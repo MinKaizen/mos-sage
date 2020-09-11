@@ -1,0 +1,15 @@
+{
+  "name": "mos-sage",
+  "version": "1.0.0",
+  "description": "MOS 2.0 Theme based on Sage",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "My Online Startup",
+  "license": "ISC",
+  "devDependencies": {
+    "webpack": "^4.44.1",
+    "webpack-cli": "^3.3.12"
+  }
+}
