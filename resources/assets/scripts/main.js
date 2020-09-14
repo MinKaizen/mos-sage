@@ -1,4 +1,16 @@
+// Routes
+import home from './routes/home'
+
+// Components
 import jsHello from './components/jsHello'
+
+// Define routes
+const routes = [
+  {
+    class: home,
+    bodyClass: '.home'
+  }
+]
 
 // Define components
 const components = [
@@ -7,6 +19,13 @@ const components = [
     selector: '.js-hello'
   }
 ]
+
+// Initialise routes
+routes.forEach(route => {
+  if (document.querySelector(route.bodyClass)) {
+    route.class.run();
+  }
+})
 
 // Initialise components
 components.forEach(component => {
