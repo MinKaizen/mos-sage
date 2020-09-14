@@ -1,3 +1,6 @@
+// Autoload
+import autoload from './autoload'
+
 // Routes
 import home from './routes/home'
 
