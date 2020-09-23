@@ -6,6 +6,7 @@ import home from './routes/home'
 
 // Components
 import jsHello from './components/jsHello'
+import GformSponsorUsername from './components/GformSponsorUsername'
 
 // Define routes
 const routes = [
@@ -20,6 +21,10 @@ const components = [
   {
     class: jsHello,
     selector: '.js-hello'
+  },
+  {
+    class: GformSponsorUsername,
+    selector: '.js-gform-sponsor-username'
   }
 ]
 
