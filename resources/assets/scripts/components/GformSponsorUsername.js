@@ -1,23 +1,35 @@
 import {unserialize} from 'php-serialize';
-const cookies = require('js-cookie');
+import Cookies from 'js-cookie';
 
 export default class GformSponsorUsername {
-  // Initialize event listeners
+
   constructor(element) {
-    this.testLog(element);
-    const uapReferralCookie = unserialize(cookies.get('uap_referral'));
-
-    if (uapReferralCookie) {
-      console.log("Affiliate ID: " + uapReferralCookie.affiliate_id);
-    } else {
-      console.log('Could not find cookie!');
-    }
+    this.main(element);
   }
 
-  // Methods
-  testLog(element) {
-    console.log('GformSponsorUsername.js is loaded!');
+  async main(element) {
+    const affid = this.getAffid();
+    const response = await this.getUserByAffid(affid);
+    const sponsorUsername = await response.data.user_login;
+    await this.injectInputValue(element, sponsorUsername);
+  }
+  
+  getAffid() {
+    const fallbackAffid = 1
+    const uapCookie = Cookies.get('uap_referral');
+    const affid = uapCookie ? unserialize(uapCookie).affiliate_id : fallbackAffid;
+    return affid;
   }
 
+  async getUserByAffid(affid) {
+    const response = await fetch(`/mos-api/user/affid/${affid}`);
+    return response.json();
+  }
+
+  async injectInputValue(element, string) {
+    const input = element.querySelector('input');
+    input.value = string;
+    return true;
+  }
   
 }
