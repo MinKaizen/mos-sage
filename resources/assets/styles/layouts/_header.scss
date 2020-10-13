@@ -10,13 +10,8 @@
 }
 
 .nav-primary {
-  display: grid;
-  justify-content: end;
-
-}
-
-.nav {
   display: flex;
+  justify-self: end;
   margin: 0;
   padding: 0;
 }
