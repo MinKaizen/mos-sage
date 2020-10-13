@@ -1,2 +1,54 @@
 // TODO: .banner .nav li {}
 // TODO: .banner .nav a {}
+
+.banner {
+  box-shadow: 1px 1px 11px 5px #66666620;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  padding: 20px;
+}
+
+.nav-primary {
+  display: grid;
+  justify-content: end;
+
+}
+
+.nav {
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.menu-item {
+  list-style: none;
+  position: relative;
+  width: auto;
+
+  a {
+    display: block;
+    padding: 10px 15px;
+    width: auto;
+    text-decoration: none;
+  }
+
+  &-has-children > a::after {
+    content: "+";
+  }
+}
+
+.sub-menu {
+  background: whitesmoke;
+  box-shadow: 1px 1px 11px 5px #66666620;
+  display: none;
+  padding: 0;
+  position: absolute;
+  white-space: nowrap;
+  width: auto;
+}
+
+.menu-item:hover .sub-menu {
+  display: block;
+}
+
