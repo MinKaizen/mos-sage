@@ -6,7 +6,7 @@ use Sober\Controller\Controller;
 
 class SingleSfwdTopic extends Controller
 {
-  function markComplete()
+  public function markComplete()
   {
     $options = [
       'button' => [
