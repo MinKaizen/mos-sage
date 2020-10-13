@@ -1,5 +1,8 @@
 @import "common/variables";
 
+// @import "../node_modules/normalize.css/normalize.css";
+@import "vendor/normalize.scss";
+
 /** Import theme styles */
 @import "common/global";
 @import "components/buttons";
