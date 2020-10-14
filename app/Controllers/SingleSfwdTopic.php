@@ -17,6 +17,23 @@ class SingleSfwdTopic extends Controller
     return $mark_complete_button;
   }
 
+  public function navItems() {
+    $course_id = $this->course_id();
+
+    $nav= $this->get_modules( $course_id, "OBJECT" );
+
+    foreach ( $nav as &$module ) {
+      $module->link = get_permalink( $module->ID );
+      $module->lessons = $this->get_lessons( $module->ID, "OBJECT" );
+      foreach ( $module->lessons as &$lesson ) {
+        $lesson->link = get_permalink( $lesson->ID );
+      }
+    }
+
+    return $nav;
+  }
+
+
   /**
    * Get a list of lessons associated with a module
    *
