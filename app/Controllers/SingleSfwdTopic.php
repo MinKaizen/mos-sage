@@ -43,4 +43,33 @@ class SingleSfwdTopic extends Controller
 
     return $result;
   }
+
+  /**
+   * Get a list of modules associated with a course
+   *
+   * @param integer $course_id    WP Post ID of course
+   * @param string $return_type   Either "OBJECT" or "ID"
+   * @return array WP_Post        Array of WP Posts
+   */
+  private function get_modules( int $course_id, string $return_type="ID" ) {
+    global $wpdb;
+
+    $postmeta_table = $wpdb->prefix . "postmeta";
+    $posts_table = $wpdb->prefix . "posts";
+    $sub_query = "SELECT post_id FROM $postmeta_table WHERE meta_key = 'course_id' AND meta_value = $course_id";
+    $query = "SELECT id FROM $posts_table WHERE post_type = 'sfwd-lessons' AND id in ($sub_query)";
+    $modules = $wpdb->get_col( $query );
+
+    if ( empty( $modules ) ) {
+      return false;
+    }
+
+    if ( $return_type === "OBJECT" ) {
+      $modules = array_map( function( $id ) {
+        return get_post( (int) $id );
+      }, $modules );
+    }
+
+    return $modules;
+  }
 }
