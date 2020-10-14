@@ -21,18 +21,13 @@ class SingleSfwdTopic extends Controller
 
   public function navItems() {
     $course_id = $this->course_id();
+    $modules = $this->get_modules( $course_id );
 
-    $nav= $this->get_modules( $course_id, "OBJECT" );
-
-    foreach ( $nav as &$module ) {
-      $module->link = get_permalink( $module->ID );
-      $module->lessons = $this->get_lessons( $module->ID, "OBJECT" );
-      foreach ( $module->lessons as &$lesson ) {
-        $lesson->link = get_permalink( $lesson->ID );
-      }
+    foreach ( $modules as &$module ) {
+      $module['lessons'] = $this->get_lessons( $module['ID'] );
     }
 
-    return $nav;
+    return $modules;
   }
 
 
@@ -43,24 +38,34 @@ class SingleSfwdTopic extends Controller
    * @param string $return_type   Either "OBJECT" or "ID"
    * @return array WP_Post        Array of WP Posts
    */
-  private function get_lessons( int $module_id, string $return_type="ID" ) {
+  private function get_lessons( int $module_id ) {
     global $wpdb;
 
-    $table = $wpdb->prefix . "postmeta";
-    $query = "SELECT post_id FROM $table WHERE meta_key = 'lesson_id' AND meta_value = $module_id";
-    $result = $wpdb->get_col( $query );
+    $t_postmeta = $wpdb->prefix . "postmeta";
+    $t_postmeta_alias = "postmeta";
+    $t_posts = $wpdb->prefix . "posts";
 
-    if ( empty( $result ) ) {
+    // Prepare query
+    $select = "SELECT $t_posts.ID, $t_posts.post_title, $t_posts.menu_order, $t_postmeta_alias.meta_value";
+    $from = "FROM $t_posts";
+    $join = "LEFT JOIN (SELECT post_id, meta_value FROM $t_postmeta WHERE meta_key = 'lesson_id') as $t_postmeta_alias";
+    $on = "ON $t_posts.ID = $t_postmeta_alias.post_id";
+    $where = "WHERE $t_postmeta_alias.meta_value = $module_id";
+    $order = "ORDER BY $t_posts.menu_order ASC";
+    $query = "$select $from $join $on $where $order";
+
+    // Execute query
+    $lessons = $wpdb->get_results( $query, ARRAY_A );
+    if ( empty( $lessons ) ) {
       return false;
     }
 
-    if ( $return_type === "OBJECT" ) {
-      $result = array_map( function( $id ) {
-        return get_post( (int) $id );
-      }, $result );
+    // Append links
+    foreach( $lessons as &$lesson ) {
+      $lesson['link'] = get_permalink($lesson['ID']);
     }
 
-    return $result;
+    return $lessons;
   }
 
 
@@ -71,23 +76,31 @@ class SingleSfwdTopic extends Controller
    * @param string $return_type   Either "OBJECT" or "ID"
    * @return array WP_Post        Array of WP Posts
    */
-  private function get_modules( int $course_id, string $return_type="ID" ) {
+  private function get_modules( int $course_id ) {
     global $wpdb;
 
-    $postmeta_table = $wpdb->prefix . "postmeta";
-    $posts_table = $wpdb->prefix . "posts";
-    $sub_query = "SELECT post_id FROM $postmeta_table WHERE meta_key = 'course_id' AND meta_value = $course_id";
-    $query = "SELECT id FROM $posts_table WHERE post_type = 'sfwd-lessons' AND id in ($sub_query)";
-    $modules = $wpdb->get_col( $query );
+    $t_postmeta = $wpdb->prefix . "postmeta";
+    $t_postmeta_alias = "postmeta";
+    $t_posts = $wpdb->prefix . "posts";
 
+    // Prepare query
+    $select = "SELECT $t_posts.ID, $t_posts.post_title, $t_posts.menu_order, $t_posts.post_type, $t_postmeta_alias.meta_value";
+    $from = "FROM $t_posts";
+    $join = "LEFT JOIN (SELECT post_id, meta_value FROM $t_postmeta WHERE meta_key = 'course_id') as $t_postmeta_alias";
+    $on = "ON $t_posts.ID = $t_postmeta_alias.post_id";
+    $where = "WHERE $t_postmeta_alias.meta_value = $course_id AND $t_posts.post_type = 'sfwd-lessons'";
+    $order = "ORDER BY $t_posts.menu_order ASC";
+    $query = "$select $from $join $on $where $order";
+
+    // Execute query
+    $modules = $wpdb->get_results( $query, ARRAY_A );
     if ( empty( $modules ) ) {
       return false;
     }
 
-    if ( $return_type === "OBJECT" ) {
-      $modules = array_map( function( $id ) {
-        return get_post( (int) $id );
-      }, $modules );
+    // Append links
+    foreach( $modules as &$module ) {
+      $module['link'] = get_permalink($module['ID']);
     }
 
     return $modules;
@@ -99,5 +112,5 @@ class SingleSfwdTopic extends Controller
     $course_id = get_post_meta( $post->ID, 'course_id', true );
     return $course_id;
   }
-  
+
 }
