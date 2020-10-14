@@ -6,6 +6,7 @@ use Sober\Controller\Controller;
 
 class SingleSfwdTopic extends Controller
 {
+
   public function markComplete()
   {
     $options = [
@@ -16,6 +17,7 @@ class SingleSfwdTopic extends Controller
     $mark_complete_button = learndash_mark_complete(get_post(), $options);
     return $mark_complete_button;
   }
+
 
   public function navItems() {
     $course_id = $this->course_id();
@@ -61,6 +63,7 @@ class SingleSfwdTopic extends Controller
     return $result;
   }
 
+
   /**
    * Get a list of modules associated with a course
    *
@@ -90,9 +93,11 @@ class SingleSfwdTopic extends Controller
     return $modules;
   }
 
+
   private function course_id() {
     $post = get_post();
     $course_id = get_post_meta( $post->ID, 'course_id', true );
     return $course_id;
   }
+  
 }
