@@ -72,4 +72,10 @@ class SingleSfwdTopic extends Controller
 
     return $modules;
   }
+
+  private function course_id() {
+    $post = get_post();
+    $course_id = get_post_meta( $post->ID, 'course_id', true );
+    return $course_id;
+  }
 }
