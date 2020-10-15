@@ -28,18 +28,6 @@ class SingleSfwdTopic extends Controller
   }
 
 
-  public function markComplete()
-  {
-    $options = [
-      'button' => [
-        'class' => 'mos-mark-complete-button'
-      ]
-    ];
-    $mark_complete_button = learndash_mark_complete(get_post(), $options);
-    return $mark_complete_button;
-  }
-
-
   public function navItems() {
     $course_id = $this->courseId();
     $modules = $this->get_modules( $course_id );
