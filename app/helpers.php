@@ -136,3 +136,48 @@ function display_sidebar()
     isset($display) || $display = apply_filters('sage/display_sidebar', false);
     return $display;
 }
+
+/**
+ * Whether or not the current post is complete by current user
+ * @return bool
+ * If page is not a learndash-related page, returns false
+ * If user is not logged in, returns flase
+ */
+function is_completed()
+{
+    $user_id = get_current_user_id();
+    if ( empty( $user_id ) ) {
+        return false;
+    }
+
+    $post = get_post();
+    if ( !in_array( $post->post_type, ['sfwd-lessons', 'sfwd-topic'] )) {
+        return false;
+    }
+
+    $progress = get_user_meta($user_id, '_sfwd-course_progress', true);
+    if ( empty( $progress ) ) {
+        return false;
+    }
+
+    return (bool) array_find_recursive( $post->ID, $progress );
+}
+
+
+function array_find_recursive( $needle, array $haystack, $max_recursions=64 )
+{
+    if ($max_recursions == 0) {
+        return false;
+    }
+
+    foreach ( $haystack as $key => $value ) {
+        if ( is_array( $value ) ) {
+            $sub_value = array_find_recursive( $needle, $value, $max_recursions-1 );
+            if ($sub_value) return $sub_value;
+        } elseif ( $key == $needle ) {
+            return $value;
+        }
+    }
+
+    return false;
+}
