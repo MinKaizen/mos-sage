@@ -19,6 +19,10 @@ class SingleSfwdTopic extends Controller
     $module_id = get_post_meta( $post->ID, 'lesson_id', true );
   }
 
+  public function lessonId() {
+    return get_the_ID();
+  }
+
 
   public function markComplete()
   {
