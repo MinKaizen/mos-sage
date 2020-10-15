@@ -4,7 +4,7 @@
 <ul>
   {{-- Start: Lessons Loop --}}
   @while($lessons_query->have_posts()) @php $lessons_query->the_post() @endphp
-    <a href="{!! get_the_permalink() !!}"><li>{!! the_title() !!}@if(get_the_ID()==$lesson_id)*@endif</li></a>
+    <a href="{!! the_permalink() !!}"><li>{!! the_title() !!}@if(get_the_ID()==$lesson_id)*@endif</li></a>
   @endwhile
   @php wp_reset_postdata() @endphp
   {{-- End: Lessons Loop --}}
