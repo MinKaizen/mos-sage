@@ -7,6 +7,8 @@ use Sober\Controller\Controller;
 class SingleSfwdTopic extends Controller
 {
 
+  protected $acf = true;
+
   public function courseId() {
     $post = get_post();
     $course_id = get_post_meta( $post->ID, 'course_id', true );
