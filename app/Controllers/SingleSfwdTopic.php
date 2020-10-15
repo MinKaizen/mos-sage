@@ -47,6 +47,8 @@ class SingleSfwdTopic extends Controller
       'meta_key' => 'course_id',
       'meta_value' => $course_id,
       'meta_compare' => '=',
+      'orderby' => 'menu_order',
+      'order' => 'ASC',
     ];
     $query = new \WP_Query( $args );
     return $query;
@@ -60,6 +62,8 @@ class SingleSfwdTopic extends Controller
       'meta_key' => 'lesson_id',
       'meta_value' => $module_id,
       'meta_compare' => '=',
+      'orderby' => 'menu_order',
+      'order' => 'ASC',
     ];
     $query = new \WP_Query( $args );
     return $query;
