@@ -1,0 +1,14 @@
+{{-- Start: Modules Loop --}}
+@while($modules_query->have_posts()) @php $modules_query->the_post() @endphp
+<h1>{!! the_title() !!}</h1>
+<ul>
+  {{-- Start: Lessons Loop --}}
+  @while($lessons_query->have_posts()) @php $lessons_query->the_post() @endphp
+    <li>{!! the_title() !!}</li>
+  @endwhile
+  @php wp_reset_postdata() @endphp
+  {{-- End: Lessons Loop --}}
+</ul>
+@endwhile
+@php wp_reset_postdata() @endphp
+{{-- End: Modules Loop --}}
