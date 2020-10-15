@@ -1,10 +1,10 @@
 {{-- Start: Modules Loop --}}
 @while($modules_query->have_posts()) @php $modules_query->the_post() @endphp
-<h1>{!! the_title() !!}</h1>
+<h1>{!! the_title() !!}@if(get_the_ID()==$module_id)*@endif</h1>
 <ul>
   {{-- Start: Lessons Loop --}}
   @while($lessons_query->have_posts()) @php $lessons_query->the_post() @endphp
-    <li>{!! the_title() !!}</li>
+    <li>{!! the_title() !!}@if(get_the_ID()==$lesson_id)*@endif</li>
   @endwhile
   @php wp_reset_postdata() @endphp
   {{-- End: Lessons Loop --}}
