@@ -17,9 +17,10 @@ class SingleSfwdTopic extends Controller
   public function moduleId() {
     $post = get_post();
     $module_id = get_post_meta( $post->ID, 'lesson_id', true );
+    return $module_id;
   }
 
-  
+
   public function lessonId() {
     return get_the_ID();
   }
