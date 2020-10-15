@@ -143,7 +143,7 @@ function display_sidebar()
  * If page is not a learndash-related page, returns false
  * If user is not logged in, returns flase
  */
-function is_completed()
+function is_complete()
 {
     $user_id = get_current_user_id();
     if ( empty( $user_id ) ) {
