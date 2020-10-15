@@ -164,6 +164,15 @@ function is_complete()
 }
 
 
+/**
+ * Searches recursively for a key in an array and returns the value
+ * --- Will not never return an array (e.g. if given key holds an array)
+ *
+ * @param $needle                   Either an array key (string) or index (int)
+ * @param array $haystack           Key/index to search for
+ * @param integer $max_recursions   Maximum number of recursions
+ * @return void                     The value at matched key or false if none found
+ */
 function array_find_recursive( $needle, array $haystack, $max_recursions=64 )
 {
     if ($max_recursions == 0) {
