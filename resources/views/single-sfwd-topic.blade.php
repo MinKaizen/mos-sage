@@ -6,5 +6,6 @@
     @include('partials.ld.course-nav')
     @include('partials.ld.mark-complete')
     @if(App\is_complete()) <h3>This lesson is complete!</h3> @endif
+    @include('partials.ld.resources')
   @endwhile
 @endsection
