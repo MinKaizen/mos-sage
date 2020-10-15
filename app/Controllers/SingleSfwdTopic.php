@@ -31,6 +31,32 @@ class SingleSfwdTopic extends Controller
   }
 
 
+  public function modulesQuery() {
+    $course_id = $this->course_id();
+    $args = [
+      'post_type' => 'sfwd-lessons',
+      'meta_key' => 'course_id',
+      'meta_value' => $course_id,
+      'meta_compare' => '=',
+    ];
+    $query = new \WP_Query( $args );
+    return $query;
+  }
+
+
+  public function lessonsQuery() {
+    $module_id = $this->module_id();
+    $args = [
+      'post_type' => 'sfwd-topic',
+      'meta_key' => 'lesson_id',
+      'meta_value' => $module_id,
+      'meta_compare' => '=',
+    ];
+    $query = new \WP_Query( $args );
+    return $query;
+  }
+
+
   /**
    * Get a list of lessons associated with a module
    *
@@ -111,6 +137,12 @@ class SingleSfwdTopic extends Controller
     $post = get_post();
     $course_id = get_post_meta( $post->ID, 'course_id', true );
     return $course_id;
+  }
+
+
+  private function module_id() {
+    $post = get_post();
+    $module_id = get_post_meta( $post->ID, 'lesson_id', true );
   }
 
 }
