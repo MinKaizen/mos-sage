@@ -7,6 +7,19 @@ use Sober\Controller\Controller;
 class SingleSfwdTopic extends Controller
 {
 
+  public function courseId() {
+    $post = get_post();
+    $course_id = get_post_meta( $post->ID, 'course_id', true );
+    return $course_id;
+  }
+
+
+  public function moduleId() {
+    $post = get_post();
+    $module_id = get_post_meta( $post->ID, 'lesson_id', true );
+  }
+
+
   public function markComplete()
   {
     $options = [
@@ -20,7 +33,7 @@ class SingleSfwdTopic extends Controller
 
 
   public function navItems() {
-    $course_id = $this->course_id();
+    $course_id = $this->courseId();
     $modules = $this->get_modules( $course_id );
 
     foreach ( $modules as &$module ) {
@@ -32,7 +45,7 @@ class SingleSfwdTopic extends Controller
 
 
   public function modulesQuery() {
-    $course_id = $this->course_id();
+    $course_id = $this->courseId();
     $args = [
       'post_type' => 'sfwd-lessons',
       'meta_key' => 'course_id',
@@ -45,7 +58,7 @@ class SingleSfwdTopic extends Controller
 
 
   public function lessonsQuery() {
-    $module_id = $this->module_id();
+    $module_id = $this->moduleId();
     $args = [
       'post_type' => 'sfwd-topic',
       'meta_key' => 'lesson_id',
@@ -130,19 +143,6 @@ class SingleSfwdTopic extends Controller
     }
 
     return $modules;
-  }
-
-
-  private function course_id() {
-    $post = get_post();
-    $course_id = get_post_meta( $post->ID, 'course_id', true );
-    return $course_id;
-  }
-
-
-  private function module_id() {
-    $post = get_post();
-    $module_id = get_post_meta( $post->ID, 'lesson_id', true );
   }
 
 }
