@@ -40,36 +40,6 @@ class SingleSfwdTopic extends Controller
   }
 
 
-  public function modulesQuery() {
-    $course_id = $this->courseId();
-    $args = [
-      'post_type' => 'sfwd-lessons',
-      'meta_key' => 'course_id',
-      'meta_value' => $course_id,
-      'meta_compare' => '=',
-      'orderby' => 'menu_order',
-      'order' => 'ASC',
-    ];
-    $query = new \WP_Query( $args );
-    return $query;
-  }
-
-
-  public function lessonsQuery() {
-    $module_id = $this->moduleId();
-    $args = [
-      'post_type' => 'sfwd-topic',
-      'meta_key' => 'lesson_id',
-      'meta_value' => $module_id,
-      'meta_compare' => '=',
-      'orderby' => 'menu_order',
-      'order' => 'ASC',
-    ];
-    $query = new \WP_Query( $args );
-    return $query;
-  }
-
-
   public function nextLesson() {
     $module_id = $this->moduleId();
     $lessons = $this->get_lessons( $module_id );

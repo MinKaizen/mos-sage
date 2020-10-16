@@ -27,3 +27,37 @@ function is_complete()
 
     return (bool) \App\array_find_recursive( $post->ID, $progress );
 }
+
+
+function modules_query( int $course_id=0 ) {
+    // If course ID not provided, get the course ID of the current post
+    $course_id = $course_id ? $course_id : get_post_meta(get_the_ID(), 'course_id', true);
+
+    $args = [
+      'post_type' => 'sfwd-lessons',
+      'meta_key' => 'course_id',
+      'meta_value' => $course_id,
+      'meta_compare' => '=',
+      'orderby' => 'menu_order',
+      'order' => 'ASC',
+    ];
+    $query = new \WP_Query( $args );
+    return $query;
+  }
+
+
+  function lessons_query( int $module_id=0 ) {
+    // If no module ID, assume function is being called from a module
+    $module_id = $module_id ? $module_id : get_the_ID();
+
+    $args = [
+      'post_type' => 'sfwd-topic',
+      'meta_key' => 'lesson_id',
+      'meta_value' => $module_id,
+      'meta_compare' => '=',
+      'orderby' => 'menu_order',
+      'order' => 'ASC',
+    ];
+    $query = new \WP_Query( $args );
+    return $query;
+  }
