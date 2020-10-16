@@ -70,6 +70,46 @@ class SingleSfwdTopic extends Controller
   }
 
 
+  public function nextLesson() {
+    $module_id = $this->moduleId();
+    $lessons = $this->get_lessons( $module_id );
+    
+    // Loop through current module
+    $_return_next_lesson = false;
+    foreach ( $lessons as $lesson ) {
+      if ( $_return_next_lesson ) {
+        return $lesson;
+      }
+
+      if ( $lesson['ID'] == get_the_ID() ) {
+        $_return_next_lesson = true;
+      }
+    }
+    
+    // Find next module
+    $modules = $this->get_modules( $this->courseId() );
+    $next_module = false;
+    $_return_next_module = false;
+
+    foreach ( $modules as $module ) {
+      if ( $_return_next_module ) {
+        $next_module = $module;
+      }
+
+      if ( $module['ID'] == $module_id ) {
+        $_return_next_module = true;
+      }
+    }
+
+    // If a next module was found, return the first lesson in that module
+    if ( $next_module ) {
+      return $module[0];
+    }
+
+    return "none found";
+  }
+
+
   /**
    * Get a list of lessons associated with a module
    *
