@@ -5,7 +5,7 @@
     @if($video) @include('partials.vimeo', ['video_id'=>$video]) @endif
     @include('partials.ld.course-nav')
     @include('partials.ld.mark-complete')
-    @if(App\is_complete()) <h3>This lesson is complete!</h3> @endif
+    @if(App\Learndash\is_complete()) <h3>This lesson is complete!</h3> @endif
     @include('partials.ld.resources')
   @endwhile
 @endsection
