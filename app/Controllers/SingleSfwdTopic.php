@@ -73,10 +73,11 @@ class SingleSfwdTopic extends Controller
 
     // If a next module was found, return the first lesson in that module
     if ( $next_module ) {
-      return $module[0];
+      $next_module_lessons = $this->get_lessons( $next_module['ID'] );
+      return $next_module_lessons[0];
     }
 
-    return "none found";
+    return false;
   }
 
 
