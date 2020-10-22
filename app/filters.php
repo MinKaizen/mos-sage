@@ -181,7 +181,7 @@ function log_something( $content ) {
         mkdir( $logs_dir, 0755, true );
     }
 
-    $file = fopen( "$logs_dir/$log_name", 'w' );
+    $file = fopen( "$logs_dir/$log_name", 'a' );
     fwrite($file, "====================================" . PHP_EOL);
     fwrite($file, date('Y-m-d H:i') . ": " . "Starting log..." . PHP_EOL);
     fwrite($file, "------------------------------------" . PHP_EOL);
