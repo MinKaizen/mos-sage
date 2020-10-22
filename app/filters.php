@@ -183,11 +183,11 @@ function log_something( $content ) {
 
     $file = fopen( "$logs_dir/$log_name", 'w' );
     fwrite($file, "====================================" . PHP_EOL);
-    fwrite($file, time() . ": " . "Starting log..." . PHP_EOL);
+    fwrite($file, date('Y-m-d H:i') . ": " . "Starting log..." . PHP_EOL);
     fwrite($file, "------------------------------------" . PHP_EOL);
     fwrite($file, json_encode($content) . PHP_EOL);
     fwrite($file, "------------------------------------" . PHP_EOL);
-    fwrite($file, time() . ": " . "Log finished..." . PHP_EOL);
+    fwrite($file, date('Y-m-d H:i') . ": " . "Log finished..." . PHP_EOL);
     fwrite($file, "====================================" . PHP_EOL);
     fwrite($file, PHP_EOL);
     fclose($file);
