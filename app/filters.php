@@ -153,6 +153,5 @@ function mos_handle_clickbank_event( $response, $identifier, $payload ) {
     $response['payload'] = $payload;
     $response['time'] = microtime( true ) - $start_time;
 
-    return $response
-
+    return $response;
 }
