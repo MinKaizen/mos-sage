@@ -175,3 +175,30 @@ function add_action_async( $hook, $function, $priority=10, $num_args=1 ) {
     add_action( $hook.'_async', $function, $priority, $num_args );
     add_action( $hook, $create_async_hook, $priority, $num_args );
 }
+
+function mos_debug( callable $function, ...$args ) {
+    $start_time = microtime( true );
+    $value_to_return = call_user_func_array( $function, $args );
+    $process_time = microtime( true ) - $start_time;
+
+    $uploads_dir  = \wp_get_upload_dir();
+    $log_file = $uploads_dir['basedir'] . '/mos-logs'. '/timing.log';
+
+    if ( $function instanceof \Closure ) {
+        $function_name = "[Anonymous Function]";
+    } else {
+        $function_name = (string) $function;
+    }
+
+    $file = fopen( $log_file, 'a' );
+    fwrite($file, "====================================" . PHP_EOL);
+    fwrite($file, date('Y-m-d H:i') . ": " . $function_name . PHP_EOL);
+    fwrite($file, "------------------------------------" . PHP_EOL);
+    fwrite($file, "Time elapsed (seconds): $process_time" . PHP_EOL);
+    fwrite($file, print_r( $value_to_return, true ) . PHP_EOL);
+    fwrite($file, "------------------------------------" . PHP_EOL);
+    fwrite($file, PHP_EOL);
+    fclose($file);
+
+    return $value_to_return;
+}
