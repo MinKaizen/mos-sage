@@ -174,7 +174,7 @@ add_action_async( 'clickbank_event', 'App\log_clickbank_event' );
 
 function log_clickbank_event( $content ) {
     $uploads_dir  = \wp_get_upload_dir();
-    $log_file = $uploads_dir['basedir'] . '/mos-logs/test.log';
+    $log_file = $uploads_dir['basedir'] . '/mos_logs/clickbank_event.log';
 
     $file = fopen( $log_file, 'a' );
     fwrite($file, date('Y-m-d H:i') . ": " . json_encode($content) . PHP_EOL);
