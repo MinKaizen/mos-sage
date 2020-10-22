@@ -177,6 +177,6 @@ function log_clickbank_event( $content ) {
     $log_file = $uploads_dir['basedir'] . '/mos-logs/test.log';
 
     $file = fopen( $log_file, 'a' );
-    fwrite($file, date('Y-m-d H:i:v') . ": " . json_encode($content) . PHP_EOL);
+    fwrite($file, date('Y-m-d H:i') . ": " . json_encode($content) . PHP_EOL);
     fclose($file);
 }
