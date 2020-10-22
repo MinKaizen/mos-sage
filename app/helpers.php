@@ -175,16 +175,3 @@ function add_action_async( $hook, $function, $priority=10, $num_args=1 ) {
     add_action( $hook.'_async', $function, $priority, $num_args );
     add_action( $hook, $create_async_hook, $priority, $num_args );
 }
-
-function do_action_async( $function, ...$args ) {
-    $unique_number = round(microtime(true) * 1000);
-    $hook = '_now_async_' . $unique_number;
-    $num_args = count($args);
-    $modified_func = function() use ($function, $args, $hook) {
-        call_user_func_array( $function, $args );
-        remove_all_actions( $hook );
-    };
-
-    add_action( $hook, $modified_func, 10, $num_args );
-    wp_schedule_single_event( time(), $hook, $args );
-}
