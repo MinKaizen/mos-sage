@@ -140,3 +140,19 @@ add_action( 'template_redirect', function() {
         break;
     }
 });
+
+/**
+ * Test Ironikus custom action webhook
+ */
+add_filter( 'wpwhpro/run/actions/custom_action/return_args', 'mos_handle_clickbank_event', 1, 3 );
+function mos_handle_clickbank_event( $response, $identifier, $payload ) {
+    $start_time = microtime( true );
+    
+    if ( $identifier != 'clickbank_event' ) return $response;
+
+    $response['payload'] = $payload;
+    $response['time'] = microtime( true ) - $start_time;
+
+    return $response
+
+}
