@@ -170,25 +170,13 @@ function mos_handle_clickbank_event( $response, $identifier, $payload ) {
     return $response;
 }
 
-add_action_async( 'clickbank_event', 'App\log_something' );
+add_action_async( 'clickbank_event', 'App\log_clickbank_event' );
 
-function log_something( $content ) {
+function log_clickbank_event( $content ) {
     $uploads_dir  = \wp_get_upload_dir();
-    $logs_dir = $uploads_dir['basedir'] . '/mos-logs';
-    $log_name = 'test.log';
+    $log_file = $uploads_dir['basedir'] . '/mos-logs/test.log';
 
-    if ( ! is_dir( $logs_dir ) ) {
-        mkdir( $logs_dir, 0755, true );
-    }
-
-    $file = fopen( "$logs_dir/$log_name", 'a' );
-    fwrite($file, "====================================" . PHP_EOL);
-    fwrite($file, date('Y-m-d H:i:v') . ": " . "Starting log..." . PHP_EOL);
-    fwrite($file, "------------------------------------" . PHP_EOL);
-    fwrite($file, json_encode($content) . PHP_EOL);
-    fwrite($file, "------------------------------------" . PHP_EOL);
-    fwrite($file, date('Y-m-d H:i:v') . ": " . "Log finished..." . PHP_EOL);
-    fwrite($file, "====================================" . PHP_EOL);
-    fwrite($file, PHP_EOL);
+    $file = fopen( $log_file, 'a' );
+    fwrite($file, date('Y-m-d H:i:v') . ": " . json_encode($content) . PHP_EOL);
     fclose($file);
 }
