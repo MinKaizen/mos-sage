@@ -163,3 +163,15 @@ function array_find_recursive( $needle, array $haystack, $max_recursions=64 )
 
     return false;
 }
+
+/**
+ * Adds an async action to a hook
+ */
+function add_action_async( $hook, $function, $priority=10, $num_args=1 ) {
+    $create_async_hook = function(...$args) use ($hook) {
+      wp_schedule_single_event( time(), $hook.'_async', $args );
+    };
+  
+    add_action( $hook.'_async', $function, $priority, $num_args );
+    add_action( $hook, $create_async_hook, $priority, $num_args );
+}
