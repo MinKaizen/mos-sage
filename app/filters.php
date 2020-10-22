@@ -162,7 +162,33 @@ function mos_handle_clickbank_event( $response, $identifier, $payload ) {
     $content = json_decode( $decrypted );
 
     $response['content'] = $content;
+
+    do_action( 'clickbank_event', $content );
+
     $response['time'] = microtime( true ) - $start_time;
     
     return $response;
+}
+
+add_action_async( 'clickbank_event', 'App\log_something' );
+
+function log_something( $content ) {
+    $uploads_dir  = \wp_get_upload_dir();
+    $logs_dir = $uploads_dir['basedir'] . '/mos-logs';
+    $log_name = 'test.log';
+
+    if ( ! is_dir( $logs_dir ) ) {
+        mkdir( $logs_dir, 0755, true );
+    }
+
+    $file = fopen( "$logs_dir/$log_name", 'w' );
+    fwrite($file, "====================================" . PHP_EOL);
+    fwrite($file, time() . ": " . "Starting log..." . PHP_EOL);
+    fwrite($file, "------------------------------------" . PHP_EOL);
+    fwrite($file, json_encode($content) . PHP_EOL);
+    fwrite($file, "------------------------------------" . PHP_EOL);
+    fwrite($file, time() . ": " . "Log finished..." . PHP_EOL);
+    fwrite($file, "====================================" . PHP_EOL);
+    fwrite($file, PHP_EOL);
+    fclose($file);
 }
