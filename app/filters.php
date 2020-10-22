@@ -144,14 +144,25 @@ add_action( 'template_redirect', function() {
 /**
  * Test Ironikus custom action webhook
  */
-add_filter( 'wpwhpro/run/actions/custom_action/return_args', 'mos_handle_clickbank_event', 1, 3 );
+add_filter( 'wpwhpro/run/actions/custom_action/return_args', 'App\mos_handle_clickbank_event', 1, 3 );
 function mos_handle_clickbank_event( $response, $identifier, $payload ) {
     $start_time = microtime( true );
-    
+
     if ( $identifier != 'clickbank_event' ) return $response;
 
-    $response['payload'] = $payload;
-    $response['time'] = microtime( true ) - $start_time;
+    $secret_key = "ANTOLAMAS61952";
+    $encrypted = \WPWHPRO()->helpers->validate_request_value( $payload['content'], 'notification' );
+    $iv = \WPWHPRO()->helpers->validate_request_value( $payload['content'], 'iv' );
+    $decrypted = trim(
+        openssl_decrypt(base64_decode($encrypted),
+        'AES-256-CBC',
+        substr(sha1($secret_key), 0, 32),
+        OPENSSL_RAW_DATA,
+        base64_decode($iv)), "\0..\32");
+    $content = json_decode( $decrypted );
 
+    $response['content'] = $content;
+    $response['time'] = microtime( true ) - $start_time;
+    
     return $response;
 }
