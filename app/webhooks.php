@@ -41,6 +41,36 @@ function mos_handle_clickbank_event( $response, $identifier, $payload ) {
 
     do_action( 'clickbank_event', $content );
 
+    switch ( $content->transactionType ) {
+        case 'SALE':
+          do_action( 'clickbank_sale', $content );
+          break;
+        case 'BILL':
+          do_action( 'clickbank_rebill', $content );
+          break;
+        case 'RFND':
+          do_action( 'clickbank_refund', $content );
+          break;
+        case 'CGBK':
+          do_action( 'clickbank_chargeback', $content );
+          break;
+        case 'CANCEL-REBILL':
+          do_action( 'clickbank_cancel_rebill', $content );
+          break;
+        case 'TEST_SALE':
+          do_action( 'clickbank_test_sale', $content );
+          break;
+        case 'TEST_BILL':
+          do_action( 'clickbank_test_rebill', $content );
+          break;
+        case 'TEST_RFND':
+          do_action( 'clickbank_test_refund', $content );
+          break;
+        case 'CANCEL-TEST-REBILL':
+          do_action( 'clickbank_test_cancel_rebill', $content );
+          break;
+    }
+    
     $response['time'] = microtime( true ) - $start_time;
     
     return $response;
