@@ -4,8 +4,44 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f31f679ab253b90c13366000decce59b",
+    "content-hash": "764fee73a0f42c054b560528b1482461",
     "packages": [
+        {
+            "name": "10up/async-transients",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/10up/Async-Transients.git",
+                "reference": "0dfb0e5fd98333d5e7d29c45ef1d01e66c129e4a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/10up/Async-Transients/zipball/0dfb0e5fd98333d5e7d29c45ef1d01e66c129e4a",
+                "reference": "0dfb0e5fd98333d5e7d29c45ef1d01e66c129e4a",
+                "shasum": ""
+            },
+            "type": "wordpress-library",
+            "autoload": {
+                "psr-4": {
+                    "TenUp\\AsyncTransients\\": "includes/TenUp/AsyncTransients"
+                },
+                "files": [
+                    "includes/helpers.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "10up",
+                    "homepage": "http://10up.com"
+                }
+            ],
+            "description": "Transients, that regenerate asynchronously once content is expired, and serve stale content in the mean time",
+            "time": "2018-01-09T15:53:01+00:00"
+        },
         {
             "name": "brain/hierarchy",
             "version": "2.4.0",
@@ -1685,12 +1721,15 @@
         }
     ],
     "aliases": [],
-    "minimum-stability": "stable",
-    "stability-flags": [],
+    "minimum-stability": "dev",
+    "stability-flags": {
+        "10up/async-transients": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
         "php": ">=7.1"
     },
-    "platform-dev": []
+    "platform-dev": [],
+    "plugin-api-version": "1.1.0"
 }
