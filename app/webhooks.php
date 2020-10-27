@@ -81,7 +81,7 @@ function mos_handle_clickbank_event( $response, $identifier, $payload ) {
  * 
  * Output file: (uploads)/mos_logs/clickbank_event.log
  */
-add_action_async( 'clickbank_event', 'App\log_clickbank_event' );
+\MOS\Async\add_action_async( 'clickbank_event', 'App\log_clickbank_event' );
 function log_clickbank_event( $content ) {
   $uploads_dir  = \wp_get_upload_dir();
   $logs_dir = $uploads_dir['basedir'] . '/mos_logs';
