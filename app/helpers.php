@@ -182,7 +182,12 @@ function mos_debug( callable $function, ...$args ) {
     $process_time = microtime( true ) - $start_time;
 
     $uploads_dir  = \wp_get_upload_dir();
-    $log_file = $uploads_dir['basedir'] . '/mos-logs'. '/timing.log';
+    $logs_dir = $uploads_dir['basedir'] . '/mos-logs';
+    $log_file = $logs_dir . '/timing.log';
+
+    if ( ! is_dir( $logs_dir ) ) {
+        mkdir( $logs_dir, 0755, true );
+    }
 
     if ( $function instanceof \Closure ) {
         $function_name = "[Anonymous Function]";
