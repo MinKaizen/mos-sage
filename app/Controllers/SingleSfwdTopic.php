@@ -57,8 +57,8 @@ class SingleSfwdTopic extends Controller
     $previous_module = false;
     foreach ( $modules as $index => $module ) {
       if ( $module['ID'] == $module_id ) {
-        // If this is the first module, return false
-        if ( $index == 0 ) return false;
+        // If this is the first module, return empty array
+        if ( $index == 0 ) return [];
         $prev_module = $modules[$index-1];
       }
     }
