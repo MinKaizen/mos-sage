@@ -54,7 +54,6 @@ class SingleSfwdTopic extends Controller
     
     // Find previous module
     $modules = $this->get_modules( $this->courseId() );
-    $previous_module = false;
     foreach ( $modules as $index => $module ) {
       if ( $module['ID'] == $module_id ) {
         // If this is the first module, return empty array
