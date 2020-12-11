@@ -1,3 +1,3 @@
-@if($next_lesson)
-<span><a href="{!! $next_lesson['link'] !!}">Next >>></a></span>
+@if($next_link)
+  <span><a href="{{ $next_link }}">Next >>></a></span>
 @endif
