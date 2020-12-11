@@ -33,7 +33,7 @@ class SingleSfwdTopic extends Controller
     $modules = $this->get_modules( $course_id );
 
     foreach ( $modules as &$module ) {
-      $module['lessons'] = $this->get_lessons( $module['ID'] );
+      $module['lessons'] = $this->get_lessons( (int) $module['ID'] );
     }
 
     return $modules;
