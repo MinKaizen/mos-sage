@@ -146,7 +146,7 @@ function display_sidebar()
  * @param integer $max_recursions   Maximum number of recursions
  * @return void                     The value at matched key or false if none found
  */
-function array_find_recursive( $needle, array $haystack, $max_recursions=64 )
+function array_find_recursive( $needle, array $haystack, int $max_recursions=64 )
 {
     if ($max_recursions == 0) {
         return false;
