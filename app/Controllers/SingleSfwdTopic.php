@@ -10,6 +10,11 @@ class SingleSfwdTopic extends Controller
   protected $acf = true;
 
 
+  public function userId(): int {
+    return \get_current_user_id();
+  }
+
+
   public function courseId(): int {
     $post = get_post();
     $course_id = (int) get_post_meta( $post->ID, 'course_id', true );
