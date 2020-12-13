@@ -50,10 +50,21 @@ class SingleSfwdTopic extends Controller
 
   public function courseStructure(): array {
     $course_id = $this->courseId();
+    // $cache_key = "mos_ld_course_structure_$course_id";
+    // $cached_value = \get_transient( $cache_key );
+    
+    // if ( $cached_value !== false ) {
+    //   return $cached_value;
+    // }
+
     $modules = $this->get_modules( $course_id );
     foreach ( $modules as &$module ) {
       $module->lessons = $this->get_lessons( $module->ID );
     }
+
+    // $cache_expiration = \WEEK_IN_SECONDS;
+    // \set_transient( $cache_key, $modules, $cache_expiration );
+
     return $modules;
   }
 
