@@ -3,7 +3,7 @@
   <ul>
     @foreach($module->lessons as $lesson)
       <li>
-        <a href="{{ $lesson->link }}" @if($lesson_id==$lesson->ID)style="color: red; font-weight: bold;"@endif>
+        <a @if($lesson_id!=$lesson->ID)href="{{ $lesson->link }}" @endif class="lesson-item @if($lesson_id==$lesson->ID)lesson-item--current @endif" >
           {{ $lesson->post_title }}@if(App\Controllers\SingleSfwdTopic::is_complete( $lesson->ID )) <span style="color: green;">✓</span> @endif
         </a>
       </li>
