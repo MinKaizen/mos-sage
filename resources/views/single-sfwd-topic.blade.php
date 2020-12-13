@@ -6,7 +6,7 @@
     @include('partials.ld.prev-link')
     @include('partials.ld.next-link')
     @include('partials.ld.course-nav', ['course_structure' => $course_structure])
-    @include('partials.ld.mark-complete')
+    @if($is_complete) @include('partials.ld.mark-complete')@endif
     @include('partials.ld.resources')
   @endwhile
 @endsection
