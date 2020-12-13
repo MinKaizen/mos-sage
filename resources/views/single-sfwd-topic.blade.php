@@ -2,7 +2,6 @@
 
 @section('content')
   @while(have_posts()) @php the_post() @endphp
-    @dump($next_link);
     @if(isset($video)) @include('partials.vimeo', ['video_id'=>$video]) @endif
     @include('partials.ld.prev-link')
     @include('partials.ld.next-link')
