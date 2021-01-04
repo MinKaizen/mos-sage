@@ -24,6 +24,14 @@ class SingleSfwdTopic extends Controller
   }
 
 
+  public function courseProgress(): array {
+    $user = User::current();
+    $course_id = $this->courseId();
+    $progress = $user->get_course_progress( $course_id );
+    return $progress;
+  }
+
+
   public function isComplete(): bool {
     return self::is_complete( \get_the_ID() );
   }
