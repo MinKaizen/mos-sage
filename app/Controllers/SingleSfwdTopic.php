@@ -3,6 +3,7 @@
 namespace App\Controllers;
 
 use Sober\Controller\Controller;
+use MOS\Affiliate\User;
 
 class SingleSfwdTopic extends Controller
 {
