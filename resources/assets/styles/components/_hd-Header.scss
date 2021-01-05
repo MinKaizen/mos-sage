@@ -1,10 +1,10 @@
-// TODO: .hd-Header .nav li {}
-// TODO: .hd-Header .nav a {}
-
 .hd-Header {
-  box-shadow: 1px 1px 11px 5px #66666620;
+  box-shadow: $shadow-shadow1;
   display: grid;
-  grid-template-columns: auto 1fr;
+  padding: 20px 50px 20px 30px;
+
+  // Grid properties
   align-items: center;
-  padding: 20px;
+  grid-template-columns: auto auto;
+  justify-content: space-between;
 }
