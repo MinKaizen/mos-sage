@@ -7,11 +7,13 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "optimize-images": "node resources/assets/scripts/build/optimize-images.js",
     "csslint": "npx stylelint \"resources/assets/styles/**.scss\"",
-    "build": "npm run-script optimize-images && npm run-script csslint"
+    "import-fonts": "npx copyfiles resources/assets/fonts/** ./dist/fonts/ -f",
+    "build": "npm run-script optimize-images && npm run-script csslint && npm run-script import-fonts"
   },
   "author": "My Online Startup",
   "license": "ISC",
   "devDependencies": {
+    "copyfiles": "^2.4.1",
     "webpack": "^4.44.1",
     "webpack-cli": "^3.3.12"
   },
