@@ -1,10 +1,16 @@
-.hd-HeaderNav {
-  display: flex;
-  margin: 0;
-  padding: 0;
+// Dropdown container
+.sub-menu {
+  background: $color-new-black;
+  opacity: 0;
+  padding: 10px;
+  position: absolute;
+  transition: all 0.2s ease-in-out;
+  transform: translateY(-20px);
+  white-space: nowrap;
+  width: auto;
 }
 
-.hd-HeaderNav .menu-item {
+.sub-menu > .menu-item {
   list-style: none;
   width: auto;
   color: white;
@@ -39,4 +45,10 @@
     border-right: 2px solid white;
     transform: rotate(0.125turn) translateY(-$half-size);
   }
+}
+
+// Show dropdown on hover
+.menu-item:hover > .sub-menu {
+  opacity: 1;
+  transform: none;
 }
