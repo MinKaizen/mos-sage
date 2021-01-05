@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "optimize-images": "node resources/assets/scripts/build/optimize-images.js",
-    "build": "npm run-script optimize-images"
+    "csslint": "npx stylelint \"resources/assets/styles/**.scss\"",
+    "build": "npm run-script optimize-images && npm run-script csslint"
   },
   "author": "My Online Startup",
   "license": "ISC",

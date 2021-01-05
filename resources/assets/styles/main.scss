@@ -1,11 +1,14 @@
+// Import utils
 @import "utils/functions";
 @import "utils/mixins";
 @import "utils/variables";
 
+// Import globals
 @import "global/global";
 @import "global/normalize";
 @import "global/typography";
 
+// Import components
 @import "components/Button";
 @import "components/Form";
 @import "components/Header";
