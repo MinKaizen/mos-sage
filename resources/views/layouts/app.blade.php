@@ -3,7 +3,7 @@
   @include('partials.head')
   <body @php body_class('bd-Body') @endphp>
     @php do_action('get_header') @endphp
-    @include('partials.header')
+    @include('partials.hd-Header')
     <div class="wrap container" role="document">
       <div class="content">
         <main class="main">
