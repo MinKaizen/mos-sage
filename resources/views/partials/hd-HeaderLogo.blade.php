@@ -1,0 +1,1 @@
+<a href="{{ home_url('/') }}" class="hd-HeaderLogo"><img src="@asset('images/logo-type-light.png')" alt=""></a>
