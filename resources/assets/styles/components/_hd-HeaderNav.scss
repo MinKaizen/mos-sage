@@ -1,37 +1,60 @@
 .hd-HeaderNav {
   display: flex;
-  justify-self: end;
   margin: 0;
   padding: 0;
 }
 
-.menu-item {
+.hd-HeaderNav .menu-item {
   list-style: none;
-  position: relative;
   width: auto;
+  color: white;
+  cursor: pointer;
+
+  &:hover {
+    color: $color-light-blue;
+  }
+  
+  &.current-menu-item, &.current-menu-ancestor {
+    color: $color-light-blue;
+  }
 
   a {
+    color: inherit;
     display: block;
-    padding: 10px 15px;
+    padding: 15px;
     width: auto;
     text-decoration: none;
   }
 
+  // Dropdown Arrow for menu items with sub pages
   &-has-children > a::after {
-    content: "+";
+    $size: 7px;
+    $half-size: $size / 2;
+    content: "";
+    height: $size;
+    width: $size;
+    margin: 0 3px;
+    display: inline-block;
+    border-bottom: 2px solid white;
+    border-right: 2px solid white;
+    transform: rotate(0.125turn) translateY(-$half-size);
   }
 }
 
-.sub-menu {
-  background: whitesmoke;
-  box-shadow: 1px 1px 11px 5px #66666620;
-  display: none;
-  padding: 0;
+// Dropdown container
+.hd-HeaderNav .sub-menu {
+  background: $color-new-black;
+  opacity: 0;
+  padding: 10px;
   position: absolute;
+  transition: all 0.2s ease-in-out;
+  transform: translateY(-20px);
   white-space: nowrap;
   width: auto;
 }
 
-.menu-item:hover .sub-menu {
-  display: block;
+// Show dropdown on hover
+.hd-HeaderNav .menu-item:hover .sub-menu {
+  opacity: 1;
+  transform: none;
 }
