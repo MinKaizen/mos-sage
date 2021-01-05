@@ -5,10 +5,10 @@
 }
 
 .hd-HeaderNav > .menu-item {
-  list-style: none;
-  width: auto;
   color: white;
   cursor: pointer;
+  list-style: none;
+  width: auto;
 
   &:hover {
     color: $color-light-blue;
@@ -22,8 +22,8 @@
     color: inherit;
     display: block;
     padding: 15px;
-    width: auto;
     text-decoration: none;
+    width: auto;
   }
 
   // Dropdown Arrow for menu items with sub pages
@@ -31,12 +31,12 @@
     $size: 7px;
     $half-size: $size / 2;
     content: "";
+    border-bottom: 2px solid white;
+    border-right: 2px solid white;
+    display: inline-block;
     height: $size;
     width: $size;
     margin: 0 3px;
-    display: inline-block;
-    border-bottom: 2px solid white;
-    border-right: 2px solid white;
     transform: rotate(0.125turn) translateY(-$half-size);
   }
 }
