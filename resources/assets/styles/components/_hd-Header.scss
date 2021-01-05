@@ -1,7 +1,9 @@
 .hd-Header {
+  background: $color-new-black;
   box-shadow: $shadow-shadow1;
   display: grid;
-  padding: 20px 50px 20px 30px;
+  padding: 0 50px 0 30px;
+  height: 75px;
 
   // Grid properties
   align-items: center;
