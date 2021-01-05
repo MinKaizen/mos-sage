@@ -1,54 +1,35 @@
 // Dropdown container
 .sub-menu {
   background: $color-new-black;
-  opacity: 0;
-  padding: 10px;
   position: absolute;
-  transition: all 0.2s ease-in-out;
-  transform: translateY(-20px);
-  white-space: nowrap;
-  width: auto;
-}
-
-.sub-menu > .menu-item {
-  list-style: none;
-  width: auto;
-  color: white;
-  cursor: pointer;
-
-  &:hover {
-    color: $color-light-blue;
-  }
   
-  &.current-menu-item, &.current-menu-ancestor {
-    color: $color-light-blue;
-  }
-
-  a {
-    color: inherit;
-    display: block;
-    padding: 15px;
-    width: auto;
-    text-decoration: none;
-  }
-
-  // Dropdown Arrow for menu items with sub pages
-  &-has-children > a::after {
-    $size: 7px;
-    $half-size: $size / 2;
-    content: "";
-    height: $size;
-    width: $size;
-    margin: 0 3px;
-    display: inline-block;
-    border-bottom: 2px solid white;
-    border-right: 2px solid white;
-    transform: rotate(0.125turn) translateY(-$half-size);
-  }
+  // Animation properties
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: all 0.2s ease-in-out;
 }
 
 // Show dropdown on hover
 .menu-item:hover > .sub-menu {
   opacity: 1;
   transform: none;
+}
+
+.sub-menu > .menu-item {
+  color: white;
+
+  &:hover {
+    color: $color-light-blue;
+  }
+  
+  a {
+    color: inherit;
+    display: block;
+    padding: 15px;
+    text-decoration: none;
+  }
+}
+
+.sub-menu > .current-menu-item {
+  color: $color-light-blue;
 }
