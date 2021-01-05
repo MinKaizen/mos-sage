@@ -1,3 +1,4 @@
+// Colors
 $color-charcoal: #3A4759;
 $color-light-charcoal: #6E7A8A;
 $color-darker-icon: #A9B2C3;
@@ -19,6 +20,7 @@ $color-new-black: #070A12;
 $color-new-dark-grey: #1E263A;
 $color-new-light-grey: #465164;
 
+// Gradients
 $gradient-shiny-dark-blue: radial-gradient(100% 100% at 42.37% 0%, #001AFF 0%, #004EC2 0.01%, #012193 15.63%, #02006D 32.29%, #060018 80.21%, #11000D 100%);
 $gradient-shiny-light-blue: radial-gradient(100% 100% at 42.37% 0%, #7EC8FF 0.01%, #3794F7 15.63%, #2570C9 32.29%, #021C55 80.21%, #000000 100%);
 $gradient-shiny-purple: radial-gradient(100% 100% at 42.37% 0%, #AB42AD 0.01%, #96177A 10.94%, #7E036B 20.83%, #6D0156 32.29%, #1C0056 80.21%, #000E3F 89.58%, #00011C 100%);
@@ -30,3 +32,12 @@ $gradient-button-red: linear-gradient(180deg, #FF595E 14.71%, #A62125 85.29%);
 $gradient-button-blue: linear-gradient(180deg, #009EFF 0%, #1A4AB2 56.77%);
 $gradient-button-purple: linear-gradient(180deg, #D44BE0 14.71%, #4F1B93 88.24%);
 $gradient-button-green: linear-gradient(180deg, #20DD95 14.71%, #0E787E 85.29%);
+
+// Shadows
+$shadow-shadow1: 0px 10px 20px rgba(15, 19, 44, 0.15);
+$shadow-shadow1-hover: 0px 20px 40px rgba(15, 19, 44, 0.25);
+$shadow-shadow2: 0px 15px 30px rgba(15, 19, 44, 0.15);
+$shadow-shadow2-hover: 0px 30px 60px rgba(15, 19, 44, 0.25);
+
+// Backdrop Filters
+$backdrop-filter-background-blur: blur(10px);
