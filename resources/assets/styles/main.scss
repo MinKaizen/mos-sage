@@ -4,8 +4,9 @@
 @import "utils/variables";
 
 // Import globals
-@import "global/global";
 @import "global/normalize";
+@import "global/fonts";
+@import "global/global";
 @import "global/typography";
 
 // Import components
