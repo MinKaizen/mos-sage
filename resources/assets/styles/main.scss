@@ -1,18 +1,12 @@
-@import "common/variables";
+@import "utils/functions";
+@import "utils/mixins";
+@import "utils/variables";
 
-// @import "../node_modules/normalize.css/normalize.css";
-@import "vendor/normalize.scss";
+@import "global/global";
+@import "global/normalize";
+@import "global/typography";
 
-/** Import theme styles */
-@import "common/global";
-@import "components/buttons";
-@import "components/comments";
-@import "components/forms";
-@import "components/lesson-resources";
-@import "components/wp-classes";
-@import "layouts/header";
-@import "layouts/sidebar";
-@import "layouts/footer";
-@import "layouts/pages";
-@import "layouts/posts";
-@import "layouts/tinymce";
+@import "components/Button";
+@import "components/Form";
+@import "components/Header";
+@import "components/WPClasses";
