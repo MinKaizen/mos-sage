@@ -1,12 +1,12 @@
 @include media('lg') {
-  .hd-HeaderNav {
+  .hd-HeaderNavDesktop {
     display: flex;
     margin: 0;
     padding: 0;
     height: 100%;
   }
   
-  .hd-HeaderNav > .menu-item {
+  .hd-HeaderNavDesktop > .menu-item {
     color: white;
     cursor: pointer;
     display: grid;
