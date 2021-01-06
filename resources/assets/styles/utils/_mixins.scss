@@ -1,0 +1,6 @@
+// Text Gradients
+@mixin text-gradient-active-top-menu() {
+  background-image: $gradient-active-top-menu-text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
