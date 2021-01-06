@@ -20,7 +20,9 @@
   }
 
   &.current-menu-item, &.current-menu-ancestor {
-    color: $color-light-blue;
+    > a {
+      @include text-gradient-active-top-menu();
+    }
 
     &::before {
       content: "";
