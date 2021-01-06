@@ -4,6 +4,20 @@
   }
 }
 
+.hd-HeaderNavMobile_Burger {
+  cursor: pointer;
+  display: grid;
+  grid-gap: 6px;
+  height: 25px;
+  width: 30px;
+
+  &Line {
+    background: $color-new-light-grey;
+    display: block;
+    height: 100%;
+    width: 100%;
+  }
+}
 .hd-HeaderNavMobile_Menu > .menu-item {
   
   &.current-menu-item, &.current-menu-ancestor {
