@@ -19,7 +19,7 @@
   color: white;
 
   &:hover {
-    color: $color-light-blue;
+    @include text-gradient-active-top-menu();
   }
   
   a {

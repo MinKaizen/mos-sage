@@ -15,8 +15,8 @@
   position: relative;
   width: auto;
 
-  &:hover {
-    color: $color-light-blue;
+  &:hover > a {
+    @include text-gradient-active-top-menu();
   }
 
   &.current-menu-item, &.current-menu-ancestor {
