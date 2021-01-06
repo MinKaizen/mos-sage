@@ -1,60 +1,62 @@
-.hd-HeaderNav {
-  display: flex;
-  margin: 0;
-  padding: 0;
-  height: 100%;
-}
-
-.hd-HeaderNav > .menu-item {
-  color: white;
-  cursor: pointer;
-  display: grid;
-  align-content: center;
-  height: 100%;
-  list-style: none;
-  position: relative;
-  width: auto;
-
-  &:hover > a {
-    @include text-gradient-active-top-menu();
+@include media('lg') {
+  .hd-HeaderNav {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    height: 100%;
   }
-
-  &.current-menu-item, &.current-menu-ancestor {
-    > a {
+  
+  .hd-HeaderNav > .menu-item {
+    color: white;
+    cursor: pointer;
+    display: grid;
+    align-content: center;
+    height: 100%;
+    list-style: none;
+    position: relative;
+    width: auto;
+  
+    &:hover > a {
       @include text-gradient-active-top-menu();
     }
-
-    &::before {
-      content: "";
-      background: $gradient-active-top-menu;
-      border-radius: 0 0 5px 5px;
-      display: block;
-      height: 6px;
-      position: absolute;
-      width: 100%;
+  
+    &.current-menu-item, &.current-menu-ancestor {
+      > a {
+        @include text-gradient-active-top-menu();
+      }
+  
+      &::before {
+        content: "";
+        background: $gradient-active-top-menu;
+        border-radius: 0 0 5px 5px;
+        display: block;
+        height: 6px;
+        position: absolute;
+        width: 100%;
+      }
     }
-  }
-
-  > a {
-    color: inherit;
-    display: block;
-    margin: auto;
-    padding: 15px;
-    text-decoration: none;
-    width: auto;
-  }
-
-  // Dropdown Arrow for menu items with sub pages
-  &-has-children > a::after {
-    $size: 7px;
-    $half-size: $size / 2;
-    content: "";
-    border-bottom: 2px solid white;
-    border-right: 2px solid white;
-    display: inline-block;
-    height: $size;
-    width: $size;
-    margin: 0 3px;
-    transform: rotate(0.125turn) translateY(-$half-size);
+  
+    > a {
+      color: inherit;
+      display: block;
+      margin: auto;
+      padding: 15px;
+      text-decoration: none;
+      width: auto;
+    }
+  
+    // Dropdown Arrow for menu items with sub pages
+    &-has-children > a::after {
+      $size: 7px;
+      $half-size: $size / 2;
+      content: "";
+      border-bottom: 2px solid white;
+      border-right: 2px solid white;
+      display: inline-block;
+      height: $size;
+      width: $size;
+      margin: 0 3px;
+      transform: rotate(0.125turn) translateY(-$half-size);
+    }
   }
 }
