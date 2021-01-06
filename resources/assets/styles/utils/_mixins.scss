@@ -4,3 +4,19 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+
+@mixin media($size) {
+  $breakpoints: (
+    'sm': $breakpoint-sm,
+    'md': $breakpoint-md,
+    'lg': $breakpoint-lg,
+    'xl': $breakpoint-xl,
+    'xxl': $breakpoint-xxl,
+  );
+
+  $breakpoint: map-get($breakpoints, $size);
+
+  @media only screen and (min-width: $breakpoint) {
+    @content;
+  }
+}
