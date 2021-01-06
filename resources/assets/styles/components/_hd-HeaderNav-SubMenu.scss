@@ -5,14 +5,14 @@
   
   // Animation properties
   opacity: 0;
-  transform: translateY(-20px);
+  transform: translateY(30px);
   transition: all 0.2s ease-in-out;
 }
 
 // Show dropdown on hover
 .menu-item:hover > .sub-menu {
   opacity: 1;
-  transform: none;
+  transform: translateY(60px);
 }
 
 .sub-menu > .menu-item {
@@ -27,6 +27,7 @@
     display: block;
     padding: 15px;
     text-decoration: none;
+    white-space: nowrap;
   }
 }
 
