@@ -1,5 +1,7 @@
 .hd-HeaderNavMobile {
-  
+  @include media('lg') {
+    display: none;
+  }
 }
 
 .hd-HeaderNavMobile > .menu-item {
