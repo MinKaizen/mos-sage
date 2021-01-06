@@ -1,0 +1,20 @@
+.hd-HeaderLogo {
+  @mixin icon-only() {
+    background: url('../images/logo-icon-40x36.png');
+    height: 36px;
+    width: 40px;
+  }
+
+  @mixin icon-type() {
+    background: url('../images/logo-type-light.png');
+    height: 37px;
+    width: 208px;
+  }
+
+  display: inline-block;
+  @include icon-only();
+  @include media('xl') {
+    @include icon-type();
+  }
+}
+

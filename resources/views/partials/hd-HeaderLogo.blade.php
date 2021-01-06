@@ -1,1 +1,1 @@
-<a href="{{ home_url('/') }}" class="hd-HeaderLogo"><img src="@asset('images/logo-type-light.png')" width="208" height="37" alt="My Online Startup"></a>
+<a href="{{ home_url('/') }}" class="hd-HeaderLogo"></a>
