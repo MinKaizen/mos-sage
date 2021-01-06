@@ -1,3 +1,7 @@
+.hd-HeaderNavDesktop {
+  display: none;
+}
+
 @include media('lg') {
   .hd-HeaderNavDesktop {
     display: flex;
