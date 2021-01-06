@@ -65,3 +65,8 @@ $breakpoint-md: 768px;
 $breakpoint-lg: 992px;
 $breakpoint-xl: 1200px;
 $breakpoint-xxl: 1400px;
+
+// Z-indices
+$z-map: (
+  'mobile-menu': 99,
+);
