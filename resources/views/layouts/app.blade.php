@@ -1,7 +1,10 @@
 <!doctype html>
 <html {!! get_language_attributes() !!}>
   @include('partials.head')
-  <body @php body_class('bd-Body') @endphp>
+  <body @php body_class('bd-Body') @endphp
+    data-level="{{ apply_filters('mos_user_level_slug', '') }}"
+    data-next-level="{{ apply_filters('mos_user_next_level_slug', '') }}"
+  >
     @include('partials.glbl-MobileNav', ['menu_slug' => 'primary_navigation'])
     @php do_action('get_header') @endphp
     @include('partials.hd-Header')
