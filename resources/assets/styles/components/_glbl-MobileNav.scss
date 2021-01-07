@@ -77,35 +77,3 @@
     transform: rotate(-45deg);
   }
 }
-
-
-.glbl-MobileNav_Menu > .menu-item {
-
-  > a {
-    color: white;
-  }
-  
-  &.current-menu-item, &.current-menu-ancestor {
-    > a {
-      
-    }
-
-    &::before {
-      
-    }
-  }
-
-  // Dropdown Arrow for menu items with sub pages
-  &-has-children > a::after {
-    $size: 7px;
-    $half-size: $size / 2;
-    content: "";
-    border-bottom: 2px solid white;
-    border-right: 2px solid white;
-    display: inline-block;
-    height: $size;
-    width: $size;
-    margin: 0 3px;
-    transform: rotate(0.125turn) translateY(-$half-size);
-  }
-}
