@@ -12,30 +12,54 @@
     font-size: $font-size-title;
     padding: 20px;
     text-decoration: none;
+  }
 
-    &:hover {
-      @include text-gradient-active-top-menu();
-    }
+  > a:hover,
+  &.current-menu-item > a,
+  &.current-menu-ancestor > a {
+    @include text-gradient-active-top-menu();
   }
   
-  // Current Menu Item
-  &.current-menu-item,
-  &.current-menu-ancestor {
-    > a {
-      @include text-gradient-active-top-menu();
-    }
+  // Current Menu Item Indicator
+  &.current-menu-item::before,
+  &.current-menu-ancestor::before {
+    background: $gradient-active-top-menu-vertical;
+    border-radius: 0 5px 5px 0;
+    content: '';
+    display: block;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 6px;
+  }
 
-    &::before {
-      background: $gradient-active-top-menu-vertical;
-      border-radius: 0 5px 5px 0;
-      content: '';
-      display: block;
-      height: 100%;
-      left: 0;
-      position: absolute;
-      top: 0;
-      width: 6px;
-    }
+  // Upgrade buttons
+  &.UpgradeButton > a {
+    // border-radius: 10px 10px 0px 10px;
+  }
+
+  &.UpgradeButton-monthly > a {
+    background: $gradient-promotion1;
+  }
+
+  &.UpgradeButton-yearly > a {
+    background: $gradient-promotion2;
+  }
+
+  &.UpgradeButton-lifetime > a {
+    background: $gradient-promotion2;
+  }
+
+  &.UpgradeButton-coaching > a {
+    background: $gradient-promotion2;
+  }
+
+  &.UpgradeButton > a:hover {
+    // #HACK: undo text gradient shenanigans
+    -webkit-background-clip: unset;
+    // #HACK: undo text gradient shenanigans
+    -webkit-text-fill-color: unset;
   }
 
   // Dropdown Arrow for menu items with sub pages
