@@ -17,13 +17,6 @@
       {!! wp_nav_menu(['theme_location' => $menu_slug, 'menu_class' => 'glbl-MobileNav_Menu', 'container' => false]) !!}
     @endif
 
-    <span class="glbl-MobileNav_Close js-ClassToggler"
-          data-target-selector=".glbl-MobileNav"
-          data-toggle-class="is-Active">
-      <div class="glbl-MobileNav_Close_Line"></div>
-      <div class="glbl-MobileNav_Close_Line"></div>
-    </span>
-
   </div>
 
 
