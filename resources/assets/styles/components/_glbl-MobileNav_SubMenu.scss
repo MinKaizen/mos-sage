@@ -1,5 +1,26 @@
 .glbl-MobileNav_Menu .sub-menu {
+  overflow: hidden;
+  padding-left: 35px;
+  padding-bottom: 15px;
+  display: none;
+  
+  &.is-Active {
+    display: block;
+  }
+
   a {
-    color: grey;
-  }  
+    color: $color-white;
+    cursor: pointer;
+    display: block;
+    text-decoration: none;
+    padding: 7px 0;
+
+    &:hover {
+      @include text-gradient-active-top-menu();
+    }
+  }
+
+  .current-menu-item {
+    @include text-gradient-active-top-menu();
+  }
 }
