@@ -11,7 +11,7 @@
       <div class="glbl-MobileNav_Close_Line"></div>
     </span>
 
-    <img src="@asset('images/logo-type-light.png')" alt="My Online Startup">
+    <a href="{{ home_url('/') }}"><img src="@asset('images/logo-type-light.png')" alt="My Online Startup"></a>
 
     @if (has_nav_menu($menu_slug))
       {!! wp_nav_menu(['theme_location' => $menu_slug, 'menu_class' => 'glbl-MobileNav_Menu', 'container' => false]) !!}
