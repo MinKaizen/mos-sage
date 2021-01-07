@@ -69,15 +69,15 @@
       transition: all 0.3s ease-out;
     }
 
-    &.UpgradeButton-monthly > a {
+    &.UpgradeButton-monthly_partner > a {
       background: $gradient-promotion1;
     }
 
-    &.UpgradeButton-yearly > a {
+    &.UpgradeButton-yearly_partner > a {
       background: $gradient-promotion2;
     }
 
-    &.UpgradeButton-lifetime > a {
+    &.UpgradeButton-lifetime_partner > a {
       background: $gradient-promotion2;
     }
 
