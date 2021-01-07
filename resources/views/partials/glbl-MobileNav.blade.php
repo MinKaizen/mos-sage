@@ -7,8 +7,8 @@
     <span class="glbl-MobileNav_Close js-ClassToggler"
           data-target-selector=".glbl-MobileNav"
           data-toggle-class="is-Active">
-      <div class="glbl-MobileNav_Close_Line"></div>
-      <div class="glbl-MobileNav_Close_Line"></div>
+      <div class="glbl-MobileNav_Close_Line1"></div>
+      <div class="glbl-MobileNav_Close_Line2"></div>
     </span>
 
     <a href="{{ home_url('/') }}"><img src="@asset('images/logo-type-light.png')" alt="My Online Startup"></a>
