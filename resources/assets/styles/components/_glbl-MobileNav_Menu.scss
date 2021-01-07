@@ -1,16 +1,39 @@
+.glbl-MobileNav_Menu {
+  display: grid;
+}
+
 .glbl-MobileNav_Menu > .menu-item {
+  position: relative;
 
   > a {
     color: white;
+    cursor: pointer;
+    display: block;
+    font-size: $font-size-title;
+    padding: 10px 20px;
+    text-decoration: none;
+
+    &:hover {
+      @include text-gradient-active-top-menu();
+    }
   }
   
+  // Current Menu Item
   &.current-menu-item, &.current-menu-ancestor {
     > a {
-      
+      @include text-gradient-active-top-menu();
     }
 
     &::before {
-      
+      background: $gradient-active-top-menu-vertical;
+      border-radius: 0 5px 5px 0;
+      content: '';
+      display: block;
+      height: 100%;
+      left: 0;
+      position: absolute;
+      top: 0;
+      width: 6px;
     }
   }
 
