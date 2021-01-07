@@ -19,7 +19,8 @@
   }
   
   // Current Menu Item
-  &.current-menu-item, &.current-menu-ancestor {
+  &.current-menu-item,
+  &.current-menu-ancestor {
     > a {
       @include text-gradient-active-top-menu();
     }
