@@ -94,8 +94,8 @@ add_filter('comments_template', function ($comments_template) {
  * Add .mos-level- to body class
  */
 add_filter( 'body_class', function( $classes ) {
-    $level = apply_filters( 'mos_user_level', '' );
-    $class = level_to_class( $level );
+    $level = apply_filters( 'mos_user_level_slug', '' );
+    $class = level_class( $level );
 
     if ( $class ) {
         $classes[] = $class;

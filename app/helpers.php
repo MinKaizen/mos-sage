@@ -196,21 +196,11 @@ function mos_debug( callable $function, ...$args ) {
     return $value_to_return;
 }
 
-function level_to_class( string $level_name_proper ): string {
-    $class_name = '';
-
-    $class_names = [
-        'None' => 'lvl-none',
-        'Free Member' => 'lvl-free',
-        'Monthly Partner' => 'lvl-monthly-partner',
-        'Yearly Partner' => 'lvl-yearly-partner',
-        'Lifetime Partner' => 'lvl-lifetime-partner',
-        'Coaching' => 'lvl-coaching',
-    ];
-
-    if ( $level_name_proper && isset( $class_names[$level_name_proper] ) ) {
-        $class_name = $class_names[$level_name_proper];
+function level_class( string $level_slug ): string {
+    if ( !$level_slug ) {
+        return '';
     }
-
+    $convert_underscores = str_replace( '_', '-', $level_slug );
+    $class_name = implode( '-', ['lvl', $convert_underscores] );
     return $class_name;
 }
