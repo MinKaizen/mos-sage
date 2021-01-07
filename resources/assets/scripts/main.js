@@ -8,6 +8,7 @@ import home from './routes/home'
 import ClassToggler from './components/ClassToggler'
 import jsHello from './components/jsHello'
 import GformSponsorUsername from './components/GformSponsorUsername'
+import MobileNav_Menu from './components/MobileNav_Menu'
 
 // Define routes
 const routes = [
@@ -22,6 +23,10 @@ const components = [
   {
     class: ClassToggler,
     selector: '.js-ClassToggler'
+  },
+  {
+    class: MobileNav_Menu,
+    selector: '.js-MobileNav'
   },
   {
     class: jsHello,
