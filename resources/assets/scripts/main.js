@@ -26,7 +26,7 @@ const components = [
   },
   {
     class: MobileNav_Menu,
-    selector: '.js-MobileNav'
+    selector: '.glbl-MobileNav_Menu'
   },
   {
     class: jsHello,
