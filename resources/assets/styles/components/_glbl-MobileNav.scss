@@ -21,22 +21,31 @@
 }
 
 .glbl-MobileNav_Close {
-  cursor: pointer;
-  display: grid;
-  height: 25px;
-  align-content: space-evenly;
-  justify-items: stretch;
-  width: 30px;
+  // Local variables
+  $size: 35px;
+  $width: 4px;
 
-  @include media('lg') {
-    display: none;
+  display: inline-block;
+  position: relative;
+  width: $size;
+  height: $size;
+  
+  &:before, &:after {
+    content: '';
+    background-color: $color-offwhite-blue;
+    border-radius: $width / 2;
+    height: $size;
+    left: ($size - $width) / 2;
+    position: absolute;
+    width: $width;
   }
 
-  &_Line {
-    background: $color-white;
-    border-radius: 2px;
-    display: block;
-    height: 4px;
+  &:before {
+    transform: rotate(45deg);
+  }
+
+  &:after {
+    transform: rotate(-45deg);
   }
 }
 
