@@ -9,6 +9,7 @@ import ClassToggler from './components/ClassToggler'
 import jsHello from './components/jsHello'
 import GformSponsorUsername from './components/GformSponsorUsername'
 import MobileNav_Menu from './components/MobileNav_Menu'
+import UpgradeButton from './components/UpgradeButton'
 
 // Define routes
 const routes = [
@@ -23,6 +24,10 @@ const components = [
   {
     class: ClassToggler,
     selector: '.js-ClassToggler'
+  },
+  {
+    class: UpgradeButton,
+    selector: '.js-UpgradeButton'
   },
   {
     class: MobileNav_Menu,
