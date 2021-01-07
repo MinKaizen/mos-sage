@@ -64,28 +64,28 @@
     }
 
     // Upgrade buttons
-    &.hd-UpgradeButton > a {
+    &.UpgradeButton > a {
       border-radius: 10px 10px 0px 10px;
       transition: all 0.3s ease-out;
     }
 
-    &.hd-UpgradeButton-monthly > a {
+    &.UpgradeButton-monthly > a {
       background: $gradient-promotion1;
     }
 
-    &.hd-UpgradeButton-yearly > a {
+    &.UpgradeButton-yearly > a {
       background: $gradient-promotion2;
     }
 
-    &.hd-UpgradeButton-lifetime > a {
+    &.UpgradeButton-lifetime > a {
       background: $gradient-promotion2;
     }
 
-    &.hd-UpgradeButton-coaching > a {
+    &.UpgradeButton-coaching > a {
       background: $gradient-promotion2;
     }
 
-    &.hd-UpgradeButton > a:hover {
+    &.UpgradeButton > a:hover {
       // #HACK: undo text gradient shenanigans
       -webkit-background-clip: unset;
       // #HACK: undo text gradient shenanigans
