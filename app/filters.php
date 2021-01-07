@@ -91,14 +91,18 @@ add_filter('comments_template', function ($comments_template) {
 }, 100);
 
 /**
- * Add .mos-level- to body class
+ * Add .lvl and .next-lvl class to body
  */
 add_filter( 'body_class', function( $classes ) {
-    $level = apply_filters( 'mos_user_level_slug', '' );
-    $class = level_class( $level );
+    $level_class = level_class();
+    $next_level_class = next_level_class();
 
-    if ( $class ) {
-        $classes[] = $class;
+    if ( $level_class ) {
+        $classes[] = $level_class;
+    }
+
+    if ( $next_level_class ) {
+        $classes[] = $next_level_class;
     }
 
     return $classes;

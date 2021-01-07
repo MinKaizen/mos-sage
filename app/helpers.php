@@ -196,11 +196,25 @@ function mos_debug( callable $function, ...$args ) {
     return $value_to_return;
 }
 
-function level_class( string $level_slug ): string {
+function level_class(): string {
+    $level_slug = apply_filters( 'mos_user_level_slug', '' );
+
+    if ( !$level_slug ) {
+        return '';
+    }
+
+    $convert_underscores = str_replace( '_', '-', $level_slug );
+    $class_name = implode( '-', ['lvl', $convert_underscores] );
+    return $class_name;
+}
+
+function next_level_class(): string {
+    $level_slug = apply_filters( 'mos_user_next_level_slug', '' );
+
     if ( !$level_slug ) {
         return '';
     }
     $convert_underscores = str_replace( '_', '-', $level_slug );
-    $class_name = implode( '-', ['lvl', $convert_underscores] );
+    $class_name = implode( '-', ['next-lvl', $convert_underscores] );
     return $class_name;
 }
