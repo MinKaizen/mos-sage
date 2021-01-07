@@ -20,6 +20,34 @@
   background: transparentize($color: $color-new-black, $amount: 0.2);
 }
 
+.glbl-MobileNav_Drawer {
+  background: $color-new-black;
+  border-right: 1px solid $color-new-dark-grey;
+  height: 100%;
+  opacity: 0;
+  overflow: hidden;
+  padding: 20px 0;
+  transition: all 0.3s ease-in-out;
+  width: 0;
+
+  // Grid
+  display: grid;
+  align-content: start;
+}
+
+.glbl-MobileNav.is-Active .glbl-MobileNav_Drawer {
+  opacity: 1;
+  padding: 20px;
+  width: 300px;
+}
+
+.glbl-MobileNav_Drawer_Top {
+  display: grid;
+  grid-template-columns: auto auto;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .glbl-MobileNav_Close {
   // Local variables
   $size: 25px;
@@ -50,22 +78,6 @@
   }
 }
 
-.glbl-MobileNav_Drawer {
-  background: $color-new-black;
-  border-right: 1px solid $color-new-dark-grey;
-  height: 100%;
-  opacity: 0;
-  overflow: hidden;
-  padding: 20px 0;
-  transition: all 0.3s ease-in-out;
-  width: 0;
-}
-
-.glbl-MobileNav.is-Active .glbl-MobileNav_Drawer {
-  opacity: 1;
-  padding: 20px;
-  width: 300px;
-}
 
 .glbl-MobileNav_Menu > .menu-item {
 
