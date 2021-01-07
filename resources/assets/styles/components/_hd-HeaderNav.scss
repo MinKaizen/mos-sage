@@ -19,36 +19,7 @@
     list-style: none;
     position: relative;
     width: auto;
-  
-    &:hover > a {
-      @include text-gradient-active-top-menu();
-    }
-  
-    &.current-menu-item, &.current-menu-ancestor {
-      > a {
-        @include text-gradient-active-top-menu();
-      }
-  
-      &::before {
-        content: "";
-        background: $gradient-active-top-menu;
-        border-radius: 0 0 5px 5px;
-        display: block;
-        height: 6px;
-        position: absolute;
-        width: 100%;
-      }
-    }
-  
-    > a {
-      color: inherit;
-      display: block;
-      margin: auto;
-      padding: 15px;
-      text-decoration: none;
-      width: auto;
-    }
-  
+
     // Dropdown Arrow for menu items with sub pages
     &-has-children > a::after {
       $size: 7px;
@@ -61,6 +32,65 @@
       width: $size;
       margin: 0 3px;
       transform: rotate(0.125turn) translateY(-$half-size);
+    }
+  
+    &.current-menu-item::before,
+    &.current-menu-ancestor::before {
+      content: "";
+      background: $gradient-active-top-menu;
+      border-radius: 0 0 5px 5px;
+      display: block;
+      height: 6px;
+      position: absolute;
+      width: 100%;
+    }
+  
+    > a {
+      color: inherit;
+      display: block;
+      margin: auto;
+      padding: 15px;
+      text-decoration: none;
+      width: auto;
+    }
+
+    &.current-menu-item > a,
+    &.current-menu-ancestor > a {
+      @include text-gradient-active-top-menu();
+    }
+
+    > a:hover {
+      @include text-gradient-active-top-menu();
+    }
+
+    // Upgrade buttons
+    &.hd-UpgradeButton > a {
+      border-radius: 10px 10px 0px 10px;
+      transition: all 0.3s ease-out;
+    }
+
+    &.hd-UpgradeButton-monthly > a {
+      background: $gradient-promotion1;
+    }
+
+    &.hd-UpgradeButton-yearly > a {
+      background: $gradient-promotion2;
+    }
+
+    &.hd-UpgradeButton-lifetime > a {
+      background: $gradient-promotion2;
+    }
+
+    &.hd-UpgradeButton-coaching > a {
+      background: $gradient-promotion2;
+    }
+
+    &.hd-UpgradeButton > a:hover {
+      // #HACK: undo text gradient shenanigans
+      -webkit-background-clip: unset;
+      // #HACK: undo text gradient shenanigans
+      -webkit-text-fill-color: unset;
+      transform: translateY(-3px);
     }
   }
 }
