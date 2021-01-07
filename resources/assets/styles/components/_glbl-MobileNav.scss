@@ -26,7 +26,6 @@
   height: 100%;
   opacity: 0;
   overflow: hidden;
-  padding: 20px 0;
   transition: all 0.3s ease-in-out;
   width: 0;
 
@@ -37,7 +36,6 @@
 
 .glbl-MobileNav.is-Active .glbl-MobileNav_Drawer {
   opacity: 1;
-  padding: 20px;
   width: 300px;
 }
 
@@ -46,6 +44,7 @@
   grid-template-columns: auto auto;
   justify-content: space-between;
   align-items: center;
+  padding: 20px;
 }
 
 .glbl-MobileNav_Close {

@@ -23,6 +23,7 @@ $color-new-light-grey: #465164;
 
 // Gradients
 $gradient-active-top-menu: linear-gradient(90deg, #4AB8FB 0%, rgba(0, 111, 250, 0) 100%);
+$gradient-active-top-menu-vertical: linear-gradient(180deg, #4AB8FB 0%, rgba(0, 111, 250, 0) 100%);
 $gradient-active-top-menu-text: linear-gradient(180deg, #0641BF 0%, #4AB8FB 33.85%, #DAF2FE 51.56%, #4AB8FB 70.83%, #0140C7 98.44%);
 $gradient-shiny-dark-blue: radial-gradient(100% 100% at 42.37% 0%, #001AFF 0%, #004EC2 0.01%, #012193 15.63%, #02006D 32.29%, #060018 80.21%, #11000D 100%);
 $gradient-shiny-light-blue: radial-gradient(100% 100% at 42.37% 0%, #7EC8FF 0.01%, #3794F7 15.63%, #2570C9 32.29%, #021C55 80.21%, #000000 100%);
