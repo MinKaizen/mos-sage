@@ -5,6 +5,7 @@ import autoload from './autoload'
 import home from './routes/home'
 
 // Components
+import ClassToggler from './components/ClassToggler'
 import jsHello from './components/jsHello'
 import GformSponsorUsername from './components/GformSponsorUsername'
 
@@ -18,6 +19,10 @@ const routes = [
 
 // Define components
 const components = [
+  {
+    class: ClassToggler,
+    selector: '.js-ClassToggler'
+  },
   {
     class: jsHello,
     selector: '.js-hello'
