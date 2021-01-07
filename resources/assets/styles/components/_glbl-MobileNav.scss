@@ -1,7 +1,5 @@
 .glbl-MobileNav {
-  display: grid;
   overflow: hidden;
-  grid-template-columns: auto 1fr;
   height: 100vh;
   position: absolute;
   top: 0;
@@ -18,16 +16,20 @@
 
 .glbl-MobileNav_Overlay {
   background: transparentize($color: $color-new-black, $amount: 0.2);
+  height: 100%;
+  width: 100%;
 }
 
 .glbl-MobileNav_Drawer {
   background: $color-new-black;
   border-right: 1px solid $color-new-dark-grey;
   height: 100%;
-  opacity: 0;
   overflow: hidden;
   transition: all 0.3s ease-in-out;
-  width: 0;
+  width: 300px;
+  position: absolute;
+  top: 0;
+  left: -300px;
 
   // Grid
   display: grid;
@@ -35,8 +37,7 @@
 }
 
 .glbl-MobileNav.is-Active .glbl-MobileNav_Drawer {
-  opacity: 1;
-  width: 300px;
+  left: 0;
 }
 
 .glbl-MobileNav_Drawer_Top {
