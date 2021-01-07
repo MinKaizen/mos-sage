@@ -89,3 +89,17 @@ add_filter('comments_template', function ($comments_template) {
 
     return $comments_template;
 }, 100);
+
+/**
+ * Add .mos-level- to body class
+ */
+add_filter( 'body_class', function( $classes ) {
+    $level = apply_filters( 'mos_user_level', '' );
+    $class = level_to_class( $level );
+
+    if ( $class ) {
+        $classes[] = $class;
+    }
+
+    return $classes;
+});
