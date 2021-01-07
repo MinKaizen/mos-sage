@@ -2,6 +2,7 @@
 <html {!! get_language_attributes() !!}>
   @include('partials.head')
   <body @php body_class('bd-Body') @endphp>
+    @include('partials.glbl-MobileNav', ['menu_slug' => 'primary_navigation'])
     @php do_action('get_header') @endphp
     @include('partials.hd-Header')
     <div class="wrap container" role="document">

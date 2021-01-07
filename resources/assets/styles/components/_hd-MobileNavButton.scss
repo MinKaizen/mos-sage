@@ -1,0 +1,19 @@
+.hd-MobileNavButton {
+  cursor: pointer;
+  display: grid;
+  height: 25px;
+  align-content: space-between;
+  justify-items: stretch;
+  width: 30px;
+
+  @include media('lg') {
+    display: none;
+  }
+
+  &_Line {
+    background: $color-white;
+    border-radius: 2px;
+    display: block;
+    height: 4px;
+  }
+}
