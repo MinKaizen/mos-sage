@@ -195,3 +195,22 @@ function mos_debug( callable $function, ...$args ) {
 
     return $value_to_return;
 }
+
+function level_to_class( string $level_name_proper ): string {
+    $class_name = '';
+
+    $class_names = [
+        'None' => 'lvl-none',
+        'Free Member' => 'lvl-free',
+        'Monthly Partner' => 'lvl-monthly-partner',
+        'Yearly Partner' => 'lvl-yearly-partner',
+        'Lifetime Partner' => 'lvl-lifetime-partner',
+        'Coaching' => 'lvl-coaching',
+    ];
+
+    if ( $level_name_proper && isset( $class_names[$level_name_proper] ) ) {
+        $class_name = $class_names[$level_name_proper];
+    }
+
+    return $class_name;
+}
