@@ -6,8 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "optimize-images": "node resources/assets/scripts/build/optimize-images.js",
-    "import-fonts": "npx copyfiles resources/assets/fonts/** ./dist/fonts/ -f",
-    "build": "npm run-script optimize-images && npm run-script import-fonts"
+    "build": "npm run-script optimize-images"
   },
   "author": "My Online Startup",
   "license": "ISC",
