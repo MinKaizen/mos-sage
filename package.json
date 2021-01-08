@@ -4,7 +4,7 @@
   "description": "MOS 2.0 Theme based on Sage",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "My Online Startup",
   "license": "ISC",
