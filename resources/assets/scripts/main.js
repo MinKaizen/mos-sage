@@ -7,7 +7,6 @@ import home from './routes/home'
 // Components
 import ClassToggler from './components/ClassToggler'
 import jsHello from './components/jsHello'
-import GformSponsorUsername from './components/GformSponsorUsername'
 import MobileNav_Menu from './components/MobileNav_Menu'
 import UpgradeButton from './components/UpgradeButton'
 
@@ -37,10 +36,6 @@ const components = [
     class: jsHello,
     selector: '.js-hello'
   },
-  {
-    class: GformSponsorUsername,
-    selector: '.js-gform-sponsor-username'
-  }
 ]
 
 // Initialise routes
