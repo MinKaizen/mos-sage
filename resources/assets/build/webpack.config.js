@@ -3,8 +3,8 @@
 const webpack = require('webpack');
 const merge = require('webpack-merge');
 const CleanPlugin = require('clean-webpack-plugin');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const StyleLintPlugin = require('stylelint-webpack-plugin');
+// const ExtractTextPlugin = require('extract-text-webpack-plugin');
+// const StyleLintPlugin = require('stylelint-webpack-plugin');
 const CopyGlobsPlugin = require('copy-globs-webpack-plugin');
 const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin');
 
@@ -46,7 +46,8 @@ let webpackConfig = {
       },
       {
         enforce: 'pre',
-        test: /\.(js|s?[ca]ss)$/,
+        // test: /\.(js|s?[ca]ss)$/,
+        test: /\.js$/,
         include: config.paths.assets,
         loader: 'import-glob',
       },
@@ -58,47 +59,47 @@ let webpackConfig = {
           { loader: 'babel-loader' },
         ],
       },
-      {
-        test: /\.css$/,
-        include: config.paths.assets,
-        use: ExtractTextPlugin.extract({
-          fallback: 'style',
-          use: [
-            { loader: 'cache' },
-            { loader: 'css', options: { sourceMap: config.enabled.sourceMaps } },
-            {
-              loader: 'postcss', options: {
-                postcssOptions: { path: __dirname, ctx: config },
-                sourceMap: config.enabled.sourceMaps,
-              },
-            },
-          ],
-        }),
-      },
-      {
-        test: /\.scss$/,
-        include: config.paths.assets,
-        use: ExtractTextPlugin.extract({
-          fallback: 'style',
-          use: [
-            { loader: 'cache' },
-            { loader: 'css', options: { sourceMap: config.enabled.sourceMaps } },
-            {
-              loader: 'postcss', options: {
-                postcssOptions: { path: __dirname, ctx: config },
-                sourceMap: config.enabled.sourceMaps,
-              },
-            },
-            { loader: 'resolve-url', options: { sourceMap: config.enabled.sourceMaps } },
-            {
-              loader: 'sass', options: {
-                sourceMap: config.enabled.sourceMaps,
-                sourceComments: true,
-              },
-            },
-          ],
-        }),
-      },
+      // {
+      //   test: /\.css$/,
+      //   include: config.paths.assets,
+      //   use: ExtractTextPlugin.extract({
+      //     fallback: 'style',
+      //     use: [
+      //       { loader: 'cache' },
+      //       { loader: 'css', options: { sourceMap: config.enabled.sourceMaps } },
+      //       {
+      //         loader: 'postcss', options: {
+      //           postcssOptions: { path: __dirname, ctx: config },
+      //           sourceMap: config.enabled.sourceMaps,
+      //         },
+      //       },
+      //     ],
+      //   }),
+      // },
+      // {
+      //   test: /\.scss$/,
+      //   include: config.paths.assets,
+      //   use: ExtractTextPlugin.extract({
+      //     fallback: 'style',
+      //     use: [
+      //       { loader: 'cache' },
+      //       { loader: 'css', options: { sourceMap: config.enabled.sourceMaps } },
+      //       {
+      //         loader: 'postcss', options: {
+      //           postcssOptions: { path: __dirname, ctx: config },
+      //           sourceMap: config.enabled.sourceMaps,
+      //         },
+      //       },
+      //       { loader: 'resolve-url', options: { sourceMap: config.enabled.sourceMaps } },
+      //       {
+      //         loader: 'sass', options: {
+      //           sourceMap: config.enabled.sourceMaps,
+      //           sourceComments: true,
+      //         },
+      //       },
+      //     ],
+      //   }),
+      // },
       {
         test: /\.(ttf|otf|eot|woff2?|png|jpe?g|gif|svg|ico)$/,
         include: config.paths.assets,
@@ -148,11 +149,11 @@ let webpackConfig = {
       output: `[path]${assetsFilenames}.[ext]`,
       manifest: config.manifest,
     }),
-    new ExtractTextPlugin({
-      filename: `styles/${assetsFilenames}.css`,
-      allChunks: true,
-      disable: (config.enabled.watcher),
-    }),
+    // new ExtractTextPlugin({
+    //   filename: `styles/${assetsFilenames}.css`,
+    //   allChunks: true,
+    //   disable: (config.enabled.watcher),
+    // }),
     new webpack.ProvidePlugin({
       $: 'jquery',
       jQuery: 'jquery',
@@ -164,23 +165,23 @@ let webpackConfig = {
       debug: config.enabled.watcher,
       stats: { colors: true },
     }),
-    new webpack.LoaderOptionsPlugin({
-      test: /\.s?css$/,
-      options: {
-        output: { path: config.paths.dist },
-        context: config.paths.assets,
-      },
-    }),
+    // new webpack.LoaderOptionsPlugin({
+    //   test: /\.s?css$/,
+    //   options: {
+    //     output: { path: config.paths.dist },
+    //     context: config.paths.assets,
+    //   },
+    // }),
     new webpack.LoaderOptionsPlugin({
       test: /\.js$/,
       options: {
         eslint: { failOnWarning: false, failOnError: true },
       },
     }),
-    new StyleLintPlugin({
-      failOnError: !config.enabled.watcher,
-      syntax: 'scss',
-    }),
+    // new StyleLintPlugin({
+    //   failOnError: !config.enabled.watcher,
+    //   syntax: 'scss',
+    // }),
     new FriendlyErrorsWebpackPlugin(),
   ],
 };
