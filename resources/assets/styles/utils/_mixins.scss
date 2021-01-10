@@ -7,11 +7,11 @@
 
 @mixin media($size) {
   $breakpoints: (
-    'sm': $breakpoint-sm,
-    'md': $breakpoint-md,
-    'lg': $breakpoint-lg,
-    'xl': $breakpoint-xl,
-    'xxl': $breakpoint-xxl,
+    "sm": $breakpoint-sm,
+    "md": $breakpoint-md,
+    "lg": $breakpoint-lg,
+    "xl": $breakpoint-xl,
+    "xxl": $breakpoint-xxl,
   );
 
   $breakpoint: map-get($breakpoints, $size);

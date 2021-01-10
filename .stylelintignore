@@ -1,0 +1,5 @@
+vendor/**/*.css
+vendor/**/*.scss
+vendor/**/*.sass
+resources/assets/styles/global/_normalize.scss
+resources/assets/styles/global/_reset.scss

@@ -6,7 +6,7 @@
   justify-items: stretch;
   width: 30px;
 
-  @include media('lg') {
+  @include media("lg") {
     display: none;
   }
 

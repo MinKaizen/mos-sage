@@ -19,13 +19,13 @@
   &.current-menu-ancestor > a {
     @include text-gradient-active-top-menu();
   }
-  
+
   // Current Menu Item Indicator
   &.current-menu-item::before,
   &.current-menu-ancestor::before {
     background: $gradient-active-top-menu-vertical;
     border-radius: 0 5px 5px 0;
-    content: '';
+    content: "";
     display: block;
     height: 100%;
     left: 0;
@@ -62,6 +62,7 @@
   &-has-children > a::after {
     $size: 7px;
     $half-size: $size / 2;
+
     content: "";
     border-bottom: 2px solid white;
     border-right: 2px solid white;

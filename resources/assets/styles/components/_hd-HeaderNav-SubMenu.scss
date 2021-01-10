@@ -3,7 +3,7 @@
   .sub-menu {
     background: $color-new-black;
     position: absolute;
-    
+
     // Animation properties
     opacity: 0;
     transform: translateY(30px);
@@ -22,7 +22,7 @@
     &:hover {
       @include text-gradient-active-top-menu();
     }
-    
+
     a {
       color: inherit;
       display: block;

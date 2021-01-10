@@ -1,12 +1,8 @@
-// Autoload
-import autoload from './autoload'
-
 // Routes
 import home from './routes/home'
 
 // Components
 import ClassToggler from './components/ClassToggler'
-import jsHello from './components/jsHello'
 import MobileNav_Menu from './components/MobileNav_Menu'
 import UpgradeButton from './components/UpgradeButton'
 
@@ -14,27 +10,23 @@ import UpgradeButton from './components/UpgradeButton'
 const routes = [
   {
     class: home,
-    bodyClass: '.home'
-  }
+    bodyClass: '.home',
+  },
 ]
 
 // Define components
 const components = [
   {
     class: ClassToggler,
-    selector: '.js-ClassToggler'
+    selector: '.js-ClassToggler',
   },
   {
     class: UpgradeButton,
-    selector: '.js-UpgradeButton'
+    selector: '.js-UpgradeButton',
   },
   {
     class: MobileNav_Menu,
-    selector: '.glbl-MobileNav_Menu'
-  },
-  {
-    class: jsHello,
-    selector: '.js-hello'
+    selector: '.glbl-MobileNav_Menu',
   },
 ]
 
