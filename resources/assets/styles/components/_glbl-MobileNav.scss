@@ -21,15 +21,17 @@
 }
 
 .glbl-MobileNav_Drawer {
+  $width: 250px;
+
   background: $color-new-black;
   border-right: 1px solid $color-new-dark-grey;
   height: 100%;
   overflow: hidden;
   transition: all 0.3s ease-in-out;
-  width: 250px;
+  width: $width;
   position: absolute;
   top: 0;
-  left: -250px;
+  left: -$width;
 
   // Grid
   display: grid;
