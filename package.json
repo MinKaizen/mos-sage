@@ -70,6 +70,7 @@
     "resize-img": "^2.0.0",
     "resolve-url-loader": "^3.1.2",
     "rimraf": "^3.0.2",
+    "sass": "^1.32.2",
     "sass-loader": "~6.0",
     "style-loader": "^0.23.1",
     "stylelint": "^13.7.2",
