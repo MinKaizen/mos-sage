@@ -1,21 +1,18 @@
 .hd-HeaderLogo {
-  @mixin icon-only() {
-    background: url("#{$dist}/images/logo-icon.svg");
-    height: 36px;
-    width: 40px;
-  }
+  height: 36px;
+  width: 40px;
 
-  @mixin icon-type() {
-    background: url("#{$dist}/images/logo-type-light.svg");
+  @include media("lg") {
+    display: none;
+  }
+}
+
+.hd-HeaderLogo-desktop {
+  display: none;
+
+  @include media("lg") {
+    display: inline-block;
     height: 37px;
     width: 208px;
-  }
-
-  display: inline-block;
-
-  @include icon-only();
-
-  @include media("xl") {
-    @include icon-type();
   }
 }

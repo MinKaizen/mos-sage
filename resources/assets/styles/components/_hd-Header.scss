@@ -10,7 +10,7 @@
   grid-template-columns: auto auto;
   justify-content: space-between;
 
-  @include media("xl") {
+  @include media("md") {
     padding: 0 50px 0 30px;
   }
 }

@@ -2,7 +2,7 @@
   display: none;
 }
 
-@include media("lg") {
+@include media("md") {
   .hd-HeaderNav {
     display: flex;
     margin: 0;
