@@ -2,7 +2,7 @@
   height: 36px;
   width: 40px;
 
-  @include media("lg") {
+  @include media("xl") {
     display: none;
   }
 }
@@ -10,7 +10,7 @@
 .hd-HeaderLogo-desktop {
   display: none;
 
-  @include media("lg") {
+  @include media("xl") {
     display: inline-block;
     height: 37px;
     width: 208px;
