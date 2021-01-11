@@ -61,14 +61,14 @@ class SingleSfwdTopic extends Controller
     $course_id = $this->courseId();
     // $cache_key = "mos_ld_course_structure_$course_id";
     // $cached_value = \get_transient( $cache_key );
-    
+
     // if ( $cached_value !== false ) {
     //   return $cached_value;
     // }
 
-    $modules = $this->get_modules( $course_id );
+    $modules = self::get_modules( $course_id );
     foreach ( $modules as &$module ) {
-      $module->lessons = $this->get_lessons( $module->ID );
+      $module->lessons = self::get_lessons( $module->ID );
     }
 
     // $cache_expiration = \WEEK_IN_SECONDS;
@@ -80,7 +80,7 @@ class SingleSfwdTopic extends Controller
 
   public function previousLink(): string {
     $link = '';
-    $lessons = $this->flatten_structure( $this->courseStructure() );
+    $lessons = self::flatten_structure( $this->courseStructure() );
 
     foreach ( $lessons as $index => $lesson ) {
       if ( $lesson->ID == \get_the_ID() ) {
@@ -97,7 +97,7 @@ class SingleSfwdTopic extends Controller
 
   public function nextLink(): string {
     $link = '';
-    $lessons = $this->flatten_structure( $this->courseStructure() );
+    $lessons = self::flatten_structure( $this->courseStructure() );
 
     foreach ( $lessons as $index => $lesson ) {
       if ( $lesson->ID == \get_the_ID() ) {
@@ -112,7 +112,7 @@ class SingleSfwdTopic extends Controller
   }
 
 
-  private function get_modules( int $course_id ): array {
+  private static function get_modules( int $course_id ): array {
     $args = [
       'post_type' => 'sfwd-lessons',
       'order' => 'ASC',
@@ -136,7 +136,7 @@ class SingleSfwdTopic extends Controller
   }
 
 
-  private function get_lessons( int $module_id ): array {
+  private static function get_lessons( int $module_id ): array {
     $args = [
       'post_type' => 'sfwd-topic',
       'order' => 'ASC',
@@ -160,7 +160,7 @@ class SingleSfwdTopic extends Controller
   }
 
 
-  private function flatten_structure( array $course_structure ): array {
+  private static function flatten_structure( array $course_structure ): array {
     $flattened_structure = [];
 
     foreach ( $course_structure as $module ) {
