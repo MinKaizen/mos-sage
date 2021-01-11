@@ -5,8 +5,11 @@
 - package.json
 - package-lock.json
 - webpack.config.js
-- /resources/scripts/
-- /resources/styles/
+- Gruntfile.js
+- /resources/assets/
+- **.txt
+- **.log
+- **.md
 
 # Include everything else
 + /**
