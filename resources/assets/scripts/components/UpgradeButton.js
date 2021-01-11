@@ -31,6 +31,7 @@ function init(menuItem) {
   const nextLevel = getNextLevel()
 
   if ( !( nextLevel in LEVELS ) ) {
+    menuItem.remove()
     return
   }
 
