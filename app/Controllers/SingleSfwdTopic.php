@@ -82,9 +82,6 @@ class SingleSfwdTopic extends Controller
     // }
 
     $modules = self::get_modules( $course_id );
-    foreach ( $modules as &$module ) {
-      $module->lessons = self::get_lessons( $module->ID );
-    }
 
     // $cache_expiration = \WEEK_IN_SECONDS;
     // \set_transient( $cache_key, $modules, $cache_expiration );
@@ -143,8 +140,9 @@ class SingleSfwdTopic extends Controller
     $modules_query = new \WP_Query( $args );
     $modules = $modules_query->posts;
 
-    foreach ( $modules as $module ) {
+    foreach ( $modules as &$module ) {
       $module->link = \get_permalink( $module->ID );
+      $module->lessons = self::get_lessons( $module->ID );
     }
 
     return $modules;
