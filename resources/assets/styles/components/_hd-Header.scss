@@ -2,11 +2,15 @@
   background: $color-new-black;
   box-shadow: $shadow-shadow1;
   display: grid;
-  padding: 0 50px 0 30px;
+  padding: 0 30px 0 20px;
   height: 75px;
 
   // Grid properties
   align-items: center;
   grid-template-columns: auto auto;
   justify-content: space-between;
+
+  @include media("xl") {
+    padding: 0 50px 0 30px;
+  }
 }
