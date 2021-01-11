@@ -1,7 +1,8 @@
 {
   "entry": {
     "main": [
-      "./scripts/main.js"
+      "./scripts/main.js",
+      "./styles/main.scss"
     ],
     "customizer": [
       "./scripts/customizer.js"
