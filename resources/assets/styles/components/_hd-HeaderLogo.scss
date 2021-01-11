@@ -1,12 +1,12 @@
 .hd-HeaderLogo {
   @mixin icon-only() {
-    background: url("../images/logo-icon-40x36.png");
+    background: url("#{$dist}/images/logo-icon-40x36.png");
     height: 36px;
     width: 40px;
   }
 
   @mixin icon-type() {
-    background: url("../images/logo-type-light.png");
+    background: url("#{$dist}/images/logo-type-light.png");
     height: 37px;
     width: 208px;
   }
