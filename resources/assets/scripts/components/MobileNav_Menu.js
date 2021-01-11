@@ -1,10 +1,10 @@
 export default class MobileNav_Menu {
   constructor(navElement) {
-    const parentMenuItems = navElement.querySelectorAll('.glbl-MobileNav_Menu > .menu-item-has-children')
-    parentMenuItems.forEach(menuItem => {
-      menuItem.addEventListener('click', (event) => {
+    const parentMenuLinks = navElement.querySelectorAll('.glbl-MobileNav_Menu > .menu-item-has-children > a')
+    parentMenuLinks.forEach(link => {
+      link.addEventListener('click', (event) => {
         event.preventDefault()
-        const subMenu = menuItem.querySelector('.sub-menu')
+        const subMenu = link.parentNode.querySelector('.sub-menu')
         subMenu.classList.toggle('is-Active')
       })
     })
