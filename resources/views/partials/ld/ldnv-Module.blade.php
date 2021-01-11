@@ -7,17 +7,13 @@
 
   <ol class="ldnv-Module_LessonList">
   @foreach($lessons as $lesson)
-    <li class="ldnv-Lesson">
-      <a
-        href="{{ $lesson->link }}"
-        class="ldnv-Lesson_Link @if($lesson_id==$lesson->ID){{ 'lesson-item--current' }}@endif">
-        <span class="ldnv-Lesson_Number">{{ "$module_num-$loop->iteration" }}</span>
-        {{ $lesson->post_title }}
-        @if(App\Controllers\SingleSfwdTopic::is_complete( $lesson->ID ))
-          <span style="color: green;">✓</span>
-        @endif
-      </a>
-    </li>
+    @include('partials.ld.ldnv-Lesson', [
+      'link' => $lesson->link,
+      'lesson_is_current' => $lesson_id==$lesson->ID,
+      'lesson_num' => "$module_num-$loop->iteration",
+      'title' => $lesson->post_title,
+      'lesson_is_complete' => App\Controllers\SingleSfwdTopic::is_complete($lesson->ID),
+    ])
   @endforeach
   </ol>
 </div>
