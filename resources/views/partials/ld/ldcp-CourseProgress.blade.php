@@ -1,5 +1,6 @@
 <div class="ldcp-CourseProgress">
-  <div class="progress-bar" style="background: grey; width: 100%; height: 20px;">
-    <div class="progress-bar__fill" style="width: {{ $course_progress['percentage_str'] }}; height: 20px; background: blue;"></div>
+  <div class="ldcp-Container">
+    <div class="ldcp-Fill" style="width: {{ $course_progress['percentage_str'] }};"></div>
   </div>
+  <span class="ldcp-Fraction">{{ $course_progress['formatted'] }}</span>
 </div>
