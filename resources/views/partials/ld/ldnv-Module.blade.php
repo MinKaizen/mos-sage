@@ -12,7 +12,7 @@
       'lesson_is_current' => $lesson_id==$lesson->ID,
       'lesson_num' => "$module_num-$loop->iteration",
       'title' => $lesson->post_title,
-      'lesson_is_complete' => App\Controllers\SingleSfwdTopic::is_complete($lesson->ID),
+      'is_complete' => App\Controllers\SingleSfwdTopic::is_complete($lesson->ID),
     ])
   @endforeach
   </ol>
