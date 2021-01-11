@@ -1,4 +1,4 @@
-<div class="ldnv-Module">
+<div class="ldnv-Module @if($is_complete){{ 'ldnv-Module-complete' }}@endif">
 
   <h1 class="ldnv-Module_Title">
     <span class="ldnv-Module_Number">{{ $module_num }}</span>
