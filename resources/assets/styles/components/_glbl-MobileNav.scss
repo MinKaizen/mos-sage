@@ -5,6 +5,7 @@
   top: 0;
   user-select: none;
   width: 0;
+  z-index: z("glbl-MobileNav");
 
   &.is-Active {
     width: 100vh;
