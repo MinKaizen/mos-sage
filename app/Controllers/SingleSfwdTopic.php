@@ -127,7 +127,7 @@ class SingleSfwdTopic extends Controller
       // Set $module->is_complete
       $module->is_complete = true;
       foreach ( $module->lessons as $lesson ) {
-        if ( !self::is_complete( $lesson->ID ) ) {
+        if ( !$lesson->is_complete ) {
             $module->is_complete = false;
             break;
         }
