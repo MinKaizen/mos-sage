@@ -1,6 +1,7 @@
 <div class="ldnv-Module @if($is_complete){{ 'ldnv-Module-complete' }}@endif @if($is_current){{ 'ldnv-Module-current' }}@endif">
 
   <h1 class="ldnv-Module_Title">
+    @include('partials.ld.ldnv-Module_Indicator', ['complete' => $is_complete])
     <span class="ldnv-Module_Number">{{ $module_num }}</span>
     {{ $title }}
   </h1>
