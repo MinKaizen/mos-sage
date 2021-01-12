@@ -18,7 +18,7 @@
 .ldnv-Module_Inner {
   display: grid;
   grid-gap: 20px;
-  padding: 15px;
+  padding: 15px 0;
 }
 
 .ldnv-Module-active .ldnv-Module_Inner {
@@ -34,6 +34,7 @@
   grid-column-gap: 15px;
   grid-template-columns: auto 1fr auto;
   justify-content: start;
+  padding: 0 15px;
 
   // Down Arrow to indicate a submenu
   &::after {
