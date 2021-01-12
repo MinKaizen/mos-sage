@@ -1,9 +1,9 @@
 export default class Module_Label {
   constructor(moduleLabelElement) {
-    const lessonsElement = moduleLabelElement.parentNode.querySelector('.ldnv-Module_Lessons')
+    const moduleElement = moduleLabelElement.parentNode
     moduleLabelElement.addEventListener('click', (event) => {
       event.preventDefault()
-      lessonsElement.classList.toggle('is-Active')
+      moduleElement.classList.toggle('ldnv-Module-active')
     })
   }
 }
