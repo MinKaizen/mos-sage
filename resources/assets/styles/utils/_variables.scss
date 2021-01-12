@@ -72,7 +72,8 @@ $breakpoint-xxl: 1400px;
 
 // Z-indices
 $z-map: (
-  "mobile-menu": 99,
+  "glbl-MobileNav": 90,
+  "ldsb-Sidebar": 10,
 );
 
 // Specifc components
