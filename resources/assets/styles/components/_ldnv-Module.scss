@@ -1,11 +1,9 @@
 .ldnv-Module {
   padding-left: 22px;
   position: relative;
-  opacity: 0.5;
 }
 
 .ldnv-Module-active {
-  opacity: 1;
   margin-bottom: 10px;
 }
 
@@ -40,6 +38,11 @@
   grid-template-columns: auto 1fr auto;
   justify-content: start;
   padding: 0 15px;
+  opacity: 0.5;
+
+  &:hover {
+    opacity: 1;
+  }
 
   // Down Arrow to indicate a submenu
   &::after {
@@ -55,6 +58,10 @@
     margin: 0 $half-size;
     transform: rotate(0.125turn) translateY(-$half-size);
   }
+}
+
+.ldnv-Module-active .ldnv-Module_Label {
+  opacity: 1;
 }
 
 .ldnv-Module_Number {
