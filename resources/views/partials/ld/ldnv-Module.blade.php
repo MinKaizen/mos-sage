@@ -1,4 +1,4 @@
-<div class="ldnv-Module js-ldnv-Module-{{ $id }} @if($is_complete){{ 'ldnv-Module-complete' }}@endif @if($is_current){{ 'ldnv-Module-current' }}@endif">
+<div class="ldnv-Module js-ldnv-Module-{{ $id }} @if($is_complete){{ 'ldnv-Module-complete' }}@endif @if($is_current){{ 'ldnv-Module-current ldnv-Module-active' }}@endif">
 
   <div class="ldnv-Module_Inner">
 
