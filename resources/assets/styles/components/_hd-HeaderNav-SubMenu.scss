@@ -8,6 +8,7 @@
     opacity: 0;
     transform: translateY(30px);
     transition: all 0.2s ease-in-out;
+    z-index: z("hd-HeaderNav_Submenu");
   }
 
   // Show dropdown on hover
