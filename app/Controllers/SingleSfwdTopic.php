@@ -154,8 +154,9 @@ class SingleSfwdTopic extends Controller
     $lessons_query = new \WP_Query( $args );
     $lessons = $lessons_query->posts;
 
-    foreach ( $lessons as $lesson ) {
+    foreach ( $lessons as &$lesson ) {
       $lesson->link = \get_permalink( $lesson->ID );
+      $lesson->is_complete = self::is_complete( $lesson->ID );
     }
 
     return $lessons;
