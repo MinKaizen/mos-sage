@@ -1,6 +1,12 @@
 .ldnv-Module {
   padding-left: 22px;
   position: relative;
+  opacity: 0.6;
+}
+
+.ldnv-Module-active {
+  opacity: 1;
+  margin-bottom: 10px;
 }
 
 .ldnv-Module-current::before {
