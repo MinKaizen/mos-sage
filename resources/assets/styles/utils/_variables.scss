@@ -25,8 +25,8 @@ $color-new-dark-grey: #1e263a;
 $color-new-light-grey: #465164;
 
 // Gradients
-$gradient-active-top-menu: linear-gradient(90deg, #4ab8fb 0%, rgba(0, 111, 250, 0) 100%);
-$gradient-active-top-menu-vertical: linear-gradient(180deg, #4ab8fb 0%, rgba(0, 111, 250, 0) 100%);
+$gradient-active-top-menu: linear-gradient(90deg, #4ab8fb 0%, #006ffa00 100%);
+$gradient-active-top-menu-vertical: linear-gradient(180deg, #4ab8fb 0%, #006ffa00 100%);
 $gradient-active-top-menu-text: linear-gradient(180deg, #0641bf 0%, #4ab8fb 33.85%, #daf2fe 51.56%, #4ab8fb 70.83%, #0140c7 98.44%);
 $gradient-shiny-dark-blue: radial-gradient(100% 100% at 42.37% 0%, #001aff 0%, #004ec2 0.01%, #012193 15.63%, #02006d 32.29%, #060018 80.21%, #11000d 100%);
 $gradient-shiny-light-blue: radial-gradient(100% 100% at 42.37% 0%, #7ec8ff 0.01%, #3794f7 15.63%, #2570c9 32.29%, #021c55 80.21%, #000 100%);
