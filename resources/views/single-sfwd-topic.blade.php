@@ -1,4 +1,4 @@
-@extends('layouts.ld-lesson')
+@extends('layouts.ldl-Lesson')
 
 @section('ld-main')
   @while(have_posts()) @php the_post() @endphp

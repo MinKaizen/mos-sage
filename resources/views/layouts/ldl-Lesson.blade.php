@@ -1,7 +1,7 @@
 @extends('layouts.main')
 
 @section('content')
-  <div class="ldlm-LessonMain">
+  <div class="ldl-Lesson">
     @include('partials.ld.ldsb-Sidebar')
     <div class="main">
       @yield('ld-main')
