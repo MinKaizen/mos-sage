@@ -5,7 +5,6 @@ import home from './routes/home'
 import ClassToggler from './components/ClassToggler'
 import MobileNav_Menu from './components/MobileNav_Menu'
 import UpgradeButton from './components/UpgradeButton'
-import Module_Label from './components/Module_Label'
 
 // Define routes
 const routes = [
@@ -20,10 +19,6 @@ const components = [
   {
     class: ClassToggler,
     selector: '.js-ClassToggler',
-  },
-  {
-    class: Module_Label,
-    selector: '.js-Module_Label',
   },
   {
     class: UpgradeButton,
