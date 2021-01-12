@@ -2,8 +2,9 @@
   background: $color-new-black;
   box-shadow: $shadow-shadow1;
   display: grid;
-  padding: 0 30px 0 20px;
   height: $hd-Header__height;
+  padding: 0 30px 0 20px;
+  user-select: none;
 
   // Grid properties
   align-items: center;
