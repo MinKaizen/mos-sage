@@ -39,7 +39,7 @@
     display: inline-block;
     height: $size;
     width: $size;
-    margin: 0 3px;
+    margin: 0 $half-size;
     transform: rotate(0.125turn) translateY(-$half-size);
   }
 
