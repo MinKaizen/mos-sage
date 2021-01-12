@@ -3,8 +3,8 @@
 @section('content')
   <div class="ldl-Lesson">
     @include('partials.ld.ldsb-Sidebar')
-    <div class="main">
-      @yield('ld-main')
+    <div class="ldm-Main">
+      @yield('ldm-Main')
     </div>
   </div>
 @endsection

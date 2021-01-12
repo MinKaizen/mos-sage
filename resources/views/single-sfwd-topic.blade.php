@@ -1,6 +1,6 @@
 @extends('layouts.ldl-Lesson')
 
-@section('ld-main')
+@section('ldm-Main')
   @while(have_posts()) @php the_post() @endphp
     @if(isset($video)) @include('partials.vimeo', ['video_id'=>$video]) @endif
     @include('partials.ld.prev-link')
