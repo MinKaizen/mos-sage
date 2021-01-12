@@ -28,8 +28,7 @@
 }
 
 .ldnv-Module-active .ldnv-Module_Inner {
-  background: $color-new-dark-grey;
-  opacity: 0.8;
+  background: transparentize($color: $color-new-dark-grey, $amount: 0.2);
   border-radius: 10px 0 0 10px;
 }
 
