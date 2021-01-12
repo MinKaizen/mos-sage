@@ -37,11 +37,9 @@
 }
 
 .ldnv-Module_Lessons {
-  height: 0;
-  overflow-y: hidden;
+  display: none;
 }
 
-.ldnv-Module-current .ldnv-Module_Lessons,
-.ldnv-Module.is-Active .ldnv-Module_Lessons {
-  height: initial;
+.ldnv-Module_Lessons.is-Active {
+  display: block;
 }
