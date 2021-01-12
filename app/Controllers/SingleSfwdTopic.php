@@ -11,20 +11,6 @@ class SingleSfwdTopic extends Controller
   protected $acf = true;
 
 
-  public static function is_complete( int $lesson_id ): bool {
-    $user_id = \get_current_user_id();
-    $meta_key = '_sfwd-course_progress';
-    $progress = get_user_meta( $user_id, $meta_key, true );
-
-    if ( empty( $progress ) ) {
-        return false;
-    }
-
-    $is_complete = (bool) \App\array_find_recursive( $lesson_id, $progress );
-    return $is_complete;
-  }
-
-
   public function courseProgress(): array {
     $user = User::current();
     $course_id = $this->courseId();
@@ -101,6 +87,20 @@ class SingleSfwdTopic extends Controller
     }
 
     return $link;
+  }
+
+
+  private static function is_complete( int $lesson_id ): bool {
+    $user_id = \get_current_user_id();
+    $meta_key = '_sfwd-course_progress';
+    $progress = get_user_meta( $user_id, $meta_key, true );
+
+    if ( empty( $progress ) ) {
+        return false;
+    }
+
+    $is_complete = (bool) \App\array_find_recursive( $lesson_id, $progress );
+    return $is_complete;
   }
 
 
