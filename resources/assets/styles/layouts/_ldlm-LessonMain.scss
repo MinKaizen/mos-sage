@@ -1,4 +1,5 @@
 .ldlm-LessonMain {
   display: grid;
   grid-template-columns: auto 1fr;
+  min-height: calc(100vh - #{$hd-Header__height} - #{$ft-Footer__height});
 }
