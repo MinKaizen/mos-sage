@@ -1,5 +1,18 @@
 .ldnv-Module {
-  // color: white;
+  padding-left: 22px;
+  position: relative;
+}
+
+.ldnv-Module-current::before {
+  background: $gradient-active-top-menu-vertical;
+  border-radius: 0 5px 5px 0;
+  content: "";
+  display: block;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 6px;
 }
 
 .ldnv-Module_Label {
