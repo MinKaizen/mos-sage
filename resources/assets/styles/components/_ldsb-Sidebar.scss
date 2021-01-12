@@ -4,6 +4,7 @@
   background: $color-new-black;
   overflow: hidden auto;
   padding: 20px;
+  user-select: none;
   width: $width;
 
   &::-webkit-scrollbar {
