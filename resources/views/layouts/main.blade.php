@@ -8,9 +8,7 @@
   >
     @include('partials.glbl-MobileNav', ['menu_slug' => 'primary_navigation'])
     @include('partials.hd-Header')
-    <div class="content">
-      @yield('content')
-    </div>
+    @yield('content')
     @include('partials.ft-Footer')
   </body>
 </html>
