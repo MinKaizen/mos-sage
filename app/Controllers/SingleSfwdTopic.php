@@ -143,6 +143,15 @@ class SingleSfwdTopic extends Controller
     foreach ( $modules as &$module ) {
       $module->link = \get_permalink( $module->ID );
       $module->lessons = self::get_lessons( $module->ID );
+
+      // Set $module->is_complete
+      $module->is_complete = true;
+      foreach ( $module->lessons as $lesson ) {
+        if ( !self::is_complete( $lesson->ID ) ) {
+            $module->is_complete = false;
+            break;
+        }
+      }
     }
 
     return $modules;
