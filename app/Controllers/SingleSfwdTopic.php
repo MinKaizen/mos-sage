@@ -11,21 +11,6 @@ class SingleSfwdTopic extends Controller
   protected $acf = true;
 
 
-  public static function is_module_complete( int $module_id ): bool {
-    $is_complete = true;
-    $lessons = self::get_lessons( $module_id );
-
-    foreach ( $lessons as $lesson ) {
-        if ( !self::is_complete( $lesson->ID ) ) {
-            $is_complete = false;
-            return $is_complete;
-        }
-    }
-
-    return $is_complete;
-  }
-
-
   public static function is_complete( int $lesson_id ): bool {
     $user_id = \get_current_user_id();
     $meta_key = '_sfwd-course_progress';

@@ -4,7 +4,7 @@
     'module_num' => $loop->iteration,
     'title' => $module->post_title,
     'lessons' => $module->lessons,
-    'is_complete' => App\Controllers\SingleSfwdTopic::is_module_complete( $module->ID ),
+    'is_complete' => $module->is_complete,
   ])
 @endforeach
 </div>
