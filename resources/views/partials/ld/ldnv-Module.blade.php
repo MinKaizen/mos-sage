@@ -2,7 +2,9 @@
 
   <div class="ldnv-Module_Inner">
 
-    <div class="ldnv-Module_Label js-Module_Label">
+    <div class="ldnv-Module_Label js-ClassToggler"
+         data-toggle-class="ldnv-Module-active"
+         data-target-selector=".js-ldnv-Module-{{ $id }}">
       @include('partials.ld.ldnv-Module_Indicator', ['complete' => $is_complete])
       <h1 class="ldnv-Module_Title">
         <span class="ldnv-Module_Number">{{ $module_num }}</span>
