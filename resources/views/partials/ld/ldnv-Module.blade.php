@@ -9,7 +9,7 @@
   @foreach($lessons as $lesson)
     @include('partials.ld.ldnv-Lesson', [
       'link' => $lesson->link,
-      'lesson_is_current' => $lesson_id==$lesson->ID,
+      'is_current' => $lesson_id==$lesson->ID,
       'lesson_num' => "$module_num-$loop->iteration",
       'title' => $lesson->post_title,
       'is_complete' => $lesson->is_complete,

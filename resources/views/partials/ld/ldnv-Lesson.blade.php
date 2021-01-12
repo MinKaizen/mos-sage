@@ -1,4 +1,4 @@
-<li class="ldnv-Lesson @if($lesson_is_current){{ 'ldnv-Lesson-current' }}@endif">
+<li class="ldnv-Lesson @if($is_current){{ 'ldnv-Lesson-current' }}@endif">
   <a href="{{ $link }}" class="ldnv-Lesson_Link">
     <span class="ldnv-Lesson_Number">{{ $lesson_num }}</span>
     {{ $title }}
