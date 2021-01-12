@@ -3,7 +3,7 @@
   box-shadow: $shadow-shadow1;
   display: grid;
   padding: 0 30px 0 20px;
-  height: 75px;
+  height: $hd-Header__height;
 
   // Grid properties
   align-items: center;
