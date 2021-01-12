@@ -90,7 +90,7 @@ class SingleSfwdTopic extends Controller
   }
 
 
-  private static function is_complete( int $lesson_id ): bool {
+  private static function is_lesson_complete( int $lesson_id ): bool {
     $user_id = \get_current_user_id();
     $meta_key = '_sfwd-course_progress';
     $progress = get_user_meta( $user_id, $meta_key, true );
@@ -156,7 +156,7 @@ class SingleSfwdTopic extends Controller
 
     foreach ( $lessons as &$lesson ) {
       $lesson->link = \get_permalink( $lesson->ID );
-      $lesson->is_complete = self::is_complete( $lesson->ID );
+      $lesson->is_complete = self::is_lesson_complete( $lesson->ID );
     }
 
     return $lessons;
