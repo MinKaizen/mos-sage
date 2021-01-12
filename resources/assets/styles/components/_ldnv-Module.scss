@@ -15,6 +15,16 @@
   width: 6px;
 }
 
+.ldnv-Module_Inner {
+  padding: 15px;
+}
+
+.ldnv-Module-active .ldnv-Module_Inner {
+  background: $color-new-dark-grey;
+  opacity: 0.8;
+  border-radius: 10px 0 0 10px;
+}
+
 .ldnv-Module_Label {
   // Down Arrow to indicate a submenu
   &::after {
