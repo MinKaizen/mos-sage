@@ -11,8 +11,6 @@
     <div class="content">
       @yield('content')
     </div>
-    @php do_action('get_footer') @endphp
-    @include('partials.footer')
-    @php wp_footer() @endphp
+    @include('partials.ft-Footer')
   </body>
 </html>
