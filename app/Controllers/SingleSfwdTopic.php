@@ -33,11 +33,6 @@ class SingleSfwdTopic extends Controller
   }
 
 
-  public function isComplete(): bool {
-    return self::is_complete( \get_the_ID() );
-  }
-
-
   public function courseId(): int {
     $post = get_post();
     $course_id = (int) get_post_meta( $post->ID, 'course_id', true );
