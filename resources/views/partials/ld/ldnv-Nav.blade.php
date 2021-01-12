@@ -5,6 +5,7 @@
     'title' => $module->post_title,
     'lessons' => $module->lessons,
     'is_complete' => $module->is_complete,
+    'is_current' => $module_id == $module->ID,
   ])
 @endforeach
 </div>
