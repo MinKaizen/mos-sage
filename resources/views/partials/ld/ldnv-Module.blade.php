@@ -5,7 +5,7 @@
     {{ $title }}
   </h1>
 
-  <ol class="ldnv-Module_LessonList">
+  <ol class="ldnv-Module_Lessons">
   @foreach($lessons as $lesson)
     @include('partials.ld.ldnv-Lesson', [
       'link' => $lesson->link,
