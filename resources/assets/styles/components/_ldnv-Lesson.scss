@@ -1,6 +1,17 @@
 .ldnv-Lesson_Link {
   color: white;
   cursor: pointer;
-  display: inline-block;
+  display: block;
+  margin-left: 27px;
+  padding: 10px 0 10px 27px;
   text-decoration: none;
+}
+
+.ldnv-Lesson-current .ldnv-Lesson_Link {
+  background: $color-new-light-grey;
+  border-radius: 10px 0 0 10px;
+}
+
+.ldnv-Lesson_Number {
+  color: $color-light-blue;
 }
