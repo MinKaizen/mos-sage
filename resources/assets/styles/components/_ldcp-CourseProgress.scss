@@ -1,0 +1,41 @@
+.ldcp-CourseProgress {
+  padding: 0 37px;
+  position: relative;
+  margin-bottom: 30px;
+}
+
+.ldcp-Track {
+  $size: 3px;
+
+  background: $color-highlight-blue;
+  border-radius: $size / 2;
+  height: $size;
+  position: relative;
+}
+
+.ldcp-Fill {
+  $size: 3px;
+
+  background: $color-light-blue;
+  border-radius: $size / 2;
+  height: $size;
+  // left: 0;
+  // HACK: prevent artifacts
+  left: -1px;
+  position: absolute;
+}
+
+.ldcp-Fraction {
+  background: $color-new-black;
+  box-sizing: border-box;
+  display: block;
+  font-size: $font-size-body-tiny;
+  padding: 5px;
+  position: absolute;
+  // HACK: Magic numbers
+  transform: translate(-7px, -10px);
+}
+
+.ldcp-Fraction_Completed {
+  color: $color-light-blue;
+}
