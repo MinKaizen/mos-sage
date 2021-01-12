@@ -1,3 +1,27 @@
+.ldnv-Lesson {
+  opacity: 0.5;
+}
+
+.ldnv-Lesson-current,
+.ldnv-Lesson:hover {
+  opacity: 1;
+}
+
+.ldnv-Lesson-complete {
+  position: relative;
+
+  &::after {
+    content: "";
+    background: $gradient-lesson-complete;
+    display: block;
+    height: 100%;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 3px;
+  }
+}
+
 .ldnv-Lesson_Link {
   color: white;
   cursor: pointer;
