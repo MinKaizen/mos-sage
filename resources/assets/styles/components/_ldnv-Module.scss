@@ -28,6 +28,13 @@
 }
 
 .ldnv-Module_Label {
+  align-items: center;
+  cursor: pointer;
+  display: grid;
+  grid-column-gap: 15px;
+  grid-template-columns: auto 1fr auto;
+  justify-content: start;
+
   // Down Arrow to indicate a submenu
   &::after {
     $size: 7px;
@@ -42,14 +49,6 @@
     margin: 0 $half-size;
     transform: rotate(0.125turn) translateY(-$half-size);
   }
-
-  align-items: center;
-  cursor: pointer;
-  display: grid;
-  grid-column-gap: 15px;
-  grid-template-columns: auto 1fr auto;
-  justify-content: start;
-  padding: 15px 0;
 }
 
 .ldnv-Module_Number {
