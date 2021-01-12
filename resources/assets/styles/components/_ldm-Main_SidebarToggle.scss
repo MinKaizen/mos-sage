@@ -1,0 +1,15 @@
+.ldm-Main_SidebarToggle {
+  $size: 70px;
+
+  border-radius: 50%;
+  background: pink;
+  cursor: pointer;
+  display: block;
+  height: $size;
+  position: absolute;
+  left: 0;
+  top: 40%;
+  transform: translateX(50%);
+  width: $size;
+  z-index: 999;
+}
