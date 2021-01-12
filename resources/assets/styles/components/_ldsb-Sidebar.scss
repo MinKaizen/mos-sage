@@ -5,6 +5,7 @@
   overflow: hidden auto;
   user-select: none;
   width: $width;
+  z-index: z("ldsb-Sidebar");
 
   &::-webkit-scrollbar {
     $width: 6px;
