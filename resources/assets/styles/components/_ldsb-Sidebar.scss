@@ -1,0 +1,19 @@
+.ldsb-Sidebar {
+  $width: 271px;
+
+  background: $color-new-black;
+  overflow: hidden auto;
+  padding: 20px;
+  width: $width;
+
+  &::-webkit-scrollbar {
+    $width: 6px;
+
+    width: $width;
+
+    &-thumb {
+      background-color: transparentize($color: $color-white, $amount: 0.8);
+      border-radius: $width / 2;
+    }
+  }
+}
