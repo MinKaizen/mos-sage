@@ -68,11 +68,15 @@ $font-default: "Geomanist", "Ubuntu", "Arial", sans-serif;
 $line-height-default: 1.5;
 
 // Media breakpoints
-$breakpoint-sm: 576px;
-$breakpoint-md: 768px;
-$breakpoint-lg: 992px;
-$breakpoint-xl: 1200px;
-$breakpoint-xxl: 1400px;
+$breakpoints: (
+  "sm": 576px,
+  "md": 768px,
+  "lg": 992px,
+  "xl": 1200px,
+  "xxl": 1400px,
+  // Named breakpoints
+  "ld-sidebar-open": 1200px, // xl
+);
 
 // Z-indices
 $z-map: (

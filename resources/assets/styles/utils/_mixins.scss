@@ -6,15 +6,6 @@
 }
 
 @mixin media($size) {
-  $breakpoints: (
-    "sm": $breakpoint-sm,
-    "md": $breakpoint-md,
-    "lg": $breakpoint-lg,
-    "xl": $breakpoint-xl,
-    "xxl": $breakpoint-xxl,
-    "ld-sidebar-open": $breakpoint-lg,
-  );
-
   $breakpoint: map-get($breakpoints, $size);
 
   @media only screen and (min-width: $breakpoint) {
