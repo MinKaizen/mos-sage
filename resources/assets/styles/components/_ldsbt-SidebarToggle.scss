@@ -22,7 +22,7 @@
   z-index: 9;
 
   @include media("ld-sidebar-open") {
-    // display: none;
+    display: none;
   }
 }
 
