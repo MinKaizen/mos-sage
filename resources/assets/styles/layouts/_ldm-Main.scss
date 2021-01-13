@@ -2,8 +2,11 @@
   $spacing: 2vw;
 
   display: grid;
-  grid-template-columns: 45fr 14fr;
   grid-template-rows: auto auto auto auto;
   grid-column-gap: $spacing;
   padding: $spacing;
+
+  @include media("banners-show") {
+    grid-template-columns: 45fr 14fr;
+  }
 }

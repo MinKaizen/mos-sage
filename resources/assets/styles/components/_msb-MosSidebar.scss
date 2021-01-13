@@ -1,4 +1,8 @@
 .msb-MosSidebar {
-  display: grid;
-  align-content: space-between;
+  display: none;
+
+  @include media("banners-show") {
+    display: grid;
+    align-content: space-between;
+  }
 }
