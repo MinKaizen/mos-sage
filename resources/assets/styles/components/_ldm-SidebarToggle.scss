@@ -17,6 +17,7 @@
   top: 40%;
   transform: translateX(-50%);
   width: $size;
+  z-index: z("ldm-SidebarToggle");
 
   @include media("ld-sidebar-open") {
     display: none;
