@@ -17,6 +17,10 @@
   top: 40%;
   transform: translateX(-50%);
   width: $size;
+
+  @include media("ld-sidebar-open") {
+    display: none;
+  }
 }
 
 .ldm-SidebarToggle::after {

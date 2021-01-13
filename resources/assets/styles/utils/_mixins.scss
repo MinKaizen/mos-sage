@@ -12,6 +12,7 @@
     "lg": $breakpoint-lg,
     "xl": $breakpoint-xl,
     "xxl": $breakpoint-xxl,
+    "ld-sidebar-open": $breakpoint-lg,
   );
 
   $breakpoint: map-get($breakpoints, $size);
