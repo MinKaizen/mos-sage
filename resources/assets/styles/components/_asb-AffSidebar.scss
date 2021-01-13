@@ -1,0 +1,8 @@
+.asb-AffSidebar {
+  display: none;
+
+  @include media("banners-show") {
+    display: grid;
+    row-gap: 2vw;
+  }
+}
