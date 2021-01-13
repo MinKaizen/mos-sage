@@ -1,5 +1,6 @@
 .ldl-Lesson {
   display: grid;
   grid-template-columns: auto 1fr;
+  align-items: start;
   min-height: calc(100vh - #{$hd-Header__height} - #{$ft-Footer__height});
 }
