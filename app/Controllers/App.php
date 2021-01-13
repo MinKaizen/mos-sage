@@ -30,4 +30,9 @@ class App extends Controller
         }
         return get_the_title();
     }
+
+    public function mosSidebar(): string {
+        $level = apply_filters( 'mos_user_level_slug', '' );
+        return $level . '_sidebar';
+    }
 }
