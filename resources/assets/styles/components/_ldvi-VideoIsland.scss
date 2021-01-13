@@ -1,0 +1,31 @@
+.ldvi-VideoIsland {
+  display: grid;
+  grid-gap: 10px;
+  margin-bottom: 20px;
+}
+
+.ldvi-VideoIsland_Nav {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-content: stretch;
+}
+
+.ldvi-VideoIsland_Prev,
+.ldvi-VideoIsland_Next {
+  color: white;
+  background: $color-new-dark-grey;
+  border-radius: 4px;
+  font-size: $font-size-body-small;
+  padding: 10px;
+  text-decoration: none;
+}
+
+.ldvi-VideoIsland_Prev {
+  grid-column: 1 / span 1;
+  justify-self: start;
+}
+
+.ldvi-VideoIsland_Next {
+  grid-column: -1 / span 1;
+  justify-self: end;
+}
