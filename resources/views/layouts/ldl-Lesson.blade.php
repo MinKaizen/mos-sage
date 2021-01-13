@@ -4,7 +4,7 @@
   <div class="ldl-Lesson">
     @include('partials.ld.ldsb-Sidebar')
     <div class="ldm-Main">
-      @include('partials.ld.ldm-Main_SidebarToggle')
+      @include('partials.ld.ldm-SidebarToggle')
       @yield('ldm-Main')
     </div>
   </div>

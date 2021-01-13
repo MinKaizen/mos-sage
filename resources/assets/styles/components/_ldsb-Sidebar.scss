@@ -1,21 +1,23 @@
 .ldsb-Sidebar {
-  $width: 271px;
-
   background: $color-new-black;
-  overflow: hidden auto;
+  height: 100vh;
+  overflow: hidden scroll;
   padding-top: 27px;
+  position: sticky;
+  top: 0;
+  transition: all 0.3s ease-in-out;
   user-select: none;
-  width: $width;
+  white-space: nowrap;
+  width: 0;
   z-index: z("ldsb-Sidebar");
 
   &::-webkit-scrollbar {
-    $width: 6px;
-
-    width: $width;
-
-    &-thumb {
-      background-color: transparentize($color: $color-white, $amount: 0.8);
-      border-radius: $width / 2;
-    }
+    display: none;
   }
+}
+
+.ldsb-Sidebar-active {
+  overflow: scroll;
+  white-space: initial;
+  width: 271px;
 }
