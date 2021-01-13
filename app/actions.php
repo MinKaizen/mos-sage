@@ -20,10 +20,10 @@ function register_sidebars() {
             'id'            => 'mos_sidebar',
             'name'          => __( 'MOS Sidebar' ),
             'description'   => __( 'Shows an Upgrade banner and other MOS related banners depending on user level.' ),
-            'before_widget' => '<div id="%1$s" class="widget %2$s">',
+            'before_widget' => '<div class="msb-MosSidebar_Banner">',
             'after_widget'  => '</div>',
-            'before_title'  => '<h3 class="widget-title">',
-            'after_title'   => '</h3>',
+            'before_title'  => '<title class="msb-MosSidebar_Title">',
+            'after_title'   => '</title>',
         ]
     );
     register_sidebar(
@@ -31,10 +31,10 @@ function register_sidebars() {
             'id'            => 'affiliate_sidebar',
             'name'          => __( 'Affiliate Sidebar' ),
             'description'   => __( 'A bunch of 3rd party affiliate banners.' ),
-            'before_widget' => '<div id="%1$s" class="widget %2$s">',
+            'before_widget' => '<div class="asb-AffSidebar_Banner">',
             'after_widget'  => '</div>',
-            'before_title'  => '<h3 class="widget-title">',
-            'after_title'   => '</h3>',
+            'before_title'  => '<title class="asb-AffSidebar_Title">',
+            'after_title'   => '</title>',
         ]
     );
 }
