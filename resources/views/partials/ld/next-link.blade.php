@@ -1,3 +1,3 @@
 @if($next_link)
-  <span><a href="{{ $next_link }}">Next >>></a></span>
+  <a class="ldvi-VideoIsland_Next" href="{{ $next_link }}">Next</a>
 @endif
