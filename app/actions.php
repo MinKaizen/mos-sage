@@ -21,9 +21,42 @@ add_action( 'widgets_init', __NAMESPACE__ . '\register_sidebars' );
 function register_sidebars() {
     register_sidebar(
         [
-            'id'            => 'mos_sidebar',
-            'name'          => __( 'MOS Sidebar' ),
-            'description'   => __( 'Shows an Upgrade banner and other MOS related banners depending on user level.' ),
+            'id'            => 'monthly_partner_sidebar',
+            'name'          => __( 'Monthly Partner Sidebar' ),
+            'description'   => __( 'MOS related banners for Monthly Partners' ),
+            'before_widget' => '<div class="msb-MosSidebar_Banner">',
+            'after_widget'  => '</div>',
+            'before_title'  => '<title class="msb-MosSidebar_Title">',
+            'after_title'   => '</title>',
+        ]
+    );
+    register_sidebar(
+        [
+            'id'            => 'yearly_partner_sidebar',
+            'name'          => __( 'Yearly Partner Sidebar' ),
+            'description'   => __( 'MOS related banners for Yearly Partners' ),
+            'before_widget' => '<div class="msb-MosSidebar_Banner">',
+            'after_widget'  => '</div>',
+            'before_title'  => '<title class="msb-MosSidebar_Title">',
+            'after_title'   => '</title>',
+        ]
+    );
+    register_sidebar(
+        [
+            'id'            => 'lifetime_partner_sidebar',
+            'name'          => __( 'Lifetime Partner Sidebar' ),
+            'description'   => __( 'MOS related banners for Lifetime Partners' ),
+            'before_widget' => '<div class="msb-MosSidebar_Banner">',
+            'after_widget'  => '</div>',
+            'before_title'  => '<title class="msb-MosSidebar_Title">',
+            'after_title'   => '</title>',
+        ]
+    );
+    register_sidebar(
+        [
+            'id'            => 'coaching_sidebar',
+            'name'          => __( 'Coaching Sidebar' ),
+            'description'   => __( 'MOS related banners for Coaching Members' ),
             'before_widget' => '<div class="msb-MosSidebar_Banner">',
             'after_widget'  => '</div>',
             'before_title'  => '<title class="msb-MosSidebar_Title">',
