@@ -5,6 +5,7 @@ import home from './routes/home'
 import ClassToggler from './components/ClassToggler'
 import MobileNav_Menu from './components/MobileNav_Menu'
 import UpgradeButton from './components/UpgradeButton'
+import SidebarToggle from './components/SidebarToggle'
 
 // Define routes
 const routes = [
@@ -19,6 +20,10 @@ const components = [
   {
     class: ClassToggler,
     selector: '.js-ClassToggler',
+  },
+  {
+    class: SidebarToggle,
+    selector: '.js-SidebarToggle',
   },
   {
     class: UpgradeButton,
