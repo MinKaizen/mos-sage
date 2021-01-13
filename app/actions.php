@@ -13,6 +13,10 @@ add_action( 'template_redirect', function() {
   }
 });
 
+
+/**
+ * Register custom sidebars
+ */
 add_action( 'widgets_init', __NAMESPACE__ . '\register_sidebars' );
 function register_sidebars() {
     register_sidebar(
