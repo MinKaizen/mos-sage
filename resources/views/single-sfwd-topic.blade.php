@@ -2,12 +2,9 @@
 
 @section('ldm-Main')
   @while(have_posts()) @php the_post() @endphp
-    @if(isset($video_url))
-      @include('partials.vid-Video', ['url' => $video_url])
-    @endif
-    @include('partials.ld.prev-link')
-    @include('partials.ld.next-link')
-    @include('partials.ld.mark-complete')
-    @include('partials.ld.resources')
+    @include('partials.ld.ldvi-VideoIsland')
+    @include('partials.msb-MosSidebar')
+    @include('partials.ld.ldci-ContentIslands')
+    @include('partials.asb-AffSidebar')
   @endwhile
 @endsection
