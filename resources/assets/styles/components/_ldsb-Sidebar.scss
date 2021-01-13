@@ -19,13 +19,13 @@
 .ldsb-Sidebar-active {
   overflow: scroll;
   white-space: initial;
-  width: 271px;
+  width: $ldsb-Sidebar__width;
 }
 
 @include media("ld-sidebar-open") {
   .ldsb-Sidebar {
     overflow: scroll;
     white-space: initial;
-    width: 271px;
+    width: $ldsb-Sidebar__width;
   }
 }
