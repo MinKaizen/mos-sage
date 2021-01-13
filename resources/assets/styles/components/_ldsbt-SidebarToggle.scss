@@ -1,0 +1,53 @@
+.ldsbt-SidebarToggle {
+  $border-color: $color-new-light-grey;
+  $color: $color-bg-black;
+  $size: 60px;
+
+  align-content: center;
+  background: $color;
+  border-radius: 50%;
+  border: solid 1px $border-color;
+  cursor: pointer;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  height: $size;
+  justify-items: start;
+  left: 0;
+  position: fixed;
+  top: 40%;
+  transform: translateX(-50%);
+  transition: all 0.3s ease-in-out;
+  width: $size;
+  // TEMP: replace with z() later
+  z-index: 9;
+
+  @include media("ld-sidebar-open") {
+    // display: none;
+  }
+}
+
+.ldsbt-SidebarToggle-active {
+  left: $ldsb-Sidebar__width;
+}
+
+.ldsbt-SidebarToggle::after {
+  $color: $color-offwhite-grey;
+  $size: 15px;
+  $thickness: 3px;
+
+  border-color: $color;
+  border-radius: $thickness;
+  border-style: solid;
+  border-width: 0 $thickness $thickness 0;
+  content: "";
+  display: inline-block;
+  grid-column: -2/-1;
+  height: $size;
+  transform: translateX(0) rotate(-45deg);
+  transition: all 0.3s ease-out;
+  width: $size;
+}
+
+.ldsbt-SidebarToggle-active::after {
+  transform: translateX(50%) rotate(-585deg);
+}
