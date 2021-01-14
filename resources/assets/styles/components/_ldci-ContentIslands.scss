@@ -1,4 +1,4 @@
 .ldci-ContentIslands {
   display: grid;
-  grid-gap: 20px;
+  grid-gap: responsive(15px, 40px);
 }
