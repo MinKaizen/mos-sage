@@ -1,11 +1,11 @@
 .ldm-Main {
-  $spacing: 2vw;
+  $spacing: 2.5vw;
 
   display: grid;
   column-gap: $spacing;
   padding: $spacing;
 
   @include media("banners-show") {
-    grid-template-columns: 45fr 14fr;
+    grid-template-columns: 3fr 1fr;
   }
 }
