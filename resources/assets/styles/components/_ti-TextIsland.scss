@@ -1,0 +1,38 @@
+.ti-TextIsland {
+  background: $color-textbox-black;
+  padding: 45px 65px 65px 65px;
+  position: relative;
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: white;
+    font-size: $font-size-h4;
+    margin-left: -15px;
+    padding: 1em 0;
+  }
+
+  p {
+    line-height: 1.5;
+    padding-bottom: 1.5em;
+  }
+
+  // Top colorful bar
+  &::before {
+    $height: 30px;
+    $oversize: 10px;
+
+    content: "";
+    background: $gradient-shiny-dark-blue;
+    display: block;
+    border-radius: 10px;
+    position: absolute;
+    top: 0;
+    left: 0 - $oversize;
+    height: $height;
+    width: calc(100% + (2 * #{$oversize}));
+  }
+}
