@@ -1,9 +1,11 @@
 .ldm-Main {
-  $spacing: 2.5vw;
+  $spacing-min: 15px;
+  $spacing-max: 40px;
 
   display: grid;
-  column-gap: $spacing;
-  padding: $spacing;
+  column-gap: responsive($spacing-min, $spacing-max);
+  row-gap: responsive($spacing-min, $spacing-max);
+  padding: responsive($spacing-min, $spacing-max);
 
   @include media("banners-show") {
     grid-template-columns: 3fr 1fr;
