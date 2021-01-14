@@ -2,6 +2,7 @@
   $spacing-min: 15px;
   $spacing-max: 40px;
 
+  align-items: start;
   display: grid;
   column-gap: responsive($spacing-min, $spacing-max);
   row-gap: responsive($spacing-min, $spacing-max);
