@@ -1,3 +1,3 @@
 <aside class="asb-AffSidebar">
-  @php dynamic_sidebar('aff_sidebar'); @endphp
+  @php dynamic_sidebar('affiliate_sidebar'); @endphp
 </aside>
