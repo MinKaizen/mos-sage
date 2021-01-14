@@ -2,44 +2,45 @@
 $dist: "/wp-content/themes/mos-sage/dist";
 
 // Colors
+$color-bg-black: #202942;
 $color-charcoal: #3a4759;
-$color-light-charcoal: #6e7a8a;
-$color-darker-icon: #a9b2c3;
-$color-icon: #d3d9e5;
-$color-offwhite-blue: #fafdff;
-$color-offwhite-grey: #f8fafb;
-$color-highlight-blue: #daf2fe;
-$color-light-blue: #4ab8fb;
 $color-dark-blue: #1f62f2;
-$color-red: #ff595e;
-$color-light-purple: #9255e2;
 $color-dark-purple: #6e00ff;
+$color-darker-icon: #a9b2c3;
 $color-elegant-themes1: #4a41eb;
 $color-elegant-themes2: #521d92;
-$color-pink: #e04bb9;
 $color-green: #20dd95;
-$color-white: #fff;
+$color-highlight-blue: #daf2fe;
+$color-icon: #d3d9e5;
+$color-light-blue: #4ab8fb;
+$color-light-charcoal: #6e7a8a;
+$color-light-purple: #9255e2;
 $color-new-black: #070a12;
-$color-bg-black: #202942;
 $color-new-dark-grey: #1e263a;
 $color-new-light-grey: #465164;
+$color-offwhite-blue: #fafdff;
+$color-offwhite-grey: #f8fafb;
+$color-pink: #e04bb9;
+$color-red: #ff595e;
+$color-textbox-black: #0b0e1f;
+$color-white: #fff;
 
 // Gradients
-$gradient-active-top-menu: linear-gradient(90deg, #4ab8fb 0%, #006ffa00 100%);
-$gradient-active-top-menu-vertical: linear-gradient(180deg, #4ab8fb 0%, #006ffa00 100%);
-$gradient-lesson-complete: linear-gradient(180deg, #4ab8fb 0%, #006ffa 100%);
 $gradient-active-top-menu-text: linear-gradient(180deg, #0641bf 0%, #4ab8fb 33.85%, #daf2fe 51.56%, #4ab8fb 70.83%, #0140c7 98.44%);
+$gradient-active-top-menu-vertical: linear-gradient(180deg, #4ab8fb 0%, #006ffa00 100%);
+$gradient-active-top-menu: linear-gradient(90deg, #4ab8fb 0%, #006ffa00 100%);
+$gradient-button-blue: linear-gradient(180deg, #009eff 0%, #1a4ab2 56.77%);
+$gradient-button-green: linear-gradient(180deg, #20dd95 14.71%, #0e787e 85.29%);
+$gradient-button-purple: linear-gradient(180deg, #d44be0 14.71%, #4f1b93 88.24%);
+$gradient-button-red: linear-gradient(180deg, #ff595e 14.71%, #a62125 85.29%);
+$gradient-circle-complete: conic-gradient(from 180deg at 50% 50%, #0641bf 0deg, #4ab8fb 116.25deg, #daf2fe 183.75deg, #4ab8fb 249.37deg, #0641bf 360deg);
+$gradient-circle-incomplete: conic-gradient(from 180deg at 50% 50%, #fff 0deg, #002a84 360deg);
+$gradient-lesson-complete: linear-gradient(180deg, #4ab8fb 0%, #006ffa 100%);
+$gradient-promotion1: linear-gradient(96.17deg, #4ab8fb 5.2%, #1f62f2 40.98%, #6e00ff 79.97%);
+$gradient-promotion2: linear-gradient(96.73deg, #e04bb9 5.27%, #9255e2 35.66%, #6e00ff 63.78%, #1f62f2 92.35%);
 $gradient-shiny-dark-blue: radial-gradient(100% 100% at 42.37% 0%, #001aff 0%, #004ec2 0.01%, #012193 15.63%, #02006d 32.29%, #060018 80.21%, #11000d 100%);
 $gradient-shiny-light-blue: radial-gradient(100% 100% at 42.37% 0%, #7ec8ff 0.01%, #3794f7 15.63%, #2570c9 32.29%, #021c55 80.21%, #000 100%);
 $gradient-shiny-purple: radial-gradient(100% 100% at 42.37% 0%, #ab42ad 0.01%, #96177a 10.94%, #7e036b 20.83%, #6d0156 32.29%, #1c0056 80.21%, #000e3f 89.58%, #00011c 100%);
-$gradient-circle-complete: conic-gradient(from 180deg at 50% 50%, #0641bf 0deg, #4ab8fb 116.25deg, #daf2fe 183.75deg, #4ab8fb 249.37deg, #0641bf 360deg);
-$gradient-circle-incomplete: conic-gradient(from 180deg at 50% 50%, #fff 0deg, #002a84 360deg);
-$gradient-promotion1: linear-gradient(96.17deg, #4ab8fb 5.2%, #1f62f2 40.98%, #6e00ff 79.97%);
-$gradient-promotion2: linear-gradient(96.73deg, #e04bb9 5.27%, #9255e2 35.66%, #6e00ff 63.78%, #1f62f2 92.35%);
-$gradient-button-red: linear-gradient(180deg, #ff595e 14.71%, #a62125 85.29%);
-$gradient-button-blue: linear-gradient(180deg, #009eff 0%, #1a4ab2 56.77%);
-$gradient-button-purple: linear-gradient(180deg, #d44be0 14.71%, #4f1b93 88.24%);
-$gradient-button-green: linear-gradient(180deg, #20dd95 14.71%, #0e787e 85.29%);
 
 // Shadows
 $shadow-shadow1: 0 10px 20px rgba(15, 19, 44, 0.15);
@@ -51,15 +52,15 @@ $shadow-shadow2-hover: 0 30px 60px rgba(15, 19, 44, 0.25);
 $backdrop-filter-background-blur: blur(10px);
 
 // Font sizes
+$font-size-body-small: 14px;
+$font-size-body-smaller: 12px;
+$font-size-body-tiny: 11px;
+$font-size-body: 16px;
 $font-size-h1: 60px;
 $font-size-h2: 48px;
 $font-size-h3: 30px;
 $font-size-h4: 24px;
 $font-size-title: 18px;
-$font-size-body: 16px;
-$font-size-body-small: 14px;
-$font-size-body-smaller: 12px;
-$font-size-body-tiny: 11px;
 
 // Fonts
 $font-default: "Geomanist", "Ubuntu", "Arial", sans-serif;
@@ -89,6 +90,6 @@ $z-map: (
 );
 
 // Specifc components
-$hd-Header__height: 75px;
 $ft-Footer__height: 82px;
+$hd-Header__height: 75px;
 $ldsb-Sidebar__width: 271px;
