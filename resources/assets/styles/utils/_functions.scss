@@ -9,3 +9,10 @@
 
   @return $number;
 }
+
+@function responsive($min, $max, $min-vp: map-get($breakpoints, "sm"), $max-vp: map-get($breakpoints, "xl")) {
+  $range: strip-unit($max - $min);
+  $range-vp: strip-unit($max-vp - $min-vp);
+
+  @return clamp(#{$min}, calc(#{$min} + #{$range} * ((100vw - #{$min-vp}) / #{$range-vp})), #{$max});
+}
