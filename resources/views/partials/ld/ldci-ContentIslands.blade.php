@@ -5,5 +5,5 @@
     @endcomponent
   @endif
   {{-- If resources, print resources --}}
-  @include('partials.ld.resources')
+  {{-- @include('partials.ld.resources') --}}
 </div>
