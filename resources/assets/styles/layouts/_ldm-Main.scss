@@ -2,7 +2,7 @@
   $spacing: 2vw;
 
   display: grid;
-  grid-column-gap: $spacing;
+  column-gap: $spacing;
   padding: $spacing;
 
   @include media("banners-show") {
