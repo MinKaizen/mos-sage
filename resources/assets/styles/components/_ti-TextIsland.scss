@@ -1,5 +1,6 @@
 .ti-TextIsland {
   background: $color-textbox-black;
+  border-radius: 10px;
   padding: 45px 65px 65px 65px;
   position: relative;
 
@@ -30,7 +31,7 @@
     $oversize: 10px;
 
     content: "";
-    background: $gradient-shiny-dark-blue;
+    background: $color-textbox-black;
     display: block;
     border-radius: 10px;
     position: absolute;
