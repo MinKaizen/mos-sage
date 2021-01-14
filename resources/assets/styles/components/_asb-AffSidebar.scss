@@ -3,6 +3,7 @@
 
   @include media("banners-show") {
     display: grid;
-    row-gap: 2vw;
+    align-content: start;
+    row-gap: responsive(4px, 9px);
   }
 }
