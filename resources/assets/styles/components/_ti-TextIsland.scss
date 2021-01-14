@@ -18,6 +18,10 @@
   p {
     line-height: 1.5;
     padding-bottom: 1.5em;
+
+    &:last-child {
+      padding-bottom: 0;
+    }
   }
 
   // Top colorful bar
