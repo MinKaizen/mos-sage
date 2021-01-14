@@ -1,3 +1,11 @@
 @function z($layer) {
   @return map-get($z-map, $layer);
 }
+
+@function strip-unit($number) {
+  @if type-of($number) == "number" and not unitless($number) {
+    @return $number / ($number * 0 + 1);
+  }
+
+  @return $number;
+}
