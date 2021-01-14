@@ -1,8 +1,7 @@
-@extends('layouts.app')
+@extends('layouts.main')
 
 @section('content')
   @while(have_posts()) @php the_post() @endphp
-    @include('partials.page-header')
-    @include('partials.content-page')
+    @include('partials.pgc-Content')
   @endwhile
 @endsection
