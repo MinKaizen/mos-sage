@@ -107,3 +107,24 @@ add_filter( 'body_class', function( $classes ) {
 
     return $classes;
 });
+
+/**
+ * Add class to nav menu
+ */
+add_filter( 'nav_menu_submenu_css_class', function( $classes ) {
+    $classes[] = 'hdsm-Submenu';
+    return $classes;
+} );
+
+
+/**
+ * Add class to nav menu items
+ */
+add_filter( 'nav_menu_css_class', function( $classes, $item, $args, $depth ) {
+    if ( $depth === 0 ) {
+        $classes[] = 'hdm-Menu_Item';
+    } else {
+        $classes[] = 'hdsm-Submenu_Item';
+    }
+    return $classes;
+}, 10, 4 );
