@@ -1,4 +1,4 @@
-.hd-HeaderLogo {
+.hd-Logo {
   height: 36px;
   width: 40px;
 
@@ -7,7 +7,7 @@
   }
 }
 
-.hd-HeaderLogo-desktop {
+.hd-Logo-desktop {
   display: none;
 
   @include media("xl") {

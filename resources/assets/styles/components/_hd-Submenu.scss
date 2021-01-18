@@ -1,0 +1,37 @@
+// Dropdown container
+.hd-Submenu {
+  background: $color-new-black;
+  position: absolute;
+
+  // Animation properties
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.2s ease-in-out;
+  z-index: z("hd-Submenu");
+}
+
+// Show dropdown on hover
+.hd-Menu_Item:hover > .hd-Submenu {
+  opacity: 1;
+  transform: translateY(60px);
+}
+
+.hd-Submenu_Item {
+  color: white;
+
+  &:hover {
+    @include text-gradient-active-top-menu();
+  }
+
+  a {
+    color: inherit;
+    display: block;
+    padding: 15px;
+    text-decoration: none;
+    white-space: nowrap;
+  }
+}
+
+.hd-Submenu_Item.current-menu-item {
+  @include text-gradient-active-top-menu();
+}

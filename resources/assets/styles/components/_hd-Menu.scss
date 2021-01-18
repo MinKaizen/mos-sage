@@ -1,16 +1,16 @@
-.hd-HeaderNav {
+.hd-Menu {
   display: none;
 }
 
 @include media("md") {
-  .hd-HeaderNav {
+  .hd-Menu {
     display: flex;
     margin: 0;
     padding: 0;
     height: 100%;
   }
 
-  .hd-HeaderNav > .menu-item {
+  .hd-Menu > .menu-item {
     color: white;
     cursor: pointer;
     display: grid;
