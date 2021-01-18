@@ -10,7 +10,7 @@
     height: 100%;
   }
 
-  .hd-Menu > .menu-item {
+  .hd-Menu_Item {
     color: white;
     cursor: pointer;
     display: grid;
@@ -21,7 +21,7 @@
     width: auto;
 
     // Dropdown Arrow for menu items with sub pages
-    &-has-children > a::after {
+    &.menu-item-has-children > a::after {
       $size: 7px;
       $half-size: $size / 2;
 
