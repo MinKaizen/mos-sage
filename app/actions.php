@@ -15,6 +15,18 @@ add_action( 'template_redirect', function() {
 
 
 /**
+ * Register custom menu locations
+ */
+add_action( 'init', __NAMESPACE__ . '\register_menus' );
+function register_menus() {
+    register_nav_menus([
+        'logged_out' => __( 'Logged Out Primary Naviation' ),
+    ]);
+}
+
+
+
+/**
  * Register custom sidebars
  */
 add_action( 'widgets_init', __NAMESPACE__ . '\register_sidebars' );
