@@ -1,11 +1,11 @@
-.glbl-MobileNav {
+.mn-MobileNav {
   overflow: hidden;
   height: 100vh;
   position: fixed;
   top: 0;
   user-select: none;
   width: 0;
-  z-index: z("glbl-MobileNav");
+  z-index: z("mn-MobileNav");
 
   &.is-Active {
     width: 100vh;
@@ -16,13 +16,13 @@
   }
 }
 
-.glbl-MobileNav_Overlay {
+.mn-MobileNav_Overlay {
   background: transparentize($color: $color-new-black, $amount: 0.2);
   height: 100%;
   width: 100%;
 }
 
-.glbl-MobileNav_Drawer {
+.mn-MobileNav_Drawer {
   $width: 250px;
 
   background: $color-new-black;
@@ -40,11 +40,11 @@
   align-content: start;
 }
 
-.glbl-MobileNav.is-Active .glbl-MobileNav_Drawer {
+.mn-MobileNav.is-Active .mn-MobileNav_Drawer {
   left: 0;
 }
 
-.glbl-MobileNav_Drawer_Top {
+.mn-MobileNav_Drawer_Top {
   display: grid;
   grid-template-columns: auto auto;
   justify-content: space-between;
@@ -52,7 +52,7 @@
   padding: 20px;
 }
 
-.glbl-MobileNav_Close {
+.mn-MobileNav_Close {
   // Local variables
   $size: 25px;
   $width: 3px;

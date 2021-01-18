@@ -31,7 +31,7 @@ const components = [
   },
   {
     class: MobileNav_Menu,
-    selector: '.glbl-MobileNav_Menu',
+    selector: '.mn-MobileNav_Menu',
   },
 ]
 
