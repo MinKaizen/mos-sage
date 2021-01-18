@@ -119,7 +119,7 @@ add_filter( 'nav_menu_submenu_css_class', function( $classes, $args, $depth ) {
 
     if ( $args->menu_class == 'hd-Menu' ) {
         $classes[] = 'hd-Submenu';
-    } elseif ( $args->menu_class == 'mm-MobileMenu' ) {
+    } elseif ( $args->menu_class == 'mn-Menu' ) {
         $classes[] = 'mm-Submenu';
     }
 
@@ -142,7 +142,7 @@ add_filter( 'nav_menu_css_class', function( $classes, $item, $args, $depth ) {
         } else {
             $classes[] = 'hd-Submenu_Item';
         }
-    } elseif ( $args->menu_class == 'mm-MobileMenu' ) {
+    } elseif ( $args->menu_class == 'mn-Menu' ) {
         if ( $depth === 0 ) {
             $classes[] = 'mm-Menu_Item';
         } else {
