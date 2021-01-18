@@ -1,3 +1,4 @@
+const DEFAULT_CLASS = 'UpgradeButton'
 const LEVELS = {
   'monthly_partner': {
     linkText: 'Upgrade to Partner',
@@ -37,6 +38,7 @@ function init(menuItem) {
 
   const menuLink = menuItem.querySelector('a')
   menuItem.classList.add(LEVELS[nextLevel].class)
+  menuItem.classList.add(DEFAULT_CLASS)
   menuLink.textContent = LEVELS[nextLevel].linkText
   menuLink.setAttribute('href', LEVELS[nextLevel].link)
 }
