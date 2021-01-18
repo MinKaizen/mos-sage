@@ -109,22 +109,46 @@ add_filter( 'body_class', function( $classes ) {
 });
 
 /**
- * Add class to nav menu
+ * Add class to submenus
  */
-add_filter( 'nav_menu_submenu_css_class', function( $classes ) {
-    $classes[] = 'hdsm-Submenu';
+add_filter( 'nav_menu_submenu_css_class', function( $classes, $args, $depth ) {
+    // If menu_class is not set, do nothing
+    if ( !isset( $args->menu_class ) ) {
+        return $classes;
+    }
+
+    if ( $args->menu_class == 'hd-Menu' ) {
+        $classes[] = 'hd-Submenu';
+    } elseif ( $args->menu_class == 'mm-MobileMenu' ) {
+        $classes[] = 'mm-Submenu';
+    }
+
     return $classes;
-} );
+}, 10, 3 );
 
 
 /**
  * Add class to nav menu items
  */
 add_filter( 'nav_menu_css_class', function( $classes, $item, $args, $depth ) {
-    if ( $depth === 0 ) {
-        $classes[] = 'hdm-Menu_Item';
-    } else {
-        $classes[] = 'hdsm-Submenu_Item';
+    // If menu_class is not set, do nothing
+    if ( !isset( $args->menu_class ) ) {
+        return $classes;
     }
+
+    if ( $args->menu_class == 'hd-Menu' ) {
+        if ( $depth === 0 ) {
+            $classes[] = 'hd-Menu_Item';
+        } else {
+            $classes[] = 'hd-Submenu_Item';
+        }
+    } elseif ( $args->menu_class == 'mm-MobileMenu' ) {
+        if ( $depth === 0 ) {
+            $classes[] = 'mm-Menu_Item';
+        } else {
+            $classes[] = 'mm-Submenu_Item';
+        }
+    }
+
     return $classes;
 }, 10, 4 );
