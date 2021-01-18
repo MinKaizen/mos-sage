@@ -5,61 +5,8 @@
 .mn-Menu_Item {
   position: relative;
 
-  > a {
-    color: white;
-    cursor: pointer;
-    display: block;
-    font-size: $font-size-body;
-    padding: 20px;
-    text-decoration: none;
-  }
-
-  > a:hover,
-  &.current-menu-item > a,
-  &.current-menu-ancestor > a {
-    @include text-gradient-active-top-menu();
-  }
-
-  // Current Menu Item Indicator
-  &.current-menu-item::before,
-  &.current-menu-ancestor::before {
-    background: $gradient-active-top-menu-vertical;
-    border-radius: 0 5px 5px 0;
-    content: "";
-    display: block;
-    height: 100%;
-    left: 0;
-    position: absolute;
-    top: 0;
-    width: 6px;
-  }
-
-  // Upgrade buttons
-  &.UpgradeButton-monthly_partner > a {
-    background: $gradient-promotion1;
-  }
-
-  &.UpgradeButton-yearly_partner > a {
-    background: $gradient-promotion2;
-  }
-
-  &.UpgradeButton-lifetime_partner > a {
-    background: $gradient-promotion2;
-  }
-
-  &.UpgradeButton-coaching > a {
-    background: $gradient-promotion2;
-  }
-
-  &.UpgradeButton > a:hover {
-    // #HACK: undo text gradient shenanigans
-    -webkit-background-clip: unset;
-    // #HACK: undo text gradient shenanigans
-    -webkit-text-fill-color: unset;
-  }
-
   // Dropdown Arrow for menu items with sub pages
-  &-has-children > a::after {
+  &-has-children > .mn-Menu_Item_Link::after {
     $size: 7px;
     $half-size: $size / 2;
 
@@ -71,5 +18,62 @@
     width: $size;
     margin: 0 3px;
     transform: rotate(0.125turn) translateY(-$half-size);
+  }
+}
+
+// Links
+.mn-Menu_Item_Link {
+  color: white;
+  cursor: pointer;
+  display: block;
+  font-size: $font-size-body;
+  padding: 20px;
+  text-decoration: none;
+}
+
+// Current and hover effects
+.mn-Menu_Item_Link:hover,
+.mn-Menu_Item-current > .mn-Menu_Item_Link,
+.mn-Menu_Item-current-ancestor > .mn-Menu_Item_Link {
+  @include text-gradient-active-top-menu();
+}
+
+// Current Menu Item Indicator
+.mn-Menu_Item-current::before,
+.mn-Menu_Item-current-ancestor::before {
+  background: $gradient-active-top-menu-vertical;
+  border-radius: 0 5px 5px 0;
+  content: "";
+  display: block;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 6px;
+}
+
+// Upgrade buttons
+.mn-Menu_Item.UpgradeButton {
+  &-monthly_partner > .mn-Menu_Item_Link {
+    background: $gradient-promotion1;
+  }
+
+  &-yearly_partner > .mn-Menu_Item_Link {
+    background: $gradient-promotion2;
+  }
+
+  &-lifetime_partner > .mn-Menu_Item_Link {
+    background: $gradient-promotion2;
+  }
+
+  &-coaching > .mn-Menu_Item_Link {
+    background: $gradient-promotion2;
+  }
+
+  & > .mn-Menu_Item_Link:hover {
+    // #HACK: undo text gradient shenanigans
+    -webkit-background-clip: unset;
+    // #HACK: undo text gradient shenanigans
+    -webkit-text-fill-color: unset;
   }
 }

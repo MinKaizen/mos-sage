@@ -15,7 +15,12 @@
     </div>
 
     @if (has_nav_menu($menu_slug))
-      {!! wp_nav_menu(['theme_location' => $menu_slug, 'menu_class' => 'mn-Menu', 'container' => false]) !!}
+      {!! wp_nav_menu([
+        'theme_location' => $menu_slug,
+        'menu_class' => 'mn-Menu',
+        'container' => false,
+        'walker' => $mobile_nav_menu_walker,
+      ]) !!}
     @endif
 
   </div>
