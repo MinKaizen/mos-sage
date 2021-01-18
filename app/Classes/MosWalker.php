@@ -92,6 +92,25 @@ class MosWalker extends Walker_Nav_Menu {
 		 * @param int      $depth   Depth of menu item. Used for padding.
 		 */
         $classes = apply_filters( 'nav_menu_css_class', $classes, $item, $args, $depth );
+
+        // Replace current-menu-item class
+        $classes = array_map( function( $class_name ) use ($depth) {
+            if ( $class_name == 'current-menu-item' ) {
+                $base_class_name = $depth == 0 ? $this->class_names['menu_item'] : $this->class_names['submenu_item'];
+                $class_name = "$base_class_name-current";
+            }
+            return $class_name;
+        }, $classes );
+
+        // Replace current-menu-ancestor class
+        $classes = array_map( function( $class_name ) use ($depth) {
+            if ( $class_name == 'current-menu-ancestor' ) {
+                $base_class_name = $depth == 0 ? $this->class_names['menu_item'] : $this->class_names['submenu_item'];
+                $class_name = "$base_class_name-current-ancestor";
+            }
+            return $class_name;
+        }, $classes );
+
         $classes = array_map( function( $class_name ) use ($depth) {
             $wp_default_class_name = 'menu-item';
             $new_class_name = $depth == 0 ? $this->class_names['menu_item'] : $this->class_names['submenu_item'];
