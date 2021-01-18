@@ -3,6 +3,8 @@
 namespace App\Controllers;
 
 use Sober\Controller\Controller;
+use App\Classes\HeaderMenuWalker;
+use App\Classes\MobileNavMenuWalker;
 
 class App extends Controller
 {
@@ -34,5 +36,15 @@ class App extends Controller
     public function mosSidebar(): string {
         $level = apply_filters( 'mos_user_level_slug', '' );
         return $level . '_sidebar';
+    }
+
+    public function headerMenuWalker() {
+        $walker = new HeaderMenuWalker();
+        return $walker;
+    }
+
+    public function mobileNavMenuWalker() {
+        $walker = new MobileNavMenuWalker();
+        return $walker;
     }
 }
