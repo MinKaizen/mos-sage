@@ -43,9 +43,9 @@ add_action('after_setup_theme', function () {
      * Register navigation menus
      * @link https://developer.wordpress.org/reference/functions/register_nav_menus/
      */
-    register_nav_menus([
-        'primary_navigation' => __('Primary Navigation', 'sage')
-    ]);
+    // register_nav_menus([
+    //     'primary_navigation' => __('Primary Navigation', 'sage')
+    // ]);
     register_nav_menus([
         'logged_out' => __( 'Logged Out Primary Naviation' ),
     ]);
