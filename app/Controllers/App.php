@@ -60,7 +60,7 @@ class App extends Controller
         $user = User::current();
 
         if ( ! $user->exists() ) {
-            $menu_slug = 'logged_out';
+            $menu_slug = 'top';
         } elseif ( $user->has_access( 'monthly_partner' ) ) {
             $menu_slug = 'top_partner';
         } else {

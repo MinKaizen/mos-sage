@@ -47,7 +47,7 @@ add_action('after_setup_theme', function () {
     //     'primary_navigation' => __('Primary Navigation', 'sage')
     // ]);
     register_nav_menus([
-        'logged_out' => __( 'Logged Out Primary Naviation' ),
+        'top' => __( 'Top (Logged Out)' ),
     ]);
     register_nav_menus([
         'footer' => __( 'Footer' ),
