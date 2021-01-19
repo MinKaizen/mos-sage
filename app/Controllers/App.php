@@ -49,7 +49,7 @@ class App extends Controller
         return $walker;
     }
 
-    public function FooterMenuWalker() {
+    public function footerMenuWalker() {
         $walker = new FooterMenuWalker();
         return $walker;
     }
