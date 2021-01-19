@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace App\Controllers;
 
@@ -8,172 +10,181 @@ use MOS\Affiliate\User;
 class SingleSfwdTopic extends Controller
 {
 
-  protected $acf = true;
+    protected $acf = true;
 
 
-  public function courseProgress(): array {
-    $user = User::current();
-    $course_id = $this->courseId();
-    $progress = $user->get_course_progress( $course_id );
-    return $progress;
-  }
+    public function courseProgress(): array
+    {
+        $user = User::current();
+        $course_id = $this->courseId();
+        $progress = $user->get_course_progress($course_id);
+        return $progress;
+    }
 
 
-  public function courseId(): int {
-    $post = get_post();
-    $course_id = (int) get_post_meta( $post->ID, 'course_id', true );
-    return $course_id;
-  }
+    public function courseId(): int
+    {
+        $post = get_post();
+        $course_id = (int) get_post_meta($post->ID, 'course_id', true);
+        return $course_id;
+    }
 
 
-  public function moduleId(): int {
-    $post = get_post();
-    $module_id = (int) get_post_meta( $post->ID, 'lesson_id', true );
-    return $module_id;
-  }
+    public function moduleId(): int
+    {
+        $post = get_post();
+        $module_id = (int) get_post_meta($post->ID, 'lesson_id', true);
+        return $module_id;
+    }
 
 
-  public function lessonId(): int {
-    return (int) get_the_ID();
-  }
+    public function lessonId(): int
+    {
+        return (int) get_the_ID();
+    }
 
 
-  public function courseStructure(): array {
-    $course_id = $this->courseId();
-    // $cache_key = "mos_ld_course_structure_$course_id";
-    // $cached_value = \get_transient( $cache_key );
+    public function courseStructure(): array
+    {
+        $course_id = $this->courseId();
+        // $cache_key = "mos_ld_course_structure_$course_id";
+        // $cached_value = \get_transient( $cache_key );
 
-    // if ( $cached_value !== false ) {
-    //   return $cached_value;
-    // }
+        // if ( $cached_value !== false ) {
+        //   return $cached_value;
+        // }
 
-    $modules = self::get_modules( $course_id );
+        $modules = self::get_modules($course_id);
 
-    // $cache_expiration = \WEEK_IN_SECONDS;
-    // \set_transient( $cache_key, $modules, $cache_expiration );
+        // $cache_expiration = \WEEK_IN_SECONDS;
+        // \set_transient( $cache_key, $modules, $cache_expiration );
 
-    return $modules;
-  }
+        return $modules;
+    }
 
 
-  public function previousLink(): string {
-    $link = '';
-    $lessons = self::flatten_structure( $this->courseStructure() );
+    public function previousLink(): string
+    {
+        $link = '';
+        $lessons = self::flatten_structure($this->courseStructure());
 
-    foreach ( $lessons as $index => $lesson ) {
-      if ( $lesson->ID == \get_the_ID() ) {
-        if ( isset( $lessons[$index - 1] ) ) {
-          $link = $lessons[$index - 1]->link;
+        foreach ($lessons as $index => $lesson) {
+            if ($lesson->ID == \get_the_ID()) {
+                if (isset($lessons[$index - 1])) {
+                    $link = $lessons[$index - 1]->link;
+                }
+                break;
+            }
         }
-        break;
-      }
+
+        return $link;
     }
 
-    return $link;
-  }
 
+    public function nextLink(): string
+    {
+        $link = '';
+        $lessons = self::flatten_structure($this->courseStructure());
 
-  public function nextLink(): string {
-    $link = '';
-    $lessons = self::flatten_structure( $this->courseStructure() );
-
-    foreach ( $lessons as $index => $lesson ) {
-      if ( $lesson->ID == \get_the_ID() ) {
-        if ( isset( $lessons[$index + 1] ) ) {
-          $link = $lessons[$index + 1]->link;
+        foreach ($lessons as $index => $lesson) {
+            if ($lesson->ID == \get_the_ID()) {
+                if (isset($lessons[$index + 1])) {
+                    $link = $lessons[$index + 1]->link;
+                }
+                break;
+            }
         }
-        break;
-      }
+
+        return $link;
     }
 
-    return $link;
-  }
 
+    private static function is_lesson_complete(int $lesson_id): bool
+    {
+        $user_id = \get_current_user_id();
+        $meta_key = '_sfwd-course_progress';
+        $progress = get_user_meta($user_id, $meta_key, true);
 
-  private static function is_lesson_complete( int $lesson_id ): bool {
-    $user_id = \get_current_user_id();
-    $meta_key = '_sfwd-course_progress';
-    $progress = get_user_meta( $user_id, $meta_key, true );
-
-    if ( empty( $progress ) ) {
-        return false;
-    }
-
-    $is_complete = (bool) \App\array_find_recursive( $lesson_id, $progress );
-    return $is_complete;
-  }
-
-
-  private static function get_modules( int $course_id ): array {
-    $args = [
-      'post_type' => 'sfwd-lessons',
-      'order' => 'ASC',
-      'orderby' => 'menu_order',
-      'meta_query' => [
-        [
-          'key' => 'course_id',
-          'value' => $course_id,
-        ],
-      ],
-    ];
-
-    $modules_query = new \WP_Query( $args );
-    $modules = $modules_query->posts;
-
-    foreach ( $modules as &$module ) {
-      $module->link = \get_permalink( $module->ID );
-      $module->lessons = self::get_lessons( $module->ID );
-
-      // Set $module->is_complete
-      $module->is_complete = true;
-      foreach ( $module->lessons as $lesson ) {
-        if ( !$lesson->is_complete ) {
-            $module->is_complete = false;
-            break;
+        if (empty($progress)) {
+            return false;
         }
-      }
+
+        $is_complete = (bool) \App\array_find_recursive($lesson_id, $progress);
+        return $is_complete;
     }
 
-    return $modules;
-  }
 
+    private static function get_modules(int $course_id): array
+    {
+        $args = [
+            'post_type' => 'sfwd-lessons',
+            'order' => 'ASC',
+            'orderby' => 'menu_order',
+            'meta_query' => [
+                [
+                    'key' => 'course_id',
+                    'value' => $course_id,
+                ],
+            ],
+        ];
 
-  private static function get_lessons( int $module_id ): array {
-    $args = [
-      'post_type' => 'sfwd-topic',
-      'order' => 'ASC',
-      'orderby' => 'menu_order',
-      'meta_query' => [
-        [
-          'key' => 'lesson_id',
-          'value' => $module_id,
-        ],
-      ],
-    ];
+        $modules_query = new \WP_Query($args);
+        $modules = $modules_query->posts;
 
-    $lessons_query = new \WP_Query( $args );
-    $lessons = $lessons_query->posts;
+        foreach ($modules as &$module) {
+            $module->link = \get_permalink($module->ID);
+            $module->lessons = self::get_lessons($module->ID);
 
-    foreach ( $lessons as &$lesson ) {
-      $lesson->link = \get_permalink( $lesson->ID );
-      $lesson->is_complete = self::is_lesson_complete( $lesson->ID );
+            // Set $module->is_complete
+            $module->is_complete = true;
+            foreach ($module->lessons as $lesson) {
+                if (!$lesson->is_complete) {
+                    $module->is_complete = false;
+                    break;
+                }
+            }
+        }
+
+        return $modules;
     }
 
-    return $lessons;
-  }
 
+    private static function get_lessons(int $module_id): array
+    {
+        $args = [
+            'post_type' => 'sfwd-topic',
+            'order' => 'ASC',
+            'orderby' => 'menu_order',
+            'meta_query' => [
+                [
+                    'key' => 'lesson_id',
+                    'value' => $module_id,
+                ],
+            ],
+        ];
 
-  private static function flatten_structure( array $course_structure ): array {
-    $flattened_structure = [];
+        $lessons_query = new \WP_Query($args);
+        $lessons = $lessons_query->posts;
 
-    foreach ( $course_structure as $module ) {
-      foreach ( $module->lessons as $lesson ) {
-        $flattened_structure[] = $lesson;
-      }
+        foreach ($lessons as &$lesson) {
+            $lesson->link = \get_permalink($lesson->ID);
+            $lesson->is_complete = self::is_lesson_complete($lesson->ID);
+        }
+
+        return $lessons;
     }
 
-    return $flattened_structure;
-  }
 
+    private static function flatten_structure(array $course_structure): array
+    {
+        $flattened_structure = [];
 
+        foreach ($course_structure as $module) {
+            foreach ($module->lessons as $lesson) {
+                $flattened_structure[] = $lesson;
+            }
+        }
+
+        return $flattened_structure;
+    }
 }
