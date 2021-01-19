@@ -46,6 +46,12 @@ add_action('after_setup_theme', function () {
     register_nav_menus([
         'primary_navigation' => __('Primary Navigation', 'sage')
     ]);
+    register_nav_menus([
+        'logged_out' => __( 'Logged Out Primary Naviation' ),
+    ]);
+    register_nav_menus([
+        'footer' => __( 'Footer' ),
+    ]);
 
     /**
      * Enable post thumbnails

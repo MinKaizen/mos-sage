@@ -12,17 +12,3 @@ add_action( 'template_redirect', function() {
     redirect_module( \get_the_ID() );
   }
 });
-
-
-/**
- * Register custom menu locations
- */
-add_action( 'init', __NAMESPACE__ . '\register_menus' );
-function register_menus() {
-    register_nav_menus([
-        'logged_out' => __( 'Logged Out Primary Naviation' ),
-    ]);
-    register_nav_menus([
-        'footer' => __( 'Footer' ),
-    ]);
-}
