@@ -5,9 +5,10 @@
 
   // Animation properties
   max-height: 0;
+  max-width: 0;
   overflow: hidden;
   opacity: 0;
-  transform: translateY(30px);
+  top: $hd-Header__height;
   transition: all 0.2s ease-in-out;
   z-index: z("hd-Submenu");
 }
@@ -17,7 +18,7 @@
   opacity: 1;
   overflow: unset;
   max-height: 99999px;
-  transform: translateY(60px);
+  max-width: 99999px;
 }
 
 .hd-Submenu_Item {
