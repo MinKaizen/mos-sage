@@ -46,6 +46,8 @@ class SingleSfwdTopic extends Controller
 
     public function courseStructure(): array
     {
+        $access_list = User::current()->get_access_list();
+        $access_list[] = '';
         $course_id = $this->courseId();
         // $cache_key = "mos_ld_course_structure_$course_id";
         // $cached_value = \get_transient( $cache_key );
@@ -54,7 +56,7 @@ class SingleSfwdTopic extends Controller
         //   return $cached_value;
         // }
 
-        $modules = self::get_modules($course_id);
+        $modules = self::get_modules($course_id, $access_list);
 
         // $cache_expiration = \WEEK_IN_SECONDS;
         // \set_transient( $cache_key, $modules, $cache_expiration );
@@ -114,16 +116,29 @@ class SingleSfwdTopic extends Controller
     }
 
 
-    private static function get_modules(int $course_id): array
+    private static function get_modules(int $course_id, array $access_list): array
     {
         $args = [
             'post_type' => 'sfwd-lessons',
             'order' => 'ASC',
             'orderby' => 'menu_order',
             'meta_query' => [
+                'relation' => 'AND',
                 [
                     'key' => 'course_id',
                     'value' => $course_id,
+                ],
+                [
+                    'relation' => 'OR',
+                    [
+                        'key' => 'access_level',
+                        'compare' => 'NOT EXISTS',
+                    ],
+                    [
+                        'key' => 'access_level',
+                        'value' => $access_list,
+                        'compare' => 'IN',
+                    ],
                 ],
             ],
         ];
@@ -133,7 +148,7 @@ class SingleSfwdTopic extends Controller
 
         foreach ($modules as &$module) {
             $module->link = \get_permalink($module->ID);
-            $module->lessons = self::get_lessons($module->ID);
+            $module->lessons = self::get_lessons($module->ID, $access_list);
 
             // Set $module->is_complete
             $module->is_complete = true;
@@ -149,16 +164,29 @@ class SingleSfwdTopic extends Controller
     }
 
 
-    private static function get_lessons(int $module_id): array
+    private static function get_lessons(int $module_id, array $access_list): array
     {
         $args = [
             'post_type' => 'sfwd-topic',
             'order' => 'ASC',
             'orderby' => 'menu_order',
             'meta_query' => [
+                'relation' => 'AND',
                 [
                     'key' => 'lesson_id',
                     'value' => $module_id,
+                ],
+                [
+                    'relation' => 'OR',
+                    [
+                        'key' => 'access_level',
+                        'compare' => 'NOT EXISTS',
+                    ],
+                    [
+                        'key' => 'access_level',
+                        'value' => $access_list,
+                        'compare' => 'IN',
+                    ],
                 ],
             ],
         ];
