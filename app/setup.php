@@ -52,6 +52,12 @@ add_action('after_setup_theme', function () {
     register_nav_menus([
         'footer' => __( 'Footer' ),
     ]);
+    register_nav_menus([
+        'top_free' => __( 'Top (Free)' ),
+    ]);
+    register_nav_menus([
+        'top_partner' => __( 'Top (Partner)' ),
+    ]);
 
     /**
      * Enable post thumbnails
