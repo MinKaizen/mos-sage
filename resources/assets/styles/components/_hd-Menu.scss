@@ -19,6 +19,7 @@
     list-style: none;
     position: relative;
     width: auto;
+    z-index: z("hd-Menu_Item");
   }
 
   // Dropdown Arrow for menu items with sub pages
