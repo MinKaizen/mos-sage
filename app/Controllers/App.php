@@ -6,6 +6,7 @@ use Sober\Controller\Controller;
 use App\Classes\HeaderMenuWalker;
 use App\Classes\MobileNavMenuWalker;
 use App\Classes\FooterMenuWalker;
+use MOS\Affiliate\User;
 
 class App extends Controller
 {
@@ -52,5 +53,20 @@ class App extends Controller
     public function footerMenuWalker() {
         $walker = new FooterMenuWalker();
         return $walker;
+    }
+
+    public function topMenuSlug() {
+        // Note: check setup.php for menu slugs
+        $user = User::current();
+
+        if ( ! $user->exists() ) {
+            $menu_slug = 'logged_out';
+        } elseif ( $user->has_access( 'monthly_partner' ) ) {
+            $menu_slug = 'top_partner';
+        } else {
+            $menu_slug = 'top_free';
+        }
+
+        return $menu_slug;
     }
 }
