@@ -5,6 +5,7 @@ namespace App\Controllers;
 use Sober\Controller\Controller;
 use App\Classes\HeaderMenuWalker;
 use App\Classes\MobileNavMenuWalker;
+use App\Classes\FooterMenuWalker;
 
 class App extends Controller
 {
@@ -45,6 +46,11 @@ class App extends Controller
 
     public function mobileNavMenuWalker() {
         $walker = new MobileNavMenuWalker();
+        return $walker;
+    }
+
+    public function FooterMenuWalker() {
+        $walker = new FooterMenuWalker();
         return $walker;
     }
 }
