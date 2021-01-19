@@ -4,6 +4,8 @@
   position: absolute;
 
   // Animation properties
+  max-height: 0;
+  overflow: hidden;
   opacity: 0;
   transform: translateY(30px);
   transition: all 0.2s ease-in-out;
@@ -13,6 +15,8 @@
 // Show dropdown on hover
 .hd-Menu_Item:hover > .hd-Submenu {
   opacity: 1;
+  overflow: unset;
+  max-height: 99999px;
   transform: translateY(60px);
 }
 
