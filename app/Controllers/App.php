@@ -59,9 +59,16 @@ class App extends Controller
         // Note: check setup.php for menu slugs
         $user = User::current();
 
+        $partner_levels = [
+            'monthly_partner',
+            'yearly_partner',
+            'lifetime_partner',
+            'coaching',
+        ];
+
         if ( ! $user->exists() ) {
             $menu_slug = 'top';
-        } elseif ( $user->has_access( 'monthly_partner' ) ) {
+        } elseif ( array_intersect( $partner_levels, $user->get_access_list() ) ) {
             $menu_slug = 'top_partner';
         } else {
             $menu_slug = 'top_free';
