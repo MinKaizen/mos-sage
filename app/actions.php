@@ -22,6 +22,9 @@ function register_menus() {
     register_nav_menus([
         'logged_out' => __( 'Logged Out Primary Naviation' ),
     ]);
+    register_nav_menus([
+        'footer' => __( 'Footer' ),
+    ]);
 }
 
 
