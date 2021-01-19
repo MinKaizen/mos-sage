@@ -2,23 +2,23 @@
 .hd-Submenu {
   background: $color-new-black;
   position: absolute;
+  top: $hd-Header__height;
 
   // Animation properties
   max-height: 0;
   max-width: 0;
-  overflow: hidden;
   opacity: 0;
-  top: $hd-Header__height;
+  overflow: hidden;
   transition: all 0.2s ease-in-out;
   z-index: z("hd-Submenu");
 }
 
 // Show dropdown on hover
 .hd-Menu_Item:hover > .hd-Submenu {
-  opacity: 1;
-  overflow: unset;
   max-height: 99999px;
   max-width: 99999px;
+  opacity: 1;
+  overflow: unset;
 }
 
 .hd-Submenu_Item {
