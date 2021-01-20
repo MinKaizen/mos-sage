@@ -52,7 +52,8 @@
     color: inherit;
     display: block;
     margin: auto;
-    padding: 15px;
+    padding: responsive(5px, 15px);
+    font-size: responsive(14px, 16px);
     text-decoration: none;
     width: auto;
   }
