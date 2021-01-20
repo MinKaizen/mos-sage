@@ -216,4 +216,11 @@ class SingleSfwdTopic extends Controller
         return $flattened_structure;
     }
 
+
+    public function showProgress(): bool {
+        $course_id = $this->courseId();
+        $show_progress = (bool) get_field( 'show_progress', $course_id );
+        return $show_progress;
+    }
+
 }
