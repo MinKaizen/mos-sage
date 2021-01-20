@@ -1,22 +1,22 @@
 const DEFAULT_CLASS = 'UpgradeButton'
 const LEVELS = {
   'monthly_partner': {
-    linkText: 'Upgrade to Partner',
+    linkText: 'Become a Partner',
     link: '/monthly-partner',
     class: 'UpgradeButton-monthly_partner',
   },
   'yearly_partner': {
-    linkText: 'Upgrade to Yearly Partner',
+    linkText: 'Yearly Partner',
     link: '/yearly-partner',
     class: 'UpgradeButton-yearly_partner',
   },
   'lifetime_partner': {
-    linkText: 'Upgrade to Lifetime Partner',
+    linkText: 'Lifetime Partner',
     link: '/lifetime-partner',
     class: 'UpgradeButton-lifetime_partner',
   },
   'coaching': {
-    linkText: 'Upgrade to Coaching',
+    linkText: 'Personal Coaching',
     link: '/coaching',
     class: 'UpgradeButton-coaching',
   },
