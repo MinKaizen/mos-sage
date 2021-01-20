@@ -193,4 +193,18 @@ add_action('after_setup_theme', function () {
     sage('blade')->compiler()->directive('new_tab', function () {
         return 'target="_blank" rel="noopener noreferrer"';
     });
+
+    /**
+     * Create @repeater() Blade directive
+     */
+    sage('blade')->compiler()->directive('repeater', function ($slug) {
+        return "<?php while(have_rows($slug)): the_row(); ?>";
+    });
+
+    /**
+     * Create @endrepeater() Blade directive
+     */
+    sage('blade')->compiler()->directive('endrepeater', function () {
+        return '<?php endwhile; ?>';
+    });
 });
