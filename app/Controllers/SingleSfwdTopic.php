@@ -216,7 +216,7 @@ class SingleSfwdTopic extends Controller
         return $flattened_structure;
     }
 
-    public function style(): string {
+    public function course_style(): string {
         $course_id = $this->courseId();
         $style = get_field('style', $course_id);
         $style = empty( $style ) ? 'default' : $style;
