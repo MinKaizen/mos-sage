@@ -207,4 +207,18 @@ add_action('after_setup_theme', function () {
     sage('blade')->compiler()->directive('endrepeater', function () {
         return '<?php endwhile; ?>';
     });
+
+    /**
+     * Create @ifrepeater() Blade directive
+     */
+    sage('blade')->compiler()->directive('ifrepeater', function ($slug) {
+        return "<?php if(have_rows($slug)): ?>";
+    });
+
+    /**
+     * Create @endifrepeater() Blade directive
+     */
+    sage('blade')->compiler()->directive('endifrepeater', function ($slug) {
+        return "<?php endif; ?>";
+    });
 });
