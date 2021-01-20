@@ -2,7 +2,7 @@
 
   {{-- Action Plan --}}
   @if(isset($action_plan) && $action_plan)
-    @include('partials.ld.ldap-ActionPlan', ['action_plan' => $action_plan])
+    @include('partials.ld.ldap-ActionPlan')
   @endif
 
   {{-- Text Island --}}
