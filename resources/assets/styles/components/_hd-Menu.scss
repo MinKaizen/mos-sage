@@ -70,7 +70,7 @@
   // Upgrade buttons
   .hd-Menu_Item.UpgradeButton > a {
     border-radius: 10px 10px 0 10px;
-    transition: all 0.3s ease-out;
+    transition: transform 0.3s ease-out;
   }
 
   .hd-Menu_Item.UpgradeButton-monthly_partner > .hd-Menu_Item_Link {
