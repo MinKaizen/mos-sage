@@ -6,8 +6,6 @@
   z-index: z("hd-Submenu");
 
   // Animation properties
-  max-height: 0;
-  max-width: 0;
   opacity: 0;
   overflow: hidden;
   transform: translate(-5px, -15px);
@@ -16,8 +14,6 @@
 
 // Show dropdown on hover
 .hd-Menu_Item:hover > .hd-Submenu {
-  max-height: 99999px;
-  max-width: 99999px;
   opacity: 1;
   overflow: unset;
   transform: translate(0, 0);
