@@ -3,7 +3,7 @@
   box-shadow: $shadow-shadow1;
   display: grid;
   height: $hd-Header__height;
-  padding: 0 30px 0 20px;
+  padding: 0 responsive(20px, 50px, breakpoint("lg")) 0 responsive(20px, 30px, breakpoint("lg"));
   user-select: none;
   z-index: z("hd-Header");
 
@@ -11,8 +11,4 @@
   align-items: center;
   grid-template-columns: auto auto;
   justify-content: space-between;
-
-  @include media("md") {
-    padding: 0 50px 0 30px;
-  }
 }
