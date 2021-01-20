@@ -186,4 +186,11 @@ add_action('after_setup_theme', function () {
     sage('blade')->compiler()->directive('asset', function ($asset) {
         return "<?= " . __NAMESPACE__ . "\\asset_path({$asset}); ?>";
     });
+
+    /**
+     * Create @new_tab() Blade directive
+     */
+    sage('blade')->compiler()->directive('new_tab', function () {
+        return 'target="_blank" rel="noopener noreferrer"';
+    });
 });
