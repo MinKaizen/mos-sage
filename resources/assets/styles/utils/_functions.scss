@@ -10,7 +10,11 @@
   @return $number;
 }
 
-@function responsive($min, $max, $min-vp: map-get($breakpoints, "sm"), $max-vp: map-get($breakpoints, "xl")) {
+@function breakpoint($breakpoint-name) {
+  @return map-get($breakpoints, $breakpoint-name);
+}
+
+@function responsive($min, $max, $min-vp: breakpoint("sm"), $max-vp: breakpoint("xl")) {
   $range: strip-unit($max - $min);
   $range-vp: strip-unit($max-vp - $min-vp);
 
