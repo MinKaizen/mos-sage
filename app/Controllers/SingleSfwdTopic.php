@@ -224,7 +224,7 @@ class SingleSfwdTopic extends Controller
     }
 
 
-    public function module_indicator(): string {
+    public function moduleIndicator(): string {
         $course_id = $this->courseId();
         $module_indicator = (string) get_field( 'module_indicator', $course_id );
         return $module_indicator;
