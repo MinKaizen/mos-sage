@@ -58,6 +58,7 @@
 .ldfaq-FAQ_Question {
   align-items: center;
   border-bottom: 1px solid $color-light-charcoal;
+  cursor: pointer;
   display: grid;
   font-size: $island-font-size-h2;
   grid-template-columns: auto 1fr auto;
