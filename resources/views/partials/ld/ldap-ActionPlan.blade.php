@@ -1,4 +1,4 @@
-<div class="ldap-ActionPlan">
+<div class="ldap-ActionPlan ldap-ActionPlan-{{ $island_color }}">
 
   <h2 class="ldap-ActionPlan_Title">Action Plan</h2>
 
