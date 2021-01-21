@@ -14,7 +14,7 @@
 
   {{-- FAQ --}}
   @if(isset($faq) && $faq)
-    @include('partials.ld-ldfaq-FAQ', ['faq' => $faq])
+    @include('partials.ld-ldfaq-FAQ')
   @endif
 
 </div>
