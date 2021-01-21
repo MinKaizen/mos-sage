@@ -16,7 +16,7 @@
 
   @if($append_complete)
     <section class="ldap-ActionItem">
-      <img class="ldap_ActionItem_Checkbox" src="@asset('images/icon-unticked.png')">
+      <img class="ldap-ActionItem_Checkbox" src="@asset('images/icon-unticked.png')">
       <h3 class="ldap-ActionItem_Title">Complete</h3>
       <hr class="ldap-ActionItem_Divider">
       <p class="ldap-ActionItem_Description">Once you're done, mark this lesson as complete!</p>
