@@ -5,6 +5,7 @@
   $padding-v: 15px;
 
   background: $gradient-button-red;
+  border: none;
   border-radius: responsive($border-radius * $mobile-scale, $border-radius);
   color: $color-white;
   cursor: pointer;
