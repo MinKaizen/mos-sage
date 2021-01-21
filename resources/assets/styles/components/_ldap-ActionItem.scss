@@ -6,7 +6,7 @@
     "check    title         title"
     "divider  divider       divider"
     "_        description   cta";
-  row-gap: 15px;
+  row-gap: responsive(10px, 15px);
 }
 
 .ldap-ActionItem_Checkbox {
