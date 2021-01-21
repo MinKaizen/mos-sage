@@ -237,4 +237,11 @@ class SingleSfwdTopic extends Controller
         return $append_complete;
     }
 
+
+    public function islandColor(): string {
+        $course_id = $this->courseId();
+        $island_color = (string) get_field( 'island_color', $course_id );
+        return $island_color;
+    }
+
 }
