@@ -1,3 +1,35 @@
 .bt-Button {
-  //
+  $border-radius: 10px;
+  $mobile-scale: 0.5;
+  $padding-h: 30px;
+  $padding-v: 15px;
+
+  background: $gradient-button-red;
+  border-radius: responsive($border-radius * $mobile-scale, $border-radius);
+  color: $color-white;
+  cursor: pointer;
+  display: inline-block;
+  font-family: $font-default;
+  font-weight: normal;
+  font-size: $font-size-body;
+  padding: responsive($padding-v * $mobile-scale, $padding-v) responsive($padding-h * $mobile-scale, $padding-h);
+  text-align: center;
+  text-decoration: none;
+  width: auto;
+}
+
+.bt-Button-red {
+  background: $gradient-button-red;
+}
+
+.bt-Button-green {
+  background: $gradient-button-green;
+}
+
+.bt-Button-purple {
+  background: $gradient-button-purple;
+}
+
+.bt-Button-blue {
+  background: $gradient-button-blue;
 }
