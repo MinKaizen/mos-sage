@@ -1,13 +1,8 @@
 .ldfaq-FAQ {
-  $top-bar-height: responsive(30px, 45px);
-  $padding: responsive(30px, 50px);
-  $padding-top: calc(#{$top-bar-height} + 10px);
-
   background: transparentize($color: $color-textbox-black, $amount: 0.15);
-  border-radius: 10px;
+  border-radius: $island-border-radius;
   display: grid;
-  padding: $padding;
-  padding-top: $padding-top;
+  padding: $island-padding;
   position: relative;
   row-gap: 15px;
 
@@ -16,9 +11,9 @@
     $oversize: 10px;
 
     content: "";
-    border-radius: 10px;
+    border-radius: $island-border-radius;
     display: block;
-    height: $top-bar-height;
+    height: $island-top-bar-height;
     left: 0 - $oversize;
     position: absolute;
     top: 0;
@@ -35,23 +30,23 @@
 }
 
 .ldfaq-FAQ_Title {
-  font-size: responsive(18px, 24px);
+  font-size: $island-font-size-h1;
   font-weight: bold;
 }
 
 .ldfaq-FAQ_List {
-  border-radius: 10px;
+  border-radius: $island-border-radius;
 }
 
 .ldfaq-FAQ_Item {
   border-bottom: 1px solid $color-light-charcoal;
 
   &:first-child {
-    border-radius: 10px 10px 0 0;
+    border-radius: $island-border-radius $island-border-radius 0 0;
   }
 
   &:last-child {
-    border-radius: 0 0 10px 10px;
+    border-radius: 0 0 $island-border-radius $island-border-radius;
     border-bottom: none;
   }
 
@@ -80,7 +75,7 @@
   align-items: center;
   border-bottom: 1px solid $color-light-charcoal;
   display: grid;
-  font-size: 18px;
+  font-size: $island-font-size-h2;
   grid-template-columns: auto 1fr auto;
   outline: none;
   padding: 15px;
@@ -89,6 +84,6 @@
 .ldfaq-FAQ_Answer {
   box-sizing: border-box;
   display: inline-block;
-  font-size: 16px;
+  font-size: $island-font-size-body;
   padding: 15px 62px 15px 15px;
 }

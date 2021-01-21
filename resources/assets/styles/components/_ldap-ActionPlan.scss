@@ -1,15 +1,10 @@
 .ldap-ActionPlan {
-  $top-bar-height: responsive(30px, 45px);
-  $padding: responsive(30px, 50px);
-  $padding-top: calc(#{$top-bar-height} + #{responsive(15px, 30px)});
-
   background: transparentize($color: $color-textbox-black, $amount: 0.15);
-  border-radius: 10px;
+  border-radius: $island-border-radius;
   display: grid;
-  padding: $padding;
-  padding-top: $padding-top;
+  padding: $island-padding;
   position: relative;
-  row-gap: responsive(20px, 40px);
+  row-gap: 30px;
 
   // Top colorful bar
   &::before {
@@ -17,11 +12,11 @@
 
     content: "";
     display: block;
-    border-radius: 10px;
+    border-radius: $island-border-radius;
     position: absolute;
     top: 0;
     left: 0 - $oversize;
-    height: $top-bar-height;
+    height: $island-top-bar-height;
     width: calc(100% + (2 * #{$oversize}));
   }
 
@@ -35,6 +30,6 @@
 }
 
 .ldap-ActionPlan_Title {
-  font-size: responsive(18px, 24px);
+  font-size: $island-font-size-h1;
   font-weight: bold;
 }
