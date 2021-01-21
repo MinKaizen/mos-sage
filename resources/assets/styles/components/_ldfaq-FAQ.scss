@@ -1,0 +1,94 @@
+.ldfaq-FAQ {
+  $top-bar-height: responsive(30px, 45px);
+  $padding: responsive(30px, 50px);
+  $padding-top: calc(#{$top-bar-height} + 10px);
+
+  background: transparentize($color: $color-textbox-black, $amount: 0.15);
+  border-radius: 10px;
+  display: grid;
+  padding: $padding;
+  padding-top: $padding-top;
+  position: relative;
+  row-gap: 15px;
+
+  // Top colorful bar
+  &::before {
+    $oversize: 10px;
+
+    content: "";
+    border-radius: 10px;
+    display: block;
+    height: $top-bar-height;
+    left: 0 - $oversize;
+    position: absolute;
+    top: 0;
+    width: calc(100% + (2 * #{$oversize}));
+  }
+
+  &-black::before {
+    background: $color-textbox-header-black;
+  }
+
+  &-shiny-purple::before {
+    background: $gradient-shiny-purple;
+  }
+}
+
+.ldfaq-FAQ_Title {
+  font-size: responsive(18px, 24px);
+  font-weight: bold;
+}
+
+.ldfaq-FAQ_List {
+  border-radius: 10px;
+}
+
+.ldfaq-FAQ_Item {
+  border-bottom: 1px solid $color-light-charcoal;
+
+  &:first-child {
+    border-radius: 10px 10px 0 0;
+  }
+
+  &:last-child {
+    border-radius: 0 0 10px 10px;
+    border-bottom: none;
+  }
+
+  &[open] {
+    background: $color-new-black;
+  }
+}
+
+.ldfaq-FAQ_Question_Plus {
+  display: initial;
+}
+
+.ldfaq-FAQ_Item[open] .ldfaq-FAQ_Question_Plus {
+  display: none;
+}
+
+.ldfaq-FAQ_Question_Minus {
+  display: none;
+}
+
+.ldfaq-FAQ_Item[open] .ldfaq-FAQ_Question_Minus {
+  display: initial;
+}
+
+.ldfaq-FAQ_Question {
+  align-items: center;
+  border-bottom: 1px solid $color-light-charcoal;
+  display: grid;
+  font-size: 18px;
+  grid-template-columns: auto 1fr auto;
+  outline: none;
+  padding: 15px;
+}
+
+.ldfaq-FAQ_Answer {
+  box-sizing: border-box;
+  display: inline-block;
+  font-size: 16px;
+  padding: 15px 62px 15px 15px;
+}
