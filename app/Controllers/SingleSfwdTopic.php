@@ -230,4 +230,11 @@ class SingleSfwdTopic extends Controller
         return $module_indicator;
     }
 
+
+    public function appendComplete(): bool {
+        $course_id = $this->courseId();
+        $append_complete = (bool) get_field( 'append_complete', $course_id );
+        return $append_complete;
+    }
+
 }
