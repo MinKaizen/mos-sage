@@ -5,8 +5,8 @@
       <details class="ldfaq-FAQ_Item">
         <summary class="ldfaq-FAQ_Question">
           {{ $item->question }}
-          <img class="ldfaq-FAQ_Question_Plus" src="@asset('images/icon-plus-solid.svg')">
-          <img class="ldfaq-FAQ_Question_Minus" src="@asset('images/icon-minus-solid.svg')">
+          <img class="ldfaq-FAQ_Question_Plus" src="@asset('images/icon-plus-hollow.svg')">
+          <img class="ldfaq-FAQ_Question_Minus" src="@asset('images/icon-minus-hollow.svg')">
         </summary>
         <div class="ldfaq-FAQ_Answer">
           {!! $item->answer !!}
