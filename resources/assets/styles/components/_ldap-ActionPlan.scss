@@ -1,0 +1,40 @@
+.ldap-ActionPlan {
+  $padding: responsive(20px, 60px);
+  $padding-top: responsive(45px, 75px);
+
+  background: transparentize($color: $color-textbox-black, $amount: 0.15);
+  border-radius: 10px;
+  display: grid;
+  padding: $padding;
+  padding-top: $padding-top;
+  position: relative;
+  row-gap: responsive(20px, 40px);
+
+  // Top colorful bar
+  &::before {
+    $height: 30px;
+    $oversize: 10px;
+
+    content: "";
+    display: block;
+    border-radius: 10px;
+    position: absolute;
+    top: 0;
+    left: 0 - $oversize;
+    height: $height;
+    width: calc(100% + (2 * #{$oversize}));
+  }
+
+  &-black::before {
+    background: $color-textbox-header-black;
+  }
+
+  &-shiny-purple::before {
+    background: $gradient-shiny-purple;
+  }
+}
+
+.ldap-ActionPlan_Title {
+  font-size: responsive(18px, 24px);
+  font-weight: bold;
+}
