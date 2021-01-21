@@ -1,10 +1,17 @@
-<div class="ldfaq-FAQ">
-  <h1>Frequently Asked Questions</h1>
-  <code>Data: @php var_dump($action_plan) @endphp</code>
-  <h4 class="ldfaq-Question">How do we do this?</h4>
-  <p class="ldfaq-Answer">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero earum eum magnam at dignissimos. Quos nemo ex error exercitationem, autem enim quia debitis iure eius consequatur dolore nostrum</p>
-  <h4 class="ldfaq-Question">Another question?</h4>
-  <p class="ldfaq-Answer">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero earum eum magnam at dignissimos. Quos nemo ex error exercitationem, autem enim quia debitis iure eius consequatur dolore nostrum</p>
-  <h4 class="ldfaq-Question">How do I get started?</h4>
-  <p class="ldfaq-Answer">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero earum eum magnam at dignissimos. Quos nemo ex error exercitationem, autem enim quia debitis iure eius consequatur dolore nostrum</p>
+<div class="ldfaq-FAQ ldfaq-FAQ-{{ $island_color }}">
+  <h2 class="ldfaq-FAQ_Title">Frequently Asked Questions</h2>
+  <div class="ldfaq-FAQ_List">
+    @foreach($faq as $item)
+      <details class="ldfaq-FAQ_Item">
+        <summary class="ldfaq-FAQ_Question">
+          {{ $item->question }}
+          <img class="ldfaq-FAQ_Question_Plus" src="@asset('images/icon-plus-solid.svg')">
+          <img class="ldfaq-FAQ_Question_Minus" src="@asset('images/icon-minus-solid.svg')">
+        </summary>
+        <div class="ldfaq-FAQ_Answer">
+          {!! $item->answer !!}
+        </div>
+      </details>
+    @endforeach
+  </div>
 </div>
