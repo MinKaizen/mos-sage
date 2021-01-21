@@ -1,6 +1,6 @@
 .ldap-ActionPlan {
   $top-bar-height: 30px;
-  $padding: responsive(20px, 65px, 800px, 1400px);
+  $padding: responsive(30px, 50px);
   $padding-top: calc(#{$top-bar-height} + #{$padding});
 
   background: transparentize($color: $color-textbox-black, $amount: 0.15);
@@ -9,7 +9,7 @@
   padding: $padding;
   padding-top: $padding-top;
   position: relative;
-  row-gap: responsive(15px, 40px);
+  row-gap: responsive(20px, 40px);
 
   // Top colorful bar
   &::before {
