@@ -1,7 +1,7 @@
 .ldap-ActionPlan {
-  $top-bar-height: 30px;
+  $top-bar-height: responsive(30px, 45px);
   $padding: responsive(30px, 50px);
-  $padding-top: calc(#{$top-bar-height} + #{$padding});
+  $padding-top: calc(#{$top-bar-height} + #{responsive(15px, 30px)});
 
   background: transparentize($color: $color-textbox-black, $amount: 0.15);
   border-radius: 10px;
