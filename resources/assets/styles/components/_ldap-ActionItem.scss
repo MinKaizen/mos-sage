@@ -1,3 +1,48 @@
 .ldap-ActionItem {
-  //
+  align-items: start;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  grid-template-areas:
+    "check    title         title"
+    "divider  divider       divider"
+    "_        description   cta";
+  row-gap: 15px;
+}
+
+.ldap-ActionItem_Checkbox {
+  grid-area: check;
+  margin-right: 15px;
+}
+
+.ldap-ActionItem_Title {
+  font-size: 18px;
+  font-weight: bold;
+  grid-area: title;
+  line-height: 1.5;
+}
+
+.ldap-ActionItem_Divider {
+  border-color: #6e7a8a;
+  border-width: 1px;
+  grid-area: divider;
+  width: 100%;
+  margin: 0;
+}
+
+.ldap-ActionItem_Description {
+  font-size: 16px;
+  grid-area: description;
+  padding-right: responsive(20px, 40px);
+}
+
+.ldap-ActionItem_CTA {
+  grid-area: cta;
+  justify-self: end;
+  margin-right: responsive(5px, 25px);
+}
+
+.ldap-MarkComplete {
+  grid-area: cta;
+  justify-self: end;
+  margin-right: responsive(5px, 25px);
 }
