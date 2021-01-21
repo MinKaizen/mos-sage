@@ -1,6 +1,6 @@
 <section class="ldap-ActionItem">
 
-  <img class="ldap_ActionItem_Checkbox" src="@asset('images/icon-unticked.png')">
+  <img class="ldap-ActionItem_Checkbox" src="@asset('images/icon-unticked.png')">
 
   <h3 class="ldap-ActionItem_Title">{{ $title }}</h3>
 
