@@ -1,0 +1,39 @@
+.ldvi-Afflink {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  justify-items: center;
+  align-items: center;
+  background: $color-new-black;
+  border-radius: 10px 10px 0 0;
+  margin-bottom: 2px;
+}
+
+.ldvi-Afflink_Icon {
+  padding: 8px 15px;
+}
+
+.ldvi-Afflink_Text {
+  $border: 1px solid $color-charcoal;
+
+  display: block;
+  text-align: center;
+  width: 100%;
+  padding: 8px 15px;
+  border-left: $border;
+  border-right: $border;
+}
+
+.ldvi-Afflink_Copy {
+  @include text-gradient-active-top-menu();
+
+  cursor: pointer;
+  padding: 8px 15px;
+  border-top-right-radius: 10px;
+
+  &:hover {
+    background: $gradient-button-blue;
+    // #HACK: reset gradient text:
+    -webkit-background-clip: unset;
+    -webkit-text-fill-color: unset;
+  }
+}
