@@ -4,7 +4,6 @@ const selfToggleClass = 'ldsbt-SidebarToggle-active'
 
 export default class SidebarToggle {
   constructor(element) {
-    console.log(element)
     main(element)
   }
 }
