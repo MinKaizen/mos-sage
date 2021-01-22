@@ -69,4 +69,8 @@ class App extends Controller
 
         return $menu_slug;
     }
+
+    public function afflink() {
+        return apply_filters( 'mos_afflink', '' );
+    }
 }
