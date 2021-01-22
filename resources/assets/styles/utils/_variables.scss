@@ -99,6 +99,7 @@ $ldsb-Sidebar__width: 271px;
 
 // Island specific
 $island-top-bar-height: 30px;
+$island-top-bar-oversize: 10px;
 $island-padding: calc(#{$island-top-bar-height} + #{responsive(18px, 30px)}) responsive(30px, 50px) responsive(30px, 50px) responsive(30px, 50px);
 $island-font-size-h1: responsive(21px, 24px);
 $island-font-size-h2: responsive(15.75px, 18px);
