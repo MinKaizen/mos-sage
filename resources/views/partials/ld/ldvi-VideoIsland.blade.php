@@ -1,4 +1,7 @@
 <div class="ldvi-VideoIsland">
+  @if($show_afflink)
+    @include('partials.ldvi-Afflink')
+  @endif
   @if(isset($video_url))
     @include('partials.vid-Video', ['url' => $video_url])
   @endif
