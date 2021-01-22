@@ -2,6 +2,8 @@
 .hd-Submenu {
   background: $color-new-black;
   position: absolute;
+  max-width: 0;
+  max-height: 0;
   top: $hd-Header__height;
   z-index: z("hd-Submenu");
 
@@ -17,6 +19,8 @@
   opacity: 1;
   overflow: unset;
   transform: translate(0, 0);
+  max-width: 999px;
+  max-height: 999px;
 }
 
 .hd-Submenu_Item {
