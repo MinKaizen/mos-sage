@@ -7,9 +7,7 @@
 
   {{-- Text Island --}}
   @if(get_the_content())
-    @component('components.ti-TextIsland')
-      {!! get_the_content() !!}
-    @endcomponent
+    @include('partials.ti-TextIsland', ['content' => get_the_content()])
   @endif
 
   {{-- FAQ --}}
