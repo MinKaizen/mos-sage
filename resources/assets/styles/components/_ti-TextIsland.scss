@@ -1,7 +1,7 @@
 .ti-TextIsland {
   background: $color-textbox-black;
-  border-radius: 10px;
-  padding: 45px 65px 65px 65px;
+  border-radius: $island-border-radius;
+  padding: $island-padding;
   position: relative;
 
   h1,
@@ -10,34 +10,31 @@
   h4,
   h5,
   h6 {
-    color: white;
-    font-size: $font-size-h4;
-    text-indent: -15px;
-    padding: 1em 0;
+    padding-bottom: 0.5em;
+    font-size: $island-font-size-h1;
+    font-weight: bold;
   }
 
   p {
-    line-height: 1.5;
-    padding-bottom: 1.5em;
-
-    &:last-child {
-      padding-bottom: 0;
-    }
+    padding: 15px;
   }
 
   // Top colorful bar
   &::before {
-    $height: 30px;
     $oversize: 10px;
 
     content: "";
     background: $color-textbox-header-black;
     display: block;
-    border-radius: 10px;
+    border-radius: $island-border-radius;
     position: absolute;
     top: 0;
     left: 0 - $oversize;
-    height: $height;
+    height: $island-top-bar-height;
     width: calc(100% + (2 * #{$oversize}));
   }
+}
+
+.ti-TextIsland-shiny-purple::before {
+  background: $gradient-shiny-purple;
 }
