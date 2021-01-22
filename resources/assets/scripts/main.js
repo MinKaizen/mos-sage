@@ -2,6 +2,7 @@
 import home from './routes/home'
 
 // Components
+import AfflinkCopy from './components/AfflinkCopy'
 import ClassToggler from './components/ClassToggler'
 import MobileNav_Menu from './components/MobileNav_Menu'
 import UpgradeButton from './components/UpgradeButton'
@@ -17,6 +18,10 @@ const routes = [
 
 // Define components
 const components = [
+  {
+    class: AfflinkCopy,
+    selector: '.js-AfflinkCopy',
+  },
   {
     class: ClassToggler,
     selector: '.js-ClassToggler',
