@@ -244,4 +244,11 @@ class SingleSfwdTopic extends Controller
         return $island_color;
     }
 
+
+    public function showAfflink(): bool {
+        $course_id = $this->courseId();
+        $show_afflink = (bool) get_field( 'show_afflink', $course_id );
+        return $show_afflink;
+    }
+
 }
