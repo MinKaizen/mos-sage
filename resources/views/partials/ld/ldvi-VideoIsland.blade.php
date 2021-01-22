@@ -3,7 +3,7 @@
     @include('partials.ldvi-Afflink')
   @endif
   @if(isset($video_url))
-    @include('partials.vid-Video', ['url' => $video_url, 'has_afflink' => true])
+    @include('partials.vid-Video', ['url' => $video_url])
   @endif
   {{-- <a href="#">
     <span class="ldvi-DownloadPdf">

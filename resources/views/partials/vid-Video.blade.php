@@ -1,4 +1,4 @@
-<div class='vid-Video @if(isset($has_afflink) && $has_afflink)vid-Video-has-afflink @endif'>
+<div class='vid-Video @if(isset($show_afflink) && $show_afflink)vid-Video-has-afflink @endif'>
   <iframe
     class='vid-Video_Frame'
     src='{{ $url }}'
