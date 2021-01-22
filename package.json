@@ -23,6 +23,7 @@
     "opera 12"
   ],
   "scripts": {
+    "comp": "bash resources/assets/build/component.sh",
     "build": "grunt && webpack --progress --config resources/assets/build/webpack.config.js",
     "build:production": "grunt && webpack --env.production --progress --config resources/assets/build/webpack.config.js",
     "build:profile": "grunt && webpack --progress --profile --json --config resources/assets/build/webpack.config.js",
