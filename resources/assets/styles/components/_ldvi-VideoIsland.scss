@@ -3,29 +3,7 @@
   grid-gap: 10px;
 }
 
-.ldvi-VideoIsland_Nav {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  justify-content: stretch;
-}
-
-.ldvi-VideoIsland_Prev {
-  grid-column: 1 / span 1;
-  justify-self: start;
-}
-
-.ldvi-VideoIsland_Next {
-  grid-column: -1 / span 1;
-  justify-self: end;
-}
-
-.ldvi-VideoIsland_Prev,
-.ldvi-VideoIsland_Next {
-  color: $color-white;
-  font-size: $font-size-body-small;
-  text-decoration: none;
-
-  &:hover {
-    color: $color-light-blue;
-  }
+.ldvi-DownloadPdf {
+  cursor: pointer;
+  text-align: center;
 }
