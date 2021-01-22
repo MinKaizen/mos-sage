@@ -8,16 +8,14 @@
 
   // Top colorful bar
   &::before {
-    $oversize: 10px;
-
     content: "";
     border-radius: $island-border-radius;
     display: block;
     height: $island-top-bar-height;
-    left: 0 - $oversize;
+    left: 0 - $island-top-bar-oversize;
     position: absolute;
     top: 0;
-    width: calc(100% + (2 * #{$oversize}));
+    width: calc(100% + (2 * #{$island-top-bar-oversize}));
   }
 
   &-black::before {

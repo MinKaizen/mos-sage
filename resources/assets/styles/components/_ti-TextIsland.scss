@@ -21,17 +21,15 @@
 
   // Top colorful bar
   &::before {
-    $oversize: 10px;
-
     content: "";
     background: $color-textbox-header-black;
     display: block;
     border-radius: $island-border-radius;
     position: absolute;
     top: 0;
-    left: 0 - $oversize;
+    left: 0 - $island-top-bar-oversize;
     height: $island-top-bar-height;
-    width: calc(100% + (2 * #{$oversize}));
+    width: calc(100% + (2 * #{$island-top-bar-oversize}));
   }
 }
 
