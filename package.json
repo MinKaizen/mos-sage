@@ -86,6 +86,7 @@
     "yargs": "^16.1.0"
   },
   "dependencies": {
+    "jquery": "^3.3.1",
     "alpinejs": "^2.7.0",
     "svg4everybody": "^2.1.9"
   }
