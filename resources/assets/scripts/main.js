@@ -7,6 +7,7 @@ import ClassToggler from './components/ClassToggler'
 import MobileNav_Menu from './components/MobileNav_Menu'
 import UpgradeButton from './components/UpgradeButton'
 import SidebarToggle from './components/SidebarToggle'
+import MosTable from './components/MosTable'
 
 // Define routes
 const routes = [
@@ -18,6 +19,10 @@ const routes = [
 
 // Define components
 const components = [
+  {
+    class: MosTable,
+    selector: '.js-referrals-table',
+  },
   {
     class: AfflinkCopy,
     selector: '.js-AfflinkCopy',
