@@ -21,7 +21,7 @@ const routes = [
 const components = [
   {
     class: MosTable,
-    selector: '.js-referrals-table',
+    selector: '.js-MosTable',
   },
   {
     class: AfflinkCopy,
