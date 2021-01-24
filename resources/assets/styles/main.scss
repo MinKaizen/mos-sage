@@ -17,6 +17,9 @@
 @import "layouts/ldl-Lesson";
 @import "layouts/ldm-Main";
 
+// Import vendor
+@import "vendor/datatables";
+
 // Import components
 @import "components/asb-AffSidebar";
 @import "components/bd-Body";
