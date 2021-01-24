@@ -15,4 +15,7 @@
     @include('partials.ld.ldfaq-FAQ')
   @endif
 
+  {{-- Comments --}}
+  @include('partials.ld.ldc-Comments')
+
 </div>
