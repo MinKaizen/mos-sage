@@ -12,7 +12,7 @@ $table-body-border: 1px solid #d3d9e5 !default;
 
 // Row background colour (hover, striping etc are all based on this colour and
 // calculated automatically)
-$table-row-background: #ffffff !default;
+$table-row-background: transparent !default;
 
 // Row colour, when selected (tr.selected)
 $table-row-selected: #daf2fe !default;
