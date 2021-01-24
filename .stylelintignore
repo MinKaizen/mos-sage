@@ -4,3 +4,4 @@ vendor/**/*.sass
 resources/assets/styles/global/_normalize.scss
 resources/assets/styles/global/_reset.scss
 resources/assets/styles/global/_typography.scss
+resources/assets/styles/vendor/**
