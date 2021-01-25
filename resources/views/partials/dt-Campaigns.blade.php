@@ -9,15 +9,15 @@
     </tr>
   </thead>
   <tbody>
-    <?php foreach($campaigns as $campaign): ?>
+    @foreach($campaigns as $campaign):
     <tr>
-      <td><?php echo $campaign['name']; ?></td>
-      <td><?php echo $campaign['clicks']; ?></td>
-      <td><?php echo $campaign['partners']; ?></td>
-      <td><?php echo $campaign['commissions_formatted']; ?></td>
-      <td><?php echo $campaign['epc_formatted']; ?></td>
+      <td>{{ $campaign['name'] }}</td>
+      <td>{{ $campaign['clicks'] }}</td>
+      <td>{{ $campaign['partners'] }}</td>
+      <td>{{ $campaign['commissions_formatted'] }}</td>
+      <td>{{ $campaign['epc_formatted'] }}</td>
     </tr>
-    <?php endforeach; ?>
+    @endforeach
   </tbody>
   <tfoot>
     <tr>
