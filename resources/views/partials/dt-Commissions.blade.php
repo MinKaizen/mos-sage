@@ -11,21 +11,21 @@
     </tr>
   </thead>
   <tbody class="table-body">
-    @foreach( $rows as $row )
+    @foreach( $commissions as $commission )
     <tr class="table-body__row">
-      <td class="table-cell table-body-cell col-date">{{ $row['date'] }}</td>
-      <td class="table-cell table-body-cell col-amount @if((int) $row['amount'] < 0 ) col-amount--negative @endif ">{{ format_currency( (float) $row['amount'], 0 ) }}</td>
-      <td class="table-cell table-body-cell col-name">{{ ucwords( strtolower( $row['display_name'] ) ) }}</td>
-      <td class="table-cell table-body-cell col-email">{{ strtolower( $row['user_email'] ) }}</td>
-      <td class="table-cell table-body-cell col-product">{{ $row['description'] }}</td>
-      <td class="table-cell table-body-cell col-campaign">{{ strtolower( $row['campaign'] ) }}</td>
+      <td class="table-cell table-body-cell col-date">{{ $commission['date'] }}</td>
+      <td class="table-cell table-body-cell col-amount @if((int) $commission['amount'] < 0 ) col-amount--negative @endif ">{{ App\format_currency( (float) $commission['amount'], 0 ) }}</td>
+      <td class="table-cell table-body-cell col-name">{{ ucwords( strtolower( $commission['display_name'] ) ) }}</td>
+      <td class="table-cell table-body-cell col-email">{{ strtolower( $commission['user_email'] ) }}</td>
+      <td class="table-cell table-body-cell col-product">{{ $commission['description'] }}</td>
+      <td class="table-cell table-body-cell col-campaign">{{ strtolower( $commission['campaign'] ) }}</td>
       <td class="table-cell table-body-cell col-payment">
-        {{ $row['payout_method'] }}
+        {{ $commission['payout_method'] }}
         <span class="tooltip" style="display: none;" >
-          <p>Date: {{ $row['payout_date'] }}</p>
-          <p>Method: {{ $row['payout_method'] }}</p>
-          <p>Address: {{ $row['payout_address'] }}</p>
-          <p>Transaction ID: {{ $row['payout_transaction_id'] }}</p>
+          <p>Date: {{ $commission['payout_date'] }}</p>
+          <p>Method: {{ $commission['payout_method'] }}</p>
+          <p>Address: {{ $commission['payout_address'] }}</p>
+          <p>Transaction ID: {{ $commission['payout_transaction_id'] }}</p>
         </span>
       </td>
     </tr>
