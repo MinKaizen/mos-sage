@@ -8,7 +8,7 @@ const options = {
   buttons: [
     {
       extend: 'csv',
-      text: 'Export',
+      text: 'Export All',
       className: 'datatables-export-button',
     },
   ],
