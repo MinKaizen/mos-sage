@@ -5,5 +5,5 @@
 @extends('layouts.main')
 
 @section('content')
-  <h1>This is the My Campaigns Page</h1>
+  @include('partials.dt-Campaigns')
 @endsection
