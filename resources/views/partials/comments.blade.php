@@ -1,4 +1,8 @@
-@php
+{{-- Intentionally left blank to enable wpdiscuz --}}
+
+
+
+{{-- @php
 if (post_password_required()) {
   return;
 }
@@ -35,4 +39,4 @@ if (post_password_required()) {
   @endif
 
   @php comment_form() @endphp
-</section>
+</section> --}}
