@@ -102,3 +102,10 @@
     font-family: $font-default !important;
   }
 }
+
+// #HACK: override media query from wpdiscuz
+@media screen and (max-width: 600px) {
+  #comments {
+      padding: $island-padding !important;
+  }
+}
