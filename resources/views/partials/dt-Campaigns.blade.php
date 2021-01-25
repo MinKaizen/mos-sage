@@ -9,7 +9,7 @@
     </tr>
   </thead>
   <tbody>
-    @foreach($campaigns as $campaign):
+    @foreach($campaigns as $campaign)
     <tr>
       <td>{{ $campaign['name'] }}</td>
       <td>{{ $campaign['clicks'] }}</td>
