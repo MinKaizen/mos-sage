@@ -1,0 +1,104 @@
+.wpdiscuz_top_clearing {
+  display: none !important;
+}
+
+// The outermost container
+.comments-area {
+  margin: 0px !important;
+  max-width: unset !important;
+  border-radius: 10px !important;
+  background: $color-textbox-black !important;
+  padding: $island-padding !important;
+  position: relative !important;
+
+  // Top colorful bar
+  &::before {
+    content: "" !important;
+    background: $color-textbox-header-black !important;
+    display: block !important;
+    border-radius: $island-border-radius !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 - $island-top-bar-oversize !important;
+    height: $island-top-bar-height !important;
+    width: calc(100% + (2 * #{$island-top-bar-oversize})) !important;
+  }
+
+
+  .lvl-monthly-partner .comments-area:before,
+  .lvl-yearly-partner .comments-area:before,
+  .lvl-lifetime-partner .comments-area:before,
+  .lvl-coaching .comments-area:before {
+    background: $gradient-shiny-purple !important;
+  }
+
+  // The inner container
+  #wpdcom {
+    background: unset !important;
+    max-width: unset !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    // Place comment form at the bottom
+    // Default: top
+    display: flex !important;
+    flex-direction: column-reverse !important;
+
+    // Hack for flex gutter
+    & > * + * {
+      margin-top: 30px !important;
+    }
+  }
+
+  // Header top of comment form
+  // You are logged in as __ | logout
+  .wpd-form-head {
+    display: none !important;
+  }
+
+  // Wrapper around comment form
+  .wpdiscuz-textarea-wrap {
+    padding: 0 !important;
+  }
+
+  // The Label that shows user roles like "Author"
+  .wpd-comment-label {
+    display: none !important;
+  }
+
+  // Container that holds the comment list
+  .wpd-thread-list {
+    padding-bottom: 0 !important;
+  }
+
+  // The comment header that holds the comment author name
+  .wpd-comment-header {
+    background: $color-textbox-header-black !important;
+  }
+
+  // The subheader that hold the "time ago" and user role (e.g. author)
+  .wpd-comment-subheader {
+    border: none !important;
+  }
+
+  // The black background behind tools buttons
+  .wpd-tool-wrap {
+    background: unset !important;
+  }
+
+  // The white popup when you click on any of the tools
+  .wpd-tools-actions,
+  .wpdiscuz-sort-buttons {
+    background: $color-new-dark-grey !important;
+  }
+
+  // Individual tools options on hover
+  .wpdiscuz-sort-button:hover,
+  .wpd-cta-button:hover {
+    background: $color-new-light-grey !important;
+  }
+
+  // Comment form editor
+  .ql-editor > * {
+    font-family: $font-default !important;
+  }
+}
