@@ -11,17 +11,17 @@
     </tr>
   </thead>
   <tbody>
-    <?php foreach($referrals as $referral): ?>
+    @foreach($referrals as $referral)
       <tr>
-        <td><?php echo $referral['date']; ?></td>
-        <td><?php echo $referral['username']; ?></td>
-        <td><?php echo $referral['name']; ?></td>
-        <td><?php echo $referral['email']; ?></td>
-        <td><?php echo $referral['level']; ?></td>
-        <td><?php echo $referral['progress']; ?></td>
-        <td><?php echo $referral['campaign']; ?></td>
+        <td>{{ $referral['date'] }}</td>
+        <td>{{ $referral['username'] }}</td>
+        <td>{{ $referral['name'] }}</td>
+        <td>{{ $referral['email'] }}</td>
+        <td>{{ $referral['level'] }}</td>
+        <td>{{ $referral['progress'] }}</td>
+        <td>{{ $referral['campaign'] }}</td>
       </tr>
-    <?php endforeach; ?>
+    @endforeach
   </tbody>
   <tfoot>
   <tr>
