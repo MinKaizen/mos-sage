@@ -10,13 +10,13 @@
   </thead>
   <tbody>
     @foreach($campaigns as $campaign)
-    <tr>
-      <td>{{ $campaign['name'] }}</td>
-      <td>{{ $campaign['clicks'] }}</td>
-      <td>{{ $campaign['partners'] }}</td>
-      <td>{{ $campaign['commissions_formatted'] }}</td>
-      <td>{{ $campaign['epc_formatted'] }}</td>
-    </tr>
+      <tr>
+        <td>{{ $campaign['name'] }}</td>
+        <td>{{ $campaign['clicks'] }}</td>
+        <td>{{ $campaign['partners'] }}</td>
+        <td>{{ $campaign['commissions_formatted'] }}</td>
+        <td>{{ $campaign['epc_formatted'] }}</td>
+      </tr>
     @endforeach
   </tbody>
   <tfoot>
