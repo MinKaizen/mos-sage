@@ -7,6 +7,6 @@ use Sober\Controller\Controller;
 class TemplateMyCampaigns extends Controller
 {
     public function campaigns() {
-        return [];
+        return apply_filters( 'mos_campaigns', [] );
     }
 }
