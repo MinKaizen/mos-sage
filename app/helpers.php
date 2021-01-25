@@ -276,3 +276,10 @@ function ld_first_child_id( int $post_id ): int {
 
     return $post_id;
 }
+
+function format_currency( float $number, int $decimals=2 ): string {
+    $sign = $number >= 0 ? '' : '-';
+    $symbol = '$';
+    $currency = $sign . $symbol . number_format( abs( $number ), $decimals );
+    return $currency;
+}
