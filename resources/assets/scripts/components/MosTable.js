@@ -14,6 +14,7 @@ const options = {
   ],
   language: {
     emptyTable: '(No data)',
+    searchPlaceholder: 'Search',
   },
 }
 
