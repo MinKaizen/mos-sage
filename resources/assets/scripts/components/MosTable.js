@@ -4,12 +4,12 @@ require( 'datatables.net-buttons-dt' );
 require( 'datatables.net-buttons/js/buttons.html5.js' );
 
 const options = {
-  dom: '<"actions"Bf>rt<"pagination"lp><"clear">',
+  dom: '<"dt-Top"Bf>rt<"dt-Bottom"lp>',
   buttons: [
     {
       extend: 'csv',
       text: 'Export All',
-      className: 'datatables-export-button',
+      className: 'dt-Button',
     },
   ],
   language: {
