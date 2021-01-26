@@ -22,6 +22,10 @@ const options = {
       '<option value="100">100</option>'+
       '<option value="-1">All</option>'+
       '</select> rows',
+    paginate: {
+      'next': '>>',
+      'previous': '<<',
+    },
   },
 }
 
