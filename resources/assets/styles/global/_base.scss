@@ -1,0 +1,11 @@
+input,
+select,
+option,
+text,
+textarea,
+a,
+button {
+  &:focus {
+    outline: 1px auto $color-light-blue;
+  }
+}
