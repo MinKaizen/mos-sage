@@ -13,3 +13,8 @@
 .dt-Table-campaigns {
   //
 }
+
+.dt-Button {
+  @extend .bt-Button;
+  @extend .bt-Button-blue;
+}
