@@ -32,5 +32,19 @@ const options = {
 export default class MosTable {
   constructor(element) {
     $(element).DataTable(options)
+    $('.dataTables_filter').addClass('dt-Filter')
+    $('.dataTables_filter label').addClass('dt-Filter_Label')
+    $('.dataTables_filter input').addClass('dt-Filter_Input')
+    $('.dt-buttons').addClass('dt-Buttons')
+    $('.dataTables_length').addClass('dt-Length')
+    $('.dataTables_length label').addClass('dt-Length_Label')
+    $('.dataTables_length select').addClass('dt-Length_Select')
+    $('.dataTables_length select option').addClass('dt-Length_Option')
+    $('.dataTables_paginate').addClass('dt-Pagination')
+    $('.dataTables_paginate span').addClass('dt-Pagination_Numbers')
+    $('.dataTables_paginate .paginate_button').addClass('dt-Pagination_Button')
+    $('.dataTables_paginate .paginate_button.previous').addClass('dt-Pagination_Button-prev')
+    $('.dataTables_paginate .paginate_button.next').addClass('dt-Pagination_Button-next')
+    $('.dataTables_paginate .paginate_button.current').addClass('dt-Pagination_Button-current')
   }
 }
