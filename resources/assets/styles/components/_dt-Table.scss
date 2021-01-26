@@ -1,17 +1,8 @@
-.dt-Table {
-  //
-}
-
-.dt-Table-referrals {
-  //
-}
-
-.dt-Table-earnings {
-  //
-}
-
-.dt-Table-campaigns {
-  //
+.dt-Top {
+  display: grid;
+  grid-template-columns: auto auto;
+  align-items: center;
+  margin-bottom: 15px;
 }
 
 .dt-Button {
