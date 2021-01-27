@@ -3,7 +3,7 @@
 }
 
 .rm-ReportMain_Container {
-  padding: 30px 50px 50px 50px;
+  padding: responsive(15px, 30px) responsive(25px, 50px) responsive(25px, 50px) responsive(25px, 50px);
   border-radius: 10px;
   background: $color-textbox-black;
 }
