@@ -24,7 +24,7 @@
   border-radius: 10px;
   border: none;
   color: $color-new-black;
-  font-size: 16px;
+  font-size: responsive(14px, 16px);
   max-width: 170px;
   padding: 10px 15px;
 
