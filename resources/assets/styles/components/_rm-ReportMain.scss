@@ -1,7 +1,6 @@
 .rm-ReportMain {
   padding: 20px;
   max-width: 1440px;
-  min-height: calc(100vh - #{$hd-Header__height + $ft-Footer__height});
   margin: auto;
 
   &-campaigns {
