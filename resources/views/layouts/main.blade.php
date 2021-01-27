@@ -8,7 +8,9 @@
   >
     @include('partials.mn-MobileNav', ['menu_slug' => $top_menu_slug])
     @include('partials.hd-Header')
-    @yield('content')
+    <main class="m-Main">
+      @yield('content')
+    </main>
     @include('partials.ft-Footer')
   </body>
 </html>
