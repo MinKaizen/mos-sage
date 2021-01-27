@@ -2,6 +2,18 @@
   padding: 20px;
   max-width: 1440px;
   margin: auto;
+
+  &-campaigns {
+    max-width: 800px;
+  }
+
+  &-referrals {
+    max-width: 1200px;
+  }
+
+  &-earnings {
+    max-width: 1000px;
+  }
 }
 
 .rm-ReportMain_Title {
