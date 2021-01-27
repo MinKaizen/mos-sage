@@ -4,7 +4,7 @@ require( 'datatables.net-buttons-dt' );
 require( 'datatables.net-buttons/js/buttons.html5.js' );
 
 const OPTIONS = {
-  dom: '<"dt-Top"Bf>rt<"dt-Bottom"lp>',
+  dom: '<"dt-Top"Bf><"dt-TableWrapper"rt><"dt-Bottom"lp>',
   buttons: [
     {
       extend: 'csv',
