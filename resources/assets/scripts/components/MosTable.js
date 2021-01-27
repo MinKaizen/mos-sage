@@ -27,6 +27,9 @@ const OPTIONS = {
       'previous': '<<',
     },
   },
+  drawCallback: () => {
+    Promise.all(CUSTOM_CLASSES.map(customClass))
+  },
 }
 
 const CUSTOM_CLASSES = [
@@ -100,9 +103,6 @@ export default class MosTable {
 
 async function main(element) {
   initDataTables(element, OPTIONS)
-  .then(() => {
-    Promise.all(CUSTOM_CLASSES.map(customClass))
-  })
 }
 
 async function initDataTables(element, options) {
