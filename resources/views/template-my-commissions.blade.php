@@ -5,8 +5,10 @@
 @extends('layouts.main')
 
 @section('content')
-  <h1>Total Commissions: {{ $total_commissions }}</h1>
-  <h1>Total Referrals: {{ $total_referrals }}</h1>
-  <h1>Total EPR: {{ $total_epr }}</h1>
-  @include('partials.dt-Commissions')
+  <main class="rm-ReportMain">
+    @include('partials.te-TotalEarnings')
+    <div class="rm-ReportMain_Container">
+      @include('partials.dt-Commissions')
+    </div>
+  </main>
 @endsection
