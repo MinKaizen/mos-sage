@@ -1,38 +1,3 @@
-.dt-Top {
-  display: grid;
-  grid-template-columns: auto auto;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 15px;
-}
-
-.dt-Button {
-  @extend .bt-Button;
-  @extend .bt-Button-blue;
-}
-
-.dt-Filter {
-  //
-}
-
-.dt-Filter_Label {
-  //
-}
-
-.dt-Filter_Input {
-  background: $color-input;
-  border-radius: 10px;
-  border: none;
-  color: $color-new-black;
-  font-size: responsive(14px, 16px);
-  max-width: 170px;
-  padding: 10px 15px;
-
-  &::placeholder {
-    color: $color-charcoal;
-  }
-}
-
 .dt-TableWrapper {
   overflow: auto;
 }
