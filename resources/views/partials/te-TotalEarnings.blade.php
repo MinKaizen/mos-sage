@@ -1,3 +1,19 @@
-<h1>Total Commissions: {{ $total_commissions }}</h1>
-<h1>Total Referrals: {{ $total_referrals }}</h1>
-<h1>Total EPR: {{ $total_epr }}</h1>
+<div class="te-TotalEarnings">
+  <h2 class="te-TotalEarnings_Title">@shortcode('[mos_name]')'s Verified Earnings</h2>
+  <div class="te-TotalEarnings_Total">
+    <span class="te-TotalEarnings_Total_Currency">$</span>
+    <span class="te-TotalEarnings_Total_Number">{{ $total_commissions }}</span>
+    <span class="te-TotalEarnings_Total_Label">Commissions</span>
+  </div>
+  <div class="te-TotalEarnings_Total">
+    <span class="te-TotalEarnings_Total_Currency">$</span>
+    <span class="te-TotalEarnings_Total_Number">{{ $total_referrals }}</span>
+    <span class="te-TotalEarnings_Total_Label">Referrals</span>
+  </div>
+  <div class="te-TotalEarnings_Total">
+    <span class="te-TotalEarnings_Total_Currency">$</span>
+    <span class="te-TotalEarnings_Total_Number">{{ $total_epr }}</span>
+    <span class="te-TotalEarnings_Total_Label">EPR</span>
+  </div>
+  <img src="@asset('images/logo-type-light.svg')" alt="My Online Startup" class="te-TotalEarnings_Logo" width="208" height="37">
+</div>
