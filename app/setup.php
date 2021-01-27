@@ -194,4 +194,11 @@ add_action('after_setup_theme', function () {
         return 'target="_blank" rel="noopener noreferrer"';
     });
 
+    /**
+     * Create @shortcode() Blade directive
+     */
+    sage('blade')->compiler()->directive('shortcode', function ($string) {
+        return "<?php echo do_shortcode($string); ?>";
+    });
+
 });
