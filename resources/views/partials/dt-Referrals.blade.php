@@ -23,7 +23,7 @@
       </tr>
     @endforeach
   </tbody>
-  <tfoot class="dt-Footer dt-Footer-referrals">
+  {{-- <tfoot class="dt-Footer dt-Footer-referrals">
     <tr class="dt-Row dt-FooterRow dt-Row-referrals dt-FooterRow-referrals">
       <td class="dt-Cell dt-FooterCell dt-Cell-referrals dt-FooterCell-referrals dt-Col-referrals-date">Date</td>
       <td class="dt-Cell dt-FooterCell dt-Cell-referrals dt-FooterCell-referrals dt-Col-referrals-username">Username</td>
@@ -33,5 +33,5 @@
       <td class="dt-Cell dt-FooterCell dt-Cell-referrals dt-FooterCell-referrals dt-Col-referrals-progress">Progress</td>
       <td class="dt-Cell dt-FooterCell dt-Cell-referrals dt-FooterCell-referrals dt-Col-referrals-campaign">Campaign</td>
     </tr>
-  </tfoot>
+  </tfoot> --}}
 </table>
