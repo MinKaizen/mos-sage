@@ -32,3 +32,22 @@
     color: $color-charcoal;
   }
 }
+
+.dt-TableWrapper {
+  overflow: auto;
+}
+
+.dt-Table {
+  //
+}
+
+.dt-Cell {
+  font-size: responsive(12px, 14px);
+  text-align: left;
+  padding: responsive(7.5px, 15px) responsive(2.5px, 5px);
+}
+
+.dt-HeaderCell {
+  font-size: responsive(14px, 16px);
+  font-weight: bold;
+}
