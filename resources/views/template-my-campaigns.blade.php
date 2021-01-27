@@ -5,5 +5,10 @@
 @extends('layouts.main')
 
 @section('content')
-  @include('partials.dt-Campaigns')
+  <main class="rm-ReportMain">
+    <div class="rm-ReportMain_Container">
+      <h3 class="rm-ReportMain_Title">My Campaigns</h3>
+      @include('partials.dt-Campaigns')
+    </div>
+  </main>
 @endsection
