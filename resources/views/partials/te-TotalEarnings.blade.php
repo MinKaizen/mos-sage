@@ -7,7 +7,7 @@
       <span class="te-TotalEarnings_Total_Label">Commissions</span>
     </div>
     <div class="te-TotalEarnings_Total">
-      <span class="te-TotalEarnings_Total_Currency">$</span>
+      <span class="te-TotalEarnings_Total_Currency">#</span>
       <span class="te-TotalEarnings_Total_Number">{{ $total_referrals }}</span>
       <span class="te-TotalEarnings_Total_Label">Referrals</span>
     </div>
