@@ -25,7 +25,7 @@
   border: none;
   color: $color-new-black;
   font-size: responsive(14px, 16px);
-  max-width: 170px;
+  max-width: responsive(100px, 170px);
   padding: 10px 15px;
 
   &::placeholder {
