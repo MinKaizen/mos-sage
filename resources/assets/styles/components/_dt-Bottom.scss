@@ -1,0 +1,48 @@
+.dt-Bottom {
+  align-content: center;
+  align-items: center;
+  display: grid;
+  grid-gap: 15px;
+  grid-template-columns: center;
+  justify-content: center;
+  justify-items: center;
+  margin-top: responsive(15px, 30px);
+
+  @include media("sm") {
+    grid-template-columns: auto auto;
+    justify-content: space-between;
+  }
+}
+
+.dt-Length_Label {
+  font-size: responsive(14px, 16px);
+}
+
+.dt-Length_Select {
+  background: $color-new-light-grey;
+  border-radius: 5px;
+  border: none;
+  color: white;
+  margin-right: 2px;
+}
+
+.dt-Pagination_Button {
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  font-size: responsive(14px, 16px);
+  padding: 3px 7px;
+
+  &-current {
+    background: $color-charcoal;
+  }
+
+  &:hover {
+    background: $color-charcoal;
+  }
+}
+
+// #HACK: gutter
+.dt-Pagination * + * {
+  margin-left: 2px;
+}
