@@ -1,0 +1,25 @@
+.aim-AffIdsMain {
+  padding: 20px;
+}
+
+.aim-AffIdsMain_Container {
+  background: $color-textbox-black;
+  border-radius: 10px;
+  display: grid;
+  justify-content: center;
+  margin: auto;
+  max-width: 930px;
+  padding: 20px 20px 50px 20px;
+}
+
+.aim-AffIdsMain_Title {
+  font-size: responsive(20px, 30px);
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.aim-AffIdsMain_Paragraph {
+  display: inline-block;
+  margin-bottom: 30px;
+  max-width: 730px;
+}
