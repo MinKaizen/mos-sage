@@ -4,7 +4,7 @@ namespace App\Controllers;
 
 use Sober\Controller\Controller;
 
-class TemplateMyCommissions extends Controller
+class TemplateMyEarnings extends Controller
 {
     public function totalCommissions() {
         return apply_filters( 'mos_total_commissions', '' );
