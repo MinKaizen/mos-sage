@@ -1,0 +1,29 @@
+.ai-MIS {
+  align-items: center;
+  column-gap: 5px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+}
+
+.ai-MIS_Main {
+  align-items: center;
+  background: $color-new-black;
+  border-radius: 10px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  padding: 5px 15px;
+}
+
+.ai-MIS_Name {
+  justify-self: start;
+}
+
+.ai-MIS_Value {
+  color: $color-darker-icon;
+  justify-self: center;
+}
+
+.ai-MIS_Link {
+  display: inline-block;
+  line-height: 0;
+}
