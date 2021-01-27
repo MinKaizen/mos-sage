@@ -1,45 +1,46 @@
-<table class="js-MosTable">
-  <thead class="table-header">
-    <tr class="table-header__row">
-      <th class="table-cell table-header-cell col-date">Date</th>
-      <th class="table-cell table-header-cell col-amount">Amount</th>
-      <th class="table-cell table-header-cell col-name">Name</th>
-      <th class="table-cell table-header-cell col-email">Email</th>
-      <th class="table-cell table-header-cell col-product">Product</th>
-      <th class="table-cell table-header-cell col-campaign">Campaign</th>
-      <th class="table-cell table-header-cell col-payment">Payment</th>
+<table class="dt-Table dt-Table-earnings js-MosTable">
+  <thead class="dt-Header dt-Header-earnings">
+    <tr class="dt-Row dt-HeaderRow dt-Row-earnings dt-HeaderRow-earnings">
+      <th class="dt-Cell dt-HeaderCell dt-Cell-earnings dt-HeaderCell-earnings dt-Col-earnings-date">Date</th>
+      <th class="dt-Cell dt-HeaderCell dt-Cell-earnings dt-HeaderCell-earnings dt-Col-earnings-amount">Amount</th>
+      <th class="dt-Cell dt-HeaderCell dt-Cell-earnings dt-HeaderCell-earnings dt-Col-earnings-name">Name</th>
+      <th class="dt-Cell dt-HeaderCell dt-Cell-earnings dt-HeaderCell-earnings dt-Col-earnings-email">Email</th>
+      <th class="dt-Cell dt-HeaderCell dt-Cell-earnings dt-HeaderCell-earnings dt-Col-earnings-product">Product</th>
+      <th class="dt-Cell dt-HeaderCell dt-Cell-earnings dt-HeaderCell-earnings dt-Col-earnings-campaign">Campaign</th>
+      <th class="dt-Cell dt-HeaderCell dt-Cell-earnings dt-HeaderCell-earnings dt-Col-earnings-payment">Payment</th>
     </tr>
   </thead>
   <tbody class="table-body">
     @foreach( $commissions as $commission )
     <tr class="table-body__row">
-      <td class="table-cell table-body-cell col-date">{{ $commission['date'] }}</td>
-      <td class="table-cell table-body-cell col-amount @if((int) $commission['amount'] < 0 ) col-amount--negative @endif ">{{ App\format_currency( (float) $commission['amount'], 0 ) }}</td>
-      <td class="table-cell table-body-cell col-name">{{ ucwords( strtolower( $commission['display_name'] ) ) }}</td>
-      <td class="table-cell table-body-cell col-email">{{ strtolower( $commission['user_email'] ) }}</td>
-      <td class="table-cell table-body-cell col-product">{{ $commission['description'] }}</td>
-      <td class="table-cell table-body-cell col-campaign">{{ strtolower( $commission['campaign'] ) }}</td>
-      <td class="table-cell table-body-cell col-payment">
+      <td class="dt-Cell dt-Cell-earnings dt-Col-earnings-date">{{ $commission['date'] }}</td>
+      <td class="dt-Cell dt-Cell-earnings dt-Col-earnings-amount @if((int) $commission['amount'] < 0 ) dt-Cell-negative @endif">{{ App\format_currency( (float) $commission['amount'], 0 ) }}</td>
+      <td class="dt-Cell dt-Cell-earnings dt-Col-earnings-name">{{ ucwords( strtolower( $commission['display_name'] ) ) }}</td>
+      <td class="dt-Cell dt-Cell-earnings dt-Col-earnings-email">{{ strtolower( $commission['user_email'] ) }}</td>
+      <td class="dt-Cell dt-Cell-earnings dt-Col-earnings-product">{{ $commission['description'] }}</td>
+      <td class="dt-Cell dt-Cell-earnings dt-Col-earnings-campaign">{{ strtolower( $commission['campaign'] ) }}</td>
+      <td class="dt-Cell dt-Cell-earnings dt-Col-earnings-payment">
         {{ $commission['payout_method'] }}
-        <span class="tooltip" style="display: none;" >
-          <p>Date: {{ $commission['payout_date'] }}</p>
-          <p>Method: {{ $commission['payout_method'] }}</p>
-          <p>Address: {{ $commission['payout_address'] }}</p>
-          <p>Transaction ID: {{ $commission['payout_transaction_id'] }}</p>
+        <span class="dt-Tooltip" style="display: none;" >
+          <p class="dt-Tooltip_Data">
+            <span class="dt-Tooltip_Key">Date:</span>
+            <span class="dt-Tooltip_Value">{{ $commission['payout_date'] }}</span>
+          </p>
+          <p class="dt-Tooltip_Data">
+            <span class="dt-Tooltip_Key">Method:</span>
+            <span class="dt-Tooltip_Value">{{ $commission['payout_method'] }}</span>
+          </p>
+          <p class="dt-Tooltip_Data">
+            <span class="dt-Tooltip_Key">Address:</span>
+            <span class="dt-Tooltip_Value">{{ $commission['payout_address'] }}</span>
+          </p>
+          <p class="dt-Tooltip_Data">
+            <span class="dt-Tooltip_Key">Transaction ID:</span>
+            <span class="dt-Tooltip_Value">{{ $commission['payout_transaction_id'] }}</span>
+          </p>
         </span>
       </td>
     </tr>
     @endforeach
   </tbody>
-  <tfoot class="table-footer">
-    <tr class="table-footer__row">
-      <th class="table-cell table-footer-cell col-date">Date</th>
-      <th class="table-cell table-footer-cell col-amount">Amount</th>
-      <th class="table-cell table-footer-cell col-name">Name</th>
-      <th class="table-cell table-footer-cell col-email">Email</th>
-      <th class="table-cell table-footer-cell col-product">Product</th>
-      <th class="table-cell table-footer-cell col-campaign">Campaign</th>
-      <th class="table-cell table-footer-cell col-payment">Payment</th>
-    </tr>
-  </tfoot>
 </table>
