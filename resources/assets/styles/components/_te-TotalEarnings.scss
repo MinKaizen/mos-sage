@@ -1,0 +1,52 @@
+.te-TotalEarnings {
+  background: $gradient-shiny-purple;
+  border-radius: 10px;
+  display: grid;
+  margin-bottom: 15px;
+  padding: responsive(25px, 50px);
+}
+
+.te-TotalEarnings_Title {
+  font-size: responsive(18px, 30px);
+  font-weight: normal;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.te-TotalEarnings_Totals {
+  display: grid;
+  row-gap: 10px;
+  margin-bottom: responsive(24px, 42px);
+
+  @include media("sm") {
+    column-gap: 20px;
+    grid-template-columns: repeat(3, 1fr);
+    justify-self: center;
+    justify-items: center;
+  }
+}
+
+.te-TotalEarnings_Total {
+  column-gap: 0.5em;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  justify-items: end;
+}
+
+.te-TotalEarnings_Total_Currency,
+.te-TotalEarnings_Total_Number {
+  font-size: responsive(26px, 50px);
+  font-weight: bold;
+  line-height: 1;
+}
+
+.te-TotalEarnings_Total_Label {
+  grid-column: 1/-1;
+  justify-self: end;
+}
+
+.te-TotalEarnings_Logo {
+  justify-self: end;
+  max-width: 100%;
+  height: auto;
+}
