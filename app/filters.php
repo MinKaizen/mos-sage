@@ -152,3 +152,16 @@ add_filter( 'nav_menu_css_class', function( $classes, $item, $args, $depth ) {
 
     return $classes;
 }, 10, 4 );
+
+/**
+ * Add logout link to nav menu
+ */
+add_filter('wp_nav_menu_objects', function ($items) {
+    foreach($items as $item){
+        $title_nicename = str_replace( ' ', '', strtolower($item->title));
+        if( $title_nicename == 'logout'){
+            $item->url = wp_logout_url('/login');
+        }
+    }
+    return $items;
+});
