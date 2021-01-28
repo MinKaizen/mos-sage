@@ -122,7 +122,7 @@ const NEW_CLASSES = [
     ],
   },
   {
-    selector: '.gf_login_links a:nth-child(2)',
+    selector: '.gf_login_links a:nth-child(3)',
     newClass: [
       'lg-Link',
       'lg-Link-reset',
