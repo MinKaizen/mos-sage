@@ -135,6 +135,7 @@ const NEW_CLASSES = [
 ]
 
 const REMEMBER_ME_SELECTOR = '.lg-Input-remember'
+const BREAKS_SELECTOR = '.lg-Links br'
 
 export default class LoginPage {
   constructor(loginPageElement) {
@@ -146,6 +147,7 @@ export default class LoginPage {
 async function main() {
   Promise.all(NEW_CLASSES.map(injectClass))
   checkRememberMe()
+  removeBreaks()
 }
 
 async function injectClass(item) {
@@ -165,4 +167,11 @@ async function injectClass(item) {
 async function checkRememberMe() {
   const checkbox = document.querySelector(REMEMBER_ME_SELECTOR)
   checkbox.checked = true
+}
+
+async function removeBreaks() {
+  const breaks = document.querySelectorAll(BREAKS_SELECTOR)
+  breaks.forEach(br => {
+    br.remove()
+  })
 }
