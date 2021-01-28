@@ -134,6 +134,8 @@ const NEW_CLASSES = [
   },
 ]
 
+const REMEMBER_ME_SELECTOR = '.lg-Input-remember'
+
 export default class LoginPage {
   constructor(loginPageElement) {
     main()
@@ -143,6 +145,7 @@ export default class LoginPage {
 
 async function main() {
   Promise.all(NEW_CLASSES.map(injectClass))
+  checkRememberMe()
 }
 
 async function injectClass(item) {
@@ -157,4 +160,9 @@ async function injectClass(item) {
       element.classList.add(item.newClass)
     }
   })
+}
+
+async function checkRememberMe() {
+  const checkbox = document.querySelector(REMEMBER_ME_SELECTOR)
+  checkbox.checked = true
 }
