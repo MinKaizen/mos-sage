@@ -95,7 +95,7 @@ const NEW_CLASSES = [
     newClass: 'lg-Footer',
   },
   {
-    selector: '.gform_fields_login',
+    selector: '.gform_fields',
     newClass: 'lg-Fields',
   },
   {
