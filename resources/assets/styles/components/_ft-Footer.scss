@@ -18,13 +18,19 @@
 .ft-Menu_Item {
   padding: 0 10px;
   margin: 15px 0;
+  position: relative;
   text-align: center;
 
   @include media("sm") {
-    border-left: 1px solid white;
-
-    &:first-child {
-      border: none;
+    & + .ft-Menu_Item::before {
+      content: "";
+      display: inline-block;
+      width: 1px;
+      position: absolute;
+      background: white;
+      left: 0;
+      top: 5px;
+      height: 1em;
     }
   }
 }
