@@ -165,3 +165,23 @@ add_filter('wp_nav_menu_objects', function ($items) {
     }
     return $items;
 });
+
+/**
+ * Change Login Page "Lost Your Password" text
+ */
+add_filter( 'gettext', function($text) {
+    if ($text == 'Lost your password?'){
+        $text = 'Reset Password';
+    }
+    return $text;
+} );
+
+/**
+ * Change Login Page "Lost Your Password" text
+ */
+add_filter( 'gettext', function($text) {
+    if ($text == 'Register'){
+        $text = 'Sign Up Instead';
+    }
+    return $text;
+} );
