@@ -198,9 +198,13 @@ body.login #nav a {
   @include media("sm") {
     margin-bottom: unset;
   }
+
+  &:hover {
+    color: $color-light-blue !important;
+  }
 }
 
-* + .lg-Link,
+// * + .lg-Link,
 body.login #nav a:last-child {
   position: relative;
 
