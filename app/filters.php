@@ -195,3 +195,10 @@ add_filter( 'gettext', function($text) {
     }
     return $text;
 } );
+
+/**
+ * Change wp register link
+ */
+add_filter( 'register_url', function ( $url ) {
+    return home_url('/');
+} );
