@@ -119,11 +119,13 @@ body.login .button.wp-hide-pw {
 }
 
 .lg-Error,
-.login .message.error {
+body.login #login_error {
   font-size: responsive(10px, 12px, 320px, 500px);
   background: $color-offwhite-grey;
   padding: responsive(3px, 15px, 320px, 500px);
-  margin-top: responsive(2px, 5px, 320px, 500px);
+  color: $color-new-dark-grey;
+  margin-bottom: 5px;
+  max-width: responsive(200px, 270px, 320px, 500px);
 }
 
 body.login .message {
@@ -132,7 +134,7 @@ body.login .message {
   padding: responsive(3px, 15px, 320px, 500px);
   margin: responsive(2px, 5px, 320px, 500px) 0 5px 0;
   color: $color-new-dark-grey;
-  max-width: responsive(150px, 270px, 320px, 500px);
+  max-width: responsive(200px, 270px, 320px, 500px);
 }
 
 .lg-InputContainer {
