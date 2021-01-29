@@ -23,8 +23,11 @@
 @import "vendor/wpdiscuz";
 
 // Import components
+@import "components/ai-AffIds";
+@import "components/ai-MIS";
 @import "components/aim-AffIdsMain";
 @import "components/asb-AffSidebar";
+@import "components/avi-AvatarIsland";
 @import "components/bd-Body";
 @import "components/bt-Button";
 @import "components/Button";
@@ -56,12 +59,9 @@
 @import "components/mn-Menu";
 @import "components/mn-MobileNav";
 @import "components/mn-Submenu";
-@import "components/pm-ProfileMain";
 @import "components/msb-MosSidebar";
+@import "components/pm-ProfileMain";
 @import "components/rm-ReportMain";
+@import "components/te-TotalEarnings";
 @import "components/ti-TextIsland";
 @import "components/vid-Video";
-@import "components/te-TotalEarnings";
-@import "components/ai-AffIds";
-@import "components/ai-MIS";
-@import "components/avi-AvatarIsland";
