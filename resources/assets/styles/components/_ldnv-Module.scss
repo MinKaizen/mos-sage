@@ -30,6 +30,23 @@
   border-radius: 10px 0 0 10px;
 }
 
+.ldnv-Module_Indicator {
+  height: 23px;
+  width: 23px;
+
+  &-complete {
+    background: $image-module-complete;
+  }
+
+  &-incomplete {
+    background: $image-module-incomplete;
+  }
+
+  &-partner {
+    background: $image-module-partner;
+  }
+}
+
 .ldnv-Module_Label {
   align-items: center;
   cursor: pointer;
