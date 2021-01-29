@@ -1,4 +1,4 @@
-.avi-AvatarIsland {
+.mpai-AvatarIsland {
   align-content: start;
   background: $gradient-shiny-light-blue;
   border-radius: 10px;
@@ -9,7 +9,7 @@
   row-gap: 30px;
 }
 
-.avi-AvatarWrapper {
+.mpai-AvatarWrapper {
   $size: 200px;
 
   height: $size;
@@ -25,7 +25,7 @@
   }
 }
 
-.avi-AvatarUpload {
+.mpai-AvatarUpload {
   .wpua-edit {
     display: grid;
     justify-items: center;
@@ -64,18 +64,18 @@
   }
 }
 
-.avi-Details {
+.mpai-Details {
   display: grid;
   column-gap: 15px;
   grid-template-columns: auto 1fr;
   row-gap: 5px;
 }
 
-.avi-Details_Label {
+.mpai-Details_Label {
   //
 }
 
-.avi-Details_Value {
+.mpai-Details_Value {
   background: $color-new-black;
   border-radius: 10px;
   padding: 5px;

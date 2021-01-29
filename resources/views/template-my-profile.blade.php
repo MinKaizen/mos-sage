@@ -5,5 +5,5 @@
 @extends('layouts.main')
 
 @section('content')
-  @include('partials.avi-AvatarIsland')
+  @include('partials.mpai-AvatarIsland')
 @endsection
