@@ -31,4 +31,10 @@ add_action('login_enqueue_scripts', function () {
         false,
         null
     );
+    wp_enqueue_script(
+        'mos-sage/login.js',
+        asset_path('scripts/login.js'),
+        false,
+        null
+    );
 }, 100);
