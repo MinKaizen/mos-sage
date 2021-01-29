@@ -6,10 +6,30 @@
   //
 }
 
+.dt-Col-earnings-payment {
+  word-wrap: break-all;
+  width: 1px !important;
+}
+
 .dt-Cell {
   font-size: responsive(12px, 14px);
   text-align: left;
   padding: responsive(7.5px, 15px) responsive(2.5px, 5px);
+}
+
+.dt-Tooltip {
+  background: $color-footer-black;
+  border-radius: 10px;
+  border: solid 1px $color-white;
+  display: none;
+  font-size: 14px;
+  padding: 20px;
+  position: absolute;
+  white-space: nowrap;
+}
+
+.dt-Cell-has-tooltip:hover .dt-Tooltip {
+  display: block;
 }
 
 .dt-HeaderCell {

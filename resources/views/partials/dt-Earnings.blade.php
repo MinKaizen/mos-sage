@@ -19,9 +19,9 @@
       <td class="dt-Cell dt-Cell-earnings dt-Col-earnings-email">{{ strtolower( $commission['user_email'] ) }}</td>
       <td class="dt-Cell dt-Cell-earnings dt-Col-earnings-product">{{ $commission['description'] }}</td>
       <td class="dt-Cell dt-Cell-earnings dt-Col-earnings-campaign">{{ strtolower( $commission['campaign'] ) }}</td>
-      <td class="dt-Cell dt-Cell-earnings dt-Col-earnings-payment">
+      <td class="dt-Cell dt-Cell-earnings dt-Col-earnings-payment dt-Cell-has-tooltip">
         {{ $commission['payout_method'] }}
-        <span class="dt-Tooltip" style="display: none;" >
+        <span class="dt-Tooltip">
           <p class="dt-Tooltip_Data">
             <span class="dt-Tooltip_Key">Date:</span>
             <span class="dt-Tooltip_Value">{{ $commission['payout_date'] }}</span>
