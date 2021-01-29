@@ -202,3 +202,11 @@ add_filter( 'gettext', function($text) {
 add_filter( 'register_url', function ( $url ) {
     return home_url('/');
 } );
+
+/**
+ * Change login redirect
+ */
+add_filter( 'login_redirect', function ( $redirect_to, $request, $user ) {
+    $redirect_to = home_url('/courses/free-course');
+    return $redirect_to;
+}, 10, 3 );
