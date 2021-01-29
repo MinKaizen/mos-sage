@@ -49,6 +49,7 @@ body.login {
   $base_height: 37px;
   $width: responsive(50px, 73px, 320px, 500px);
 
+  margin-top: -15px;
   margin-bottom: responsive(5px, 15px, 320px, 500px);
   width: $width;
   height: calc(#{$base_height / $base_width} * #{$width});
