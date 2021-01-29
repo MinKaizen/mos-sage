@@ -5,7 +5,7 @@
   display: grid;
   justify-content: stretch;
   max-width: 390px;
-  padding: 50px;
+  padding: responsive(20px, 50px);
   row-gap: 30px;
 }
 
