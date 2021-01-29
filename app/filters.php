@@ -185,3 +185,13 @@ add_filter( 'gettext', function($text) {
     }
     return $text;
 } );
+
+/**
+ * Change Login Page "Lost Your Password" text
+ */
+add_filter( 'gettext', function($text) {
+    if ($text == 'Please enter your username or email address. You will receive an email message with instructions on how to reset your password.'){
+        $text = 'Enter your username or email address.';
+    }
+    return $text;
+} );
