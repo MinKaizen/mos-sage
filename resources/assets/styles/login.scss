@@ -173,11 +173,8 @@ body.login #nav {
   margin: unset;
   padding: unset;
   width: 100%;
-  max-width: responsive(150px, 250px, 320px, 500px);
-
-  @include media("sm") {
-    grid-template-columns: 1fr auto 1fr;
-  }
+  max-width: responsive(200px, 250px, 320px, 500px);
+  grid-template-columns: 1fr auto 1fr;
 }
 
 body.login #nav {
@@ -189,7 +186,8 @@ body.login #nav a {
   color: $color-offwhite-grey;
   text-decoration: none;
   text-align: center;
-  font-size: 14px !important;
+  font-size: responsive(12px, 14px, 320px, 500px);
+  line-height: 1.2;
   margin-bottom: 5px;
 
   @include media("sm") {
@@ -197,21 +195,19 @@ body.login #nav a {
   }
 }
 
-@include media("sm") {
-  * + .lg-Link,
-  body.login #nav a:last-child {
-    position: relative;
+* + .lg-Link,
+body.login #nav a:last-child {
+  position: relative;
 
-    &::before {
-      background: $color-offwhite-grey;
-      content: "";
-      display: inline-block;
-      height: 15px;
-      position: absolute;
-      top: 5px;
-      left: 0;
-      width: 1px;
-    }
+  &::before {
+    background: $color-offwhite-grey;
+    content: "";
+    display: inline-block;
+    height: 15px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1px;
   }
 }
 
