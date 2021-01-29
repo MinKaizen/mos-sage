@@ -1,3 +1,205 @@
-* {
-  background: pink !important;
+// Import utils
+@import "utils/functions";
+@import "utils/mixins";
+@import "utils/variables";
+
+// Import globals
+@import "global/reset";
+@import "global/fonts";
+@import "global/global";
+@import "global/base";
+@import "global/typography";
+
+// Import components
+@import "components/bt-Button";
+
+html {
+  background: $gradient-login-bg;
+}
+
+.lg-Background-shapes,
+body.login {
+  height: 100%;
+  min-height: calc(100vh - #{$ft-Footer__height});
+  display: grid;
+  background: $image-bg-geo;
+  background-size: cover;
+  background-attachment: fixed;
+  justify-items: center;
+  align-items: center;
+}
+
+.lg-Main,
+#login {
+  width: responsive(320px, 500px, 320px, 500px) !important;
+  padding: unset !important;
+  height: responsive(320px, 500px, 320px, 500px);
+  background: rgba(15, 19, 44, 0.5);
+  border: 2px solid $color-white;
+  border-radius: 50%;
+  display: grid;
+  justify-items: center;
+  align-content: center;
+  align-items: center;
+}
+
+.lg-Logo,
+#login h1 a {
+  $base_width: 40px;
+  $base_height: 37px;
+  $width: responsive(50px, 73px, 320px, 500px);
+
+  margin-bottom: responsive(5px, 15px, 320px, 500px);
+  width: $width;
+  height: calc(#{$base_height / $base_width} * #{$width});
+  background-image: $image-logo-icon;
+  background-size: cover;
+}
+
+.lg-LoginWrapper {
+  //
+}
+
+.lg-LoginForm {
+  //
+}
+
+.lg-Body {
+  //
+}
+
+.lg-Fields,
+body.login form {
+  max-width: responsive(200px, 270px, 320px, 500px);
+  width: 100%;
+  padding: unset;
+  background: unset;
+  border: unset;
+  margin: unset;
+}
+
+.lg-Field,
+.login form p {
+  display: inline-block;
+  width: 100%;
+
+  &-username,
+  &:nth-child(1) {
+    margin-bottom: responsive(5px, 15px, 320px, 500px) !important;
+  }
+
+  &-password,
+  & + div {
+    margin-bottom: responsive(5px, 15px, 320px, 500px) !important;
+  }
+
+  &-remember,
+  &:nth-child(3) {
+    display: none;
+  }
+}
+
+.lg-Label,
+.login label {
+  display: none !important;
+}
+
+body.login .wp-pwd {
+  display: grid;
+  align-content: center;
+}
+
+body.login .button.wp-hide-pw {
+  top: 50%;
+  transform: translateY(-50%);
+
+  .dashicons-visibility {
+    color: $color-light-charcoal;
+  }
+}
+
+.lg-Error,
+.login .message.error {
+  font-size: responsive(10px, 12px, 320px, 500px);
+  background: $color-offwhite-grey;
+  padding: responsive(3px, 15px, 320px, 500px);
+  margin-top: responsive(2px, 5px, 320px, 500px);
+}
+
+body.login .message {
+  font-size: responsive(10px, 12px, 320px, 500px);
+  background: $color-offwhite-grey;
+  padding: responsive(3px, 15px, 320px, 500px);
+  margin: responsive(2px, 5px, 320px, 500px) 0 0 0;
+  color: $color-new-dark-grey;
+  max-width: responsive(150px, 270px, 320px, 500px);
+}
+
+.lg-InputContainer {
+  //
+}
+
+.lg-Input,
+body.login form .input {
+  padding: responsive(3px, 15px, 320px, 500px);
+  border: 3px solid $color-highlight-blue;
+  border-radius: responsive(4px, 10px, 320px, 500px);
+  width: 100%;
+  color: $color-light-charcoal;
+  margin: unset;
+  font-size: $font-size-body;
+}
+
+.lg-Footer {
+  max-width: 270px;
+}
+
+.lg-Submit,
+#login form p.submit .button {
+  margin-bottom: 5px;
+  width: 100%;
+
+  @extend .bt-Button;
+  @extend .bt-Button-blue;
+}
+
+.lg-Links,
+body.login #nav {
+  display: grid;
+  margin: unset;
+  padding: unset;
+  width: 100%;
+  max-width: responsive(150px, 250px, 320px, 500px);
+
+  @include media("sm") {
+    grid-template-columns: 1fr auto 1fr;
+  }
+}
+
+.lg-Link,
+body.login #nav a {
+  color: $color-offwhite-grey;
+  text-decoration: none;
+  text-align: center;
+}
+
+@include media("sm") {
+  * + .lg-Link {
+    position: relative;
+
+    &::before {
+      background: $color-offwhite-grey;
+      content: "";
+      display: inline-block;
+      height: 15px;
+      position: absolute;
+      top: 5px;
+      left: 0;
+      width: 1px;
+    }
+  }
+}
+
+body.login #backtoblog {
+  display: none;
 }
