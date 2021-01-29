@@ -96,13 +96,13 @@ export default class ProfileDetails {
 }
 
 async function main(detailsElement) {
-  console.log(detailsElement)
-  Promise.all(newClasses.map(injectClass))
-  console.log('End Main')
+  Promise.all(newClasses.map(async (item) =>{
+    injectClass(detailsElement, item)
+  }))
 }
 
-async function injectClass(item) {
-  document.querySelectorAll(item.selector).forEach(async (element) => {
+async function injectClass(detailsElement, item) {
+  detailsElement.querySelectorAll(item.selector).forEach(async (element) => {
     element.classList.add(item.newClass)
   })
   console.log(item.selector)
