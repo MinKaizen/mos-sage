@@ -5,5 +5,9 @@
 @extends('layouts.main')
 
 @section('content')
-  @include('partials.mpai-AvatarIsland')
+  <div class="mp-MyProfile">
+    <div class="mp-MyProfile_Avatar">@include('partials.mpai-AvatarIsland')</div>
+    <div class="mp-MyProfile_Details">@include('partials.mpd-Details')</div>
+    <div class="mp-MyProfile_Password">@include('partials.mpp-Password')</div>
+  </div>
 @endsection
