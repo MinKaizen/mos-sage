@@ -1,0 +1,83 @@
+.avi-AvatarIsland {
+  align-content: start;
+  background: $gradient-shiny-light-blue;
+  border-radius: 10px;
+  display: grid;
+  justify-content: stretch;
+  max-width: 390px;
+  padding: 50px;
+  row-gap: 30px;
+}
+
+.avi-AvatarWrapper {
+  $size: 200px;
+
+  height: $size;
+  width: $size;
+  border: 2px solid $color-light-blue;
+  border-radius: 50%;
+  margin: auto;
+  overflow: hidden;
+
+  .avatar {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.avi-AvatarUpload {
+  .wpua-edit {
+    display: grid;
+    justify-items: center;
+    row-gap: 10px;
+  }
+
+  .button[name="wpua-add-existing"] {
+    $border-radius: 10px;
+    $mobile-scale: 0.5;
+    $padding-h: 20px;
+    $padding-v: 10px;
+
+    background: transparentize($color: $color-new-black, $amount: 0.5);
+    border: unset;
+    border-radius: responsive($border-radius * $mobile-scale, $border-radius);
+    color: $color-white;
+    font-size: $font-size-body;
+    padding: responsive($padding-v * $mobile-scale, $padding-v) responsive($padding-h * $mobile-scale, $padding-h);
+  }
+
+  .button[name="submit"] {
+    @extend .bt-Button;
+    @extend .bt-Button-blue;
+  }
+
+  // p wrappers around buttons
+  #wpua-add-button-existing,
+  .submit {
+    all: initial;
+  }
+
+  // image previews
+  #wpua-preview-existing,
+  #wpua-images-existing {
+    display: none;
+  }
+}
+
+.avi-Details {
+  display: grid;
+  column-gap: 15px;
+  grid-template-columns: auto 1fr;
+  row-gap: 5px;
+}
+
+.avi-Details_Label {
+  //
+}
+
+.avi-Details_Value {
+  background: $color-new-black;
+  border-radius: 10px;
+  padding: 5px;
+  text-align: center;
+}
