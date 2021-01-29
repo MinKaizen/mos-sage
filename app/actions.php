@@ -12,3 +12,7 @@ add_action( 'template_redirect', function() {
     redirect_module( \get_the_ID() );
   }
 });
+
+// Remove wrappers around Wordpress User Avatar
+remove_action('wpua_before_avatar', 'wpua_do_before_avatar');
+remove_action('wpua_after_avatar', 'wpua_do_after_avatar');
