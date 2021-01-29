@@ -183,22 +183,22 @@ body.login #nav a {
   text-align: center;
 }
 
-@include media("sm") {
-  * + .lg-Link {
-    position: relative;
+// @include media("sm") {
+//   * + .lg-Link {
+//     position: relative;
 
-    &::before {
-      background: $color-offwhite-grey;
-      content: "";
-      display: inline-block;
-      height: 15px;
-      position: absolute;
-      top: 5px;
-      left: 0;
-      width: 1px;
-    }
-  }
-}
+//     &::before {
+//       background: $color-offwhite-grey;
+//       content: "";
+//       display: inline-block;
+//       height: 15px;
+//       position: absolute;
+//       top: 5px;
+//       left: 0;
+//       width: 1px;
+//     }
+//   }
+// }
 
 body.login #backtoblog {
   display: none;
