@@ -147,7 +147,8 @@ body.login form .input {
   width: 100%;
   color: $color-light-charcoal;
   margin: unset;
-  font-size: $font-size-body;
+  font-size: responsive(14px, 16px, 320px, 500px);
+  line-height: 1.2;
 }
 
 .lg-Footer {
@@ -156,11 +157,14 @@ body.login form .input {
 
 .lg-Submit,
 #login form p.submit .button {
-  margin-bottom: 5px;
-  width: 100%;
-
   @extend .bt-Button;
   @extend .bt-Button-blue;
+
+  margin-bottom: 5px;
+  width: 100%;
+  padding: responsive(3px, 15px, 320px, 500px);
+  font-size: responsive(14px, 16px, 320px, 500px);
+  line-height: 1.2;
 }
 
 .lg-Links,
