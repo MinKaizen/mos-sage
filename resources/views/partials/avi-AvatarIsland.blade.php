@@ -1,6 +1,6 @@
 <div class="avi-AvatarIsland">
   <div class="avi-AvatarWrapper">
-    @shortcode('[avatar]')
+    @shortcode('[avatar size=200]')
   </div>
   <div class="avi-AvatarUpload">
     @shortcode('[avatar_upload]')
