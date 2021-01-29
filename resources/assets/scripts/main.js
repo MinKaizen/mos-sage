@@ -9,6 +9,7 @@ import UpgradeButton from './components/UpgradeButton'
 import SidebarToggle from './components/SidebarToggle'
 import MosTable from './components/MosTable'
 import ProfileDetails from './components/ProfileDetails'
+import ProfilePassword from './components/ProfilePassword'
 
 // Define routes
 const routes = [
@@ -20,6 +21,10 @@ const routes = [
 
 // Define components
 const components = [
+  {
+    class: ProfilePassword,
+    selector: '.js-ProfilePassword',
+  },
   {
     class: ProfileDetails,
     selector: '.js-ProfileDetails',
