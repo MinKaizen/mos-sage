@@ -98,6 +98,10 @@ body.login form {
   &:nth-child(3) {
     display: none;
   }
+
+  &:nth-child(3).submit {
+    display: block;
+  }
 }
 
 .lg-Label,
