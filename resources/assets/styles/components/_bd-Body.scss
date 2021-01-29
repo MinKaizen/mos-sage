@@ -1,5 +1,6 @@
 .bd-Body {
-  // background: url("#{$dist}/images/background-geometric.svg") $color-bg-black;
-  // background-size: cover;
+  background: $image-bg-geo $color-bg-black;
+  background-size: cover;
+  background-attachment: fixed;
   min-height: 100vh;
 }
