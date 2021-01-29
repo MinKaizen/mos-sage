@@ -8,6 +8,7 @@
       "./scripts/customizer.js"
     ],
     "login": [
+      "./scripts/login.js",
       "./styles/login.scss"
     ]
   },
