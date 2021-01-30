@@ -1,7 +1,7 @@
 .mpd-Details {
   background: $color-textbox-black;
   border-radius: 10px;
-  padding: responsive(20px, 30px) responsive(20px, 50px);
+  padding: 30px responsive(30px, 50px);
 }
 
 .mpd-FormWrapper {
@@ -18,14 +18,22 @@
 
 .mpd-Fields {
   display: grid;
-  row-gap: 5px;
+  row-gap: 15px;
   margin-bottom: responsive(10px, 20px);
+
+  @include media("sm") {
+    row-gap: 5px;
+  }
 }
 
 .mpd-Field {
   display: grid;
-  grid-template-columns: responsive(80px, 160px) 1fr;
   align-items: center;
+  grid-gap: 5px;
+
+  @include media("sm") {
+    grid-template-columns: responsive(80px, 120px) 1fr;
+  }
 }
 
 .mpd-Field-consent {
