@@ -3,3 +3,113 @@
   border-radius: 10px;
   padding: responsive(20px, 30px) responsive(20px, 50px);
 }
+
+.mpd-FormWrapper {
+  //
+}
+
+.mpd-Form {
+  //
+}
+
+.mpd-Body {
+  //
+}
+
+.mpd-Fields {
+  display: grid;
+  row-gap: 5px;
+  margin-bottom: responsive(10px, 20px);
+}
+
+.mpd-Field {
+  display: grid;
+  grid-template-columns: responsive(80px, 160px) 1fr;
+  align-items: center;
+}
+
+.mpd-Field-consent {
+  justify-items: start;
+  font-size: 12px;
+  grid-template-columns: unset;
+  margin-top: responsive(10px, 25px);
+}
+
+.mpd-Label {
+  //
+}
+
+.mpd-SubLabel {
+  display: none;
+}
+
+.mpd-Description {
+  //
+}
+
+.mpd-InputContainer {
+  //
+}
+
+.mpd-InputContainer-name {
+  display: grid;
+  grid-gap: 5px;
+
+  @include media("sm") {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.mpd-InputContainer-first-name {
+  //
+}
+
+.mpd-InputContainer-last-name {
+  //
+}
+
+.mpd-InputContainer-email {
+  //
+}
+
+.mpd-InputContainer-website {
+  //
+}
+
+.mpd-Input {
+  border-radius: 10px;
+  border: none;
+  padding: 5px responsive(10px, 15px);
+  width: 100%;
+}
+
+.mpd-Field-consent .mpd-Input {
+  width: auto;
+}
+
+.mpd-Input-first-name {
+  //
+}
+
+.mpd-Input-last-name {
+  //
+}
+
+.mpd-Input-email {
+  //
+}
+
+.mpd-Input-website {
+  //
+}
+
+.mpd-Footer {
+  display: grid;
+  justify-items: center;
+  align-items: center;
+}
+
+.mpd-Submit {
+  @extend .bt-Button;
+  @extend .bt-Button-blue;
+}

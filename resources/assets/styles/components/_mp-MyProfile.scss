@@ -1,0 +1,9 @@
+.mp-MyProfile {
+  margin: auto;
+  max-width: 930px;
+  padding: 20px;
+
+  // Grid
+  display: grid;
+  grid-gap: responsive(10px, 15px);
+}
