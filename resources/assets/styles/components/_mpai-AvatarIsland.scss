@@ -1,17 +1,35 @@
 .mpai-AvatarIsland {
-  align-content: start;
+  align-content: center;
+  height: 100%;
   background: $gradient-shiny-light-blue;
   border-radius: 10px;
   display: grid;
   justify-content: stretch;
-  max-width: 390px;
   padding: responsive(20px, 50px);
   row-gap: 30px;
+  grid-template-areas:
+    "avatar"
+    "edit"
+    "details";
+
+  @include media("sm") {
+    grid-template-areas:
+      "avatar details"
+      "edit   details";
+  }
+
+  @include media("md") {
+    grid-template-areas:
+      "avatar"
+      "edit"
+      "details";
+  }
 }
 
 .mpai-AvatarWrapper {
   $size: 200px;
 
+  grid-area: avatar;
   height: $size;
   width: $size;
   border: 2px solid $color-light-blue;
@@ -26,6 +44,8 @@
 }
 
 .mpai-AvatarUpload {
+  grid-area: edit;
+
   .wpua-edit {
     display: grid;
     justify-items: center;
@@ -65,10 +85,21 @@
 }
 
 .mpai-Details {
+  grid-area: details;
+  align-content: center;
+  align-items: center;
   display: grid;
   column-gap: 15px;
   grid-template-columns: auto 1fr;
   row-gap: 5px;
+
+  @include media("sm") {
+    grid-template-columns: unset;
+  }
+
+  @include media("md") {
+    grid-template-columns: auto 1fr;
+  }
 }
 
 .mpai-Details_Label {
