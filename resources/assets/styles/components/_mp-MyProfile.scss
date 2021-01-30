@@ -5,5 +5,28 @@
 
   // Grid
   display: grid;
+  align-items: stretch;
   grid-gap: responsive(10px, 15px);
+  grid-template-areas:
+    "avatar"
+    "details"
+    "password";
+
+  @include media("md") {
+    grid-template-areas:
+      "avatar details"
+      "avatar password";
+  }
+}
+
+.mp-MyProfile_Avatar {
+  grid-area: avatar;
+}
+
+.mp-MyProfile_Details {
+  grid-area: details;
+}
+
+.mp-MyProfile_Password {
+  grid-area: password;
 }
