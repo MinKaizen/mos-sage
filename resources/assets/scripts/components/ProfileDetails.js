@@ -87,6 +87,14 @@ const newClasses = [
     selector: '.gform_footer .gform_button',
     newClass: 'mpd-Submit',
   },
+  {
+    selector: '.validation_error',
+    newClass: 'mpd-Error',
+  },
+  {
+    selector: '.validation_message',
+    newClass: 'mpd-ErrorMessage',
+  },
 ]
 
 export default class ProfileDetails {
