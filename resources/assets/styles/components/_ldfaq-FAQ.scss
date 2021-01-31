@@ -1,39 +1,31 @@
 .ldfaq-FAQ {
-  background: transparentize($color: $color-textbox-black, $amount: 0.15);
+  //
+}
+
+.ldfaq-FAQ_Title {
+  font-size: $font-size-title;
+  font-weight: bold;
+  display: block;
   border-radius: $island-border-radius;
-  display: grid;
-  padding: $island-padding;
-  position: relative;
-  row-gap: 15px;
+  margin-left: 0 - $island-top-bar-oversize;
+  padding: 15px 15px 15px 35px;
+  width: calc(100% + (2 * #{$island-top-bar-oversize}));
 
-  // Top colorful bar
-  &::before {
-    content: "";
-    border-radius: $island-border-radius;
-    display: block;
-    height: $island-top-bar-height;
-    left: 0 - $island-top-bar-oversize;
-    position: absolute;
-    top: 0;
-    width: calc(100% + (2 * #{$island-top-bar-oversize}));
-  }
-
-  &-black::before {
+  &-black {
     background: $color-textbox-header-black;
   }
 
-  &-shiny-purple::before {
+  &-shiny-purple {
     background: $gradient-shiny-dark-blue;
   }
 }
 
-.ldfaq-FAQ_Title {
-  font-size: $island-font-size-h1;
-  font-weight: bold;
-}
-
 .ldfaq-FAQ_List {
-  border-radius: $island-border-radius;
+  background: $color-textbox-black;
+  border-radius: 0 0 $island-border-radius $island-border-radius;
+  display: grid;
+  padding: $lesson-island-padding;
+  padding-top: 10px;
 }
 
 .ldfaq-FAQ_Item {

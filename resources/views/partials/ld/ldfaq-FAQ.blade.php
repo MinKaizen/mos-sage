@@ -1,5 +1,5 @@
-<div class="ldfaq-FAQ ldfaq-FAQ-{{ $island_color }}">
-  <h2 class="ldfaq-FAQ_Title">Frequently Asked Questions</h2>
+<div class="ldfaq-FAQ">
+  <h2 class="ldfaq-FAQ_Title @if(isset($island_color))ldfaq-FAQ_Title-{{ $island_color }}@endif">Frequently Asked Questions:</h2>
   <div class="ldfaq-FAQ_List">
     @foreach($faq as $item)
       <details class="ldfaq-FAQ_Item">
