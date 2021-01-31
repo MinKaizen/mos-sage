@@ -111,6 +111,23 @@
   //
 }
 
+.mpd-Error {
+  background: darken($color: $color-textbox-black, $amount: 3%);
+  border-left: $color-red solid 1px;
+  font-size: 12px;
+  margin: 5px 0;
+  padding: 5px 5px 5px 10px;
+}
+
+.mpd-ErrorMessage {
+  background: darken($color: $color-textbox-black, $amount: 3%);
+  border-left: $color-red solid 1px;
+  font-size: 12px;
+  grid-column: 1 / -1;
+  margin: 5px 0;
+  padding: 5px 5px 5px 10px;
+}
+
 .mpd-Footer {
   display: grid;
   justify-items: center;
