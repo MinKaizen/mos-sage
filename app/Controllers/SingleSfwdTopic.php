@@ -13,6 +13,13 @@ class SingleSfwdTopic extends Controller
     protected $acf = true;
 
 
+    public function isComplete(): bool {
+        $lesson_id = $this->lessonId();
+        $is_complete = self::is_lesson_complete( $lesson_id );
+        return $is_complete;
+    }
+
+
     public function courseProgress(): array
     {
         $user = User::current();
