@@ -16,14 +16,20 @@
     @endforeach
   @endif
 
-  @if($append_complete)
-    <section class="ldap-ActionItem">
-      <img class="ldap-ActionItem_Checkbox" src="@asset('images/icon-unticked.png')">
-      <h3 class="ldap-ActionItem_Title">Complete</h3>
-      <hr class="ldap-ActionItem_Divider">
-      <p class="ldap-ActionItem_Description">Once you're done, mark this lesson as complete!</p>
-      @include('partials.ld.ldap-MarkComplete')
-    </section>
-  @endif
+    @if($append_complete)
+      <section class="ldap-ActionItem">
+        <img class="ldap-ActionItem_Checkbox" src="@asset('images/icon-unticked.png')">
+        <h3 class="ldap-ActionItem_Title">Complete</h3>
+        <hr class="ldap-ActionItem_Divider">
+        @if($is_complete)
+          <p class="ldap-ActionItem_Description">You've completed this lesson!</p>
+          <a class="bt-Button bt-Button-blue ldap-ActionItem_CTA ldap-ActionItem_CTA-blue" href="{{ $next_link }}">Next >>></a>
+        @else
+          <p class="ldap-ActionItem_Description">Mark this lesson as complete!</p>
+          @include('partials.ld.ldap-MarkComplete')
+        @endif
+      </section>
+    @endif
+  </div>
 
 </div>
