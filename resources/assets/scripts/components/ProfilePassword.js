@@ -63,6 +63,14 @@ const newClasses = [
     selector: '.gform_footer .gform_button',
     newClass: 'mpp-Submit',
   },
+  {
+    selector: '.validation_error',
+    newClass: 'mpp-Error',
+  },
+  {
+    selector: '.validation_message',
+    newClass: 'mpp-ErrorMessage',
+  },
 ]
 
 export default class ProfilePassword {
