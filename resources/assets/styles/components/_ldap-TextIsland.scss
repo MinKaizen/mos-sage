@@ -1,0 +1,24 @@
+.ldap-TextIsland_Content {
+  background: $color-textbox-black;
+  border-radius: 0 0 $island-border-radius $island-border-radius;
+  padding: $lesson-island-padding;
+  position: relative;
+}
+
+.ldap-TextIsland_Title {
+  font-size: $font-size-title;
+  font-weight: bold;
+  display: block;
+  border-radius: $island-border-radius;
+  margin-left: 0 - $island-top-bar-oversize;
+  padding: 15px 15px 15px 35px;
+  width: calc(100% + (2 * #{$island-top-bar-oversize}));
+
+  &-black {
+    background: $color-textbox-header-black;
+  }
+
+  &-shiny-purple {
+    background: $gradient-shiny-dark-blue;
+  }
+}

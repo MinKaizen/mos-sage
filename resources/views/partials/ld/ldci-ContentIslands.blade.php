@@ -6,8 +6,11 @@
   @endif
 
   {{-- Text Island --}}
-  @if(get_the_content())
-    @include('partials.ti-TextIsland', ['content' => get_the_content()])
+  @if(isset($text_island) && isset($text_island->title) && isset($text_island->content))
+    @include('partials.ld.ldap-TextIsland', [
+      'title' => $text_island->title,
+      'content' => $text_island->content,
+    ])
   @endif
 
   {{-- FAQ --}}
