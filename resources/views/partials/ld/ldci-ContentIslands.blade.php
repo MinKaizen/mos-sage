@@ -1,7 +1,7 @@
 <div class="ldci-ContentIslands">
 
   {{-- Action Plan --}}
-  @if(isset($action_plan) && $action_plan)
+  @if(isset($action_plan) && $action_plan || $append_complete)
     @include('partials.ld.ldap-ActionPlan')
   @endif
 
