@@ -1,33 +1,26 @@
-.ldap-ActionPlan {
+.ldap-ActionPlan_Inner {
   background: transparentize($color: $color-textbox-black, $amount: 0.15);
-  border-radius: $island-border-radius;
+  border-radius: 0 0 $island-border-radius $island-border-radius;
   display: grid;
-  padding: $island-padding;
+  padding: $lesson-island-padding;
   position: relative;
   row-gap: 30px;
-
-  // Top colorful bar
-  &::before {
-    content: "";
-    display: block;
-    border-radius: $island-border-radius;
-    position: absolute;
-    top: 0;
-    left: 0 - $island-top-bar-oversize;
-    height: $island-top-bar-height;
-    width: calc(100% + (2 * #{$island-top-bar-oversize}));
-  }
-
-  &-black::before {
-    background: $color-textbox-header-black;
-  }
-
-  &-shiny-purple::before {
-    background: $gradient-shiny-dark-blue;
-  }
 }
 
 .ldap-ActionPlan_Title {
-  font-size: $island-font-size-h1;
+  font-size: $font-size-title;
   font-weight: bold;
+  display: block;
+  border-radius: $island-border-radius;
+  margin-left: 0 - $island-top-bar-oversize;
+  padding: 15px 15px 15px 35px;
+  width: calc(100% + (2 * #{$island-top-bar-oversize}));
+
+  &-black {
+    background: $color-textbox-header-black;
+  }
+
+  &-shiny-purple {
+    background: $gradient-shiny-dark-blue;
+  }
 }
