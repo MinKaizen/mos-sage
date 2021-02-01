@@ -83,3 +83,11 @@
     display: none;
   }
 }
+
+.ms-MySponsor_Message {
+  background: $color-textbox-black;
+  border-radius: 10px;
+  grid-column: 1 / -1;
+  padding: responsive(20px, 50px);
+  text-align: center;
+}
