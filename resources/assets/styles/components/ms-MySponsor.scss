@@ -1,0 +1,14 @@
+.ms-MySponsor {
+  margin: auto;
+  max-width: 970px;
+  padding: 20px;
+
+  // Grid
+  display: grid;
+  align-items: stretch;
+  grid-gap: responsive(10px, 15px);
+
+  @include media("sm") {
+    grid-template-columns: auto auto;
+  }
+}
