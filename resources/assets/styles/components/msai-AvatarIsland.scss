@@ -1,0 +1,27 @@
+.msai-AvatarIsland {
+  align-content: center;
+  height: 100%;
+  background: $gradient-shiny-light-blue;
+  border-radius: 10px;
+  display: grid;
+  justify-content: stretch;
+  padding: responsive(20px, 50px);
+  row-gap: 30px;
+  max-width: 390px;
+}
+
+.msai-AvatarWrapper {
+  $size: 200px;
+
+  height: $size;
+  width: $size;
+  border: 2px solid $color-light-blue;
+  border-radius: 50%;
+  margin: auto;
+  overflow: hidden;
+
+  .avatar {
+    width: 100%;
+    height: 100%;
+  }
+}
