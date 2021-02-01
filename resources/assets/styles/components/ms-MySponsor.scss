@@ -42,3 +42,44 @@
     height: 100%;
   }
 }
+
+.ms-MySponsor_DetailsIsland {
+  align-content: start;
+  background: $color-textbox-black;
+  border-radius: 10px;
+  display: grid;
+  max-width: 525px;
+  padding: responsive(20px, 50px);
+  row-gap: responsive(15px, 20px);
+}
+
+.ms-MySponsor_Title {
+  font-size: 24px;
+  font-weight: normal;
+  grid-column: 1 / -1;
+  text-align: center;
+}
+
+.ms-MySponsor_Details {
+  column-gap: 15px;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  row-gap: 5px;
+}
+
+.ms-MySponsor_Details_Label {
+  //
+}
+
+.ms-MySponsor_Details_Value {
+  background: $color-input;
+  border-radius: 10px;
+  color: $color-light-charcoal;
+  overflow: auto;
+  padding: 5px 15px;
+  width: 100%;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
