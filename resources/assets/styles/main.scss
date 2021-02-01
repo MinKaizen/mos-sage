@@ -27,7 +27,6 @@
 @import "components/ai-MIS";
 @import "components/aim-AffIdsMain";
 @import "components/asb-AffSidebar";
-@import "components/mpai-AvatarIsland";
 @import "components/bd-Body";
 @import "components/bt-Button";
 @import "components/Button";
@@ -44,6 +43,7 @@
 @import "components/ldap-ActionItem";
 @import "components/ldap-ActionPlan";
 @import "components/ldap-MarkComplete";
+@import "components/ldap-TextIsland";
 @import "components/ldci-ContentIslands";
 @import "components/ldcp-CourseProgress";
 @import "components/ldfaq-FAQ";
@@ -60,11 +60,12 @@
 @import "components/mn-MobileNav";
 @import "components/mn-Submenu";
 @import "components/mp-MyProfile";
+@import "components/mpai-AvatarIsland";
+@import "components/mpd-Details";
+@import "components/mpp-Password";
+@import "components/msai-AvatarIsland.scss";
 @import "components/msb-MosSidebar";
 @import "components/rm-ReportMain";
 @import "components/te-TotalEarnings";
 @import "components/ti-TextIsland";
 @import "components/vid-Video";
-@import "components/mpd-Details";
-@import "components/mpp-Password";
-@import "components/ldap-TextIsland";
