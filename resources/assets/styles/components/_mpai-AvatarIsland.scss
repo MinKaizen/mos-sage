@@ -24,6 +24,17 @@
       "edit"
       "details";
   }
+
+  #wpua-upload-button-existing {
+    display: grid;
+    align-items: center;
+    justify-items: center;
+  }
+
+  #wpua-file-existing {
+    font-size: 0;
+    background: none;
+  }
 }
 
 .mpai-AvatarWrapper {
@@ -52,7 +63,8 @@
     row-gap: 10px;
   }
 
-  .button[name="wpua-add-existing"] {
+  .button[name="wpua-add-existing"],
+  #wpua-file-existing::-webkit-file-upload-button {
     $border-radius: 10px;
     $mobile-scale: 0.5;
     $padding-h: 30px;
@@ -62,6 +74,7 @@
     border: unset;
     border-radius: responsive($border-radius * $mobile-scale, $border-radius);
     color: $color-white;
+    display: initial !important;
     font-size: $font-size-body;
     padding: responsive($padding-v * $mobile-scale, $padding-v) responsive($padding-h * $mobile-scale, $padding-h);
   }
@@ -80,6 +93,26 @@
   // image previews
   #wpua-preview-existing,
   #wpua-images-existing {
+    display: none !important;
+  }
+
+  //
+  #wpua-upload-messages-existing {
+    display: none;
+  }
+
+  // Duplicate submit button
+  #wpua-upload-existing {
+    display: none;
+  }
+
+  // updated message
+  .updated {
+    display: none;
+  }
+
+  // Undo button
+  #wpua-undo-button-existing {
     display: none;
   }
 }
