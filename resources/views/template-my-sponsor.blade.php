@@ -7,8 +7,8 @@
 @section('content')
   <div class="ms-MySponsor">
 
-    <div class="msai-AvatarIsland">
-      <div class="msai-AvatarWrapper">
+    <div class="ms-MySponsor_AvatarIsland">
+      <div class="ms-MySponsor_AvatarWrapper">
         {!! get_avatar( $sponsor->ID, 250 ) !!}
       </div>
     </div>
