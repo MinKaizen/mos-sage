@@ -9,6 +9,6 @@
   grid-gap: responsive(10px, 15px);
 
   @include media("sm") {
-    grid-template-columns: auto auto;
+    grid-template-columns: 26fr 35fr;
   }
 }

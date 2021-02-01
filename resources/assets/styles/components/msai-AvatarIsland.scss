@@ -4,20 +4,22 @@
   background: $gradient-shiny-light-blue;
   border-radius: 10px;
   display: grid;
-  justify-content: stretch;
+  justify-content: center;
   padding: responsive(20px, 50px);
   row-gap: 30px;
-  max-width: 390px;
+
+  @include media("sm") {
+    max-width: 390px;
+  }
 }
 
 .msai-AvatarWrapper {
-  $size: 200px;
+  $size: responsive(200px, 250px);
 
-  height: $size;
   width: $size;
+  height: $size;
   border: 2px solid $color-light-blue;
   border-radius: 50%;
-  margin: auto;
   overflow: hidden;
 
   .avatar {

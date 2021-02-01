@@ -9,7 +9,7 @@
 
     <div class="msai-AvatarIsland">
       <div class="msai-AvatarWrapper">
-        {!! get_avatar( $sponsor->ID, 200 ) !!}
+        {!! get_avatar( $sponsor->ID, 250 ) !!}
       </div>
     </div>
 
