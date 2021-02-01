@@ -73,4 +73,9 @@ class App extends Controller
     public function afflink() {
         return apply_filters( 'mos_afflink', '' );
     }
+
+    public function sponsor() {
+        $sponsor = apply_filters( 'get_sponsor', null );
+        return $sponsor;
+    }
 }
