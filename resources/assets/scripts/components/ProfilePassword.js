@@ -89,5 +89,4 @@ async function injectClass(passwordElement, item) {
   passwordElement.querySelectorAll(item.selector).forEach(async (element) => {
     element.classList.add(item.newClass)
   })
-  console.log(item.selector)
 }

@@ -113,5 +113,4 @@ async function injectClass(detailsElement, item) {
   detailsElement.querySelectorAll(item.selector).forEach(async (element) => {
     element.classList.add(item.newClass)
   })
-  console.log(item.selector)
 }
