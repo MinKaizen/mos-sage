@@ -1,5 +1,5 @@
 .ldap-ActionPlan_Inner {
-  background: transparentize($color: $color-textbox-black, $amount: 0.15);
+  background: $color-ld-island;
   border-radius: 0 0 $island-border-radius $island-border-radius;
   display: grid;
   padding: $lesson-island-padding;
