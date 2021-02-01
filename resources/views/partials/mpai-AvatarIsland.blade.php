@@ -1,6 +1,6 @@
 <div class="mpai-AvatarIsland">
   <div class="mpai-AvatarWrapper">
-    @shortcode('[avatar size=200]')
+    {!! get_avatar( get_current_user_id(), 200 ) !!}
   </div>
   <div class="mpai-AvatarUpload">
     @shortcode('[avatar_upload]')
