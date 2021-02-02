@@ -28,6 +28,10 @@ const newClasses = [
     newClass: 'gf-Field',
   },
   {
+    selector: '.gfield_error',
+    newClass: 'gf-Field-error',
+  },
+  {
     selector: '.gfield.field_sublabel_below',
     newClass: 'gf-Field-label-below',
   },

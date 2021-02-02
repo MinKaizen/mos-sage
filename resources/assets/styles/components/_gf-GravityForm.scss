@@ -4,6 +4,21 @@
   row-gap: 15px;
 }
 
+.gf-Field {
+  display: grid;
+
+  &-error {
+    // border-left: $color-red solid 1px;
+    // padding-left: 15px;
+  }
+
+  &-error .gf-Label::before {
+    content: "✗";
+    color: $color-red;
+    padding: 0 3px;
+  }
+}
+
 .gf-Label {
   font-size: 20px;
 }
@@ -61,6 +76,29 @@
   &-consent {
     font-size: 14px;
     font-style: italic;
+  }
+}
+
+.gf-Error {
+  // background: darken($color: $color-textbox-black, $amount: 3%);
+  background: transparentize($color: $color-red, $amount: 0.9);
+  border-left: $color-red solid 1px;
+  font-size: 14px;
+  margin: 5px 0;
+  padding: 5px 5px 5px 10px;
+}
+
+.gf-ErrorMessage {
+  // background: darken($color: $color-textbox-black, $amount: 3%);
+  background: transparentize($color: $color-red, $amount: 0.9);
+  border-left: $color-red solid 1px;
+  font-size: 14px;
+  grid-column: 1 / -1;
+  padding: 5px 5px 5px 10px;
+  margin: 0 0 5px 0;
+
+  &::before {
+    content: "🠕 ";
   }
 }
 
