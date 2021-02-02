@@ -127,6 +127,19 @@
     letter-spacing: unset !important;
     line-height: unset !important;
   }
+
+  // Second level reply buttons
+  .wpd-comment .wpd-comment-footer .wpd-reply-button {
+    padding: 1px 15px !important;
+  }
+
+  // Second level vote buttons
+  .wpd-comment.wpd-reply .wpd-comment-footer .wpd-vote-up,
+  .wpd-comment.wpd-reply .wpd-comment-footer .wpd-vote-down {
+    padding: 3px !important;
+    width: 20px !important;
+    height: 20px !important;
+  }
 }
 
 // #HACK: override media query from wpdiscuz
