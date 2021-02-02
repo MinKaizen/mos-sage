@@ -1,0 +1,42 @@
+.ac-Accordion {
+  background: $color-ld-island;
+  border-radius: 0 0 $island-border-radius $island-border-radius;
+  display: grid;
+  padding: $lesson-island-padding;
+  padding-top: 10px;
+}
+
+.ac-Accordion_Item {
+  border-bottom: 1px solid $color-light-charcoal;
+
+  &:first-child {
+    border-radius: $island-border-radius $island-border-radius 0 0;
+  }
+
+  &:last-child {
+    border-radius: 0 0 $island-border-radius $island-border-radius;
+    border-bottom: none;
+  }
+
+  &[open] {
+    background: $color-new-black;
+  }
+}
+
+.ac-Accordion_Item_Title {
+  align-items: center;
+  border-bottom: 1px solid $color-light-charcoal;
+  cursor: pointer;
+  display: grid;
+  font-size: $island-font-size-h2;
+  grid-template-columns: auto 1fr auto;
+  outline: none;
+  padding: 15px;
+}
+
+.ac-Accordion_Item_Content {
+  box-sizing: border-box;
+  display: inline-block;
+  font-size: $island-font-size-body;
+  padding: 15px 62px 15px 35px;
+}

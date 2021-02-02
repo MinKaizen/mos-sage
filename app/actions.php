@@ -69,6 +69,18 @@ add_action('acf/init', function() {
         },
     ];
 
+    $blocks['ac-Accordion'] = [
+        'name' => 'accordion',
+        'title' => 'Accordion',
+        'description' => 'MOS Accordion',
+        'category' => ['accordion', 'mos'],
+        'mode' => 'auto',
+        'render_callback' => function() {
+            $args['list'] = get_field('list');
+            echo template('blocks.ac-Accordion', $args);
+        },
+    ];
+
     foreach ( $blocks as $block ) {
         acf_register_block_type( $block );
     }
