@@ -2,7 +2,7 @@
   align-items: center;
   column-gap: 5px;
   display: grid;
-  grid-template-columns: 1fr auto;
+  grid-template-columns: 1fr 34px;
 }
 
 .ai-MIS_Main {
@@ -10,8 +10,12 @@
   background: $color-new-black;
   border-radius: 10px;
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
   padding: 5px 15px;
+  row-gap: 5px;
+
+  @include media("sm") {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 .ai-MIS_Name {
@@ -20,7 +24,10 @@
 
 .ai-MIS_Value {
   color: $color-darker-icon;
-  justify-self: center;
+
+  @include media("sm") {
+    justify-self: center;
+  }
 }
 
 .ai-MIS_Link {
