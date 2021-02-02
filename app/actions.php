@@ -29,3 +29,48 @@ if( function_exists('acf_add_options_page') ) {
 	));
 
 }
+
+// Regiser ACF blocks
+add_action('acf/init', function() {
+
+    if( !function_exists('acf_register_block_type') ) {
+        return;
+    }
+
+    $blocks = [];
+
+    $blocks['ti-TextIsland'] = [
+        'name' => 'text-island',
+        'title' => 'Text Island',
+        'description' => 'Island for general content',
+        'category' => ['text', 'island', 'content'],
+        'mode' => 'preview',
+        'supports' => [
+            'jsx' => true,
+            'mode' => true,
+        ],
+        'render_callback' => function() {
+            echo template('blocks.ti-TextIsland');
+        },
+    ];
+
+    $blocks['bt-Button'] = [
+        'name' => 'button',
+        'title' => 'MOS Button',
+        'description' => 'MOS Button',
+        'category' => ['button', 'mos', 'bt'],
+        'mode' => 'auto',
+        'render_callback' => function() {
+            $args['link'] = get_field('link');
+            $args['new_tab'] = get_field('new_tab');
+            $args['text'] = get_field('text');
+            $args['color'] = get_field('color');
+            echo template('blocks.bt-Button', $args);
+        },
+    ];
+
+    foreach ( $blocks as $block ) {
+        acf_register_block_type( $block );
+    }
+});
+
