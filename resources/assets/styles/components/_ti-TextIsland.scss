@@ -4,21 +4,6 @@
   padding: $island-padding;
   position: relative;
 
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    padding-bottom: 0.5em;
-    font-size: $island-font-size-h1;
-    font-weight: bold;
-  }
-
-  p {
-    padding: 15px;
-  }
-
   // Top colorful bar
   &::before {
     content: "";
@@ -31,8 +16,4 @@
     height: $island-top-bar-height;
     width: calc(100% + (2 * #{$island-top-bar-oversize}));
   }
-}
-
-.ti-TextIsland-shiny-purple::before {
-  background: $gradient-shiny-dark-blue;
 }
