@@ -9,7 +9,7 @@
   h4,
   h5,
   h6 {
-    margin-top: 1.7em;
+    margin-top: 1.3em;
     margin-bottom: 0.3em;
 
     &:first-child {
@@ -19,7 +19,7 @@
 
   p {
     margin-top: 0.3em;
-    margin-bottom: 1.7em;
+    margin-bottom: 1.3em;
 
     &:last-child {
       margin-bottom: 0;
@@ -29,10 +29,14 @@
   ol,
   ul {
     margin-top: 0.3em;
-    margin-bottom: 1.7em;
+    margin-bottom: 1.3em;
   }
 
   li {
     margin-bottom: 0.3em;
+  }
+
+  img {
+    max-width: 100%;
   }
 }
