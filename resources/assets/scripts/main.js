@@ -10,6 +10,7 @@ import SidebarToggle from './components/SidebarToggle'
 import MosTable from './components/MosTable'
 import ProfileDetails from './components/ProfileDetails'
 import ProfilePassword from './components/ProfilePassword'
+import GravityForm from './components/GravityForm'
 
 // Define routes
 const routes = [
@@ -21,6 +22,10 @@ const routes = [
 
 // Define components
 const components = [
+  {
+    class: GravityForm,
+    selector: '.js-GravityForm_wrapper',
+  },
   {
     class: ProfilePassword,
     selector: '.js-ProfilePassword',

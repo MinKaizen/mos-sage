@@ -1,0 +1,69 @@
+// Fields list
+.gf-Fields {
+  display: grid;
+  row-gap: 15px;
+}
+
+.gf-Label {
+  font-size: 20px;
+}
+
+.gf-SubLabel {
+  font-size: 14px;
+  font-style: italic;
+}
+
+.gf-Required {
+  color: $color-red;
+  margin-left: 3px;
+}
+
+.gf-InputContainer {
+  &-complex {
+    display: grid;
+    grid-gap: 10px;
+  }
+}
+
+.gf-Input {
+  font-size: 16px;
+
+  &[type="email"],
+  &[type="number"],
+  &[type="tel"],
+  &[type="password"],
+  &[type="text"] {
+    border-radius: 10px;
+    border: none;
+    padding: 5px responsive(10px, 15px);
+    width: 100%;
+    color: $color-new-dark-grey;
+  }
+}
+
+.gf-Select {
+  font-size: 16px;
+  border-radius: 10px;
+  border: none;
+  padding: 5px responsive(10px, 15px);
+}
+
+.gf-SelectOption {
+  font-size: 16px;
+}
+
+.gf-Instruction {
+  font-size: 14px;
+  font-style: italic;
+}
+
+.gf-Description {
+  &-consent {
+    font-size: 14px;
+    font-style: italic;
+  }
+}
+
+.gf-Submit {
+  @extend .bt-Button;
+}
