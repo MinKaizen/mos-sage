@@ -81,7 +81,7 @@ add_action('after_setup_theme', function () {
      * Use main stylesheet for visual editor
      * @see resources/assets/styles/layouts/_tinymce.scss
      */
-    add_editor_style(asset_path('styles/main.css'));
+    // add_editor_style(asset_path('styles/main.css'));
 }, 20);
 
 /**
@@ -201,4 +201,9 @@ add_action('after_setup_theme', function () {
         return "<?php echo do_shortcode($string); ?>";
     });
 
+});
+
+add_action('enqueue_block_editor_assets', function () {
+    wp_enqueue_style('sage/main.css', asset_path('styles/gutenberg.css'), false, null);
+    wp_enqueue_script('sage/main.js', asset_path('scripts/gutenberg.js'), ['jquery'], null, true);
 });

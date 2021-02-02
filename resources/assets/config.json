@@ -10,6 +10,9 @@
     "login": [
       "./scripts/login.js",
       "./styles/login.scss"
+    ],
+    "gutenberg": [
+      "./styles/gutenberg.scss"
     ]
   },
   "publicPath": "/wp-content/themes/sage",
