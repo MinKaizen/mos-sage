@@ -42,6 +42,11 @@ b {
   font-weight: bold;
 }
 
+em,
+i {
+  font-style: italic;
+}
+
 input {
   color: $color-light-charcoal;
   background: $color-input;
