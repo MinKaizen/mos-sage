@@ -4,12 +4,14 @@
 STYLE_COMPONENT_FOLDER="resources/assets/styles/components"
 BLADE_COMPONENT_FOLDER="resources/views/partials"
 STYLE_MAIN_FILE="resources/assets/styles/main.scss"
+STYLE_GUTENBERG_FILE="resources/assets/styles/gutenberg.scss"
 END_LOOP_PHRASE="done"
 
 function pre_check() {
   [ ! -d "$STYLE_COMPONENT_FOLDER" ] && exit_with "Cannot find directory: $STYLE_COMPONENT_FOLDER"
   [ ! -d "$BLADE_COMPONENT_FOLDER" ] && exit_with "Cannot find directory: $BLADE_COMPONENT_FOLDER"
   [ ! -f "$STYLE_MAIN_FILE" ] && exit_with "Cannot find file: $STYLE_MAIN_FILE"
+  [ ! -f "$STYLE_GUTENBERG_FILE" ] && exit_with "Cannot find file: $STYLE_GUTENBERG_FILE"
 }
 
 function exit_with() {
@@ -50,6 +52,7 @@ function create_component_blade() {
 function import_component_style() {
   local import_rule="@import \"components/$1\";"
   echo -e $import_rule >> $STYLE_MAIN_FILE
+  echo -e $import_rule >> $STYLE_GUTENBERG_FILE
   printf "[IMPORTED] $import_rule\n"
 }
 
