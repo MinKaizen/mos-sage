@@ -63,6 +63,12 @@
   padding: 5px responsive(10px, 15px);
 }
 
+// #HACK: Override base rules from c-Content
+.gf-Radio,
+.gf-Checkbox {
+  margin: 0 !important;
+}
+
 .gf-SelectOption {
   font-size: 16px;
 }
