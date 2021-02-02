@@ -2,4 +2,37 @@
   color: white;
   font-size: 16px;
   line-height: 1.5;
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin-top: 1.7em;
+    margin-bottom: 0.3em;
+
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+
+  p {
+    margin-top: 0.3em;
+    margin-bottom: 1.7em;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  ol,
+  ul {
+    margin-top: 0.3em;
+    margin-bottom: 1.7em;
+  }
+
+  li {
+    margin-bottom: 0.3em;
+  }
 }
