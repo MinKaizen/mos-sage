@@ -283,3 +283,65 @@ function format_currency( float $number, int $decimals=2 ): string {
     $currency = $sign . $symbol . number_format( abs( $number ), $decimals );
     return $currency;
 }
+
+function video_id( string $type, string $url ): string {
+    $regexes = [
+        'vimeo' => '/vimeo.com\/(?:manage\/|video\/)?([0-9]+)/i',
+        'youtube' => '/(?:youtu\.be|youtube\.com)\/(?:embed\/|watch\?v=)?([a-zA-Z0-9-_]+)/i',
+        'wave' => '/(?:wave\.|watch\.|embed\.)?wave\.video\/(?:video\/)?([a-zA-Z0-9_-]+)/i',
+    ];
+
+    if ( !array_key_exists( $type, $regexes ) ) {
+        return '';
+    }
+
+    $regex = $regexes[$type];
+    preg_match( $regex, $url, $matches );
+    $video_id = isset( $matches[1] ) ? $matches[1] : '';
+    return $video_id;
+}
+
+function video_type( string $url ): string {
+    $type = '';
+
+    $types = [
+        'vimeo.com' => 'vimeo',
+        'youtube.com' => 'youtube',
+        'youtu.be' => 'youtube',
+        'wave.video' => 'wave',
+    ];
+
+    foreach ( $types as $needle => $type_name ) {
+        if ( strpos( $url, $needle ) !== false ) {
+            $type = $type_name;
+            break;
+        }
+    }
+
+    return $type;
+}
+
+function video_embed_url( string $url, bool $fallback_original=true ): string {
+    $fallback = $fallback_original ? $url : '';
+    $type = video_type( $url );
+
+    if ( !$type ) {
+        return $fallback;
+    }
+
+    $video_id = video_id( $type, $url );
+
+    if ( !$video_id ) {
+        return $fallback;
+    }
+
+    $templates = [
+        'vimeo' => 'https://player.vimeo.com/video/%video_id%',
+        'youtube' => 'https://www.youtube.com/embed/%video_id%',
+        'wave' => 'https://embed.wave.video/%video_id%',
+    ];
+
+    $template = $templates[$type];
+    $embed_url = $video_id ? str_replace( '%video_id%', $video_id, $template ) : $fallback;
+    return $embed_url;
+}
