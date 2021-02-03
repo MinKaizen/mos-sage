@@ -284,64 +284,43 @@ function format_currency( float $number, int $decimals=2 ): string {
     return $currency;
 }
 
-function video_id( string $type, string $url ): string {
-    $regexes = [
-        'vimeo' => '/vimeo.com\/(?:manage\/|video\/)?([0-9]+)/i',
-        'youtube' => '/(?:youtu\.be|youtube\.com)\/(?:embed\/|watch\?v=)?([a-zA-Z0-9-_]+)/i',
-        'wave' => '/(?:wave\.|watch\.|embed\.)?wave\.video\/(?:video\/)?([a-zA-Z0-9_-]+)/i',
+function video_embed_url( string $url, bool $fallback_original=true ): string {
+    $options_map = [
+        'vimeo.com' => [
+            'regex' => '/vimeo.com\/(?:manage\/|video\/)?([0-9]+)/i',
+            'template' => 'https://player.vimeo.com/video/%video_id%',
+        ],
+        'youtube.com' => [
+            'regex' => '/(?:youtu\.be|youtube\.com)\/(?:embed\/|watch\?v=)?([a-zA-Z0-9-_]+)/i',
+            'template' => 'https://www.youtube.com/embed/%video_id%',
+        ],
+        'youtu.be' => [
+            'regex' => '/(?:youtu\.be|youtube\.com)\/(?:embed\/|watch\?v=)?([a-zA-Z0-9-_]+)/i',
+            'template' => 'https://www.youtube.com/embed/%video_id%',
+        ],
+        'wave.video' => [
+            'regex' => '/(?:wave\.|watch\.|embed\.)?wave\.video\/(?:video\/)?([a-zA-Z0-9_-]+)/i',
+            'template' => 'https://embed.wave.video/%video_id%',
+        ],
     ];
 
-    if ( !array_key_exists( $type, $regexes ) ) {
-        return '';
-    }
+    $options = [];
 
-    $regex = $regexes[$type];
-    preg_match( $regex, $url, $matches );
-    $video_id = isset( $matches[1] ) ? $matches[1] : '';
-    return $video_id;
-}
-
-function video_type( string $url ): string {
-    $type = '';
-
-    $types = [
-        'vimeo.com' => 'vimeo',
-        'youtube.com' => 'youtube',
-        'youtu.be' => 'youtube',
-        'wave.video' => 'wave',
-    ];
-
-    foreach ( $types as $needle => $type_name ) {
+    foreach ( $options_map as $needle => $o ) {
         if ( strpos( $url, $needle ) !== false ) {
-            $type = $type_name;
+            $options = $o;
             break;
         }
     }
 
-    return $type;
-}
-
-function video_embed_url( string $url, bool $fallback_original=true ): string {
     $fallback = $fallback_original ? $url : '';
-    $type = video_type( $url );
 
-    if ( !$type ) {
+    if ( empty( $options ) ) {
         return $fallback;
     }
 
-    $video_id = video_id( $type, $url );
-
-    if ( !$video_id ) {
-        return $fallback;
-    }
-
-    $templates = [
-        'vimeo' => 'https://player.vimeo.com/video/%video_id%',
-        'youtube' => 'https://www.youtube.com/embed/%video_id%',
-        'wave' => 'https://embed.wave.video/%video_id%',
-    ];
-
-    $template = $templates[$type];
-    $embed_url = $video_id ? str_replace( '%video_id%', $video_id, $template ) : $fallback;
+    preg_match( $options['regex'], $url, $matches );
+    $video_id = isset( $matches[1] ) ? $matches[1] : '';
+    $embed_url = str_replace( '%video_id%', $video_id, $options['template'] );
     return $embed_url;
 }
