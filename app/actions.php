@@ -98,3 +98,6 @@ add_action('acf/init', function() {
     }
 });
 
+// Handle mis forms
+add_action( 'admin_post_nopriv_update_user_mis', '\App\Handler\update_user_mis' );
+add_action( 'admin_post_update_user_mis', '\App\Handler\update_user_mis' );
