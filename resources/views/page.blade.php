@@ -4,7 +4,6 @@
   @while(have_posts()) @php the_post() @endphp
     <div class="p-Page">
       <div class="ti-TextIsland c-Content">
-        <h2>{{ the_title() }}</h2>
         @php the_content() @endphp
       </div>
 
