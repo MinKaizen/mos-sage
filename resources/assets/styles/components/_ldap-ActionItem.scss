@@ -3,10 +3,18 @@
   display: grid;
   grid-template-columns: auto 1fr auto;
   grid-template-areas:
-    "check    title         title"
-    "divider  divider       divider"
-    "_        description   cta";
+    "check    title      "
+    "divider  divider    "
+    "_        description"
+    "_        cta        ";
   row-gap: 15px;
+
+  @include media("sm") {
+    grid-template-areas:
+      "check    title         title"
+      "divider  divider       divider"
+      "_        description   cta";
+  }
 }
 
 .ldap-ActionItem_Checkbox {
