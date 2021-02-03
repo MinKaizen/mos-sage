@@ -81,6 +81,18 @@ add_action('acf/init', function() {
         },
     ];
 
+    $blocks['vid-Video'] = [
+        'name' => 'video',
+        'title' => 'Video',
+        'description' => 'Responsive Video',
+        'category' => ['video', 'mos', 'responsive'],
+        'mode' => 'edit',
+        'render_callback' => function() {
+            $args['url'] = get_field('url');
+            echo template('blocks.vid-Video', $args);
+        },
+    ];
+
     foreach ( $blocks as $block ) {
         acf_register_block_type( $block );
     }
