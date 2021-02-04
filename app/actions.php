@@ -101,3 +101,16 @@ add_action('acf/init', function() {
 // Handle mis forms
 add_action( 'admin_post_nopriv_update_user_mis', '\App\Handler\update_user_mis' );
 add_action( 'admin_post_update_user_mis', '\App\Handler\update_user_mis' );
+
+// Load Acf
+add_action( 'admin_init', function() {
+    if ( !function_exists( 'acf_add_local_field_group' ) ) {
+      return;
+    }
+
+    $acf_data = json_decode( file_get_contents( __DIR__ . '/acf.json' ), true );
+
+    foreach ( $acf_data as $field_group ) {
+        acf_add_local_field_group( $field_group );
+    }
+} );
