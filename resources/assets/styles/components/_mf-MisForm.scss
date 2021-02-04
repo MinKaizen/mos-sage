@@ -1,0 +1,40 @@
+.mf-MisForm {
+  display: grid;
+  justify-content: center;
+  grid-gap: 10px;
+}
+
+.mf-Body {
+  &-saved {
+    padding-left: 10px;
+    border-left: 5px solid $color-green;
+  }
+}
+
+.mf-Label {
+  &-has-value::before {
+    content: "✓";
+    color: $color-green;
+    margin-right: 0.2em;
+  }
+}
+
+.mf-Input {
+  border: none;
+  border-radius: 10px;
+  max-width: 130px;
+  padding: 5px 10px;
+}
+
+.mf-Saved {
+  color: $color-green;
+}
+
+.mf-Submit {
+  border: none;
+  border-radius: 10px;
+  padding: 5px 10px;
+  color: $color-white;
+
+  @extend .bt-Button-red;
+}
