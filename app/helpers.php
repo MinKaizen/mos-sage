@@ -374,3 +374,28 @@ function free_course_progress( int $user_id=0 ): array {
     $free_course_progress = course_progress( $free_course_id, $user_id );
     return $free_course_progress;
 }
+
+function get_mis( string $slug, int $user_id=0 ): string {
+    $fallback = '';
+
+    if ( !$user_id ) {
+        // User id not specified. Use current user ID
+        $user_id = get_current_user_id();
+    }
+
+    if ( !$user_id ) {
+        // User is not logged in. Return early
+        return $fallback;
+    }
+
+    if ( function_exists( 'get_field' ) ) {
+        $mis_metakey_prefix = get_field( 'mis_metakey_prefix', 'option' );
+    } else {
+        $mis_metakey_prefix = '';
+    }
+
+    $mis_metakey_prefix = $mis_metakey_prefix ? $mis_metakey_prefix : 'mos_mis_';
+    $mis_metakey = $mis_metakey_prefix . $slug;
+    $mis_value = (string) get_user_meta( $user_id, $mis_metakey, true );
+    return $mis_value;
+}
