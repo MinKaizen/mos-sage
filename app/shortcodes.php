@@ -2,8 +2,9 @@
 
 namespace App;
 
-use \MOS\Affiliate\User;
 use \MOS\Affiliate\MIS;
+
+use function \App\get_mis;
 
 // Shortcode for mis form
 add_shortcode( 'mos_mis_form', function( $atts ) {
@@ -17,7 +18,7 @@ add_shortcode( 'mos_mis_form', function( $atts ) {
         return "[no MIS with slug $atts[network]]";
     }
 
-    $current_value = User::current()->get_mis($mis->slug);
+    $current_value = get_mis( $atts['network'] );
 
     $vars = [
         'mis' => $mis,
