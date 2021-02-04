@@ -14,7 +14,7 @@ add_shortcode( 'mos_mis_form', function( $atts ) {
     $mis = new MIS( $atts['network'] );
 
     if ( !$mis->exists ) {
-        return "[no MIS with slug $atts[network]";
+        return "[no MIS with slug $atts[network]]";
     }
 
     $current_value = User::current()->get_mis($mis->slug);
