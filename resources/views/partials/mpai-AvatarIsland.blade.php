@@ -11,6 +11,6 @@
     <div class="mpai-Details_Label mpai-Details_Label-Level">Level:</div>
     <div class="mpai-Details_Value mpai-Details_Value-Level">@shortcode('[mos_level]')</div>
     <div class="mpai-Details_Label mpai-Details_Label-Progress">Course Status:</div>
-    <div class="mpai-Details_Value mpai-Details_Value-Progress">@shortcode('[mos_course_progress]')</div>
+    <div class="mpai-Details_Value mpai-Details_Value-Progress">{{ \App\free_course_progress()['formatted'] }}</div>
   </div>
 </div>
