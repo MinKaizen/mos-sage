@@ -704,6 +704,25 @@
               "multiple": 0,
               "return_format": "id",
               "ui": 1
+          },
+          {
+              "key": "field_1qfioe46qzbhr",
+              "label": "MIS Metakey Prefix",
+              "name": "mis_metakey_prefix",
+              "type": "text",
+              "instructions": "<code>mis_metakey_prefix<\/code><p>Make sure to add an underscore (_) at the end</p>",
+              "required": 0,
+              "conditional_logic": 0,
+              "wrapper": {
+                  "width": "",
+                  "class": "",
+                  "id": ""
+              },
+              "default_value": "mos_mis_",
+              "placeholder": "",
+              "prepend": "",
+              "append": "",
+              "maxlength": ""
           }
       ],
       "location": [
