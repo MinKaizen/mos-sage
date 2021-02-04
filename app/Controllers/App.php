@@ -6,7 +6,6 @@ use Sober\Controller\Controller;
 use App\Classes\HeaderMenuWalker;
 use App\Classes\MobileNavMenuWalker;
 use App\Classes\FooterMenuWalker;
-use MOS\Affiliate\User;
 
 class App extends Controller
 {
@@ -57,9 +56,9 @@ class App extends Controller
 
     public function topMenuSlug() {
         // Note: check setup.php for menu slugs
-        $user = User::current();
+        $user = wp_get_current_user();
 
-        if ( ! $user->exists() ) {
+        if ( empty($user->ID) || !$user->ID ) {
             $menu_slug = 'top';
         } elseif ( $user->has_access('monthly_partner') ) {
             $menu_slug = 'top_partner';
