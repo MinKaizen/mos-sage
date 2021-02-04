@@ -324,3 +324,53 @@ function video_embed_url( string $url, bool $fallback_original=true ): string {
     $embed_url = str_replace( '%video_id%', $video_id, $options['template'] );
     return $embed_url;
 }
+
+function course_progress( int $course_id, int $user_id=0 ): array {
+    // Default values
+    $course_progress = [
+        'completed' => 0,
+        'total' => 0,
+        'percentage' => 0.0,
+        'percentage_str' => '0%',
+        'formatted' => '-',
+    ];
+
+    if ( !$user_id ) {
+        // User id not specified. Use current user ID
+        $user_id = get_current_user_id();
+    }
+
+    if ( !$user_id ) {
+        // User is not logged in. Return early
+        return $course_progress;
+    }
+
+    $course_progress_meta = \get_user_meta( $user_id, '_sfwd-course_progress', true );
+
+    if ( !empty( $course_progress_meta[$course_id]['completed'] ) ) {
+        $course_progress['completed'] = (int) $course_progress_meta[$course_id]['completed'];
+    }
+
+    if ( !empty( $course_progress_meta[$course_id]['total'] ) ) {
+        $course_progress['total'] = (int) $course_progress_meta[$course_id]['total'];
+    }
+
+    if ( $course_progress['total'] != 0 ) {
+        $course_progress['formatted'] = "$course_progress[completed]/$course_progress[total]";
+        $course_progress['percentage'] = $course_progress['completed']/$course_progress['total'];
+        $course_progress['percentage_str'] = (string) ceil( $course_progress['percentage'] * 100 ) . '%';
+    }
+
+    return $course_progress;
+}
+
+function free_course_progress( int $user_id=0 ): array {
+    if ( function_exists( 'get_field' ) ) {
+        $free_course_id = (int) get_field( 'free_course_id', 'options' );
+    } else {
+        $free_course_id = 0;
+    }
+
+    $free_course_progress = course_progress( $free_course_id, $user_id );
+    return $free_course_progress;
+}
