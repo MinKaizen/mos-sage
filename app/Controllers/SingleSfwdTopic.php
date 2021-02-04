@@ -7,6 +7,8 @@ namespace App\Controllers;
 use Sober\Controller\Controller;
 use MOS\Affiliate\User;
 
+use function \App\course_progress;
+
 class SingleSfwdTopic extends Controller
 {
 
@@ -22,9 +24,8 @@ class SingleSfwdTopic extends Controller
 
     public function courseProgress(): array
     {
-        $user = User::current();
         $course_id = $this->courseId();
-        $progress = $user->get_course_progress($course_id);
+        $progress = course_progress( $course_id );
         return $progress;
     }
 
