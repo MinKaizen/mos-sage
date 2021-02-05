@@ -706,6 +706,25 @@
               "ui": 1
           },
           {
+              "key": "field_7k0kj2895nfwj",
+              "label": "MIS Link Template Tag",
+              "name": "mis_link_template_tag",
+              "type": "text",
+              "instructions": "<code>mis_link_template_tag<\/code>",
+              "required": 0,
+              "conditional_logic": 0,
+              "wrapper": {
+                  "width": "",
+                  "class": "",
+                  "id": ""
+              },
+              "default_value": "%affid%",
+              "placeholder": "",
+              "prepend": "",
+              "append": "",
+              "maxlength": ""
+          },
+          {
               "key": "field_1qfioe46qzbhr",
               "label": "MIS Metakey Prefix",
               "name": "mis_metakey_prefix",
