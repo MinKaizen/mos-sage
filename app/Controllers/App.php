@@ -56,11 +56,11 @@ class App extends Controller
 
     public function topMenuSlug() {
         // Note: check setup.php for menu slugs
-        $user = wp_get_current_user();
+        $user_id = get_current_user_id();
 
-        if ( empty($user->ID) || !$user->ID ) {
+        if ( !$user_id ) {
             $menu_slug = 'top';
-        } elseif ( $user->has_access('monthly_partner') ) {
+        } elseif ( apply_filters( 'mos_has_access', false, 'monthly_partner', $user_id ) ) {
             $menu_slug = 'top_partner';
         } else {
             $menu_slug = 'top_free';
