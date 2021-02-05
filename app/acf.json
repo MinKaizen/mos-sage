@@ -688,7 +688,7 @@
               "label": "Free Course ID",
               "name": "free_course_id",
               "type": "post_object",
-              "instructions": "",
+              "instructions": "<code>free_course_id</code>",
               "required": 0,
               "conditional_logic": 0,
               "wrapper": {
