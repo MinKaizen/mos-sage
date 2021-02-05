@@ -114,3 +114,16 @@ add_action( 'init', function() {
         acf_add_local_field_group( $field_group );
     }
 } );
+
+// Add Access Level column when viewing pages
+add_filter( 'manage_page_posts_columns', function( $columns ) {
+    $columns['Access'] = 'Access';
+    return $columns;
+} );
+add_action( 'manage_page_posts_custom_column', function( $column, $post_id ) {
+    if ( $column === 'Access' && function_exists( 'get_field' ) ) {
+        $access_level = get_field( 'access_level', $post_id );
+        $access_level = $access_level ? $access_level : '';
+        echo $access_level;
+    }
+}, 10, 2 );
