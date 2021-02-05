@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace App\Controllers;
 
 use Sober\Controller\Controller;
-use MOS\Affiliate\User;
 
 use function \App\course_progress;
 
@@ -54,7 +53,7 @@ class SingleSfwdTopic extends Controller
 
     public function courseStructure(): array
     {
-        $access_list = User::current()->get_access_list();
+        $access_list = apply_filters( 'mos_access_list', [] );
         $access_list[] = '';
         $course_id = $this->courseId();
         // $cache_key = "mos_ld_course_structure_$course_id";
