@@ -5,7 +5,7 @@
       <th class="dt-Cell dt-HeaderCell dt-Cell-campaigns dt-HeaderCell-campaigns dt-Col-campaigns-clicks">Clicks</th>
       <th class="dt-Cell dt-HeaderCell dt-Cell-campaigns dt-HeaderCell-campaigns dt-Col-campaigns-partners">Partners</th>
       <th class="dt-Cell dt-HeaderCell dt-Cell-campaigns dt-HeaderCell-campaigns dt-Col-campaigns-commissions">Commissions</th>
-      <th class="dt-Cell dt-HeaderCell dt-Cell-campaigns dt-HeaderCell-campaigns dt-Col-campaigns-epc">EPC</th>
+      {{-- <th class="dt-Cell dt-HeaderCell dt-Cell-campaigns dt-HeaderCell-campaigns dt-Col-campaigns-epc">EPC</th> --}}
     </tr>
   </thead>
   <tbody class="dt-Body dt-Body-campaigns">
@@ -15,7 +15,7 @@
         <td class="dt-Cell dt-Cell-campaigns dt-Col-campaigns-clicks">{{ $campaign['clicks'] }}</td>
         <td class="dt-Cell dt-Cell-campaigns dt-Col-campaigns-partners">{{ $campaign['partners'] }}</td>
         <td class="dt-Cell dt-Cell-campaigns dt-Col-campaigns-commissions">{{ $campaign['commissions_formatted'] }}</td>
-        <td class="dt-Cell dt-Cell-campaigns dt-Col-campaigns-epc">{{ $campaign['epc_formatted'] }}</td>
+        {{-- <td class="dt-Cell dt-Cell-campaigns dt-Col-campaigns-epc">{{ $campaign['epc_formatted'] }}</td> --}}
       </tr>
     @endforeach
   </tbody>
