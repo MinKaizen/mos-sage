@@ -17,12 +17,14 @@
   display: grid;
   row-gap: 10px;
   margin-bottom: responsive(24px, 42px);
+  justify-self: center;
+  justify-items: center;
 
   @include media("sm") {
     column-gap: 20px;
-    grid-template-columns: repeat(3, 1fr);
-    justify-self: center;
-    justify-items: center;
+    // grid-template-columns: repeat(3, 1fr);
+    // justify-self: center;
+    // justify-items: center;
   }
 }
 
@@ -35,7 +37,9 @@
 
 .te-TotalEarnings_Total_Currency,
 .te-TotalEarnings_Total_Number {
-  font-size: responsive(26px, 50px);
+  font-size: responsive(35px, 100px);
+  // Font size if there are 3 totals (commissions, referrals, epr):
+  // font-size: responsive(26px, 50px);
   font-weight: bold;
   line-height: 1;
 }
