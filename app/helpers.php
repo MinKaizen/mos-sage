@@ -399,3 +399,9 @@ function get_mis( string $slug, int $user_id=0 ): string {
     $mis_value = (string) get_user_meta( $user_id, $mis_metakey, true );
     return $mis_value;
 }
+
+function validate_mis_value( string $value ): bool {
+    $valid_regex = '/^[a-zA-Z0-9-_]+$/';
+    $is_valid = (bool) preg_match( $valid_regex, $value );
+    return $is_valid;
+}
