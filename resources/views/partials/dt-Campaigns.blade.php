@@ -5,8 +5,8 @@
       <th class="dt-Cell dt-HeaderCell dt-Cell-campaigns dt-HeaderCell-campaigns dt-Col-campaigns-clicks">Clicks</th>
       <th class="dt-Cell dt-HeaderCell dt-Cell-campaigns dt-HeaderCell-campaigns dt-Col-campaigns-monthly">Monthly P.</th>
       <th class="dt-Cell dt-HeaderCell dt-Cell-campaigns dt-HeaderCell-campaigns dt-Col-campaigns-yearly">Yearly P.</th>
-      <th class="dt-Cell dt-HeaderCell dt-Cell-campaigns dt-HeaderCell-campaigns dt-Col-campaigns-lifetime">Lifetime P.</th>
-      <th class="dt-Cell dt-HeaderCell dt-Cell-campaigns dt-HeaderCell-campaigns dt-Col-campaigns-coaching">Coaching</th>
+      @if($show_lifetime)<th class="dt-Cell dt-HeaderCell dt-Cell-campaigns dt-HeaderCell-campaigns dt-Col-campaigns-lifetime">Lifetime P.</th>@endif
+      @if($show_coaching)<th class="dt-Cell dt-HeaderCell dt-Cell-campaigns dt-HeaderCell-campaigns dt-Col-campaigns-coaching">Coaching</th>@endif
       <th class="dt-Cell dt-HeaderCell dt-Cell-campaigns dt-HeaderCell-campaigns dt-Col-campaigns-fbt">FBT</th>
       <th class="dt-Cell dt-HeaderCell dt-Cell-campaigns dt-HeaderCell-campaigns dt-Col-campaigns-lgs">LGS</th>
       <th class="dt-Cell dt-HeaderCell dt-Cell-campaigns dt-HeaderCell-campaigns dt-Col-campaigns-abb">ABB</th>
@@ -21,8 +21,8 @@
         <td class="dt-Cell dt-Cell-campaigns dt-Col-campaigns-clicks">{{ $campaign['clicks'] }}</td>
         <td class="dt-Cell dt-Cell-campaigns dt-Col-campaigns-monthly">{{ $campaign['monthly_partner'] }}</td>
         <td class="dt-Cell dt-Cell-campaigns dt-Col-campaigns-yearly">{{ $campaign['yearly_partner'] }}</td>
-        <td class="dt-Cell dt-Cell-campaigns dt-Col-campaigns-lifetime">{{ $campaign['lifetime_partner'] }}</td>
-        <td class="dt-Cell dt-Cell-campaigns dt-Col-campaigns-coaching">{{ $campaign['coaching'] }}</td>
+        @if($show_lifetime)<td class="dt-Cell dt-Cell-campaigns dt-Col-campaigns-lifetime">{{ $campaign['lifetime_partner'] }}</td>@endif
+        @if($show_coaching)<td class="dt-Cell dt-Cell-campaigns dt-Col-campaigns-coaching">{{ $campaign['coaching'] }}</td>@endif
         <td class="dt-Cell dt-Cell-campaigns dt-Col-campaigns-fbt">{{ $campaign['fb_toolkit'] }}</td>
         <td class="dt-Cell dt-Cell-campaigns dt-Col-campaigns-lgs">{{ $campaign['lead_system'] }}</td>
         <td class="dt-Cell dt-Cell-campaigns dt-Col-campaigns-abb">{{ $campaign['authority_bonuses'] }}</td>
