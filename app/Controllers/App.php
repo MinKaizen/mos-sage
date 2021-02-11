@@ -39,7 +39,7 @@ class App extends Controller
     }
 
     public function mosSidebar(): string {
-        $level = apply_filters( 'mos_user_level_slug', '' );
+        $level = $this->levelSlug();
         return $level . '_sidebar';
     }
 
