@@ -3,7 +3,7 @@
   @include('partials.head')
   <body @php body_class('bd-Body') @endphp
     data-level="{{ $level_slug }}"
-    data-next-level="{{ apply_filters('mos_user_next_level_slug', '') }}"
+    data-next-level="{{ $next_level_slug }}"
   >
     @include('partials.mn-MobileNav', ['menu_slug' => $top_menu_slug])
     @php do_action('get_header') @endphp
