@@ -71,6 +71,10 @@
   .hd-Menu_Item.UpgradeButton > a {
     border-radius: 10px 10px 0 10px;
     transition: transform 0.3s ease-out;
+    // #HACK: undo text gradient shenanigans
+    -webkit-background-clip: unset !important;
+    // #HACK: undo text gradient shenanigans
+    -webkit-text-fill-color: unset !important;
   }
 
   .hd-Menu_Item.UpgradeButton-monthly_partner > .hd-Menu_Item_Link {
@@ -90,10 +94,6 @@
   }
 
   .hd-Menu_Item.UpgradeButton > .hd-Menu_Item_Link:hover {
-    // #HACK: undo text gradient shenanigans
-    -webkit-background-clip: unset;
-    // #HACK: undo text gradient shenanigans
-    -webkit-text-fill-color: unset;
     transform: translateY(-3px);
   }
 }
