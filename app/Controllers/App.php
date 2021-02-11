@@ -34,6 +34,10 @@ class App extends Controller
         return get_the_title();
     }
 
+    public function levelSlug(): string {
+        return apply_filters( 'mos_user_level_slug', '' );
+    }
+
     public function mosSidebar(): string {
         $level = apply_filters( 'mos_user_level_slug', '' );
         return $level . '_sidebar';
