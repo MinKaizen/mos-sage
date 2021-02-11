@@ -10,11 +10,14 @@
     @if(isset($_GET['mis_saved_' . $mis->slug]) && $_GET['mis_saved_' . $mis->slug] )
       <span class="mf-Saved">✓Saved</span>
     @endif
+    @if(isset($_GET["error_$mis->slug"]) && $_GET["error_$mis->slug"] )
+      <span class="mf-Error">✗ {{ $_GET["message_$mis->slug"] }}</span>
+    @endif
   </div>
   {!! wp_nonce_field("save_mis_$mis->slug") !!}
   <input type="hidden" name="user_id" value="{{ get_current_user_id() }}">
   <input type="hidden" name="slug" value="{{ $mis->slug }}">
   <input type="hidden" name="meta_key" value="{{ $mis->meta_key }}">
-  <input type="hidden" name="redirect" value="{{ add_query_arg( 'mis_saved_' . $mis->slug, 1, get_permalink() ) }}">
+  <input type="hidden" name="redirect" value="{{ get_permalink() }}">
   <input type="hidden" name="action" value="update_user_mis">
 </form>
