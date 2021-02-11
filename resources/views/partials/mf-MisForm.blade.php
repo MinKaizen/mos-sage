@@ -1,18 +1,14 @@
 <form class="mf-MisForm"
       action="{{ esc_url( admin_url('admin-post.php') ) }}"
       method="POST">
-  <div class="mf-Body @if(isset($_GET['mis_saved_' . $mis->slug]) && $_GET['mis_saved_' . $mis->slug] )mf-Body-saved @endif">
+  <div class="mf-Body @if($is_saved)mf-Body-saved @endif">
     <div class="mf-Fields">
       <label class="mf-Label" for="" class="mf-Label">{{ $mis->name }} ID:</label>
       <input class="mf-Input"type="text" name="value" value="{{ $current_value }}">
       <input class="mf-Submit" type="submit" value="Save">
     </div>
-    @if(isset($_GET['mis_saved_' . $mis->slug]) && $_GET['mis_saved_' . $mis->slug] )
-      <span class="mf-Saved">✓Saved</span>
-    @endif
-    @if(isset($_GET["error_$mis->slug"]) && $_GET["error_$mis->slug"] )
-      <span class="mf-Error">✗ {{ $_GET["message_$mis->slug"] }}</span>
-    @endif
+    @if($is_saved)<span class="mf-Saved">✓Saved</span>@endif
+    @if($is_error)<span class="mf-Error">✗ {{ $error_message }}</span>@endif
   </div>
   {!! wp_nonce_field("save_mis_$mis->slug") !!}
   <input type="hidden" name="user_id" value="{{ get_current_user_id() }}">
