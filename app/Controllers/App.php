@@ -38,6 +38,10 @@ class App extends Controller
         return apply_filters( 'mos_user_level_slug', '' );
     }
 
+    public function nextLevelSlug(): string {
+        return apply_filters( 'mos_user_next_level_slug', '' );
+    }
+
     public function mosSidebar(): string {
         $level = $this->levelSlug();
         return $level . '_sidebar';
