@@ -249,7 +249,7 @@ function ld_first_child_id( int $post_id ): int {
         $child_post_type = 'sfwd-topic';
         $post_type_meta = 'lesson_id';
     } else {
-        return $post_id; // Not applicable
+        return 0; // Not applicable
     }
 
     $args = [
@@ -271,7 +271,7 @@ function ld_first_child_id( int $post_id ): int {
     if ( isset( $posts[0] ) && ($posts[0] instanceof \WP_Post) ) {
         $post_id = $posts[0]->ID;
     } else {
-        $post_id = 0;
+        return 0;
     }
 
     return $post_id;
