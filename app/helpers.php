@@ -242,8 +242,30 @@ function redirect_error_url( array $args ): string {
 
 function redirect_course( int $course_id ): void {
     $first_module_id = ld_first_child_id( $course_id );
+
+    if ( !$first_module_id ) {
+        redirect_error([
+            'message' => "Course[$course_id] does not have any modules",
+        ]);
+    }
+
     $first_lesson_id = ld_first_child_id( $first_module_id );
-    \wp_redirect( \get_permalink( $first_lesson_id ), 301, 'mos-sage' );
+
+    if ( !$first_lesson_id ) {
+        redirect_error([
+            'message' => "Module[$first_module_id] of Course[$course_id] does not have any lessons",
+        ]);
+    }
+
+    $redirect = \get_permalink( $first_lesson_id );
+
+    if ( !$redirect ) {
+        redirect_error([
+            'message' => "Tried to enter Course[$course_id] but could not find permalink for post[$first_lesson_id]",
+        ]);
+    }
+
+    \wp_redirect( $redirect, 301, 'mos-sage' );
     exit;
 }
 
