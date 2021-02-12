@@ -227,6 +227,19 @@ function is_ld_module(): bool {
     return \get_post_type() === 'sfwd-lessons';
 }
 
+function redirect_error( array $args ): void {
+    $args['error'] = 1;
+    $args['message'] = isset( $args['message'] ) ? $args['message'] : 'Undefined error';
+    $redirect = redirect_error_url( $args );
+    \wp_redirect( $redirect, 301, 'mos-sage' );
+    exit;
+}
+
+function redirect_error_url( array $args ): string {
+    $redirect = \add_query_arg( $args, \home_url( '/404' ) );
+    return $redirect;
+}
+
 function redirect_course( int $course_id ): void {
     $first_module_id = ld_first_child_id( $course_id );
     $first_lesson_id = ld_first_child_id( $first_module_id );
