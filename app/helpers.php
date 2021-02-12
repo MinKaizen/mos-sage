@@ -245,7 +245,7 @@ function redirect_course( int $course_id ): void {
 
     if ( !$first_module_id ) {
         redirect_error([
-            'message' => "Course[$course_id] does not have any modules",
+            'message' => "Tried to redirect Course[$course_id] but it does not have any modules",
         ]);
     }
 
@@ -253,7 +253,7 @@ function redirect_course( int $course_id ): void {
 
     if ( !$first_lesson_id ) {
         redirect_error([
-            'message' => "Module[$first_module_id] of Course[$course_id] does not have any lessons",
+            'message' => "Tried to redirect Course[$course_id] but Module[$first_module_id] does not have any lessons",
         ]);
     }
 
@@ -261,7 +261,7 @@ function redirect_course( int $course_id ): void {
 
     if ( !$redirect ) {
         redirect_error([
-            'message' => "Tried to enter Course[$course_id] but could not find permalink for post[$first_lesson_id]",
+            'message' => "Tried to redirect Course[$course_id] but could not find permalink for post[$first_lesson_id]",
         ]);
     }
 
