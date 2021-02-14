@@ -466,7 +466,7 @@
                               "key": "field_6008aba677f98",
                               "label": "URL",
                               "name": "url",
-                              "type": "url",
+                              "type": "text",
                               "instructions": "<code>url<\/code>",
                               "required": 1,
                               "conditional_logic": 0,
