@@ -6,7 +6,7 @@
   @endif
 
   {{-- Text Island --}}
-  @if(isset($text_island) && isset($text_island->title) && isset($text_island->content))
+  @if(isset($text_island) && !empty($text_island->title) && !empty($text_island->content))
     @include('partials.ld.ldap-TextIsland', [
       'title' => $text_island->title,
       'content' => $text_island->content,
