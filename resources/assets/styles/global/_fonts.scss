@@ -1,35 +1,32 @@
-// @font-face {
-//   font-family: Geomanist;
-//   src:
-//     url("#{$dist}/fonts/geomanist-regular-webfont.ttf"),
-//     url("#{$dist}/fonts/geomanist-regular-webfont.woff"),
-//     url("#{$dist}/fonts/geomanist-regular-webfont.woff2");
-// }
+@font-face {
+  font-family: "Geomanist Light";
+  src:
+    url("#{$dist}/fonts/geomanist-light-webfont.ttf"),
+    url("#{$dist}/fonts/geomanist-light-webfont.woff"),
+    url("#{$dist}/fonts/geomanist-light-webfont.woff2");
+}
 
 // @font-face {
-//   font-family: Geomanist;
+//   font-family: "Geomanist Light";
 //   font-weight: bold;
-//   src:
-//     url("#{$dist}/fonts/geomanist-bold-webfont.ttf"),
-//     url("#{$dist}/fonts/geomanist-bold-webfont.woff"),
-//     url("#{$dist}/fonts/geomanist-bold-webfont.woff2");
+//   src: url("#{$dist}/fonts/geomanist-regular-webfont.woff2");
+//   // url("#{$dist}/fonts/geomanist-regular-webfont.ttf"),
+//   // url("#{$dist}/fonts/geomanist-regular-webfont.woff"),
 // }
 
 // @font-face {
-//   font-family: Geomanist;
+//   font-family: "Geomanist Light";
 //   font-style: italic;
-//   src:
-//     url("#{$dist}/fonts/geomanist-italic-webfont.ttf"),
-//     url("#{$dist}/fonts/geomanist-italic-webfont.woff"),
-//     url("#{$dist}/fonts/geomanist-italic-webfont.woff2");
+//   src: url("#{$dist}/fonts/geomanist-light-italic-webfont.woff2");
+//   // url("#{$dist}/fonts/geomanist-light-italic-webfont.ttf"),
+//   // url("#{$dist}/fonts/geomanist-light-italic-webfont.woff"),
 // }
 
 // @font-face {
-//   font-family: Geomanist;
+//   font-family: "Geomanist Light";
 //   font-weight: bold;
 //   font-style: italic;
-//   src:
-//     url("#{$dist}/fonts/geomanist-bold-italic-webfont.ttf"),
-//     url("#{$dist}/fonts/geomanist-bold-italic-webfont.woff"),
-//     url("#{$dist}/fonts/geomanist-bold-italic-webfont.woff2");
+//   src: url("#{$dist}/fonts/geomanist-regular-italic-webfont.woff2");
+//   // url("#{$dist}/fonts/geomanist-regular-italic-webfont.ttf"),
+//   // url("#{$dist}/fonts/geomanist-regular-italic-webfont.woff"),
 // }
