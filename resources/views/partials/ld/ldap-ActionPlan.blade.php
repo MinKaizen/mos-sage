@@ -20,10 +20,14 @@
     @if($append_complete)
       <section class="ldap-ActionItem">
         <img class="ldap-ActionItem_Checkbox" src="@asset('images/icon-unticked.png')">
-        <h3 class="ldap-ActionItem_Title">Complete</h3>
+        @if($is_complete)
+          <h3 class="ldap-ActionItem_Title">Next Lesson</h3>
+        @else
+          <h3 class="ldap-ActionItem_Title">Complete</h3>
+        @endif
         <hr class="ldap-ActionItem_Divider">
         @if($is_complete)
-          <p class="ldap-ActionItem_Description">You've completed this lesson!</p>
+          <p class="ldap-ActionItem_Description">You've completed this lesson! Click the button to go to the next lesson.</p>
           <a class="bt-Button bt-Button-blue ldap-ActionItem_CTA ldap-ActionItem_CTA-blue" href="{{ $next_link }}">Next >>></a>
         @else
           <p class="ldap-ActionItem_Description">Mark this lesson as complete!</p>
