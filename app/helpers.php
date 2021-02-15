@@ -476,3 +476,20 @@ function get_category( int $post_id, string $tax_slug='category' ): string {
     $category = $term->name;
     return $category;
 }
+
+function resource_generate_link( int $id ): string {
+    $mis = get_field( 'mis', $id );
+    $link_template = (string) get_field( 'link', $id );
+
+    if ( empty( $mis ) ) {
+        return $link_template;
+    }
+
+    $link_template = $link_template ? $link_template : (string) get_field( 'link_template', $mis->ID );
+    $template_tag = (string) get_field( 'mis_link_template_tag', 'option' );
+    $mis_slug = get_field( 'slug', $mis->ID );
+    $mis_value = do_shortcode( "[mos_sponsor_mis network=$mis_slug]" );
+
+    $link = str_replace( $template_tag, $mis_value, $link_template );
+    return $link;
+}
