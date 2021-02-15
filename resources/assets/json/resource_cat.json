@@ -1,0 +1,42 @@
+{
+  "label": "Resource Categories",
+  "labels": {
+    "name": "Resource Categories",
+    "singular_name": "Resource Category",
+    "menu_name": "Categories",
+    "all_items": "All Resource Categories",
+    "edit_item": "Edit Resource Category",
+    "view_item": "View Resource Category",
+    "update_item": "Update Resource Category name",
+    "add_new_item": "Add new Resource Category",
+    "new_item_name": "New Resource Category name",
+    "parent_item": "Parent Resource Category",
+    "parent_item_colon": "Parent Resource Category:",
+    "search_items": "Search Resource Categories",
+    "popular_items": "Popular Resource Categories",
+    "separate_items_with_commas": "Separate Resource Categories with commas",
+    "add_or_remove_items": "Add or remove Resource Categories",
+    "choose_from_most_used": "Choose from the most used Resource Categories",
+    "not_found": "No Resource Categories found",
+    "no_terms": "No Resource Categories",
+    "items_list_navigation": "Resource Categories list navigation",
+    "items_list": "Resource Categories list",
+    "back_to_items": "Back to Resource Categories"
+  },
+  "public": true,
+  "publicly_queryable": true,
+  "hierarchical": true,
+  "show_ui": true,
+  "show_in_menu": true,
+  "show_in_nav_menus": true,
+  "query_var": true,
+  "rewrite": {
+    "slug": "resource_cat",
+    "with_front": true
+  },
+  "show_admin_column": false,
+  "show_in_rest": true,
+  "rest_base": "resource_cat",
+  "rest_controller_class": "WP_REST_Terms_Controller",
+  "show_in_quick_edit": false
+}

@@ -1,0 +1,76 @@
+{
+  "key": "group_6029b3277261f",
+  "title": "Resource Fields",
+  "fields": [
+    {
+      "key": "field_6029b38dc6cd6",
+      "label": "Link",
+      "name": "link",
+      "type": "url",
+      "instructions": "<p>Only if you want to override the MIS default link template (e.g. for Clickbank Products).<\/p>\r\n<p>Use <code>%affid%<\/code> in your template to dynamically insert the sponsor's MIS value<\/p>",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "default_value": "",
+      "placeholder": ""
+    },
+    {
+      "key": "field_6029b344c6cd4",
+      "label": "MIS",
+      "name": "mis",
+      "type": "post_object",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "post_type": [
+        "mis"
+      ],
+      "taxonomy": "",
+      "allow_null": 1,
+      "multiple": 0,
+      "return_format": "object",
+      "ui": 1
+    }
+  ],
+  "location": [
+    [
+      {
+        "param": "post_type",
+        "operator": "==",
+        "value": "resource"
+      }
+    ]
+  ],
+  "menu_order": 0,
+  "position": "normal",
+  "style": "default",
+  "label_placement": "top",
+  "instruction_placement": "label",
+  "hide_on_screen": [
+    "permalink",
+    "the_content",
+    "excerpt",
+    "discussion",
+    "comments",
+    "revisions",
+    "slug",
+    "author",
+    "format",
+    "page_attributes",
+    "featured_image",
+    "categories",
+    "tags",
+    "send-trackbacks"
+  ],
+  "active": true,
+  "description": ""
+}

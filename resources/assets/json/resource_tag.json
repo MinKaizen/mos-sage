@@ -1,0 +1,42 @@
+{
+  "label": "Resource Tags",
+  "labels": {
+    "name": "Resource Tags",
+    "singular_name": "Resource Tag",
+    "menu_name": "Tags",
+    "all_items": "All Resource Tags",
+    "edit_item": "Edit Resource Tag",
+    "view_item": "View Resource Tag",
+    "update_item": "Update Resource Tag name",
+    "add_new_item": "Add new Resource Tag",
+    "new_item_name": "New Resource Tag name",
+    "parent_item": "Parent Resource Tag",
+    "parent_item_colon": "Parent Resource Tag:",
+    "search_items": "Search Resource Tags",
+    "popular_items": "Popular Resource Tags",
+    "separate_items_with_commas": "Separate Resource Tags with commas",
+    "add_or_remove_items": "Add or remove Resource Tags",
+    "choose_from_most_used": "Choose from the most used Resource Tags",
+    "not_found": "No Resource Tags found",
+    "no_terms": "No Resource Tags",
+    "items_list_navigation": "Resource Tags list navigation",
+    "items_list": "Resource Tags list",
+    "back_to_items": "Back to Resource Tags"
+  },
+  "public": true,
+  "publicly_queryable": true,
+  "hierarchical": false,
+  "show_ui": true,
+  "show_in_menu": true,
+  "show_in_nav_menus": true,
+  "query_var": true,
+  "rewrite": {
+    "slug": "resource_tag",
+    "with_front": true
+  },
+  "show_admin_column": false,
+  "show_in_rest": true,
+  "rest_base": "resource_tag",
+  "rest_controller_class": "WP_REST_Terms_Controller",
+  "show_in_quick_edit": false
+}
