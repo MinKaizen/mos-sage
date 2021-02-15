@@ -8,7 +8,7 @@
 
   <p class="ldap-ActionItem_Description">{{ $description }}</p>
 
-  <a href="{{ $cta->url }}"
+  <a href="{{ do_shortcode($cta->url) }}"
     class="bt-Button bt-Button-{{ $cta->color }} ldap-ActionItem_CTA ldap-ActionItem_CTA-{{ $cta->color }}"
     @if($cta->new_tab) @new_tab @endif>
     {{ $cta->text }}
