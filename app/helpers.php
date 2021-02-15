@@ -455,3 +455,24 @@ function validate_mis_value( string $value ): bool {
     $is_valid = (bool) preg_match( $valid_regex, $value );
     return $is_valid;
 }
+
+function get_category( int $post_id, string $tax_slug='category' ): string {
+    $terms = \get_the_terms( $post_id, $tax_slug );
+
+    if ( empty( $terms ) ) {
+        return '';
+    }
+
+    if ( empty( $terms[0] ) ) {
+        return '';
+    }
+
+    $term = $terms[0];
+
+    if ( !( $term instanceof \WP_Term ) ) {
+        return '';
+    }
+
+    $category = $term->name;
+    return $category;
+}
