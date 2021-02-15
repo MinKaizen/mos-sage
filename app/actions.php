@@ -127,3 +127,30 @@ add_action( 'manage_page_posts_custom_column', function( $column, $post_id ) {
         echo $access_level;
     }
 }, 10, 2 );
+
+// Resource custom post type
+add_action( 'init', function() {
+    $file = __DIR__ . '/json/cpt-resource.json';
+    if ( file_exists( $file ) ) {
+        $args = json_decode( (string) file_get_contents( $file ), true );
+        register_post_type( 'resource', $args );
+    }
+} );
+
+// Resource Category custom taxonomy
+add_action( 'init', function() {
+    $file = __DIR__ . '/json/tax-resource_cat.json';
+    if ( file_exists( $file ) ) {
+        $args = json_decode( (string) file_get_contents( $file ), true );
+        register_taxonomy( 'resource_cat', [ "resource" ], $args );
+    }
+} );
+
+// Resource Tag custom taxonomy
+add_action( 'init', function() {
+    $file = __DIR__ . '/json/tax-resource_tag.json';
+    if ( file_exists( $file ) ) {
+        $args = json_decode( (string) file_get_contents( $file ), true );
+        register_taxonomy( 'resource_tag', [ "resource" ], $args );
+    }
+} );
