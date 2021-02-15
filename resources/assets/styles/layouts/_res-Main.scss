@@ -1,0 +1,6 @@
+.res-Main {
+  display: grid;
+  justify-content: center;
+  padding: responsive(20px, 40px);
+  grid-gap: responsive(20px, 40px);
+}
