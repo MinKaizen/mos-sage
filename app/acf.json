@@ -355,6 +355,25 @@
       "key": "group_6004d764f337c",
       "title": "Lesson Properties",
       "fields": [
+            {
+              "key": "field_lesson_display_freeform",
+              "label": "Display Freeform?",
+              "name": "freeform",
+              "type": "true_false",
+              "instructions": "<code>freeform<\/code>",
+              "required": 0,
+              "conditional_logic": 0,
+              "wrapper": {
+                  "width": "",
+                  "class": "",
+                  "id": ""
+              },
+              "message": "",
+              "default_value": 0,
+              "ui": 0,
+              "ui_on_text": "",
+              "ui_off_text": ""
+          },
           {
               "key": "field_6004d776c55a7",
               "label": "Video URL",
