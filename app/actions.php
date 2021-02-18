@@ -93,6 +93,18 @@ add_action('acf/init', function() {
         },
     ];
 
+    $blocks['ldvi-Afflink'] = [
+        'name' => 'afflink',
+        'title' => 'Afflink',
+        'description' => 'Affliate Link',
+        'category' => ['link', 'mos', 'afflink'],
+        'mode' => 'edit',
+        'render_callback' => function() {
+            $args['afflink'] = apply_filters( 'mos_afflink', '' );
+            echo template('partials.ldvi-Afflink', $args);
+        },
+    ];
+
     foreach ( $blocks as $block ) {
         acf_register_block_type( $block );
     }
