@@ -105,6 +105,20 @@ add_action('acf/init', function() {
         },
     ];
 
+    $blocks['ldnp-NextPrev'] = [
+        'name' => 'nextprev',
+        'title' => 'Next & Prev Links',
+        'description' => 'LearnDash Next & Previous Links. Displayed side by side in one row.',
+        'category' => ['next', 'previous', 'navigation'],
+        'mode' => 'preview',
+        'render_callback' => function() {
+            $controller = new \App\Controllers\SingleSfwdTopic();
+            $args['next_link'] = $controller->nextLink();
+            $args['previous_link'] = $controller->previousLink();
+            echo template('blocks.ldnp-NextPrev', $args);
+        },
+    ];
+
     foreach ( $blocks as $block ) {
         acf_register_block_type( $block );
     }

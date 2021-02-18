@@ -1,0 +1,16 @@
+.ldnp-NextPrev {
+  display: grid;
+  grid-template-columns: auto auto;
+  justify-content: space-between;
+  grid-template-areas: "prev next";
+}
+
+.ldnp-Prev {
+  grid-area: prev;
+  text-align: left;
+}
+
+.ldnp-Next {
+  grid-area: next;
+  text-align: right;
+}
