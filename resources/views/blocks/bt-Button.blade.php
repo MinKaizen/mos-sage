@@ -1,5 +1,5 @@
 <a
-  href="{{ $link }}"
+  href="{{ do_shortcode($link) }}"
   class="bt-Button @if(isset($color))bt-Button-{{ $color }}@endif"
   @if($new_tab) @new_tab @endif>
   {{ $text }}
