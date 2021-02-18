@@ -210,3 +210,11 @@ add_filter( 'login_redirect', function ( $redirect_to, $request, $user ) {
     $redirect_to = home_url('/courses/free-course');
     return $redirect_to;
 }, 10, 3 );
+
+/**
+ * Remove Learndash the_content filter
+ */
+add_filter( 'learndash_post_args', function( $args ) {
+    $args['sfwd-topic']['template_redirect'] = false;
+    return $args;
+} );
