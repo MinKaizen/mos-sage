@@ -16,10 +16,10 @@
                   "class": "",
                   "id": ""
               },
-              "collapsed": "",
+              "collapsed": "title",
               "min": 1,
               "max": 0,
-              "layout": "block",
+              "layout": "row",
               "button_label": "Add Item",
               "sub_fields": [
                   {
