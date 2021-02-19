@@ -36,6 +36,9 @@ add_shortcode( 'mos_video', function( $atts ) {
         return '{No URL specified for shortcode mos_video}';
     }
 
-    $args = ['url' => (string) $atts['url']];
+    $args = [
+        'url' => (string) $atts['url'],
+        'spacing' => isset( $atts['spacing'] ) ? (int) $atts['spacing'] : 0,
+    ];
     return template( 'blocks.vid-Video', $args );
 } );

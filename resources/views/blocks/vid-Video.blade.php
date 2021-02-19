@@ -1,5 +1,5 @@
 @if(isset($url))
-  <div class='vid-Video'>
+  <div class='vid-Video' @if(!empty($spacing))style='margin-bottom: {{ $spacing }}px;'@endif>
     <iframe
       class='vid-Video_Frame'
       src='{{ \App\video_embed_url($url) }}'
