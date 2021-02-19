@@ -42,3 +42,16 @@ add_shortcode( 'mos_video', function( $atts ) {
     ];
     return template( 'blocks.vid-Video', $args );
 } );
+
+// Shortcode for mos_button
+add_shortcode( 'mos_button', function( $atts ) {
+    $args = [
+        'link' => isset( $atts['link'] ) ? $atts['link'] : '#',
+        'text' => isset( $atts['text'] ) ? $atts['text'] : 'Click Here',
+        'new_tab' => isset( $atts['new_tab'] ) ? $atts['new_tab'] == 'true' || $atts['new_tab'] == '1' : false,
+        'color' => isset( $atts['color'] ) ? $atts['color'] : 'red',
+    ];
+
+    return template( 'blocks.bt-Button', $args );
+} );
+
