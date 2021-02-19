@@ -55,3 +55,21 @@ add_shortcode( 'mos_button', function( $atts ) {
     return template( 'blocks.bt-Button', $args );
 } );
 
+// Shortcode for mos_sponsor_mis_button
+add_shortcode( 'mos_sponsor_mis_button', function( $atts ) {
+    $args = [
+        'text' => isset( $atts['text'] ) ? $atts['text'] : 'Click Here',
+        'new_tab' => isset( $atts['new_tab'] ) ? $atts['new_tab'] == 'true' || $atts['new_tab'] == '1' : false,
+        'color' => isset( $atts['color'] ) ? $atts['color'] : 'red',
+    ];
+
+    if ( !empty( $atts['link'] ) ) {
+        $args['link'] = $atts['link'];
+    } elseif ( !empty( $atts['network'] ) ) {
+        $args['link'] = do_shortcode( "[mos_sponsor_mis_link network=$atts[network]]" );
+    } else {
+        $args['link'] = '#';
+    }
+
+    return template( 'blocks.bt-Button', $args );
+} );
