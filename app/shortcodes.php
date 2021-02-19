@@ -29,3 +29,13 @@ add_shortcode( 'mos_mis_form', function( $atts ) {
 
     return template('partials.mf-MisForm', $vars);
 } );
+
+// Shortcode for vid-Video
+add_shortcode( 'mos_video', function( $atts ) {
+    if ( !isset( $atts['url'] ) ) {
+        return '{No URL specified for shortcode mos_video}';
+    }
+
+    $args = ['url' => (string) $atts['url']];
+    return template( 'blocks.vid-Video', $args );
+} );
