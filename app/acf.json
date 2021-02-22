@@ -164,7 +164,22 @@
               "ui": 0,
               "ui_on_text": "",
               "ui_off_text": ""
-          }
+          },
+          {
+            "key": "field_wxbsqzhdbyz9d",
+            "label": "Align",
+            "name": "align",
+            "type": "radio",
+            "instructions": "",
+            "choices": {
+                "left": "left",
+                "center": "center",
+                "right": "right"
+            },
+            "default_value": "left",
+            "layout": "horizontal",
+            "return_format": "value"
+        }
       ],
       "location": [
           [

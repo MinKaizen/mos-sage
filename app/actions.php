@@ -64,7 +64,10 @@ add_action('acf/init', function() {
             $args['link'] = get_field('link');
             $args['new_tab'] = get_field('new_tab');
             $args['text'] = get_field('text');
-            $args['color'] = get_field('color');
+            $color = get_field('color');
+            $args['color_class'] = $color ? "bt-Button-$color" : '';
+            $align = get_field('align');
+            $args['align_class'] = $align ? "bt-Button-$align" : '';
             echo template('blocks.bt-Button', $args);
         },
     ];
