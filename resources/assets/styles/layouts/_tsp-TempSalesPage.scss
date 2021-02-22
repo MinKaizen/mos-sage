@@ -1,0 +1,15 @@
+.tsp-Container {
+  display: grid;
+  gap: responsive(20px, 100px);
+  justify-content: center;
+  justify-items: center;
+  padding: responsive(20px, 30px);
+}
+
+.tsp-Container > * {
+  max-width: 1000px !important;
+}
+
+.Group-fullwidth {
+  width: 100%;
+}
