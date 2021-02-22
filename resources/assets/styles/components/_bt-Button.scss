@@ -9,7 +9,8 @@
   border-radius: responsive($border-radius * $mobile-scale, $border-radius);
   color: $color-white;
   cursor: pointer;
-  display: inline-block;
+  display: block;
+  max-width: fit-content;
   font-family: $font-default;
   font-weight: normal;
   font-size: $font-size-body;
@@ -33,4 +34,16 @@
 
 .bt-Button-blue {
   background: $gradient-button-blue;
+}
+
+.bt-Button-center {
+  margin: auto;
+}
+
+.bt-Button-left {
+  margin-right: auto;
+}
+
+.bt-Button-right {
+  margin-left: auto;
 }
