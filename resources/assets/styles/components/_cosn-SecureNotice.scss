@@ -1,0 +1,23 @@
+.cosn-SecureNotice {
+  display: grid;
+  column-gap: responsive(10px, 30px);
+  grid-template-areas:
+    "icon title"
+    "icon description";
+  grid-template-columns: auto 1fr;
+}
+
+.cosn-Icon {
+  grid-area: icon;
+  color: $color-white;
+}
+
+.cosn-Title {
+  grid-area: title;
+  color: $color-white;
+}
+
+.cosn-Description {
+  grid-area: description;
+  color: $color-white;
+}
