@@ -10,14 +10,13 @@
   color: $color-white;
   cursor: pointer;
   display: block;
-  max-width: fit-content;
+  width: fit-content;
   font-family: $font-default;
   font-weight: normal;
   font-size: $font-size-body;
   padding: responsive($padding-v * $mobile-scale, $padding-v) responsive($padding-h * $mobile-scale, $padding-h);
   text-align: center;
   text-decoration: none;
-  width: auto;
 }
 
 .bt-Button-red {
