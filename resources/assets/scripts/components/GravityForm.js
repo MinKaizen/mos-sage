@@ -1,5 +1,9 @@
 const newClasses = [
   {
+    selector: '.gfield_visibility_hidden',
+    newClass: 'gf-Field-hidden',
+  },
+  {
     selector: '.gfield_required',
     newClass: 'gf-Required',
   },

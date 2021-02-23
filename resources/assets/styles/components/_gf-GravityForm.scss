@@ -17,6 +17,10 @@
     color: $color-red;
     padding: 0 3px;
   }
+
+  &-hidden {
+    display: none;
+  }
 }
 
 .gf-Label {
