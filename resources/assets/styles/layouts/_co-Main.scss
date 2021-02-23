@@ -1,0 +1,15 @@
+.co-Main {
+  padding-bottom: 30px;
+}
+
+.co-Main_Container {
+  max-width: 700px;
+  margin: auto;
+  display: grid;
+  gap: responsive(20px, 40px);
+}
+
+.co-Main .gf-GravityForm {
+  padding: responsive(20px, 60px);
+  background: $color-ld-island;
+}
