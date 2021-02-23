@@ -89,7 +89,7 @@
               "key": "field_6018950c40e08",
               "label": "Link",
               "name": "link",
-              "type": "url",
+              "type": "text",
               "instructions": "",
               "required": 1,
               "conditional_logic": 0,
@@ -98,7 +98,7 @@
                   "class": "",
                   "id": ""
               },
-              "default_value": "#",
+              "default_value": "",
               "placeholder": ""
           },
           {
