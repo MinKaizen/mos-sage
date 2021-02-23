@@ -10,3 +10,4 @@ resources/assets/config-local.json
 **.log
 /loose-ends.txt
 .vscode
+resources/views/partials/svg-symbols.blade.php
