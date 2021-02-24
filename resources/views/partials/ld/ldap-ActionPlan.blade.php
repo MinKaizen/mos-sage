@@ -35,6 +35,11 @@
         @endif
       </section>
     @endif
+
+    <div class="ldap-Disclaimer">
+      <hr class="ldap-Disclaimer_Divider">
+      <div class="ldap-Disclaimer_Text">Affiliate Disclaimer - This lesson may contain affiliate links, which means Partners of My Online Startup may receive a small commission, at no cost to you, if you make a purchase through a link.@if($level_slug == 'free') To learn more about our Partner Program, please click on the top tab “Become A Partner” or <a href="@if($mos_is_launched){{ '/monthly-partner' }}@else{{ '/partner' }}@endif" @new_tab>click here.</a> @endif</div>
+    </div>
   </div>
 
 </div>
