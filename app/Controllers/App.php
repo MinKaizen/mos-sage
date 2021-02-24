@@ -85,4 +85,16 @@ class App extends Controller
         $sponsor = apply_filters( 'get_sponsor', null );
         return $sponsor;
     }
+
+    public function mosIsLaunched(): bool {
+        $fallback = false;
+        if ( !function_exists( 'get_field' ) ) {
+            return $fallback;
+        }
+        $launched = get_field( 'mos_is_launched', 'options' );
+        if ( empty( $launched ) ) {
+            return $fallback;
+        }
+        return (bool) $launched;
+    }
 }
