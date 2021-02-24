@@ -718,6 +718,19 @@
       "title": "MOS Settings",
       "fields": [
           {
+              "key": "field_7ewr1sauz5gi9",
+              "label": "MOS 2.0 Launched?",
+              "name": "mos_is_launched",
+              "type": "true_false",
+              "instructions": "Whether or not the new Partner funnel (with monthly, yearly, lifetime) for MOS 2.0 is launched<br>slug: <code>mos_is_launched</code>",
+              "required": 0,
+              "message": "",
+              "default_value": 0,
+              "ui": 1,
+              "ui_on_text": "LAUNCHED",
+              "ui_off_text": "Not yet"
+          },
+          {
               "key": "field_60171e1e833e7",
               "label": "Free Course ID",
               "name": "free_course_id",
