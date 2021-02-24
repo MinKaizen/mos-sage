@@ -1,40 +1,60 @@
 .mf-MisForm {
   display: grid;
-  justify-content: center;
   grid-gap: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 .mf-Body {
-  &-saved {
-    padding-left: 10px;
-    border-left: 5px solid $color-green;
-  }
+  //
 }
 
 .mf-Label {
-  &-has-value::before {
-    content: "✓";
-    color: $color-green;
-    margin-right: 0.2em;
+  font-size: 24px;
+  font-weight: bold;
+  display: block;
+  margin-bottom: 15px;
+}
+
+.mf-Fields {
+  padding-left: 15px;
+
+  &-saved {
+    border-left: 3px solid $color-green;
+  }
+
+  &-error {
+    border-left: 3px solid $color-red;
   }
 }
 
 .mf-Input {
   border: none;
   border-radius: 10px;
-  max-width: 130px;
-  padding: 5px 10px;
-}
-
-.mf-Saved {
-  color: $color-green;
+  font-size: 16px;
+  width: 170px;
+  max-width: 100%;
+  padding: 15px;
 }
 
 .mf-Submit {
-  border: none;
   border-radius: 10px;
-  padding: 5px 10px;
+  border: none;
   color: $color-white;
+  font-size: 16px;
+  padding: 15px 30px;
 
   @extend .bt-Button-red;
+}
+
+.mf-Saved,
+.mf-Error {
+  display: block;
+  font-size: 14px;
+  margin-top: 15px;
+  font-style: italic;
+}
+
+.mf-Error {
+  color: $color-red;
 }
