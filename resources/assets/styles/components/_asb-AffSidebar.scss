@@ -4,6 +4,19 @@
   @include media("banners-show") {
     display: grid;
     align-content: start;
+    justify-items: center;
     row-gap: responsive(4px, 9px);
+  }
+
+  &_Title {
+    $protrusion: 5px;
+
+    background: $color-textbox-header-black;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 15px;
+    text-align: center;
+    width: calc(100% + 2 * #{$protrusion});
   }
 }
