@@ -1,6 +1,13 @@
 <div class="ldap-ActionPlan ldap-ActionPlan-{{ $island_color }}">
 
-  <h2 class="ldap-ActionPlan_Title ldap-ActionPlan_Title-{{ $island_color }}">Your Action Plan:</h2>
+  <div class="ldap-Header ldap-Header-{{ $island_color }}">
+    <span class="ldap-Header_Title">Your Action Plan:</span>
+    @if(!empty($pdf))
+      <a class="ldap-Header_PDF" href="{{ $pdf }}" download @new_tab>
+        <img class="ldap-Header_PDF_Icon" src="@asset('images/icon-pdf-solid.svg')" alt="Download PDF" width="34" height="34">
+      </a>
+    @endif
+  </div>
 
   <div class="ldap-ActionPlan_Inner">
     @if(isset($action_plan) && $action_plan)
