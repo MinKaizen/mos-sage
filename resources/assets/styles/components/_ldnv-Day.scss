@@ -1,0 +1,59 @@
+.ldnv-Day {
+  padding-left: 22px;
+  position: relative;
+
+  &-current::before {
+    background: $gradient-active-top-menu-vertical;
+    border-radius: 0 5px 5px 0;
+    content: "";
+    display: block;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 6px;
+  }
+}
+
+.ldnv-Day_Inner {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  column-gap: 15px;
+  padding: 15px 5px 15px 15px;
+
+  &-current {
+    background: transparentize($color: $color-new-dark-grey, $amount: 0.2);
+    border-radius: 10px 0 0 10px;
+  }
+}
+
+.ldnv-Day_Indicator {
+  height: 23px;
+  width: 23px;
+  display: inline-block;
+  background: $image-module-incomplete;
+
+  &-complete {
+    background: $image-module-complete;
+  }
+
+  &-partner {
+    background: $image-module-partner;
+  }
+}
+
+.ldnv-Day_Number {
+  color: $color-light-blue;
+  font-weight: bold;
+}
+
+.ldnv-Day_Title {
+  color: white;
+  font-weight: bold;
+  opacity: 0.5;
+}
+
+.ldnv-Day_Inner-current .ldnv-Day_Title,
+.ldnv-Day_Inner:hover .ldnv-Day_Title {
+  opacity: 1;
+}
