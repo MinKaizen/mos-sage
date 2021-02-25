@@ -406,6 +406,16 @@
         "placeholder": "e.g. https:\/\/player.vimeo.com\/video\/427225775"
       },
       {
+        "key": "field_6036e9ed77742",
+        "label": "PDF",
+        "name": "pdf",
+        "type": "file",
+        "instructions": "",
+        "return_format": "url",
+        "library": "all",
+        "mime_types": ".pdf"
+      },
+      {
         "key": "field_6008a86377f93",
         "label": "Action Plan",
         "name": "action_plan",
