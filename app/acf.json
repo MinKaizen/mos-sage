@@ -262,6 +262,25 @@
         "ui_off_text": "Hide"
       },
       {
+        "key": "field_nkfty2onrwy77",
+        "label": "Side Nav Style",
+        "name": "side_nav_style",
+        "type": "radio",
+        "instructions": "<code>side_nav_style<\/code>",
+        "required": 1,
+        "conditional_logic": 0,
+        "choices": {
+          "default": "default",
+          "challenge": "challenge"
+        },
+        "allow_null": 0,
+        "other_choice": 0,
+        "default_value": "default",
+        "layout": "horizontal",
+        "return_format": "value",
+        "save_other_choice": 0
+      },
+      {
         "key": "field_60089bf9c13d5",
         "label": "Module Indicator",
         "name": "module_indicator",
