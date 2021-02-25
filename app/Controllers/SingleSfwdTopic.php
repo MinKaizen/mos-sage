@@ -258,4 +258,11 @@ class SingleSfwdTopic extends Controller
         return $show_afflink;
     }
 
+
+    public function sideNavStyle(): string {
+        $course_id = $this->courseId();
+        $show_afflink = (string) get_field( 'side_nav_style', $course_id );
+        return $show_afflink;
+    }
+
 }
