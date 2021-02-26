@@ -3,4 +3,8 @@
   row-gap: 30px;
   max-width: 700px;
   margin: auto;
+
+  &-wide {
+    max-width: 960px;
+  }
 }
