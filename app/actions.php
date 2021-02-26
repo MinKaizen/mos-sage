@@ -122,6 +122,26 @@ add_action('acf/init', function() {
         },
     ];
 
+    $blocks['grid'] = [
+        'name' => 'grid',
+        'title' => 'Grid',
+        'description' => 'CSS Grid',
+        'category' => ['css', 'grid', 'columns'],
+        'mode' => 'preview',
+        'supports' => [
+            'jsx' => true,
+            'mode' => true,
+        ],
+        'render_callback' => function() {
+            $args['justify_content'] = \esc_html( get_field( 'justify_content' ) );
+            $args['grid_template_columns'] = \esc_html( get_field( 'grid_template_columns' ) );
+            $args['grid_template_rows'] = \esc_html( get_field( 'grid_template_rows' ) );
+            $args['gap'] = \esc_html( get_field( 'gap' ) );
+            $args['padding'] = \esc_html( get_field( 'padding' ) );
+            echo template('blocks.grid', $args);
+        },
+    ];
+
     foreach ( $blocks as $block ) {
         acf_register_block_type( $block );
     }
