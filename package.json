@@ -86,13 +86,14 @@
     "yargs": "^16.1.0"
   },
   "dependencies": {
+    "alpinejs": "^2.7.0",
     "datatables.net": "^1.10.22",
     "datatables.net-buttons-dt": "^1.6.5",
     "datatables.net-dt": "^1.10.22",
     "datatables.net-fixedheader-dt": "^3.1.7",
-    "pdfmake": "^0.1.68",
     "jquery": "^3.3.1",
-    "alpinejs": "^2.7.0",
+    "pdfmake": "^0.1.68",
+    "scriptjs": "^2.5.9",
     "svg4everybody": "^2.1.9"
   }
 }
