@@ -1,0 +1,11 @@
+.onesignal-customlink-container {
+  .onesignal-customlink-subscribe.link,
+  .onesignal-customlink-subscribe.button {
+    @extend .bt-Button;
+    @extend .bt-Button-purple;
+
+    text-transform: none;
+    font-weight: normal !important;
+    text-decoration: none !important;
+  }
+}
