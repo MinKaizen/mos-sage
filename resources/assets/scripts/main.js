@@ -11,6 +11,7 @@ import MosTable from './components/MosTable'
 import ProfileDetails from './components/ProfileDetails'
 import ProfilePassword from './components/ProfilePassword'
 import GravityForm from './components/GravityForm'
+import OneSignalButton from './components/OneSignalButton'
 
 // Define routes
 const routes = [
@@ -22,6 +23,10 @@ const routes = [
 
 // Define components
 const components = [
+  {
+    class: OneSignalButton,
+    selector: '.onesignal-customlink-container',
+  },
   {
     class: GravityForm,
     selector: '.js-GravityForm_wrapper',
