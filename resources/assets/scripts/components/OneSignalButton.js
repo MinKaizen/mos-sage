@@ -8,8 +8,11 @@ export default class OneSignalButton {
 }
 
 function init() {
+  // eslint-disable-next-line no-undef
   window.OneSignal = window.OneSignal || [];
+  // eslint-disable-next-line no-undef
   OneSignal.push(function() {
+    // eslint-disable-next-line no-undef
     OneSignal.init({
       appId: 'f75e91f7-2deb-4300-bbbd-f501d1e254ca',
       allowLocalhostAsSecureOrigin: true,
