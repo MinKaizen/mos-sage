@@ -64,7 +64,7 @@ class App extends Controller
 
     public function topMenuSlug() {
         // Note: check setup.php for menu slugs
-        $user_id = get_current_user_id();
+        $user_id = \apply_filters( 'mos_current_user_id', get_current_user_id() );
 
         if ( !$user_id ) {
             $menu_slug = 'top';

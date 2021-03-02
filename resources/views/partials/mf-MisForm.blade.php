@@ -11,7 +11,7 @@
     </div>
   </div>
   {!! wp_nonce_field("save_mis_$mis->slug") !!}
-  <input type="hidden" name="user_id" value="{{ get_current_user_id() }}">
+  <input type="hidden" name="user_id" value="{{ \apply_filters( 'mos_current_user_id', get_current_user_id() ) }}">
   <input type="hidden" name="slug" value="{{ $mis->slug }}">
   <input type="hidden" name="meta_key" value="{{ $mis->meta_key }}">
   <input type="hidden" name="redirect" value="{{ get_permalink() }}">

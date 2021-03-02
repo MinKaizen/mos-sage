@@ -387,7 +387,7 @@ function course_progress( int $course_id, int $user_id=0 ): array {
 
     if ( !$user_id ) {
         // User id not specified. Use current user ID
-        $user_id = get_current_user_id();
+        $user_id = \apply_filters( 'mos_current_user_id', get_current_user_id() );
     }
 
     if ( !$user_id ) {
@@ -430,7 +430,7 @@ function get_mis( string $slug, int $user_id=0 ): string {
 
     if ( !$user_id ) {
         // User id not specified. Use current user ID
-        $user_id = get_current_user_id();
+        $user_id = \apply_filters( 'mos_current_user_id', get_current_user_id() );
     }
 
     if ( !$user_id ) {

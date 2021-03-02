@@ -110,7 +110,7 @@ class SingleSfwdTopic extends Controller
 
     private static function is_lesson_complete(int $lesson_id): bool
     {
-        $user_id = \get_current_user_id();
+        $user_id = \apply_filters( 'mos_current_user_id', get_current_user_id() );
         $meta_key = '_sfwd-course_progress';
         $progress = get_user_meta($user_id, $meta_key, true);
 
