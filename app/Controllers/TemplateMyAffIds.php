@@ -15,14 +15,11 @@ class TemplateMyAffIds extends Controller {
         }
 
         foreach ( $all_mis as $mis ) {
-            $qualifies_for_mis = apply_filters( 'mos_qualifies_for_mis', false, $mis->slug );
-            if ( $qualifies_for_mis ) {
-                $user_mis[$mis->slug] = [
-                    'name' => $mis->name,
-                    'course_link' => $mis->course_link,
-                    'value' => do_shortcode("[mos_mis network=$mis->slug]"),
-                ];
-            }
+            $user_mis[$mis->slug] = [
+                'name' => $mis->name,
+                'course_link' => $mis->course_link,
+                'value' => do_shortcode("[mos_mis network=$mis->slug]"),
+            ];
         }
 
         return $user_mis;
