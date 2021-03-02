@@ -1,9 +1,15 @@
-.onesignal-customlink-container {
-  .onesignal-customlink-subscribe.link,
-  .onesignal-customlink-subscribe.button {
+.onesignal-customlink-subscribe.link,
+.onesignal-customlink-subscribe.button {
+  &.state-unsubscribed {
     @extend .bt-Button;
     @extend .bt-Button-purple;
 
+    text-transform: none;
+    font-weight: normal !important;
+    text-decoration: none !important;
+  }
+
+  .state-subscribed {
     text-transform: none;
     font-weight: normal !important;
     text-decoration: none !important;
