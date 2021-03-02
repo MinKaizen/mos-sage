@@ -40,7 +40,7 @@ function init() {
             unsubscribe:
               'Unsubscribe from Push Notifications' /* Prompt's text when subscribed */,
           },
-          unsubscribeEnabled: false /* Controls whether the prompt is visible after subscription */,
+          unsubscribeEnabled: true /* Controls whether the prompt is visible after subscription */,
         },
       },
     });
