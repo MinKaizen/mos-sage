@@ -5,6 +5,7 @@ const appIds = {
   localhost: 'f75e91f7-2deb-4300-bbbd-f501d1e254ca',
   'staging-myonlinestartup.temp312.kinsta.cloud': '5afc90b0-812c-41be-a998-8508ba248038',
   'myonlinestartup.com': 'c0237383-712a-454d-a6d9-f1b3ebbba030',
+  'mos-sage.local': '79d3ff1e-55ca-4207-a476-0353aa5dd043',
 }
 
 const subdomainNames = {
