@@ -75,3 +75,9 @@ add_shortcode( 'mos_sponsor_mis_button', function( $atts ) {
 
     return template( 'blocks.bt-Button', $args );
 } );
+
+// Shortcode for onesignal
+add_shortcode( 'onesignal', function() {
+    return template( 'partials.osb-OneSignalButton' );
+} );
+
