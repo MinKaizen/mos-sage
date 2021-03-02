@@ -1,5 +1,17 @@
 import $script from 'scriptjs';
 
+const appIds = {
+  _default: 'f75e91f7-2deb-4300-bbbd-f501d1e254ca',
+  localhost: 'f75e91f7-2deb-4300-bbbd-f501d1e254ca',
+  'staging-myonlinestartup.temp312.kinsta.cloud': '5afc90b0-812c-41be-a998-8508ba248038',
+  'myonlinestartup.com': 'c0237383-712a-454d-a6d9-f1b3ebbba030',
+}
+
+const subdomainNames = {
+  _default: null,
+  'staging-myonlinestartup.temp312.kinsta.cloud': 'staging-mos',
+}
+
 export default class OneSignalButton {
   constructor() {
     $script('https://cdn.onesignal.com/sdks/OneSignalSDK.js', 'onesignal')
@@ -14,8 +26,9 @@ function init() {
   OneSignal.push(function() {
     // eslint-disable-next-line no-undef
     OneSignal.init({
-      appId: 'f75e91f7-2deb-4300-bbbd-f501d1e254ca',
+      appId: getAppId(window.location.hostname),
       allowLocalhostAsSecureOrigin: true,
+      subdomainName: getSubdomainName(window.location.hostname),
       promptOptions: {
         customlink: {
           enabled: true /* Required to use the Custom Link */,
@@ -33,32 +46,18 @@ function init() {
   });
 }
 
-// function init() {
-//   window.OneSignal = window.OneSignal || [];
-//   OneSignal.push(function () {
-//     OneSignal.init({
-//       appId: '5afc90b0-812c-41be-a998-8508ba248038',
-//       promptOptions: {
-//         customlink: {
-//           enabled: true /* Required to use the Custom Link */,
-//           style: 'button' /* Has value of 'button' or 'link' */,
-//           size: 'medium' /* One of 'small', 'medium', or 'large' */,
-//           color: {
-//             button:
-//               '#E12D30' /* Color of the button background if style = 'button' */,
-//             text: '#FFFFFF' /* Color of the prompt's text */,
-//           },
-//           text: {
-//             subscribe:
-//               'Subscribe to push notifications' /* Prompt's text when not subscribed */,
-//             unsubscribe:
-//               'Unsubscribe from push notifications' /* Prompt's text when subscribed */,
-//             explanation:
-//               'Get updates from all sorts of things that matter to you' /* Optional text appearing before the prompt button */,
-//           },
-//           unsubscribeEnabled: true /* Controls whether the prompt is visible after subscription */,
-//         },
-//       },
-//     });
-//   });
-// }
+function getAppId(domain) {
+  if ( domain in appIds ) {
+    return appIds[domain]
+  } else {
+    return appIds._default
+  }
+}
+
+function getSubdomainName(domain) {
+  if ( domain in subdomainNames ) {
+    return subdomainNames[domain]
+  } else {
+    return subdomainNames._default
+  }
+}
