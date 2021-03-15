@@ -103,6 +103,15 @@ add_action('widgets_init', function () {
     //     'id'            => 'sidebar-footer'
     // ] + $config);
     register_sidebar([
+        'id'            => 'free_sidebar',
+        'name'          => __( 'Free Member Sidebar' ),
+        'description'   => __( 'MOS related banners for Free Members' ),
+        'before_widget' => '<section class="msb-MosSidebar_Banner">',
+        'after_widget'  => '</section>',
+        'before_title'  => '<title class="msb-MosSidebar_Title">',
+        'after_title'   => '</title>',
+    ]);
+    register_sidebar([
         'id'            => 'monthly_partner_sidebar',
         'name'          => __( 'Monthly Partner Sidebar' ),
         'description'   => __( 'MOS related banners for Monthly Partners' ),
