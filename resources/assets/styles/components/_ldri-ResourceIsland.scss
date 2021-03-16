@@ -1,0 +1,60 @@
+.ldri-ResourceIsland {
+  background: $color-ld-island;
+  border-radius: 0 0 $island-border-radius $island-border-radius;
+  display: grid;
+}
+
+.ldri-Title {
+  font-size: $font-size-title;
+  font-weight: bold;
+  display: block;
+  border-radius: $island-border-radius;
+  margin-left: 0 - $island-top-bar-oversize;
+  padding: 15px 15px 15px 35px;
+  width: calc(100% + (2 * #{$island-top-bar-oversize}));
+
+  &-black {
+    background: $color-textbox-header-black;
+  }
+
+  &-shiny-purple {
+    background: $gradient-shiny-dark-blue;
+  }
+}
+
+.ldri-Resources {
+  padding: $lesson-island-padding;
+  padding-top: 20px;
+  display: grid;
+
+  @include media("sm") {
+    grid-template-columns: 2fr 5fr;
+    row-gap: 15px;
+  }
+}
+
+.ldri-ResourceName {
+  font-size: 16px;
+  margin-bottom: 0.3em;
+
+  @include media("sm") {
+    margin-bottom: 0;
+  }
+}
+
+.ldri-ResourceDescription {
+  font-size: 16px;
+  margin-bottom: 1.7em;
+
+  @include media("sm") {
+    margin-bottom: 0;
+  }
+}
+
+.ldri-Divider {
+  grid-column: 1/-1;
+  border-color: $color-light-charcoal;
+  border-width: 1px;
+  width: 100%;
+  margin: 0;
+}
