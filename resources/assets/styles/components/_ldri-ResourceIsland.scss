@@ -26,6 +26,8 @@
   padding: $lesson-island-padding;
   padding-top: 20px;
   display: grid;
+  align-items: start;
+  justify-items: start;
 
   @include media("sm") {
     grid-template-columns: 2fr 5fr;
