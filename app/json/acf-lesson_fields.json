@@ -205,6 +205,46 @@
       ]
     },
     {
+      "key": "field_1iztnqbpq8scc",
+      "label": "Resources",
+      "name": "resources",
+      "type": "repeater",
+      "instructions": "<code>resources<\/code>",
+      "required": 0,
+      "collapsed": "field_ooe1du566swzs",
+      "layout": "row",
+      "button_label": "Add Resource",
+      "sub_fields": [
+        {
+          "key": "field_ooe1du566swzs",
+          "label": "Name",
+          "name": "name",
+          "type": "text",
+          "instructions": "<code>name<\/code>",
+          "required": 1
+        },
+        {
+          "key": "field_jxoqar183d6ox",
+          "label": "Link",
+          "name": "link",
+          "type": "url",
+          "instructions": "<code>link</code>",
+          "required": 1
+        },
+        {
+          "key": "field_6brfbjwbrjdon",
+          "label": "Description",
+          "name": "description",
+          "type": "wysiwyg",
+          "instructions": "<code>description<\/code>",
+          "required": 1,
+          "tabs": "all",
+          "toolbar": "full",
+          "media_upload": 0
+        }
+      ]
+    },
+    {
       "key": "field_60090b89aa250",
       "label": "FAQ",
       "name": "faq",
