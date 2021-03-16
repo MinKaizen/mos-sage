@@ -5,6 +5,11 @@
     @include('partials.ld.ldap-ActionPlan')
   @endif
 
+  {{-- Tools and Resources --}}
+  @if(isset($resources) && $resources)
+    @include('partials.ld.ldri-ResourceIsland')
+  @endif
+
   {{-- FAQ --}}
   @if(isset($faq) && $faq)
     @include('partials.ld.ldfaq-FAQ')
