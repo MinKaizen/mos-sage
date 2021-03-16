@@ -164,6 +164,22 @@ add_action( 'init', function() {
     }
 } );
 
+// Load Lesson Fields ACF
+add_action( 'init', function() {
+    if ( !function_exists( 'acf_add_local_field_group' ) ) {
+      return;
+    }
+
+    $json_file = __DIR__ . '/json/acf-lesson_fields.json';
+    if ( !file_exists( $json_file ) ) {
+        return;
+    }
+
+    $acf_data = json_decode( file_get_contents( $json_file ), true );
+
+    acf_add_local_field_group( $acf_data );
+} );
+
 // Load Resource Fields ACF
 add_action( 'init', function() {
     if ( !function_exists( 'acf_add_local_field_group' ) ) {
