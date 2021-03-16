@@ -59,4 +59,16 @@
   img {
     max-width: 100%;
   }
+
+  a {
+    color: inherit;
+    text-decoration: underline $color-dark-blue;
+    text-decoration-thickness: 5px;
+
+    &:hover {
+      color: inherit;
+      text-decoration: none;
+      background: linear-gradient(0deg, $color-dark-blue 0%, $color-dark-blue 65%, transparent 65%, transparent 100%);
+    }
+  }
 }
