@@ -17,6 +17,13 @@
   padding: responsive($padding-v * $mobile-scale, $padding-v) responsive($padding-h * $mobile-scale, $padding-h);
   text-align: center;
   text-decoration: none;
+  box-shadow: 0 5px 5px 0 $color-new-black !important;
+  transition: transform 0.2s ease-in;
+
+  &:hover {
+    box-shadow: 0 13px 8px -6px $color-new-black !important;
+    transform: translateY(-3px);
+  }
 }
 
 .bt-Button-red {
