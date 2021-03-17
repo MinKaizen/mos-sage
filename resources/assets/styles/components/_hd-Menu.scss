@@ -12,7 +12,6 @@
 
   .hd-Menu_Item {
     color: white;
-    cursor: pointer;
     display: grid;
     align-content: center;
     height: 100%;
@@ -51,8 +50,8 @@
   .hd-Menu_Item_Link {
     color: inherit;
     display: block;
-    margin: auto;
-    padding: responsive(5px, 15px);
+    margin: responsive(5px, 15px) auto;
+    padding: 0 responsive(5px, 15px);
     font-size: responsive(14px, 16px);
     text-decoration: none;
     width: auto;
