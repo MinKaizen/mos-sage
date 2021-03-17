@@ -41,8 +41,7 @@
   text-decoration: none;
 
   &:hover {
-    color: $color-light-blue;
-    text-decoration: underline;
+    @include text-gradient-active-top-menu();
   }
 }
 
