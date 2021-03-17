@@ -1,8 +1,9 @@
 .c-Link {
   color: inherit;
   text-decoration: underline $color-dark-blue;
-  text-decoration-thickness: 5px;
-  transition: text-decoration 1s;
+  text-decoration-thickness: 3px;
+  text-underline-offset: 1px;
+  transition: text-decoration 0.5s;
 
   &:hover {
     color: inherit;
