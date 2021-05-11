@@ -4,7 +4,7 @@
   $padding-h: 30px;
   $padding-v: 15px;
 
-  background: $gradient-button-red;
+  background: $gradient-button-red !important;
   border: none;
   border-radius: responsive($border-radius * $mobile-scale, $border-radius);
   color: $color-white;
@@ -16,30 +16,30 @@
   font-size: $font-size-body;
   padding: responsive($padding-v * $mobile-scale, $padding-v) responsive($padding-h * $mobile-scale, $padding-h);
   text-align: center;
-  text-decoration: none;
-  // box-shadow: 0 5px 5px 0 $color-new-black !important;
-  transition: transform 0.2s ease-in;
+  text-decoration: none !important;
+  box-shadow: 0 5px 5px 0 $color-new-black !important;
+  transition: all 0.2s ease-in !important;
 
   &:hover {
-    // box-shadow: 0 13px 8px -6px $color-new-black !important;
+    box-shadow: 0 13px 8px -6px $color-new-black !important;
     transform: translateY(-3px);
   }
 }
 
 .bt-Button-red {
-  background: $gradient-button-red;
+  background: $gradient-button-red !important;
 }
 
 .bt-Button-green {
-  background: $gradient-button-green;
+  background: $gradient-button-green !important;
 }
 
 .bt-Button-purple {
-  background: $gradient-button-purple;
+  background: $gradient-button-purple !important;
 }
 
 .bt-Button-blue {
-  background: $gradient-button-blue;
+  background: $gradient-button-blue !important;
 }
 
 .bt-Button-center {
