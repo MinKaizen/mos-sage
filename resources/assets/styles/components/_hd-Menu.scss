@@ -50,8 +50,8 @@
   .hd-Menu_Item_Link {
     color: inherit;
     display: block;
-    margin: responsive(5px, 15px) auto;
-    padding: 0 responsive(5px, 15px);
+    margin: 0 auto;
+    padding: responsive(5px, 10px) responsive(5px, 15px);
     font-size: responsive(14px, 16px);
     text-decoration: none;
     width: auto;
