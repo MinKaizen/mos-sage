@@ -60,7 +60,7 @@
     max-width: 100%;
   }
 
-  a {
+  a:not(.bt-Button) {
     color: inherit;
     text-decoration: underline $color-dark-blue;
     text-decoration-thickness: 3px;
